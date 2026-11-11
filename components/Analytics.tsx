@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 // Google Tag Manager on every page. GA4 is configured inside the GTM container.
@@ -11,8 +10,9 @@ export { GTM_ID };
  * Google Consent Mode v2 (advanced): before GTM loads, everything is "denied" by default.
  * Google tags then send only anonymous cookieless pings until the visitor accepts.
  * A choice saved on a previous visit is re-applied immediately.
+ * Rendered by app/layout.tsx with strategy="beforeInteractive" (must live in the root layout).
  */
-const consentDefaults = `
+export const consentDefaults = `
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', {
@@ -33,11 +33,6 @@ try {
 
 export default function Analytics() {
   return (
-    <>
-      <Script id="consent-defaults" strategy="beforeInteractive">
-        {consentDefaults}
-      </Script>
-      <GoogleTagManager gtmId={GTM_ID} />
-    </>
+    <GoogleTagManager gtmId={GTM_ID} />
   );
 }

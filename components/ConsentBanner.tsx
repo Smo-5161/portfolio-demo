@@ -5,22 +5,24 @@ import { CLARITY_ID, CONSENT_KEY } from "@/lib/tracking";
 
 type Choice = "granted" | "denied";
 
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-    clarity?: (...args: unknown[]) => void;
-  }
-}
+// Typed locally (not via "declare global") to avoid clashing with the dataLayer type
+// already declared by @next/third-parties.
+type TrackingWindow = Window & {
+  dataLayer?: unknown[];
+  clarity?: (...args: unknown[]) => void;
+};
+const w = () => window as unknown as TrackingWindow;
 
 export const OPEN_CONSENT_EVENT = "open-consent";
 
 function gtag(...args: unknown[]) {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(args);
+  const win = w();
+  win.dataLayer = win.dataLayer || [];
+  win.dataLayer.push(args);
 }
 
 function loadClarity() {
-  if (window.clarity) return;
+  if (w().clarity) return;
   /* eslint-disable */
   (function (c: any, l: Document, a: string, r: string, i: string) {
     c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
@@ -31,8 +33,7 @@ function loadClarity() {
     y.parentNode!.insertBefore(t, y);
   })(window, document, "clarity", "script", CLARITY_ID);
   /* eslint-enable */
-  const clarity = window.clarity as ((...args: unknown[]) => void) | undefined;
-  clarity?.("consent");
+  w().clarity?.("consent");
 }
 
 function applyChoice(choice: Choice) {
@@ -43,7 +44,7 @@ function applyChoice(choice: Choice) {
     ad_personalization: value,
     analytics_storage: value,
   });
-  window.dataLayer?.push({ event: "consent_update", consent: choice });
+  w().dataLayer?.push({ event: "consent_update", consent: choice });
   if (choice === "granted") loadClarity();
 }
 

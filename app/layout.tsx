@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import Analytics from "@/components/Analytics";
+import Script from "next/script";
+import Analytics, { consentDefaults } from "@/components/Analytics";
 import ConsentBanner from "@/components/ConsentBanner";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -28,7 +29,11 @@ export const metadata: Metadata = {
     description: home.description,
   },
   twitter: { card: "summary_large_image", title: home.title, description: home.description },
-  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
 };
 
 export const viewport: Viewport = {
@@ -49,6 +54,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400..700&display=swap"
         />
       </head>
+      <Script id="consent-defaults" strategy="beforeInteractive">
+        {consentDefaults}
+      </Script>
       <Analytics />
       <body className="font-sans">
         <noscript>
