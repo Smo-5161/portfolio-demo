@@ -47,9 +47,9 @@ export const trackingEvents: TrackingEvent[] = [
     status: "planned",
   },
   {
-    name: "faq_expand",
-    trigger: "A FAQ answer is opened (hover ≥ 1 s, tap or focus)",
-    params: ["faq_question"],
+    name: "faq_view",
+    trigger: "Visit to the /faq page (from the footer link)",
+    params: ["page_referrer"],
     keyEvent: false,
     tool: "GA4",
     status: "planned",

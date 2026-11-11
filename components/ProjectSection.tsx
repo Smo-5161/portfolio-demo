@@ -16,7 +16,7 @@ const tones = ["bg-gblue-100!", "bg-gred-100!", "bg-gyellow-100!", "bg-ggreen-10
 
 export default function ProjectSection({ path, title, items, emptyMessage }: Props) {
   // Internal linking: every project page links to the other sections of the portfolio.
-  const others = routes.filter((r) => r.path !== "/" && r.path !== path);
+  const others = routes.filter((r) => r.portfolio && r.path !== path);
 
   return (
     <main>

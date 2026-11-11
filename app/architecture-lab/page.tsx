@@ -26,11 +26,12 @@ const toc = [
 ];
 
 const pageDetails: Record<string, { rendering: string; content: string }> = {
-  "/": { rendering: "Static (SSG)", content: "Profile, skills carousel, portfolio, FAQ" },
+  "/": { rendering: "Static (SSG)", content: "Profile, CV, skills carousel, portfolio" },
   "/websites": { rendering: "Static (SSG)", content: "Projects from data/sites.json" },
   "/saas": { rendering: "Static (SSG)", content: "Projects from data/saas.json" },
   "/internal-tools": { rendering: "Static (SSG)", content: "Projects from data/tools.json" },
   "/architecture-lab": { rendering: "Static (SSG)", content: "This report" },
+  "/faq": { rendering: "Static (SSG)", content: "Sourced FAQ, built for GEO" },
 };
 
 const machineFiles = [
@@ -66,7 +67,7 @@ const jsonLdBlocks = [
     why: "Google's type for a page about one person: who the site is about, with contacts and skills.",
     data: profilePageJsonLd,
   },
-  { type: "FAQPage", where: "Home page", why: `${faq.length} questions and answers, eligible for rich results and easy for LLMs to quote.`, data: faqJsonLd },
+  { type: "FAQPage", where: "FAQ page (/faq)", why: `${faq.length} questions and answers, easy for LLMs to quote. It marks up content that is visible on the page, as Google requires.`, data: faqJsonLd },
   {
     type: "ItemList + CreativeWork",
     where: "Project pages",
@@ -85,7 +86,7 @@ const faqRules = [
   { title: "Natural phrasing", text: "Questions are written the way someone would ask ChatGPT, not as keywords." },
   { title: "Answer first", text: "The first sentence answers the question on its own, with a figure." },
   { title: "Sourced data", text: "Every figure links to its source at the end of the answer." },
-  { title: "Always in the HTML", text: "Answers expand on hover, but are never display:none: crawlers read them all." },
+  { title: "Visible, never hidden", text: "The FAQ sits on its own page rather than being hidden: text shown to robots but not to visitors breaks Google’s spam policies." },
 ];
 
 const tones = ["bg-gblue-100", "bg-gred-100", "bg-gyellow-100", "bg-ggreen-100"];
@@ -293,7 +294,7 @@ export default function ArchitectureLabPage() {
               <h3 className="text-base mb-4">Heading hierarchy</h3>
               <ul className="space-y-2 text-sm font-mono">
                 <li className="rounded-lg bg-gblue-100 px-3 py-2">H1 · one per page (page subject)</li>
-                <li className="rounded-lg bg-gred-100 px-3 py-2 ml-6">H2 · each section (My skills, Portfolio, FAQ…)</li>
+                <li className="rounded-lg bg-gred-100 px-3 py-2 ml-6">H2 · each section (My skills, Portfolio…)</li>
                 <li className="rounded-lg bg-gyellow-100 px-3 py-2 ml-12">H3 · each card (a skill, a project, a question)</li>
                 <li className="rounded-lg bg-ggreen-100 px-3 py-2 ml-18">H4 · details inside a project</li>
               </ul>
@@ -370,10 +371,10 @@ Sitemap: /sitemap.xml`}
         {/* 5. FAQ */}
         <Section
           id="faq-structure"
-          plain="When someone asks ChatGPT a question, it looks for short, clear, trustworthy answers it can quote. So every answer in this FAQ starts with the direct answer and a figure, then adds context, then names its source: exactly the shape an AI likes to reuse. On screen the answers fold away to keep the page tidy, but they are always present in the page’s code, so robots read all of them."
+          plain="When someone asks ChatGPT a question, it looks for short, clear, trustworthy answers it can quote. So every answer in this FAQ starts with the direct answer and a figure, then adds context, then names its source: exactly the shape an AI likes to reuse. On a portfolio, a FAQ about SEO statistics isn’t really useful to visitors: it is here to show the method. So instead of cluttering the home page, it has its own page, linked from the footer. It is not hidden, though: showing robots text that people can’t see is a classic black-hat trick that Google penalizes."
           eyebrow="05"
           title="A FAQ built for GEO"
-          intro="Generative engines quote short, self-contained, sourced answers. Every FAQ entry follows the same anatomy."
+          intro={<>Generative engines quote short, self-contained, sourced answers. Every FAQ entry follows the same anatomy. On this portfolio the FAQ is a demonstration of SEO/GEO structuring rather than content for visitors, so it lives on a dedicated page, <a href="/faq" className="link">/faq</a>, linked from the footer, instead of the home page.</>}
         >
           <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
             <div className="card p-6">

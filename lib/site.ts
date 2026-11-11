@@ -25,6 +25,8 @@ export type RouteInfo = {
   title: string;
   /** Meta description: ~150 characters, shown under the title in Google. */
   description: string;
+  /** Part of the portfolio (listed in "Explore the rest of the portfolio"). */
+  portfolio?: boolean;
 };
 
 export const routes: RouteInfo[] = [
@@ -38,6 +40,7 @@ export const routes: RouteInfo[] = [
   {
     path: "/websites",
     label: "Websites",
+    portfolio: true,
     title: "Website case studies: SEO & UX redesigns",
     description:
       "Website redesigns built for search and conversion: site architecture, technical SEO, structured data, page speed and GEO-ready FAQs, with real results.",
@@ -45,6 +48,7 @@ export const routes: RouteInfo[] = [
   {
     path: "/saas",
     label: "SaaS",
+    portfolio: true,
     title: "SaaS products built from idea to launch",
     description:
       "SaaS products designed and built end to end, like Omi.ai, an AI onboarding platform with process capture, RAG knowledge base and an AI mentor.",
@@ -52,6 +56,7 @@ export const routes: RouteInfo[] = [
   {
     path: "/internal-tools",
     label: "Internal Tools",
+    portfolio: true,
     title: "Internal tools & business apps",
     description:
       "Internal tools and no-code business apps that automate repetitive work and centralize company data for teams.",
@@ -59,9 +64,17 @@ export const routes: RouteInfo[] = [
   {
     path: "/architecture-lab",
     label: "Architecture & SEO/GEO/CRO Lab",
+    portfolio: true,
     title: "SEO, GEO & tracking lab: how this site is built",
     description:
       "A visual report on this site: architecture, semantic markup, JSON-LD, AI crawlers in robots.txt, GEO-ready FAQ, GA4, Clarity and server-side tracking.",
+  },
+  {
+    path: "/faq",
+    label: "FAQ",
+    title: "FAQ: SEO, GEO, CRO, UX and internal tools, with sourced figures",
+    description:
+      "Short, sourced answers on why SEO still matters, what GEO is, conversion and UX impact, and when custom internal tools or no-code make sense.",
   },
 ];
 

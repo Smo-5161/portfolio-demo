@@ -3,8 +3,7 @@ import Link from "next/link";
 const anchors = [
   { href: "/#profile", label: "Profile" },
   { href: "/#portfolio", label: "Portfolio" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
+    { href: "#contact", label: "Contact" },
 ];
 
 export default function SiteHeader() {
