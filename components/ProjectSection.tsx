@@ -29,22 +29,29 @@ export default function ProjectSection({ title, items, emptyMessage }: Props) {
 
   return (
     <main>
-      <h1 className="text-3xl font-bold mb-8">{title}</h1>
-      {items.length === 0 ? (
-        <EmptyState message={emptyMessage} />
-      ) : (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          />
-          <div className="space-y-10">
-            {items.map((p) => (
-              <ProjectCard key={p.id} project={p} />
-            ))}
-          </div>
-        </>
-      )}
+      <div className="hero-gradient border-b border-stroke">
+        <div className="max-w-6xl mx-auto px-6 py-14">
+          <p className="eyebrow mb-2">Portfolio</p>
+          <h1 className="text-4xl">{title}</h1>
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        {items.length === 0 ? (
+          <EmptyState message={emptyMessage} />
+        ) : (
+          <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="space-y-10">
+              {items.map((p) => (
+                <ProjectCard key={p.id} project={p} />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
     </main>
   );
 }

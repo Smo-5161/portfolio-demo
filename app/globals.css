@@ -1,1 +1,144 @@
 @import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design system — inspiré de Microsoft Fluent Design
+   Palette pastel / désaturée : bleu nuit, magenta, violet, blanc.
+   Tous les couples texte/fond respectent le contraste WCAG AA (≥ 4.5:1).
+------------------------------------------------------------------- */
+@theme {
+  --font-sans: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Cascadia Code", Consolas, "SFMono-Regular", monospace;
+
+  /* Bleu nuit */
+  --color-night-900: #1f2a44; /* texte principal, footer */
+  --color-night-700: #3a4766;
+  --color-night-500: #5b6478; /* texte secondaire */
+  --color-night-100: #e6e9f0;
+
+  /* Violet (couleur d'action) */
+  --color-violet-600: #6a5fa3; /* boutons, liens */
+  --color-violet-300: #c9c3e6;
+  --color-violet-200: #d9d3ef;
+  --color-violet-100: #ece9f7;
+
+  /* Magenta (accent) */
+  --color-magenta-600: #9a527a;
+  --color-magenta-300: #e3bdd1;
+  --color-magenta-200: #ebcfdd;
+  --color-magenta-100: #f7e8f0;
+
+  /* Surfaces */
+  --color-surface: #f7f7fb;
+  --color-stroke: #e3e1ee;
+
+  --radius-fluent: 8px;
+  --shadow-fluent-2: 0 1px 2px rgb(31 42 68 / 0.06), 0 0 2px rgb(31 42 68 / 0.06);
+  --shadow-fluent-8: 0 4px 8px rgb(31 42 68 / 0.08), 0 0 2px rgb(31 42 68 / 0.06);
+  --shadow-fluent-16: 0 8px 16px rgb(31 42 68 / 0.1), 0 0 2px rgb(31 42 68 / 0.06);
+}
+
+@layer base {
+  body {
+    background: var(--color-surface);
+    color: var(--color-night-900);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  a {
+    color: inherit;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-violet-600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Carte Fluent : fond blanc, coins 8px, élévation légère */
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-stroke);
+    border-radius: var(--radius-fluent);
+    box-shadow: var(--shadow-fluent-2);
+  }
+  .card-interactive {
+    transition: box-shadow 150ms ease, transform 150ms ease, border-color 150ms ease;
+  }
+  .card-interactive:hover {
+    box-shadow: var(--shadow-fluent-16);
+    border-color: var(--color-violet-300);
+    transform: translateY(-2px);
+  }
+
+  /* Boutons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: background-color 150ms ease;
+  }
+  .btn-primary {
+    background: var(--color-violet-600);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: var(--color-night-700);
+  }
+  .btn-secondary {
+    background: #fff;
+    color: var(--color-night-900);
+    border: 1px solid var(--color-stroke);
+  }
+  .btn-secondary:hover {
+    background: var(--color-violet-100);
+  }
+
+  /* Étiquette */
+  .chip {
+    display: inline-block;
+    padding: 0.125rem 0.625rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--color-violet-100);
+    color: var(--color-night-900);
+  }
+  .chip-magenta {
+    background: var(--color-magenta-100);
+  }
+
+  /* Lien texte */
+  .link {
+    color: var(--color-violet-600);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .link:hover {
+    color: var(--color-magenta-600);
+  }
+
+  /* Sur-titre de section */
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-magenta-600);
+  }
+
+  /* Dégradé pastel du hero */
+  .hero-gradient {
+    background:
+      radial-gradient(60% 80% at 0% 0%, var(--color-violet-200) 0%, transparent 70%),
+      radial-gradient(50% 70% at 100% 20%, var(--color-magenta-200) 0%, transparent 70%),
+      #fff;
+  }
+}

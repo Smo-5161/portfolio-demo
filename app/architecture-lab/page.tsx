@@ -2,39 +2,48 @@ import TrackTester from "./TrackTester";
 
 export default function ArchitectureLabPage() {
   return (
-    <main className="space-y-8">
-      <h1 className="text-2xl font-bold">Architecture &amp; SEO/GEO/CRO Lab</h1>
+    <main>
+      <div className="hero-gradient border-b border-stroke">
+        <div className="max-w-6xl mx-auto px-6 py-14">
+          <p className="eyebrow mb-2">Proof of work</p>
+          <h1 className="text-4xl">Architecture &amp; SEO/GEO/CRO Lab</h1>
+        </div>
+      </div>
 
-      <section className="border border-gray-300 p-4">
-        <h2 className="font-bold mb-2">Data Pipeline &amp; Server-Side Tracking</h2>
-        <TrackTester />
-      </section>
+      <div className="max-w-6xl mx-auto px-6 py-12 grid gap-6 lg:grid-cols-2">
+        <section className="card p-6 lg:col-span-2">
+          <h2 className="text-xl mb-4">Data Pipeline &amp; Server-Side Tracking</h2>
+          <TrackTester />
+        </section>
 
-      <section className="border border-gray-300 p-4">
-        <h2 className="font-bold mb-2">GEO / Crawlability Inspector</h2>
-        <p className="text-sm mb-2">JSON-LD actuellement injecté :</p>
-        <pre className="border border-gray-300 bg-gray-50 p-2 text-xs overflow-auto">
-          {"// Aucun JSON-LD injecté"}
-        </pre>
-      </section>
+        <section className="card p-6">
+          <h2 className="text-xl mb-2">GEO / Crawlability Inspector</h2>
+          <p className="text-sm text-night-500 mb-3">JSON-LD actuellement injecté :</p>
+          <pre className="rounded bg-night-900 text-violet-200 p-4 text-xs font-mono overflow-auto">
+            {"// Aucun JSON-LD injecté"}
+          </pre>
+        </section>
 
-      <section className="border border-gray-300 p-4">
-        <h2 className="font-bold mb-2">Performance &amp; Metrics Logs</h2>
-        <table className="w-full border-collapse text-sm">
-          <thead>
-            <tr>
-              <th className="border border-gray-300 p-2 text-left">Métrique</th>
-              <th className="border border-gray-300 p-2 text-left">Valeur</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border border-gray-300 p-2">—</td>
-              <td className="border border-gray-300 p-2">—</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+        <section className="card p-6">
+          <h2 className="text-xl mb-4">Performance &amp; Metrics Logs</h2>
+          <div className="rounded border border-stroke overflow-hidden">
+            <table className="w-full text-sm">
+              <thead className="bg-surface text-left text-night-500">
+                <tr>
+                  <th className="p-3 font-semibold">Métrique</th>
+                  <th className="p-3 font-semibold">Valeur</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-stroke">
+                  <td className="p-3">—</td>
+                  <td className="p-3">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

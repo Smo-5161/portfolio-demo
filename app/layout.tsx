@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth">
       <Analytics />
-      <body className="bg-white text-black font-sans">
+      <body className="font-sans">
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
@@ -50,7 +50,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <SiteHeader />
-        <div id="contenu" className="max-w-5xl mx-auto px-6 py-10">
+        <div id="contenu">
           {children}
         </div>
         <SiteFooter />

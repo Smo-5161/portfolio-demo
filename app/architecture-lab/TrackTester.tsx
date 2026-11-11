@@ -29,11 +29,11 @@ export default function TrackTester() {
         id="test-conversion"
         onClick={handleClick}
         disabled={loading}
-        className="border border-gray-400 px-3 py-1 hover:bg-gray-100 disabled:opacity-50"
+        className="btn btn-primary disabled:opacity-50"
       >
-        Déclencher un événement de test
+        {loading ? "Envoi…" : "Déclencher un événement de test"}
       </button>
-      <pre className="mt-3 border border-gray-300 bg-gray-50 p-2 text-xs overflow-auto">
+      <pre className="mt-4 rounded bg-night-900 text-violet-200 p-4 text-xs font-mono overflow-auto">
         {output}
       </pre>
     </div>
