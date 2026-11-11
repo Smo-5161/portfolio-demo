@@ -10,6 +10,8 @@ type Props = {
   title: string;
   /** Plain-language explanation, always visible. */
   plain?: string;
+  /** Source files on GitHub related to this section. */
+  code?: { label: string; href: string }[];
   /** Technical details: server-rendered, collapsed on screen but always in the HTML. */
   children: React.ReactNode;
 };
@@ -19,7 +21,7 @@ type Props = {
  * at all times (never display:none, never removed): crawlers and LLMs read everything.
  * Only the on-screen height animates between 0 and auto.
  */
-export default function LabSection({ id, eyebrow, title, plain, children }: Props) {
+export default function LabSection({ id, eyebrow, title, plain, code, children }: Props) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
 
@@ -82,6 +84,24 @@ export default function LabSection({ id, eyebrow, title, plain, children }: Prop
             </p>
             <p className="text-sm leading-relaxed text-ink-700">{plain}</p>
           </div>
+        )}
+
+        {code && code.length > 0 && (
+          <p className="mt-4 flex flex-wrap items-center gap-2 text-sm">
+            <span className="text-ink-500">See the code:</span>
+            {code.map((c) => (
+              <a
+                key={c.href}
+                href={c.href}
+                target="_blank"
+                rel="noopener"
+                onClick={(e) => e.stopPropagation()}
+                className="chip chip-tonal font-mono hover:underline"
+              >
+                {c.label} ↗
+              </a>
+            ))}
+          </p>
         )}
 
         <p className="mt-4 text-sm font-medium text-ink-700">

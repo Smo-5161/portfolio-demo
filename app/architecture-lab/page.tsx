@@ -1,7 +1,7 @@
 import LabSection from "@/components/LabSection";
 import LabToggleAll from "@/components/LabToggleAll";
 import { pageMetadata } from "@/lib/seo";
-import { routes } from "@/lib/site";
+import { REPO_URL, repoFile, routes } from "@/lib/site";
 import { aiBotGroups, aiBots } from "@/lib/ai-bots";
 import { faq, faqJsonLd } from "@/lib/faq";
 import { JsonLd, breadcrumbJsonLd, profilePageJsonLd, projectListJsonLd, websiteJsonLd } from "@/lib/jsonld";
@@ -104,6 +104,7 @@ function Section({
   title,
   intro,
   plain,
+  code,
   children,
 }: {
   id: string;
@@ -112,12 +113,20 @@ function Section({
   intro?: React.ReactNode;
   /** Plain-language explanation for non-technical readers (recruiters, clients). */
   plain?: string;
+  /** Repository paths shown as "See the code" links. */
+  code?: string[];
   children: React.ReactNode;
 }) {
   // Collapsible card: title + plain words always visible; details expand on click,
   // but are rendered here on the server and always present in the HTML.
   return (
-    <LabSection id={id} eyebrow={eyebrow} title={title} plain={plain}>
+    <LabSection
+      id={id}
+      eyebrow={eyebrow}
+      title={title}
+      plain={plain}
+      code={code?.map((path) => ({ label: path, href: repoFile(path) }))}
+    >
       {intro && <div className="text-ink-700 leading-relaxed max-w-3xl mb-6">{intro}</div>}
       {children}
     </LabSection>
@@ -171,6 +180,25 @@ export default function ArchitectureLabPage() {
             <span className="rounded-full bg-brand-50 px-2 py-0.5">In plain words</span>{" "}
             explanation. Click a card to open the technical details.
           </p>
+          <div className="mb-8 max-w-3xl rounded-2xl border border-stroke bg-white/80 p-5">
+            <p className="text-sm text-ink-700 mb-4">
+              <strong className="font-medium text-ink-900">Built with AI, directed by me.</strong> The code
+              was written with Claude as a coding partner. The brief, the architecture, the SEO/GEO
+              requirements, the content and every decision are mine, set out in a written brief and a
+              set of project rules the assistant had to follow.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <a href={REPO_URL} target="_blank" rel="noopener" className="btn btn-primary">
+                View the source code on GitHub ↗
+              </a>
+              <a href={repoFile("docs/PRD.md")} target="_blank" rel="noopener" className="btn btn-secondary">
+                Initial brief (PRD) ↗
+              </a>
+              <a href={repoFile("PROJECT_RULES.md")} target="_blank" rel="noopener" className="btn btn-secondary">
+                Project rules for the AI ↗
+              </a>
+            </div>
+          </div>
           <ul className="grid grid-cols-2 sm:grid-cols-5 gap-3">
             {stats.map((s, i) => (
               <li key={s.label} className={`rounded-2xl p-4 ${tones[i % tones.length]}`}>
@@ -201,6 +229,7 @@ export default function ArchitectureLabPage() {
         {/* 1. Architecture */}
         <Section
           id="architecture"
+          code={["lib/site.ts", "app/sitemap.ts", "app/llms.txt/route.ts", "next.config.ts"]}
           plain="Think of the site as a building with a clear floor plan: every room (page) can be reached from the lobby (the home page) in one step, with signs everywhere. Search engines discover a site by following its links, so a simple plan means no page gets lost. The “files made for machines” are a reception desk for robots: a map of the site (sitemap), the house rules (robots.txt) and a short summary written for AI assistants (llms.txt)."
           eyebrow="01"
           title="Site architecture"
@@ -243,6 +272,7 @@ export default function ArchitectureLabPage() {
         {/* 2. Stack */}
         <Section
           id="stack"
+          code={["package.json", "app/layout.tsx", "app/globals.css"]}
           plain="Many modern websites send an almost empty page and assemble it inside the visitor’s browser. Search engines and AI assistants often don’t wait for that step, so they see little or nothing. Here the server sends the finished page straight away, like handing someone a printed brochure instead of a box of parts. Visitors get a faster site, and Google or ChatGPT can read every word."
           eyebrow="02"
           title="Code & stack"
@@ -272,6 +302,7 @@ export default function ArchitectureLabPage() {
         {/* 3. Markup */}
         <Section
           id="markup"
+          code={["lib/jsonld.tsx", "lib/seo.ts"]}
           plain="HTML tags work like labels on a filing cabinet: “this is the main title”, “this is a section”, “this is the contact address”. Clear labels help Google and AI tools understand what each part of a page is. JSON-LD goes one step further: it is an ID card hidden in the page, in a format machines read directly (“this site belongs to Antoine Smolar, Growth Marketer, here is his LinkedIn”). It helps Google display richer results and helps AI assistants describe a person or a company accurately."
           eyebrow="03"
           title="Semantic markup & structured data"
@@ -320,6 +351,7 @@ export default function ArchitectureLabPage() {
         {/* 4. robots.txt */}
         <Section
           id="robots"
+          code={["lib/ai-bots.ts", "app/robots.ts"]}
           plain="robots.txt is the doorman of a website: a small public file telling automated visitors (robots) what they are allowed to read. Many sites block AI robots without knowing it, so ChatGPT or Gemini can never learn about them or quote them. This site names each AI company’s robots and lets them in: the first step to appearing in AI-generated answers, which is what GEO is about."
           eyebrow="04"
           title="robots.txt & AI crawlers"
@@ -370,6 +402,7 @@ Sitemap: /sitemap.xml`}
         {/* 5. FAQ */}
         <Section
           id="faq-structure"
+          code={["lib/faq.ts", "app/faq/page.tsx"]}
           plain="When someone asks ChatGPT a question, it looks for short, clear, trustworthy answers it can quote. So every answer in this FAQ starts with the direct answer and a figure, then adds context, then names its source: exactly the shape an AI likes to reuse. On a portfolio, a FAQ about SEO statistics isn’t really useful to visitors: it is here to show the method. So instead of cluttering the home page, it has its own page, linked from the footer. It is not hidden, though: showing robots text that people can’t see is a classic black-hat trick that Google penalizes."
           eyebrow="05"
           title="A FAQ built for GEO"
@@ -411,6 +444,7 @@ Sitemap: /sitemap.xml`}
         {/* 6. Tracking */}
         <Section
           id="tracking"
+          code={["components/Analytics.tsx", "components/ConsentBanner.tsx", "data/lab.ts"]}
           plain="Google Analytics counts what happens: how many visitors, what they click, how many get in touch. Microsoft Clarity shows how it happens: heatmaps of where people click and anonymous replays of visits, to spot what confuses them. Google Tag Manager is the control panel that switches these tools on without touching the site’s code. A “conversion” is an action that matters for the business, here contacting me. And the cookie banner asks visitors for permission first, as European law requires."
           eyebrow="06"
           title="Analytics & tracking"
@@ -533,6 +567,7 @@ Sitemap: /sitemap.xml`}
         {/* 8. Dashboards */}
         <Section
           id="dashboards"
+          code={["data/lab.ts"]}
           plain="These are the actual reporting screens of the tools described above. They prove the setup works end to end: data comes in, and it turns into charts and insights a team can act on."
           eyebrow="08"
           title="Dashboards, heatmaps & reports"

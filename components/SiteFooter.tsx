@@ -1,4 +1,4 @@
-import { contact } from "@/lib/site";
+import { REPO_URL, contact } from "@/lib/site";
 import CookieSettingsButton from "./CookieSettingsButton";
 
 const tiles = ["bg-brand-100", "bg-accent-100", "bg-brand-50"];
@@ -37,6 +37,9 @@ export default function SiteFooter() {
           </span>
           <a href="/faq" className="underline underline-offset-2 hover:text-ink-900">
             FAQ
+          </a>
+          <a href={REPO_URL} target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-ink-900">
+            Source code
           </a>
           <CookieSettingsButton />
         </p>

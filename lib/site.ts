@@ -9,6 +9,10 @@ export const SITE_URL =
 // Date of the last real content update (used in the sitemap). Change it when content changes.
 export const SITE_UPDATED = "2026-11-11";
 
+// Public source code of this site.
+export const REPO_URL = "https://github.com/Smo-5161/portfolio-demo";
+export const repoFile = (path: string) => `${REPO_URL}/blob/main/${path}`;
+
 export const contact = {
   name: "Antoine Smolar",
   jobTitle: "Growth Marketer & Product Builder",
