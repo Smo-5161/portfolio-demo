@@ -81,5 +81,73 @@
         ]
       }
     ]
+  },
+  {
+    "id": "kompute",
+    "name": "Kompute — batch AI jobs on idle gaming GPUs",
+    "url": "https://kompute.vercel.app/",
+    "urlLabel": "Visit the site",
+    "description": "Student team project (entrepreneurship class): a marketplace that runs small teams' batch AI jobs on gaming PCs that would otherwise sit idle.",
+    "scope": [
+      "School project",
+      "Team work",
+      "Product",
+      "Business model"
+    ],
+    "stack": [
+      "Next.js",
+      "Vercel"
+    ],
+    "context": [
+      "Kompute was built as a group project for an entrepreneurship class. The result is a team effort, not mine alone.",
+      "It grew out of a personal project I had put on hold: I had hit a technical wall on security, since running other people’s workloads safely on private computers demands a level of sandboxing and isolation expertise I did not have yet. Rather than ship something unsafe, I paused it, and the class gave the team a chance to rethink the idea as a business: who needs it, what it should cost, and what a credible first version looks like.",
+      "Kompute is a student project: there are no customers, no providers and no revenue. The site says so openly."
+    ],
+    "work": [
+      {
+        "title": "The idea",
+        "text": "Small AI teams need GPU power for batch work, while millions of gaming GPUs sit unused most of the day. Kompute connects the two.",
+        "points": [
+          "Teams send non-sensitive, interruptible jobs that fit on a single GPU: embeddings, batch inference (classify, tag, summarise), transcription of public audio and similar runs.",
+          "Gamers rent out their idle PC and keep 85% of what each job pays.",
+          "Not a fit by design: large multi-GPU training, real-time serving, and any personal or confidential data."
+        ]
+      },
+      {
+        "title": "How it works",
+        "text": "Consumer machines can disappear at any moment, so the system is built around that.",
+        "points": [
+          "Each job is split into small chunks, and every finished chunk is saved as a checkpoint.",
+          "The agent on the gaming PC pulls work over HTTPS: nothing ever connects into the player’s home network.",
+          "PCs send a heartbeat every 2 seconds; after 10 seconds of silence the job goes back to the queue and resumes on another machine from its last checkpoint.",
+          "A few random items are recomputed and compared before delivery, and the team receives one result file, in order."
+        ]
+      },
+      {
+        "title": "What it brings",
+        "text": "A cheaper option for work that can wait a few minutes, and a fair deal for the people providing the hardware.",
+        "points": [
+          "For teams: batch compute without renting or maintaining cloud GPUs, with help packaging their first job.",
+          "For gamers: income from an idle PC, chosen availability hours, and games always come first (the job moves elsewhere as soon as a game starts)."
+        ]
+      },
+      {
+        "title": "Business model, tested in interviews",
+        "text": "Pricing hypotheses put in front of potential users during interviews, not yet validated by payments.",
+        "points": [
+          "0.30 to 0.40 € per GPU-hour for teams.",
+          "15% platform commission, 85% to the provider."
+        ]
+      },
+      {
+        "title": "What is actually built",
+        "text": "A working proof of concept, with an honest line between what runs and what is illustrative.",
+        "points": [
+          "A live demo runs a real embeddings job on a separate worker that saves checkpoints, can be unplugged mid-job and resumes (on a CPU server, not a gaming GPU).",
+          "A quote form that stores requests in a database, answered by hand.",
+          "The marketplace dashboard (providers, wallet, payouts) is a mock-up with demo data."
+        ]
+      }
+    ]
   }
 ]
