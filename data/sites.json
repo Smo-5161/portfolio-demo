@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "helmo-renovation",
+    "name": "Helmo Rénovation",
+    "url": "https://helmo-renovation.fr/",
+    "description": "Refonte complète (SEO, UI et UX) du site d'une entreprise de rénovation tous corps d'état, réalisée en 2 mois.",
+    "duration": "2 mois",
+    "scope": ["SEO", "UI", "UX"],
+    "context": [
+      "Helmo Rénovation est une entreprise de rénovation tous corps d'état (intérieur, rénovation énergétique, chantiers pour professionnels) qui réalise ses travaux clé en main avec ses propres équipes, sans sous-traitance.",
+      "Le site a été entièrement refait en 2 mois : structure SEO, interface et parcours utilisateur. L'objectif était de clarifier une offre très large (par type de logement, par pièce, par corps de métier) et d'amener chaque visiteur vers une demande de devis.",
+      "Le parcours s'appuie sur des preuves de confiance visibles dès le premier écran (avis clients, logos de références, qualification RGE) et sur plusieurs points d'entrée vers la conversion : devis, rappel téléphonique et estimation pièce par pièce."
+    ],
+    "design": {
+      "summary": "Une identité sobre et premium : un bleu nuit profond qui inspire sérieux et confiance, réveillé par un orange vif réservé aux actions. Une seule famille typographique, Poppins, déclinée en graisses pour hiérarchiser l'information.",
+      "palette": [
+        { "name": "Bleu nuit", "hex": "#001C28", "role": "Couleur primaire : fonds du hero et du footer, titres, texte principal" },
+        { "name": "Orange Helmo", "hex": "#FF7920", "role": "Accent : boutons d'appel à l'action et éléments à mettre en avant" },
+        { "name": "Pêche clair", "hex": "#FFF2E9", "role": "Fonds doux pour les blocs de mise en avant" },
+        { "name": "Blanc", "hex": "#FFFFFF", "role": "Couleur secondaire : fonds de sections et texte sur fond sombre" },
+        { "name": "Anthracite", "hex": "#2F2F2F", "role": "Texte courant secondaire" },
+        { "name": "Gris", "hex": "#A1A1AA", "role": "Mentions, légendes et éléments discrets" }
+      ],
+      "fontFamily": "Poppins",
+      "typeScale": [
+        { "role": "Titre d'accroche", "size": "80px", "weight": "600", "note": "interlettrage -2,4px pour un rendu compact et impactant" },
+        { "role": "Titre de section", "size": "48px", "weight": "600" },
+        { "role": "Sous-titre", "size": "20px", "weight": "300" },
+        { "role": "Texte courant", "size": "16px", "weight": "400" },
+        { "role": "Bouton", "size": "14–16px", "weight": "600", "note": "coins arrondis de 16px" }
+      ],
+      "principles": [
+        "L'orange est réservé aux actions : l'œil va directement vers « Obtenir mon devis ».",
+        "Fort contraste bleu nuit / blanc pour une lecture rapide sur mobile comme sur desktop.",
+        "Photos avant/après aux tons chauds et naturels pour rendre le résultat concret.",
+        "Icônes linéaires simples pour présenter les engagements (standardisé, fiable, ultra rapide).",
+        "Comparatif « Sans Helmo / Avec Helmo » pour répondre visuellement aux craintes des clients."
+      ]
+    },
+    "seoScores": []
+  }
+]
