@@ -1,7 +1,8 @@
 import { GoogleTagManager } from "@next/third-parties/google";
 
 // Google Tag Manager on every page. GA4 is configured inside the GTM container.
-// Microsoft Clarity is NOT loaded here: ConsentBanner loads it only after the visitor accepts.
+// Microsoft Clarity is loaded by a tag inside the GTM container; ConsentBanner passes the
+// visitor's choice to it (Clarity Consent API v2). Without consent it runs cookieless.
 import { GTM_ID, CONSENT_KEY } from "@/lib/tracking";
 
 export { GTM_ID };

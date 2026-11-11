@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CLARITY_ID, CONSENT_KEY } from "@/lib/tracking";
+import { CONSENT_KEY } from "@/lib/tracking";
 
 type Choice = "granted" | "denied";
 
@@ -21,19 +21,22 @@ function gtag(...args: unknown[]) {
   win.dataLayer.push(args);
 }
 
-function loadClarity() {
-  if (w().clarity) return;
-  /* eslint-disable */
-  (function (c: any, l: Document, a: string, r: string, i: string) {
-    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-    const t = l.createElement(r) as HTMLScriptElement;
-    t.async = true;
-    t.src = "https://www.clarity.ms/tag/" + i;
-    const y = l.getElementsByTagName(r)[0];
-    y.parentNode!.insertBefore(t, y);
-  })(window, document, "clarity", "script", CLARITY_ID);
-  /* eslint-enable */
-  w().clarity?.("consent");
+/**
+ * Clarity is loaded by the GTM container (Microsoft Clarity tag). Without consent it runs
+ * cookieless; this passes the visitor's choice through Clarity's Consent API v2.
+ * The stub queues the call if Clarity hasn't loaded yet.
+ */
+function clarityConsent(choice: Choice) {
+  const win = w();
+  if (!win.clarity) {
+    const q: unknown[] = [];
+    const stub = (...args: unknown[]) => {
+      q.push(args);
+    };
+    (stub as unknown as { q: unknown[] }).q = q;
+    win.clarity = stub;
+  }
+  win.clarity("consentv2", { ad_Storage: choice, analytics_Storage: choice });
 }
 
 function applyChoice(choice: Choice) {
@@ -45,7 +48,7 @@ function applyChoice(choice: Choice) {
     analytics_storage: value,
   });
   w().dataLayer?.push({ event: "consent_update", consent: choice });
-  if (choice === "granted") loadClarity();
+  clarityConsent(choice);
 }
 
 /** Cookie banner: equal "Accept" / "Refuse" buttons, choice saved for next visits. */
@@ -57,7 +60,7 @@ export default function ConsentBanner() {
     try {
       saved = localStorage.getItem(CONSENT_KEY);
     } catch {}
-    if (saved === "granted") loadClarity();
+    if (saved === "granted" || saved === "denied") clarityConsent(saved);
     if (saved !== "granted" && saved !== "denied") setOpen(true);
 
     const reopen = () => setOpen(true);

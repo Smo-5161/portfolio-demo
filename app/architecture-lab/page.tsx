@@ -414,7 +414,7 @@ Sitemap: /sitemap.xml`}
           plain="Google Analytics counts what happens: how many visitors, what they click, how many get in touch. Microsoft Clarity shows how it happens: heatmaps of where people click and anonymous replays of visits, to spot what confuses them. Google Tag Manager is the control panel that switches these tools on without touching the site’s code. A “conversion” is an action that matters for the business, here contacting me. And the cookie banner asks visitors for permission first, as European law requires."
           eyebrow="06"
           title="Analytics & tracking"
-          intro="Google Tag Manager loads on every page and drives Google Analytics 4; Microsoft Clarity loads once the visitor accepts cookies. GA4 measures what happens, Clarity shows how (heatmaps, recordings, rage clicks). Consent is handled by a banner and Google Consent Mode v2 (live)."
+          intro="Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. GA4 measures what happens, Clarity shows how (heatmaps, recordings, rage clicks). Consent is handled by a banner, Google Consent Mode v2 and Clarity Consent API v2 (live): until a visitor accepts, both tools run without cookies."
         >
           <ol className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
             <FlowNode title="Browser + consent banner" detail="Consent Mode v2: denied by default" tone="bg-gblue-100" />
@@ -428,7 +428,7 @@ Sitemap: /sitemap.xml`}
               </span>
               <span className="rounded-2xl px-4 py-3 bg-ggreen-100">
                 <span className="block font-medium">Microsoft Clarity</span>
-                <span className="block text-xs text-ink-700 mt-0.5">Project {CLARITY_ID} · after consent</span>
+                <span className="block text-xs text-ink-700 mt-0.5">Project {CLARITY_ID} · cookieless until consent</span>
               </span>
             </li>
           </ol>
@@ -524,7 +524,7 @@ Sitemap: /sitemap.xml`}
               Server-side tracking does not override a refusal. This site already runs a consent
               banner with Google Consent Mode v2 in advanced mode: when consent is denied, tags only
               send anonymous cookieless pings (no identifiers, no cookies), and GA4 and Google Ads
-              use them to model the missing conversions. Microsoft Clarity only loads after the
+              use them to model the missing conversions. Microsoft Clarity runs without cookies until the
               visitor accepts. The data recovered this way stays aggregated and GDPR-compliant.
             </p>
           </div>
