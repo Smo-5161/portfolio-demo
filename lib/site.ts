@@ -62,6 +62,22 @@ export const routes: RouteInfo[] = [
       "Internal tools and no-code business apps that automate repetitive work and centralize company data for teams.",
   },
   {
+    path: "/workshops",
+    label: "Workshops & Talks",
+    portfolio: true,
+    title: "Workshops & talks on AI, vibe coding and growth",
+    description:
+      "Workshops and conferences led by Antoine Smolar on AI, vibe coding, no-code and growth marketing: format, audience and takeaways.",
+  },
+  {
+    path: "/research",
+    label: "Research & Hackathons",
+    portfolio: true,
+    title: "Research projects & hackathons",
+    description:
+      "Research projects and hackathons by Antoine Smolar: the problem tackled, the prototype built and the results.",
+  },
+  {
     path: "/architecture-lab",
     label: "Architecture & SEO/GEO/CRO Lab",
     portfolio: true,

@@ -24,10 +24,12 @@ const toc = [
 ];
 
 const pageDetails: Record<string, { rendering: string; content: string }> = {
-  "/": { rendering: "Static (SSG)", content: "Profile, CV, skills carousel, portfolio" },
+  "/": { rendering: "Static (SSG)", content: "Profile, CV, skills, portfolio" },
   "/websites": { rendering: "Static (SSG)", content: "Projects from data/sites.json" },
   "/saas": { rendering: "Static (SSG)", content: "Projects from data/saas.json" },
   "/internal-tools": { rendering: "Static (SSG)", content: "Projects from data/tools.json" },
+  "/workshops": { rendering: "Static (SSG)", content: "Talks from data/workshops.json" },
+  "/research": { rendering: "Static (SSG)", content: "Projects from data/research.json" },
   "/architecture-lab": { rendering: "Static (SSG)", content: "This report" },
   "/faq": { rendering: "Static (SSG)", content: "Sourced FAQ, built for GEO" },
 };
@@ -40,7 +42,7 @@ const machineFiles = [
 
 const stack = [
   { name: "Next.js (App Router)", why: "Pages are rendered on the server: the full HTML is in the first response." },
-  { name: "React Server Components", why: "Content ships as HTML, not JavaScript. Only 2 small interactive islands run in the browser." },
+  { name: "React Server Components", why: "Content ships as HTML, not JavaScript. Only a few small interactive islands (cookie banner, collapsible report sections) run in the browser." },
   { name: "TypeScript (strict)", why: "Typed content (projects, FAQ, tracking plan): a broken entry fails the build, not the page." },
   { name: "Tailwind CSS v4", why: "Design tokens in one file (globals.css), no runtime CSS-in-JS." },
   { name: "JSON & TS data files", why: "Content is separated from layout and reused for HTML, JSON-LD, sitemap and llms.txt." },

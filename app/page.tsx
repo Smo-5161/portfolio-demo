@@ -3,11 +3,12 @@ import Image from "next/image";
 import cvPreview from "@/public/cv/cv-preview.webp";
 import { pageMetadata } from "@/lib/seo";
 import { JsonLd, profilePageJsonLd } from "@/lib/jsonld";
-import SkillsCarousel, { type Skill } from "@/components/SkillsCarousel";
 
 export const metadata = pageMetadata("/");
 
 const CV_PDF = "/cv/Antoine-Smolar-CV.pdf";
+
+type Skill = { title: string; text: string; tone: "blue" | "red" | "yellow" | "green" };
 
 const skills: Skill[] = [
   {
@@ -59,6 +60,16 @@ const projects = [
     href: "/internal-tools",
     label: "Internal Tools",
     text: "Business apps that automate and centralize the way teams work.",
+  },
+  {
+    href: "/workshops",
+    label: "Workshops & Talks",
+    text: "Workshops and conferences I have led on AI, vibe coding and growth.",
+  },
+  {
+    href: "/research",
+    label: "Research & Hackathons",
+    text: "Research projects and hackathons: the problem, the prototype and what came out of it.",
   },
   {
     href: "/architecture-lab",
@@ -124,12 +135,22 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="max-w-6xl mx-auto px-6 py-12">
           <p className="eyebrow mb-2">Expertise</p>
-          <h2 id="skills-title" className="text-3xl mb-8">
+          <h2 id="skills-title" className="text-3xl mb-6">
             My skills
           </h2>
-          <SkillsCarousel skills={skills} />
+          {/* Compact band: every skill visible at once, two-colour accent bar per card. */}
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {skills.map((s, i) => (
+              <li key={s.title}>
+                <article className="card h-full p-4 border-l-4!" style={{ borderLeftColor: i % 2 === 0 ? "var(--color-brand-700)" : "var(--color-accent-500)" }}>
+                  <h3 className="text-sm font-medium mb-1">{s.title}</h3>
+                  <p className="text-xs text-ink-700 leading-relaxed">{s.text}</p>
+                </article>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -144,7 +165,7 @@ export default function Home() {
           <h2 id="portfolio-title" className="text-3xl mb-8">
             Portfolio
           </h2>
-          <ul className="grid gap-5 sm:grid-cols-2">
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((p, i) => (
               <li key={p.href}>
                 <Link

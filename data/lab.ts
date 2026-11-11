@@ -39,14 +39,6 @@ export const trackingEvents: TrackingEvent[] = [
     status: "planned",
   },
   {
-    name: "skill_view",
-    trigger: "Slide change in the “My skills” carousel",
-    params: ["skill_index", "skill_name"],
-    keyEvent: false,
-    tool: "GA4",
-    status: "planned",
-  },
-  {
     name: "faq_view",
     trigger: "Visit to the /faq page (from the footer link)",
     params: ["page_referrer"],
