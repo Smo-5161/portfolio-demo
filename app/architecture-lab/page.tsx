@@ -1,4 +1,6 @@
 import TrackTester from "./TrackTester";
+import LabSection from "@/components/LabSection";
+import LabToggleAll from "@/components/LabToggleAll";
 import { pageMetadata } from "@/lib/seo";
 import { routes } from "@/lib/site";
 import { aiBotGroups, aiBots } from "@/lib/ai-bots";
@@ -112,26 +114,13 @@ function Section({
   plain?: string;
   children: React.ReactNode;
 }) {
+  // Collapsible card: title + plain words always visible; details expand on click,
+  // but are rendered here on the server and always present in the HTML.
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-28">
-      <p className="eyebrow mb-1">{eyebrow}</p>
-      <h2 id={`${id}-title`} className="text-2xl sm:text-3xl mb-3">
-        {title}
-      </h2>
+    <LabSection id={id} eyebrow={eyebrow} title={title} plain={plain}>
       {intro && <div className="text-ink-700 leading-relaxed max-w-3xl mb-6">{intro}</div>}
-      {plain && (
-        <aside aria-label="In plain words" className="mb-8 max-w-3xl rounded-2xl bg-ggreen-100 p-5">
-          <p className="mb-1 flex items-center gap-2 text-sm font-medium">
-            <span aria-hidden="true" className="grid h-6 w-6 place-items-center rounded-full bg-white text-xs">
-              i
-            </span>
-            In plain words
-          </p>
-          <p className="text-sm leading-relaxed text-ink-700">{plain}</p>
-        </aside>
-      )}
       {children}
-    </section>
+    </LabSection>
   );
 }
 
@@ -177,9 +166,10 @@ export default function ArchitectureLabPage() {
             configuration, not typed by hand.
           </p>
           <p className="text-sm text-ink-700 max-w-3xl mb-8 -mt-4 rounded-2xl bg-white/70 border border-stroke px-4 py-3">
-            <strong className="font-medium">No tech background?</strong> Every section has an{" "}
-            <span className="rounded-full bg-ggreen-100 px-2 py-0.5">In plain words</span> box
-            that explains what it does and why it matters for a business.
+            <strong className="font-medium">No tech background?</strong> Each section below is a card
+            with a short{" "}
+            <span className="rounded-full bg-ggreen-100 px-2 py-0.5">In plain words</span>{" "}
+            explanation. Click a card to open the technical details.
           </p>
           <ul className="grid grid-cols-2 sm:grid-cols-5 gap-3">
             {stats.map((s, i) => (
@@ -204,7 +194,10 @@ export default function ArchitectureLabPage() {
         </ul>
       </nav>
 
-      <div className="max-w-6xl mx-auto px-6 py-14 space-y-24">
+      <div className="max-w-6xl mx-auto px-6 py-14 space-y-6">
+        <div className="flex justify-end">
+          <LabToggleAll />
+        </div>
         {/* 1. Architecture */}
         <Section
           id="architecture"
