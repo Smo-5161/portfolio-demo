@@ -9,10 +9,10 @@ export type Skill = {
 };
 
 const tones = {
-  blue: { bar: "bg-gblue-500", soft: "bg-gblue-100", label: "text-gblue-600", dot: "bg-gblue-500" },
-  red: { bar: "bg-gred-500", soft: "bg-gred-100", label: "text-gred-600", dot: "bg-gred-500" },
-  yellow: { bar: "bg-gyellow-500", soft: "bg-gyellow-100", label: "text-ink-900", dot: "bg-gyellow-500" },
-  green: { bar: "bg-ggreen-500", soft: "bg-ggreen-100", label: "text-ggreen-600", dot: "bg-ggreen-500" },
+  blue: { bar: "bg-gblue-100", soft: "bg-gblue-100", label: "text-ink-900", dot: "bg-gblue-100" },
+  red: { bar: "bg-gred-100", soft: "bg-gred-100", label: "text-ink-900", dot: "bg-gred-100" },
+  yellow: { bar: "bg-gyellow-100", soft: "bg-gyellow-100", label: "text-ink-900", dot: "bg-gyellow-100" },
+  green: { bar: "bg-ggreen-100", soft: "bg-ggreen-100", label: "text-ink-900", dot: "bg-ggreen-100" },
 };
 
 /**
@@ -78,7 +78,7 @@ export default function SkillsCarousel({ skills }: { skills: readonly Skill[] })
               className="w-full shrink-0 snap-center"
             >
               <div className="card overflow-hidden h-full">
-                <div aria-hidden="true" className={`h-1.5 ${t.bar}`} />
+                <div aria-hidden="true" className={`h-3 ${t.bar}`} />
                 <div className="grid gap-8 p-8 sm:p-12 md:grid-cols-[auto_1fr] md:items-center">
                   <span
                     aria-hidden="true"
@@ -107,7 +107,7 @@ export default function SkillsCarousel({ skills }: { skills: readonly Skill[] })
               aria-label={`Show skill ${i + 1}: ${s.title}`}
               aria-current={active === i}
               className={`h-2.5 rounded-full transition-all duration-300 ${
-                active === i ? `w-8 ${tones[s.tone].dot}` : "w-2.5 bg-ink-100 hover:bg-ink-500"
+                active === i ? `w-8 ring-1 ring-ink-300 ${tones[s.tone].dot}` : "w-2.5 bg-ink-100 hover:bg-ink-300"
               }`}
             />
           ))}
@@ -118,7 +118,7 @@ export default function SkillsCarousel({ skills }: { skills: readonly Skill[] })
             onClick={() => goTo(active - 1)}
             disabled={active === 0}
             aria-label="Previous skill"
-            className="grid place-items-center w-11 h-11 rounded-full border border-stroke bg-white text-ink-700 hover:bg-gblue-100 disabled:opacity-40 disabled:hover:bg-white transition-colors"
+            className="grid place-items-center w-11 h-11 rounded-full border border-stroke bg-white text-ink-700 hover:bg-surface disabled:opacity-40 disabled:hover:bg-white transition-colors"
           >
             ←
           </button>
@@ -127,7 +127,7 @@ export default function SkillsCarousel({ skills }: { skills: readonly Skill[] })
             onClick={() => goTo(active + 1)}
             disabled={active === skills.length - 1}
             aria-label="Next skill"
-            className="grid place-items-center w-11 h-11 rounded-full bg-gblue-600 text-white hover:bg-gblue-800 disabled:opacity-40 disabled:hover:bg-gblue-600 transition-colors"
+            className="grid place-items-center w-11 h-11 rounded-full bg-gblue-100 text-ink-900 hover:shadow-md disabled:opacity-40 disabled:hover:shadow-none transition-colors"
           >
             →
           </button>

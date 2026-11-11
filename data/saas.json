@@ -2,9 +2,21 @@
   {
     "id": "omi-ai",
     "name": "Omi.ai — Onboarding Mentor Intelligence",
-    "url": "https://obi-ai-three.vercel.app/login",
+    "url": "https://omi-landing-nesquick-s-projects.vercel.app",
+    "urlLabel": "View the landing page",
+    "links": [
+      {
+        "label": "Open the app",
+        "url": "https://obi-ai-three.vercel.app/login"
+      }
+    ],
     "description": "An AI onboarding SaaS that captures an employee's business processes and turns them into a per-role knowledge base, so new hires learn the job with an AI mentor that cites its sources.",
-    "scope": ["Product", "Full-stack", "AI / RAG", "UX"],
+    "scope": [
+      "Product",
+      "Full-stack",
+      "AI / RAG",
+      "UX"
+    ],
     "stack": [
       "Next.js 16",
       "React 19",

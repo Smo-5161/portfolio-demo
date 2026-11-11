@@ -25,10 +25,19 @@ export default function ProjectCard({ project: p }: { project: Project }) {
               </p>
             )}
           </div>
-          {p.url && (
-            <a href={p.url} className="btn btn-primary" target="_blank" rel="noopener">
-              Visit {host} <span aria-hidden="true">↗</span>
-            </a>
+          {(p.url || p.links) && (
+            <div className="flex flex-wrap gap-2">
+              {p.url && (
+                <a href={p.url} className="btn btn-primary" target="_blank" rel="noopener">
+                  {p.urlLabel ?? `Visit ${host}`} <span aria-hidden="true">↗</span>
+                </a>
+              )}
+              {p.links?.map((l) => (
+                <a key={l.url} href={l.url} className="btn btn-secondary" target="_blank" rel="noopener">
+                  {l.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
           )}
         </div>
       </header>
@@ -66,7 +75,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                         <li key={pt} className="flex gap-2 text-sm text-ink-700">
                           <span
                             aria-hidden="true"
-                            className="mt-1.5 block w-1.5 h-1.5 shrink-0 rounded-full bg-gblue-500"
+                            className="mt-1.5 block w-1.5 h-1.5 shrink-0 rounded-full bg-ink-300"
                           />
                           {pt}
                         </li>
@@ -85,7 +94,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
               SEO scores
             </h3>
             {p.seoScores.length === 0 ? (
-              <p className="rounded-2xl border border-dashed border-gblue-300 bg-gblue-100 p-6 text-center text-ink-500">
+              <p className="rounded-2xl border border-dashed border-ink-300 bg-gblue-100 p-6 text-center text-ink-500">
                 SEO score screenshots coming soon.
               </p>
             ) : (

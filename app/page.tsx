@@ -30,6 +30,13 @@ const skills: Skill[] = [
   },
 ];
 
+const faqHover = [
+  "hover:bg-gblue-100 focus-within:bg-gblue-100",
+  "hover:bg-gred-100 focus-within:bg-gred-100",
+  "hover:bg-gyellow-100 focus-within:bg-gyellow-100",
+  "hover:bg-ggreen-100 focus-within:bg-ggreen-100",
+];
+
 const projectTones = ["bg-gblue-100!", "bg-gred-100!", "bg-gyellow-100!", "bg-ggreen-100!"];
 
 const projects = [
@@ -123,7 +130,7 @@ export default function Home() {
                 >
                   <h3 className="text-lg mb-1 flex items-center justify-between gap-2">
                     {p.label}
-                    <span aria-hidden="true" className="grid place-items-center w-8 h-8 rounded-full bg-white text-gblue-600">
+                    <span aria-hidden="true" className="grid place-items-center w-8 h-8 rounded-full bg-white text-ink-900">
                       →
                     </span>
                   </h3>
@@ -142,22 +149,40 @@ export default function Home() {
           <h2 id="faq-title" className="text-3xl mb-8">
             Frequently asked questions
           </h2>
-          <div className="space-y-4">
-            {faq.map((item) => (
-              <article key={item.question} className="card p-6">
-                <h3 className="text-base mb-2">{item.question}</h3>
-                <p className="text-ink-700 leading-relaxed mb-3">{item.answer}</p>
-                <p className="text-xs text-ink-500">
-                  Source{item.sources.length > 1 ? "s" : ""}:{" "}
-                  {item.sources.map((s, i) => (
-                    <span key={s.url}>
-                      {i > 0 && " · "}
-                      <a href={s.url} className="link" target="_blank" rel="noopener">
-                        {s.label}
-                      </a>
-                    </span>
-                  ))}
-                </p>
+          {/* Only the question shows; the answer expands on hover, tap or keyboard focus.
+              It is never display:none — just a collapsed grid row — so crawlers and LLMs read it. */}
+          <div className="space-y-3">
+            {faq.map((item, i) => (
+              <article
+                key={item.question}
+                tabIndex={0}
+                className={`group card px-6 py-5 transition-colors duration-300 ${faqHover[i % faqHover.length]}`}
+              >
+                <h3 className="flex items-center justify-between gap-4 text-base">
+                  {item.question}
+                  <span
+                    aria-hidden="true"
+                    className="grid place-items-center w-8 h-8 shrink-0 rounded-full bg-surface text-ink-700 transition-transform duration-300 group-hover:rotate-45 group-focus-within:rotate-45"
+                  >
+                    +
+                  </span>
+                </h3>
+                <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] group-focus-within:grid-rows-[1fr]">
+                  <div className="overflow-hidden">
+                    <p className="pt-3 text-ink-700 leading-relaxed mb-3">{item.answer}</p>
+                    <p className="text-xs text-ink-500">
+                      Source{item.sources.length > 1 ? "s" : ""}:{" "}
+                      {item.sources.map((s, j) => (
+                        <span key={s.url}>
+                          {j > 0 && " · "}
+                          <a href={s.url} className="link" target="_blank" rel="noopener">
+                            {s.label}
+                          </a>
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                </div>
               </article>
             ))}
           </div>

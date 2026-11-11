@@ -2,9 +2,8 @@
 
 /* ------------------------------------------------------------------
    Design system — inspired by Google Material Design 3
-   Google's four brand hues, slightly shifted (softer, a touch deeper).
-   Every text/background pair meets WCAG AA contrast (≥ 4.5:1).
-   Decorative-only shades (bars, dots, blobs) are marked "decor".
+   Only four pastel hues (blue, red, yellow, green) + neutral ink greys.
+   All text is ink on white/pastel: WCAG AA contrast everywhere.
 ------------------------------------------------------------------- */
 @theme {
   --font-sans: "Google Sans Flex", "Google Sans", Roboto, system-ui, -apple-system, Arial, sans-serif;
@@ -14,32 +13,13 @@
   --color-ink-900: #1f2124; /* main text, footer */
   --color-ink-700: #3c4043;
   --color-ink-500: #5f6368; /* secondary text */
+  --color-ink-300: #9aa0a6; /* decor */
   --color-ink-100: #e8eaed;
 
-  /* Blue (primary / actions) */
-  --color-gblue-800: #1a4ba6; /* hover */
-  --color-gblue-600: #2563d0; /* buttons, links */
-  --color-gblue-500: #4a86e8; /* decor */
-  --color-gblue-300: #a9c6f5;
-  --color-gblue-200: #d3e2fb;
+  /* The only four hues on the site (pastels). Text always uses ink. */
   --color-gblue-100: #eaf1fd;
-
-  /* Red */
-  --color-gred-600: #c5392e;
-  --color-gred-500: #e2574c; /* decor */
-  --color-gred-300: #f3b3ad;
-  --color-gred-200: #f8d3cf;
   --color-gred-100: #fcecea;
-
-  /* Yellow */
-  --color-gyellow-500: #f2b630; /* decor */
-  --color-gyellow-300: #f9dc8e;
   --color-gyellow-100: #fef6e0;
-
-  /* Green */
-  --color-ggreen-600: #1e7a45;
-  --color-ggreen-500: #3aa466; /* decor */
-  --color-ggreen-300: #a7dbbc;
   --color-ggreen-100: #e7f5ec;
 
   /* Surfaces */
@@ -68,7 +48,7 @@
     color: inherit;
   }
   :focus-visible {
-    outline: 2px solid var(--color-gblue-600);
+    outline: 2px solid var(--color-ink-900);
     outline-offset: 2px;
     border-radius: 8px;
   }
@@ -103,20 +83,19 @@
     transition: background-color 200ms ease, box-shadow 200ms ease;
   }
   .btn-primary {
-    background: var(--color-gblue-600);
-    color: #fff;
+    background: var(--color-gblue-100);
+    color: var(--color-ink-900);
   }
   .btn-primary:hover {
-    background: var(--color-gblue-800);
-    box-shadow: var(--shadow-elev-1);
+    box-shadow: var(--shadow-elev-2);
   }
   .btn-secondary {
-    background: transparent;
-    color: var(--color-gblue-600);
+    background: #fff;
+    color: var(--color-ink-900);
     border: 1px solid var(--color-stroke);
   }
   .btn-secondary:hover {
-    background: var(--color-gblue-100);
+    background: var(--color-ggreen-100);
   }
 
   /* Material assist chip */
@@ -135,33 +114,34 @@
   .chip-tonal {
     background: var(--color-gblue-100);
     border-color: transparent;
-    color: var(--color-gblue-800);
+    color: var(--color-ink-900);
   }
 
   /* Text link */
   .link {
-    color: var(--color-gblue-600);
-    text-decoration: none;
+    color: var(--color-ink-900);
+    text-decoration: underline;
+    text-decoration-color: var(--color-ink-300);
+    text-underline-offset: 3px;
   }
   .link:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration-color: var(--color-ink-900);
   }
 
   /* Section eyebrow */
   .eyebrow {
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-gblue-600);
+    color: var(--color-ink-500);
   }
 
   /* Hero: soft blobs in the four brand hues */
   .hero-gradient {
     background:
-      radial-gradient(35% 60% at 8% 10%, var(--color-gblue-200) 0%, transparent 70%),
-      radial-gradient(30% 55% at 92% 15%, var(--color-gred-200) 0%, transparent 70%),
-      radial-gradient(30% 50% at 75% 100%, var(--color-gyellow-100) 0%, transparent 70%),
-      radial-gradient(30% 55% at 25% 100%, var(--color-ggreen-100) 0%, transparent 70%),
+      radial-gradient(45% 75% at 5% 5%, var(--color-gblue-100) 0%, transparent 75%),
+      radial-gradient(40% 70% at 95% 10%, var(--color-gred-100) 0%, transparent 75%),
+      radial-gradient(40% 65% at 75% 100%, var(--color-gyellow-100) 0%, transparent 75%),
+      radial-gradient(40% 70% at 25% 100%, var(--color-ggreen-100) 0%, transparent 75%),
       #fff;
   }
 }

@@ -15,6 +15,10 @@ export type Project = {
   id: string;
   name: string;
   url?: string;
+  /** Label of the main button (defaults to "Visit <host>"). */
+  urlLabel?: string;
+  /** Extra secondary buttons. */
+  links?: { label: string; url: string }[];
   description?: string;
   context?: string[];
   scope?: string[];
