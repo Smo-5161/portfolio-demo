@@ -3,13 +3,13 @@
     "id": "helmo-renovation",
     "name": "Helmo Rénovation",
     "url": "https://helmo-renovation.fr/",
-    "description": "Full redesign (SEO, UI and UX) of an 80-page WordPress site for an all-trades renovation company, delivered in 2 months.",
+    "description": "Full redesign (SEO, UI and UX) of a 147-page WordPress site (64 site pages and 83 blog articles) for an all-trades renovation company, delivered in 2 months.",
     "duration": "2 months",
     "scope": ["Technical SEO", "GEO", "UI/UX", "Performance"],
     "stack": ["WordPress", "Elementor", "Hostinger", "AIOSEO", "LiteSpeed Cache"],
     "context": [
       "Helmo Rénovation is a French all-trades renovation company (interior work, energy retrofits, projects for professionals) that delivers turnkey projects with its own in-house teams.",
-      "I rebuilt the site from the ground up in 2 months: architecture, SEO for all 80 pages, markup, performance and content. The site runs on WordPress with the Elementor page builder and is hosted on Hostinger."
+      "I rebuilt the site from the ground up in 2 months: architecture, SEO for all 147 pages (64 site pages and 83 blog articles), markup, performance and content. The site runs on WordPress with the Elementor page builder and is hosted on Hostinger."
     ],
     "work": [
       {
@@ -22,7 +22,7 @@
         ]
       },
       {
-        "title": "SEO for all 80 pages",
+        "title": "SEO for all 147 pages",
         "text": "Each page targets a specific search intent and was optimized individually.",
         "points": [
           "Unique title tags and meta descriptions written to earn the click.",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Automated article generation",
-        "text": "An automated blog production process that keeps the site supplied with targeted content on a regular schedule, with no manual workload."
+        "text": "An automated blog production process that keeps the site supplied with targeted content on a regular schedule, with no manual workload: 83 articles published so far."
       },
       {
         "title": "FAQ rewrite for GEO",
