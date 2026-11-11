@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { faq, faqJsonLd } from "@/lib/faq";
+import SkillsCarousel, { type Skill } from "@/components/SkillsCarousel";
 
-const skills = [
+const skills: Skill[] = [
   {
     title: "SEO (Search Engine Optimization)",
     text: "Technical audits, information architecture, performance and content built around search intent, to capture qualified, lasting organic traffic.",
@@ -27,15 +28,7 @@ const skills = [
     text: "Fast delivery of SaaS products and internal tools with no-code and low-code platforms, to validate an idea or equip a team within days.",
     tone: "blue",
   },
-] as const;
-
-// Each skill takes one of the four brand hues: a decor bar + a tonal toggle.
-const tone = {
-  blue: { bar: "bg-gblue-500", toggle: "bg-gblue-100 text-gblue-600" },
-  red: { bar: "bg-gred-500", toggle: "bg-gred-100 text-gred-600" },
-  yellow: { bar: "bg-gyellow-500", toggle: "bg-gyellow-100 text-ink-900" },
-  green: { bar: "bg-ggreen-500", toggle: "bg-ggreen-100 text-ggreen-600" },
-};
+];
 
 const projectTones = ["bg-gblue-100!", "bg-gred-100!", "bg-gyellow-100!", "bg-ggreen-100!"];
 
@@ -104,30 +97,7 @@ export default function Home() {
           <h2 id="skills-title" className="text-3xl mb-8">
             My skills
           </h2>
-          {/* Native <details>: the text stays in the HTML (crawlable) even when collapsed. */}
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 items-start">
-            {skills.map((s) => (
-              <li key={s.title}>
-                <details className="group card overflow-hidden">
-                  <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <div aria-hidden="true" className={`h-1.5 ${tone[s.tone].bar}`} />
-                    <div className="flex items-center justify-between gap-4 p-6 hover:bg-surface transition-colors">
-                      <h3 className="text-lg">{s.title}</h3>
-                      <span
-                        aria-hidden="true"
-                        className={`grid place-items-center w-9 h-9 shrink-0 rounded-full text-lg ${tone[s.tone].toggle} transition-transform duration-200 group-open:rotate-45`}
-                      >
-                        +
-                      </span>
-                    </div>
-                  </summary>
-                  <p className="px-6 pb-6 -mt-2 text-sm text-ink-500 leading-relaxed">
-                    {s.text}
-                  </p>
-                </details>
-              </li>
-            ))}
-          </ul>
+          <SkillsCarousel skills={skills} />
         </div>
       </section>
 
