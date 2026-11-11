@@ -3,38 +3,81 @@
     "id": "helmo-renovation",
     "name": "Helmo Rénovation",
     "url": "https://helmo-renovation.fr/",
-    "description": "Refonte complète (SEO, UI et UX) du site d'une entreprise de rénovation tous corps d'état, réalisée en 2 mois.",
+    "description": "Refonte complète (SEO, UI et UX) d'un site WordPress de 80 pages pour une entreprise de rénovation tous corps d'état, réalisée en 2 mois.",
     "duration": "2 mois",
-    "scope": ["SEO", "UI", "UX"],
+    "scope": ["SEO technique", "GEO", "UI/UX", "Performance"],
+    "stack": ["WordPress", "Elementor", "Hostinger", "AIOSEO", "LiteSpeed Cache"],
     "context": [
-      "Helmo Rénovation est une entreprise de rénovation tous corps d'état (intérieur, rénovation énergétique, chantiers pour professionnels) qui réalise ses travaux clé en main avec ses propres équipes, sans sous-traitance.",
-      "Le site a été entièrement refait en 2 mois : structure SEO, interface et parcours utilisateur. L'objectif était de clarifier une offre très large (par type de logement, par pièce, par corps de métier) et d'amener chaque visiteur vers une demande de devis.",
-      "Le parcours s'appuie sur des preuves de confiance visibles dès le premier écran (avis clients, logos de références, qualification RGE) et sur plusieurs points d'entrée vers la conversion : devis, rappel téléphonique et estimation pièce par pièce."
+      "Helmo Rénovation est une entreprise de rénovation tous corps d'état (intérieur, rénovation énergétique, chantiers pour professionnels) qui réalise ses travaux clé en main avec ses propres équipes.",
+      "J'ai entièrement refait le site en 2 mois : architecture, référencement des 80 pages, balisage, performances et contenus. Le site tourne sous WordPress avec le constructeur Elementor, et il est hébergé chez Hostinger."
+    ],
+    "work": [
+      {
+        "title": "Architecture du site",
+        "text": "Une offre très large, réorganisée en silos thématiques clairs pour que Google comme les visiteurs comprennent immédiatement la structure.",
+        "points": [
+          "Trois silos principaux : rénovation intérieure, rénovation énergétique et offre pour les professionnels.",
+          "Sous-pages par type de logement, par pièce et par corps de métier (isolation, chauffage, ventilation, électricité, plomberie…).",
+          "Maillage interne entre pages d'un même silo et fil d'Ariane sur l'ensemble du site."
+        ]
+      },
+      {
+        "title": "Référencement des 80 pages",
+        "text": "Chaque page cible une intention de recherche précise et a été optimisée individuellement.",
+        "points": [
+          "Balise title et meta description uniques et rédigées pour le clic.",
+          "Un seul H1 par page et une hiérarchie H2/H3 cohérente.",
+          "Sitemap XML segmenté (pages, articles, catégories) pour faciliter l'exploration."
+        ]
+      },
+      {
+        "title": "Images et textes alternatifs",
+        "text": "Toutes les images ont été renommées et décrites pour être comprises par les moteurs et accessibles aux lecteurs d'écran.",
+        "points": [
+          "Attributs alt descriptifs, rédigés en fonction du contenu réel de l'image et du mot-clé de la page.",
+          "Conversion au format WebP et chargement différé (lazy loading) des visuels hors écran."
+        ]
+      },
+      {
+        "title": "Balisage et données structurées",
+        "text": "Un balisage schema.org complet pour que Google et les IA identifient clairement l'entreprise, ses pages et sa structure.",
+        "points": [
+          "Organization et LocalBusiness pour l'identité de l'entreprise.",
+          "WebSite et WebPage sur chaque page.",
+          "BreadcrumbList pour exposer l'arborescence dans les résultats de recherche."
+        ]
+      },
+      {
+        "title": "Optimisation des temps de chargement",
+        "text": "Un site Elementor riche en visuels, allégé pour rester rapide sur mobile.",
+        "points": [
+          "Cache serveur LiteSpeed, proposé nativement par Hostinger.",
+          "Images compressées en WebP et chargement différé.",
+          "Nettoyage des éléments Elementor et des scripts inutiles."
+        ]
+      },
+      {
+        "title": "Automatisation de la génération d'articles",
+        "text": "Un processus automatisé de production d'articles de blog pour alimenter le site en contenus ciblés, de façon régulière et sans charge manuelle."
+      },
+      {
+        "title": "Refonte de la FAQ pour le GEO",
+        "text": "Les FAQ ont été réécrites pour être reprises par les moteurs génératifs (ChatGPT, Gemini, Perplexity…).",
+        "points": [
+          "Questions formulées naturellement, comme un client les poserait à une IA.",
+          "Réponse directe dès la première phrase, puis le détail.",
+          "Formulations courtes et factuelles, faciles à citer."
+        ]
+      }
     ],
     "design": {
-      "summary": "Une identité sobre et premium : un bleu nuit profond qui inspire sérieux et confiance, réveillé par un orange vif réservé aux actions. Une seule famille typographique, Poppins, déclinée en graisses pour hiérarchiser l'information.",
-      "palette": [
-        { "name": "Bleu nuit", "hex": "#001C28", "role": "Couleur primaire : fonds du hero et du footer, titres, texte principal" },
-        { "name": "Orange Helmo", "hex": "#FF7920", "role": "Accent : boutons d'appel à l'action et éléments à mettre en avant" },
-        { "name": "Pêche clair", "hex": "#FFF2E9", "role": "Fonds doux pour les blocs de mise en avant" },
-        { "name": "Blanc", "hex": "#FFFFFF", "role": "Couleur secondaire : fonds de sections et texte sur fond sombre" },
-        { "name": "Anthracite", "hex": "#2F2F2F", "role": "Texte courant secondaire" },
-        { "name": "Gris", "hex": "#A1A1AA", "role": "Mentions, légendes et éléments discrets" }
-      ],
+      "summary": "Côté interface : un bleu nuit qui inspire confiance, un orange réservé aux appels à l'action et une seule police, Poppins, pour une lecture rapide sur mobile.",
       "fontFamily": "Poppins",
-      "typeScale": [
-        { "role": "Titre d'accroche", "size": "80px", "weight": "600", "note": "interlettrage -2,4px pour un rendu compact et impactant" },
-        { "role": "Titre de section", "size": "48px", "weight": "600" },
-        { "role": "Sous-titre", "size": "20px", "weight": "300" },
-        { "role": "Texte courant", "size": "16px", "weight": "400" },
-        { "role": "Bouton", "size": "14–16px", "weight": "600", "note": "coins arrondis de 16px" }
-      ],
-      "principles": [
-        "L'orange est réservé aux actions : l'œil va directement vers « Obtenir mon devis ».",
-        "Fort contraste bleu nuit / blanc pour une lecture rapide sur mobile comme sur desktop.",
-        "Photos avant/après aux tons chauds et naturels pour rendre le résultat concret.",
-        "Icônes linéaires simples pour présenter les engagements (standardisé, fiable, ultra rapide).",
-        "Comparatif « Sans Helmo / Avec Helmo » pour répondre visuellement aux craintes des clients."
+      "palette": [
+        { "name": "Bleu nuit", "hex": "#001C28", "role": "Couleur primaire" },
+        { "name": "Orange Helmo", "hex": "#FF7920", "role": "Appels à l'action" },
+        { "name": "Pêche clair", "hex": "#FFF2E9", "role": "Fonds de mise en avant" },
+        { "name": "Blanc", "hex": "#FFFFFF", "role": "Fonds et texte sur sombre" }
       ]
     },
     "seoScores": []

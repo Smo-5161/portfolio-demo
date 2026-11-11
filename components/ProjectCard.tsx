@@ -19,6 +19,11 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                 {p.duration && <li className="chip chip-magenta">Durée : {p.duration}</li>}
               </ul>
             )}
+            {p.stack && (
+              <p className="mt-3 text-sm text-night-700">
+                <span className="font-semibold">Stack :</span> {p.stack.join(" · ")}
+              </p>
+            )}
           </div>
           {p.url && (
             <a href={p.url} className="btn btn-primary" target="_blank" rel="noopener">
@@ -42,69 +47,35 @@ export default function ProjectCard({ project: p }: { project: Project }) {
           </section>
         )}
 
-        {p.design && (
-          <section aria-labelledby={`${p.id}-da`}>
-            <h3 id={`${p.id}-da`} className="text-xl mb-3">
-              Direction artistique
+        {p.work && (
+          <section aria-labelledby={`${p.id}-travaux`}>
+            <h3 id={`${p.id}-travaux`} className="text-xl mb-4">
+              Ce que j&apos;ai fait
             </h3>
-            <p className="text-night-700 leading-relaxed mb-6 max-w-3xl">{p.design.summary}</p>
-
-            <h4 className="eyebrow mb-3">Palette de couleurs</h4>
-            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-              {p.design.palette.map((c) => (
-                <li key={c.hex} className="card overflow-hidden">
-                  <span
-                    aria-hidden="true"
-                    className="block h-16 border-b border-stroke"
-                    style={{ backgroundColor: c.hex }}
-                  />
-                  <span className="block p-3 text-sm">
-                    <span className="flex items-center justify-between gap-2 mb-1">
-                      <strong>{c.name}</strong>
-                      <code className="text-xs text-night-500">{c.hex}</code>
-                    </span>
-                    <span className="text-night-500">{c.role}</span>
-                  </span>
+            <ol className="grid gap-4 md:grid-cols-2">
+              {p.work.map((w, i) => (
+                <li key={w.title} className="card p-5">
+                  <h4 className="text-base mb-2 flex items-baseline gap-2">
+                    <span className="chip shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                    {w.title}
+                  </h4>
+                  <p className="text-sm text-night-700 leading-relaxed">{w.text}</p>
+                  {w.points && (
+                    <ul className="mt-3 space-y-1.5">
+                      {w.points.map((pt) => (
+                        <li key={pt} className="flex gap-2 text-sm text-night-700">
+                          <span
+                            aria-hidden="true"
+                            className="mt-1.5 block w-1.5 h-1.5 shrink-0 rounded-full bg-magenta-600"
+                          />
+                          {pt}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
-            </ul>
-
-            <h4 className="eyebrow mb-3">Typographie : {p.design.fontFamily}</h4>
-            <div className="card overflow-x-auto mb-8">
-              <table className="w-full text-sm">
-                <thead className="bg-surface text-left text-night-500">
-                  <tr>
-                    <th className="p-3 font-semibold">Usage</th>
-                    <th className="p-3 font-semibold">Taille</th>
-                    <th className="p-3 font-semibold">Graisse</th>
-                    <th className="p-3 font-semibold">Détail</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {p.design.typeScale.map((t) => (
-                    <tr key={t.role} className="border-t border-stroke">
-                      <td className="p-3 font-semibold">{t.role}</td>
-                      <td className="p-3">{t.size}</td>
-                      <td className="p-3">{t.weight}</td>
-                      <td className="p-3 text-night-500">{t.note ?? "—"}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <h4 className="eyebrow mb-3">Principes visuels</h4>
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {p.design.principles.map((pr) => (
-                <li key={pr} className="flex gap-3 text-night-700">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 block w-1.5 h-1.5 shrink-0 rounded-full bg-magenta-600"
-                  />
-                  {pr}
-                </li>
-              ))}
-            </ul>
+            </ol>
           </section>
         )}
 
@@ -140,6 +111,31 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                 ))}
               </ul>
             )}
+          </section>
+        )}
+
+        {p.design && (
+          <section aria-labelledby={`${p.id}-da`}>
+            <h3 id={`${p.id}-da`} className="text-xl mb-2">
+              Direction artistique
+            </h3>
+            <p className="text-sm text-night-700 leading-relaxed mb-4 max-w-3xl">
+              {p.design.summary}
+            </p>
+            <ul className="flex flex-wrap gap-3">
+              {p.design.palette.map((c) => (
+                <li key={c.hex} className="flex items-center gap-2 text-xs">
+                  <span
+                    aria-hidden="true"
+                    className="block w-6 h-6 rounded border border-stroke"
+                    style={{ backgroundColor: c.hex }}
+                  />
+                  <span>
+                    <strong>{c.name}</strong> <code className="text-night-500">{c.hex}</code>
+                  </span>
+                </li>
+              ))}
+            </ul>
           </section>
         )}
       </div>
