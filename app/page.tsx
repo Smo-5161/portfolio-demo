@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { faq, faqJsonLd } from "@/lib/faq";
 
-const sections = [
-  { href: "/sites-web", label: "Sites Web" },
-  { href: "/saas", label: "SaaS" },
-  { href: "/outils-internes", label: "Outils Internes" },
-  { href: "/architecture-lab", label: "Architecture & SEO/GEO/CRO Lab" },
-];
-
 const expertises = [
   {
     title: "SEO (Search Engine Optimization)",
@@ -15,7 +8,7 @@ const expertises = [
   },
   {
     title: "GEO (Generative Engine Optimization)",
-    text: "Structurer contenus et données (JSON-LD, réponses directes, sources chiffrées) pour être compris et cité par les moteurs génératifs comme ChatGPT, Gemini ou Perplexity.",
+    text: "Structurer contenus et données (JSON-LD, réponses directes, sources chiffrées) pour être compris et cité par ChatGPT, Claude, Gemini, Perplexity ou Mistral.",
   },
   {
     title: "CRO (Conversion Rate Optimization)",
@@ -31,51 +24,88 @@ const expertises = [
   },
 ];
 
+const projects = [
+  {
+    href: "/sites-web",
+    label: "Sites Web",
+    text: "Sites vitrines et e-commerce conçus pour le référencement et la conversion.",
+  },
+  {
+    href: "/saas",
+    label: "SaaS",
+    text: "Produits logiciels construits de l'idée au lancement.",
+  },
+  {
+    href: "/outils-internes",
+    label: "Outils Internes",
+    text: "Applications métier qui automatisent et centralisent le travail des équipes.",
+  },
+  {
+    href: "/architecture-lab",
+    label: "Architecture & SEO/GEO/CRO Lab",
+    text: "Les coulisses techniques de ce site : tracking, données structurées et métriques.",
+  },
+];
+
 export default function Home() {
   return (
-    <main>
+    <main className="space-y-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold mb-3">Growth Marketer &amp; Product Builder</h1>
-        <p className="mb-2">
+      {/* Section 1 : Profil */}
+      <section id="profil" aria-labelledby="profil-title" className="scroll-mt-20">
+        <h1 id="profil-title" className="text-3xl font-bold mb-3">
+          Growth Marketer &amp; Product Builder
+        </h1>
+        <p className="mb-2 max-w-3xl">
           Je fais grandir des produits digitaux en combinant acquisition, conversion et
           construction produit : rendre un site visible sur Google comme dans les IA
           génératives, transformer ce trafic en clients, puis livrer les applications et
           outils qui font tourner l&apos;activité.
         </p>
-        <p>
+        <p className="mb-8 max-w-3xl">
           Ce site est à la fois mon portfolio et mon laboratoire : chaque optimisation y
           est appliquée, mesurée et documentée en direct.
         </p>
-      </header>
 
-      <div className="space-y-6 mb-12">
-        {expertises.map((e) => (
-          <section key={e.title}>
-            <h2 className="text-xl font-bold mb-1">{e.title}</h2>
-            <p>{e.text}</p>
-          </section>
-        ))}
-      </div>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {expertises.map((e) => (
+            <li key={e.title}>
+              <article className="h-full border border-gray-300 rounded p-5">
+                <h2 className="text-lg font-bold mb-2">{e.title}</h2>
+                <p className="text-sm">{e.text}</p>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-      <nav aria-label="Sections du portfolio" className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-        {sections.map((s) => (
-          <Link
-            key={s.href}
-            href={s.href}
-            className="block border border-gray-300 p-4 hover:bg-gray-100"
-          >
-            {s.label}
-          </Link>
-        ))}
-      </nav>
+      {/* Section 2 : Portfolio */}
+      <section id="portfolio" aria-labelledby="portfolio-title" className="scroll-mt-20">
+        <h2 id="portfolio-title" className="text-2xl font-bold mb-6">
+          Portfolio
+        </h2>
+        <ul className="grid gap-4 sm:grid-cols-2">
+          {projects.map((p) => (
+            <li key={p.href}>
+              <Link
+                href={p.href}
+                className="block h-full border border-gray-300 rounded p-5 hover:bg-gray-100"
+              >
+                <h3 className="font-bold mb-1">{p.label} →</h3>
+                <p className="text-sm">{p.text}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-      <section id="faq" aria-labelledby="faq-title">
-        <h2 id="faq-title" className="text-xl font-bold mb-4">
+      {/* Section 3 : FAQ */}
+      <section id="faq" aria-labelledby="faq-title" className="scroll-mt-20">
+        <h2 id="faq-title" className="text-2xl font-bold mb-6">
           Questions fréquentes
         </h2>
         <div className="space-y-6">
