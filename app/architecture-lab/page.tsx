@@ -101,12 +101,15 @@ function Section({
   eyebrow,
   title,
   intro,
+  plain,
   children,
 }: {
   id: string;
   eyebrow: string;
   title: string;
   intro?: React.ReactNode;
+  /** Plain-language explanation for non-technical readers (recruiters, clients). */
+  plain?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -115,7 +118,18 @@ function Section({
       <h2 id={`${id}-title`} className="text-2xl sm:text-3xl mb-3">
         {title}
       </h2>
-      {intro && <div className="text-ink-700 leading-relaxed max-w-3xl mb-8">{intro}</div>}
+      {intro && <div className="text-ink-700 leading-relaxed max-w-3xl mb-6">{intro}</div>}
+      {plain && (
+        <aside aria-label="In plain words" className="mb-8 max-w-3xl rounded-2xl bg-ggreen-100 p-5">
+          <p className="mb-1 flex items-center gap-2 text-sm font-medium">
+            <span aria-hidden="true" className="grid h-6 w-6 place-items-center rounded-full bg-white text-xs">
+              i
+            </span>
+            In plain words
+          </p>
+          <p className="text-sm leading-relaxed text-ink-700">{plain}</p>
+        </aside>
+      )}
       {children}
     </section>
   );
@@ -162,6 +176,11 @@ export default function ArchitectureLabPage() {
             and measured end to end. Every number below is read from the site&apos;s own
             configuration, not typed by hand.
           </p>
+          <p className="text-sm text-ink-700 max-w-3xl mb-8 -mt-4 rounded-2xl bg-white/70 border border-stroke px-4 py-3">
+            <strong className="font-medium">No tech background?</strong> Every section has an{" "}
+            <span className="rounded-full bg-ggreen-100 px-2 py-0.5">In plain words</span> box
+            that explains what it does and why it matters for a business.
+          </p>
           <ul className="grid grid-cols-2 sm:grid-cols-5 gap-3">
             {stats.map((s, i) => (
               <li key={s.label} className={`rounded-2xl p-4 ${tones[i % tones.length]}`}>
@@ -189,6 +208,7 @@ export default function ArchitectureLabPage() {
         {/* 1. Architecture */}
         <Section
           id="architecture"
+          plain="Think of the site as a building with a clear floor plan: every room (page) can be reached from the lobby (the home page) in one step, with signs everywhere. Search engines discover a site by following its links, so a simple plan means no page gets lost. The “files made for machines” are a reception desk for robots: a map of the site (sitemap), the house rules (robots.txt) and a short summary written for AI assistants (llms.txt)."
           eyebrow="01"
           title="Site architecture"
           intro="A flat structure: every page is one click from the home page, every section has its own anchor, and content lives in data files reused everywhere."
@@ -230,6 +250,7 @@ export default function ArchitectureLabPage() {
         {/* 2. Stack */}
         <Section
           id="stack"
+          plain="Many modern websites send an almost empty page and assemble it inside the visitor’s browser. Search engines and AI assistants often don’t wait for that step, so they see little or nothing. Here the server sends the finished page straight away, like handing someone a printed brochure instead of a box of parts. Visitors get a faster site, and Google or ChatGPT can read every word."
           eyebrow="02"
           title="Code & stack"
           intro="The site is built so that a crawler or an LLM gets the full content in plain HTML, without running any JavaScript."
@@ -258,6 +279,7 @@ export default function ArchitectureLabPage() {
         {/* 3. Markup */}
         <Section
           id="markup"
+          plain="HTML tags work like labels on a filing cabinet: “this is the main title”, “this is a section”, “this is the contact address”. Clear labels help Google and AI tools understand what each part of a page is. JSON-LD goes one step further: it is an ID card hidden in the page, in a format machines read directly (“this site belongs to Antoine Smolar, Growth Marketer, here is his LinkedIn”). It helps Google display richer results and helps AI assistants describe a person or a company accurately."
           eyebrow="03"
           title="Semantic markup & structured data"
           intro="HTML tags describe what each block is, and JSON-LD states the facts explicitly so search engines and LLMs don't have to guess."
@@ -305,6 +327,7 @@ export default function ArchitectureLabPage() {
         {/* 4. robots.txt */}
         <Section
           id="robots"
+          plain="robots.txt is the doorman of a website: a small public file telling automated visitors (robots) what they are allowed to read. Many sites block AI robots without knowing it, so ChatGPT or Gemini can never learn about them or quote them. This site names each AI company’s robots and lets them in: the first step to appearing in AI-generated answers, which is what GEO is about."
           eyebrow="04"
           title="robots.txt & AI crawlers"
           intro={
@@ -354,6 +377,7 @@ Sitemap: /sitemap.xml`}
         {/* 5. FAQ */}
         <Section
           id="faq-structure"
+          plain="When someone asks ChatGPT a question, it looks for short, clear, trustworthy answers it can quote. So every answer in this FAQ starts with the direct answer and a figure, then adds context, then names its source: exactly the shape an AI likes to reuse. On screen the answers fold away to keep the page tidy, but they are always present in the page’s code, so robots read all of them."
           eyebrow="05"
           title="A FAQ built for GEO"
           intro="Generative engines quote short, self-contained, sourced answers. Every FAQ entry follows the same anatomy."
@@ -394,6 +418,7 @@ Sitemap: /sitemap.xml`}
         {/* 6. Tracking */}
         <Section
           id="tracking"
+          plain="Google Analytics counts what happens: how many visitors, what they click, how many get in touch. Microsoft Clarity shows how it happens: heatmaps of where people click and anonymous replays of visits, to spot what confuses them. Google Tag Manager is the control panel that switches these tools on without touching the site’s code. A “conversion” is an action that matters for the business, here contacting me. And the cookie banner asks visitors for permission first, as European law requires."
           eyebrow="06"
           title="Analytics & tracking"
           intro="Google Tag Manager loads on every page and drives Google Analytics 4; Microsoft Clarity loads once the visitor accepts cookies. GA4 measures what happens, Clarity shows how (heatmaps, recordings, rage clicks). Consent is handled by a banner and Google Consent Mode v2 (live)."
@@ -451,6 +476,7 @@ Sitemap: /sitemap.xml`}
         {/* 7. Server-side */}
         <Section
           id="server-side"
+          plain="Today, measurement tools run inside the visitor’s browser, where ad blockers and privacy settings often switch them off: part of the visits simply goes uncounted, like a shop door counter that misses some customers. Server-side tracking moves this work to my own server: the browser sends one message to my own address, and my server passes it on to Google and the other tools. Measurement becomes more complete and more reliable, and the page gets lighter. It does not override anyone’s choice: if a visitor refuses cookies, only anonymous statistics are kept."
           eyebrow="07"
           title="Server-side tracking with Stape"
           intro={
@@ -514,6 +540,7 @@ Sitemap: /sitemap.xml`}
         {/* 8. Dashboards */}
         <Section
           id="dashboards"
+          plain="These are the actual reporting screens of the tools described above. They prove the setup works end to end: data comes in, and it turns into charts and insights a team can act on."
           eyebrow="08"
           title="Dashboards, heatmaps & reports"
           intro="Screenshots from the tools above, updated as the site collects data."
@@ -543,6 +570,7 @@ Sitemap: /sitemap.xml`}
         {/* 9. Live demo */}
         <Section
           id="live-demo"
+          plain="Click the button: your click is sent to this site’s own server, which replies instantly with the message shown below. It is a miniature version of how a server-side tracking system receives an event."
           eyebrow="09"
           title="Live demo: server-side event"
           intro="This button sends an event to the site's own server endpoint (/api/track), the future entry point of the server-side pipeline. The response is shown below."
