@@ -24,9 +24,9 @@ npx vercel        # ou import du repo GitHub sur vercel.com
 | Route | Rôle |
 |---|---|
 | `/` | Accueil, 4 liens vers les sections |
-| `/sites-web` | Lit `data/sites.json` → EmptyState |
-| `/saas` | Lit `data/saas.json` → EmptyState |
-| `/outils-internes` | Lit `data/tools.json` → EmptyState |
+| `/websites` | Reads `data/sites.json` |
+| `/saas` | Reads `data/saas.json` |
+| `/internal-tools` | Reads `data/tools.json` |
 | `/architecture-lab` | Bouton test tracking, inspecteur JSON-LD, tableau métriques |
 | `POST /api/track` | Stub : `console.log(body)` → `{ "status": "received_stub" }` |
 | `/robots.txt` | Généré par `app/robots.ts` : robots IA autorisés, `/api/` exclu, lien sitemap |

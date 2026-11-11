@@ -7,7 +7,7 @@ export default function SaasPage() {
     <ProjectSection
       title="SaaS"
       items={data as Project[]}
-      emptyMessage="Aucun SaaS répertorié."
+      emptyMessage="No SaaS products listed yet."
     />
   );
 }

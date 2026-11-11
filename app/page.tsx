@@ -1,30 +1,30 @@
 import Link from "next/link";
 import { faq, faqJsonLd } from "@/lib/faq";
 
-const expertises = [
+const skills = [
   {
     title: "SEO (Search Engine Optimization)",
-    text: "Audit technique, architecture de l'information, performance et contenus pensés pour l'intention de recherche, afin de capter un trafic organique qualifié et durable.",
+    text: "Technical audits, information architecture, performance and content built around search intent, to capture qualified, lasting organic traffic.",
     tone: "violet",
   },
   {
     title: "GEO (Generative Engine Optimization)",
-    text: "Structurer contenus et données (JSON-LD, réponses directes, sources chiffrées) pour être compris et cité par ChatGPT, Claude, Gemini, Perplexity ou Mistral.",
+    text: "Structuring content and data (JSON-LD, direct answers, sourced figures) so it can be understood and cited by ChatGPT, Claude, Gemini, Perplexity or Mistral.",
     tone: "magenta",
   },
   {
     title: "CRO (Conversion Rate Optimization)",
-    text: "Analyse du parcours utilisateur, tracking (GTM, server-side), heatmaps et tests A/B pour transformer davantage de visiteurs en clients sans augmenter le budget d'acquisition.",
+    text: "User journey analysis, tracking (GTM, server-side), heatmaps and A/B testing to turn more visitors into customers without increasing acquisition spend.",
     tone: "night",
   },
   {
     title: "UI/UX (User Interface / User Experience)",
-    text: "Des interfaces claires et sans friction, conçues à partir des données d'usage pour que chaque écran serve un objectif précis.",
+    text: "Clear, frictionless interfaces designed from usage data, so every screen serves a specific goal.",
     tone: "magenta",
   },
   {
     title: "No-code app development",
-    text: "Conception rapide de SaaS et d'outils internes avec des outils no-code et low-code, pour valider une idée ou outiller une équipe en quelques jours.",
+    text: "Fast delivery of SaaS products and internal tools with no-code and low-code platforms, to validate an idea or equip a team within days.",
     tone: "violet",
   },
 ] as const;
@@ -37,24 +37,24 @@ const toneBar = {
 
 const projects = [
   {
-    href: "/sites-web",
-    label: "Sites Web",
-    text: "Sites vitrines et e-commerce conçus pour le référencement et la conversion.",
+    href: "/websites",
+    label: "Websites",
+    text: "Showcase and e-commerce sites built for search visibility and conversion.",
   },
   {
     href: "/saas",
     label: "SaaS",
-    text: "Produits logiciels construits de l'idée au lancement.",
+    text: "Software products built from idea to launch.",
   },
   {
-    href: "/outils-internes",
-    label: "Outils Internes",
-    text: "Applications métier qui automatisent et centralisent le travail des équipes.",
+    href: "/internal-tools",
+    label: "Internal Tools",
+    text: "Business apps that automate and centralize the way teams work.",
   },
   {
     href: "/architecture-lab",
     label: "Architecture & SEO/GEO/CRO Lab",
-    text: "Les coulisses techniques de ce site : tracking, données structurées et métriques.",
+    text: "Behind the scenes of this site: tracking, structured data and metrics.",
   },
 ];
 
@@ -66,60 +66,75 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* Section 1 : Profil */}
-      <section id="profil" aria-labelledby="profil-title" className="scroll-mt-14">
+      {/* Section 1: Profile */}
+      <section id="profile" aria-labelledby="profile-title" className="scroll-mt-14">
         <div className="hero-gradient border-b border-stroke">
           <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
             <p className="eyebrow mb-3">Portfolio &amp; Technical Lab</p>
-            <h1 id="profil-title" className="text-4xl sm:text-5xl mb-5 max-w-3xl">
+            <h1 id="profile-title" className="text-4xl sm:text-5xl mb-5 max-w-3xl">
               Growth Marketer &amp; Product Builder
             </h1>
             <p className="text-lg text-night-700 mb-3 max-w-2xl">
-              Je fais grandir des produits digitaux en combinant acquisition, conversion et
-              construction produit : rendre un site visible sur Google comme dans les IA
-              génératives, transformer ce trafic en clients, puis livrer les applications et
-              outils qui font tourner l&apos;activité.
+              I grow digital products by combining acquisition, conversion and product
+              building: making a site visible on Google and in generative AI, turning that
+              traffic into customers, then shipping the apps and tools that keep the business
+              running.
             </p>
             <p className="text-night-500 mb-8 max-w-2xl">
-              Ce site est à la fois mon portfolio et mon laboratoire : chaque optimisation y
-              est appliquée, mesurée et documentée en direct.
+              This site is both my portfolio and my lab: every optimization is applied,
+              measured and documented live.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="#portfolio" className="btn btn-primary">
-                Voir le portfolio
+                View portfolio
               </a>
               <a href="#contact" className="btn btn-secondary">
-                Me contacter
+                Get in touch
               </a>
             </div>
           </div>
         </div>
 
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {expertises.map((e) => (
-              <li key={e.title}>
-                <article className="card h-full overflow-hidden">
-                  <div aria-hidden="true" className={`h-1 ${toneBar[e.tone]}`} />
-                  <div className="p-6">
-                    <h2 className="text-lg mb-2">{e.title}</h2>
-                    <p className="text-sm text-night-500 leading-relaxed">{e.text}</p>
-                  </div>
-                </article>
+          <p className="eyebrow mb-2">Expertise</p>
+          <h2 id="skills-title" className="text-3xl mb-8">
+            My skills
+          </h2>
+          {/* Native <details>: the text stays in the HTML (crawlable) even when collapsed. */}
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 items-start">
+            {skills.map((s) => (
+              <li key={s.title}>
+                <details className="group card overflow-hidden">
+                  <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <div aria-hidden="true" className={`h-1 ${toneBar[s.tone]}`} />
+                    <div className="flex items-center justify-between gap-4 p-6 hover:bg-violet-100/50 transition-colors">
+                      <h3 className="text-lg">{s.title}</h3>
+                      <span
+                        aria-hidden="true"
+                        className="grid place-items-center w-8 h-8 shrink-0 rounded-full bg-violet-100 text-violet-600 transition-transform duration-200 group-open:rotate-45"
+                      >
+                        +
+                      </span>
+                    </div>
+                  </summary>
+                  <p className="px-6 pb-6 -mt-2 text-sm text-night-500 leading-relaxed">
+                    {s.text}
+                  </p>
+                </details>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* Section 2 : Portfolio */}
+      {/* Section 2: Portfolio */}
       <section
         id="portfolio"
         aria-labelledby="portfolio-title"
         className="scroll-mt-14 bg-white border-y border-stroke"
       >
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <p className="eyebrow mb-2">Réalisations</p>
+          <p className="eyebrow mb-2">Work</p>
           <h2 id="portfolio-title" className="text-3xl mb-8">
             Portfolio
           </h2>
@@ -146,12 +161,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 3 : FAQ */}
+      {/* Section 3: FAQ */}
       <section id="faq" aria-labelledby="faq-title" className="scroll-mt-14">
         <div className="max-w-4xl mx-auto px-6 py-16">
           <p className="eyebrow mb-2">FAQ</p>
           <h2 id="faq-title" className="text-3xl mb-8">
-            Questions fréquentes
+            Frequently asked questions
           </h2>
           <div className="space-y-4">
             {faq.map((item) => (
@@ -159,7 +174,7 @@ export default function Home() {
                 <h3 className="text-base mb-2">{item.question}</h3>
                 <p className="text-night-700 leading-relaxed mb-3">{item.answer}</p>
                 <p className="text-xs text-night-500">
-                  Source{item.sources.length > 1 ? "s" : ""} :{" "}
+                  Source{item.sources.length > 1 ? "s" : ""}:{" "}
                   {item.sources.map((s, i) => (
                     <span key={s.url}>
                       {i > 0 && " · "}

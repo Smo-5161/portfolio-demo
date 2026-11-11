@@ -1,4 +1,4 @@
-// Structure d'un projet du portfolio. Tous les champs sauf id/name sont optionnels.
+// Portfolio project shape. Every field except id/name is optional.
 export type ColorToken = { name: string; hex: string; role: string };
 
 export type DesignSystem = {

@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Design system — inspiré de Microsoft Fluent Design
-   Palette pastel / désaturée : bleu nuit, magenta, violet, blanc.
-   Tous les couples texte/fond respectent le contraste WCAG AA (≥ 4.5:1).
+   Design system — inspired by Microsoft Fluent Design
+   Pastel / desaturated palette: night blue, magenta, violet, white.
+   Every text/background pair meets WCAG AA contrast (≥ 4.5:1).
 ------------------------------------------------------------------- */
 @theme {
   --font-sans: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Cascadia Code", Consolas, "SFMono-Regular", monospace;
 
-  /* Bleu nuit */
-  --color-night-900: #1f2a44; /* texte principal, footer */
+  /* Night blue */
+  --color-night-900: #1f2a44; /* main text, footer */
   --color-night-700: #3a4766;
-  --color-night-500: #5b6478; /* texte secondaire */
+  --color-night-500: #5b6478; /* secondary text */
   --color-night-100: #e6e9f0;
 
-  /* Violet (couleur d'action) */
-  --color-violet-600: #6a5fa3; /* boutons, liens */
+  /* Violet (action color) */
+  --color-violet-600: #6a5fa3; /* buttons, links */
   --color-violet-300: #c9c3e6;
   --color-violet-200: #d9d3ef;
   --color-violet-100: #ece9f7;
@@ -58,7 +58,7 @@
 }
 
 @layer components {
-  /* Carte Fluent : fond blanc, coins 8px, élévation légère */
+  /* Fluent card: white, 8px corners, light elevation */
   .card {
     background: #fff;
     border: 1px solid var(--color-stroke);
@@ -74,7 +74,7 @@
     transform: translateY(-2px);
   }
 
-  /* Boutons */
+  /* Buttons */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -101,7 +101,7 @@
     background: var(--color-violet-100);
   }
 
-  /* Étiquette */
+  /* Chip */
   .chip {
     display: inline-block;
     padding: 0.125rem 0.625rem;
@@ -115,7 +115,7 @@
     background: var(--color-magenta-100);
   }
 
-  /* Lien texte */
+  /* Text link */
   .link {
     color: var(--color-violet-600);
     text-decoration: underline;
@@ -125,7 +125,7 @@
     color: var(--color-magenta-600);
   }
 
-  /* Sur-titre de section */
+  /* Section eyebrow */
   .eyebrow {
     font-size: 0.75rem;
     font-weight: 600;
@@ -134,7 +134,7 @@
     color: var(--color-magenta-600);
   }
 
-  /* Dégradé pastel du hero */
+  /* Pastel hero gradient */
   .hero-gradient {
     background:
       radial-gradient(60% 80% at 0% 0%, var(--color-violet-200) 0%, transparent 70%),

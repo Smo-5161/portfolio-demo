@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
-// Robots d'IA explicitement autorisés (entraînement, indexation et navigation à la demande).
+// AI crawlers explicitly allowed (training, indexing and on-demand browsing).
 const aiBots = [
   // OpenAI (ChatGPT)
   "GPTBot",
@@ -21,15 +21,15 @@ const aiBots = [
   "MistralAI-User",
   "MistralAI-Index",
   "MistralAI-Training",
-  // DeepSeek (pas de documentation officielle : jetons observés)
+  // DeepSeek (no official documentation: observed tokens)
   "DeepSeekBot",
   "Deepseekbot",
-  // xAI (Grok) (pas de documentation officielle : jetons observés)
+  // xAI (Grok) (no official documentation: observed tokens)
   "GrokBot",
   "xAI-Grok",
   "Grok-DeepSearch",
   "xAI-SearchBot",
-  // Autres assistants IA
+  // Other AI assistants
   "PerplexityBot",
   "Perplexity-User",
   "Applebot-Extended",

@@ -1,8 +1,8 @@
 import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 
-// GTM + Microsoft Clarity, chargés sur toutes les pages via le root layout.
-// GA4 se configure désormais dans le conteneur GTM.
+// GTM + Microsoft Clarity, loaded on every page via the root layout.
+// GA4 is configured inside the GTM container.
 export const GTM_ID = "GTM-TWFXM6B4";
 const CLARITY_ID = "zc1u4r8qm1";
 

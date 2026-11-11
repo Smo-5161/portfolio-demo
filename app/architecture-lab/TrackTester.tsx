@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function TrackTester() {
-  const [output, setOutput] = useState<string>("// En attente d'un événement…");
+  const [output, setOutput] = useState<string>("// Waiting for an event…");
   const [loading, setLoading] = useState(false);
 
   async function handleClick() {
@@ -17,7 +17,7 @@ export default function TrackTester() {
       const json: unknown = await res.json();
       setOutput(JSON.stringify(json, null, 2));
     } catch (err) {
-      setOutput(`Erreur : ${err instanceof Error ? err.message : String(err)}`);
+      setOutput(`Error: ${err instanceof Error ? err.message : String(err)}`);
     } finally {
       setLoading(false);
     }
@@ -31,7 +31,7 @@ export default function TrackTester() {
         disabled={loading}
         className="btn btn-primary disabled:opacity-50"
       >
-        {loading ? "Envoi…" : "Déclencher un événement de test"}
+        {loading ? "Sending…" : "Trigger a test event"}
       </button>
       <pre className="mt-4 rounded bg-night-900 text-violet-200 p-4 text-xs font-mono overflow-auto">
         {output}

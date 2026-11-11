@@ -2,12 +2,12 @@ import ProjectSection from "@/components/ProjectSection";
 import data from "@/data/tools.json";
 import type { Project } from "@/lib/types";
 
-export default function OutilsInternesPage() {
+export default function InternalToolsPage() {
   return (
     <ProjectSection
-      title="Applications & Outils Internes"
+      title="Apps & Internal Tools"
       items={data as Project[]}
-      emptyMessage="Aucun outil interne répertorié."
+      emptyMessage="No internal tools listed yet."
     />
   );
 }

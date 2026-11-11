@@ -3,81 +3,81 @@
     "id": "helmo-renovation",
     "name": "Helmo Rénovation",
     "url": "https://helmo-renovation.fr/",
-    "description": "Refonte complète (SEO, UI et UX) d'un site WordPress de 80 pages pour une entreprise de rénovation tous corps d'état, réalisée en 2 mois.",
-    "duration": "2 mois",
-    "scope": ["SEO technique", "GEO", "UI/UX", "Performance"],
+    "description": "Full redesign (SEO, UI and UX) of an 80-page WordPress site for an all-trades renovation company, delivered in 2 months.",
+    "duration": "2 months",
+    "scope": ["Technical SEO", "GEO", "UI/UX", "Performance"],
     "stack": ["WordPress", "Elementor", "Hostinger", "AIOSEO", "LiteSpeed Cache"],
     "context": [
-      "Helmo Rénovation est une entreprise de rénovation tous corps d'état (intérieur, rénovation énergétique, chantiers pour professionnels) qui réalise ses travaux clé en main avec ses propres équipes.",
-      "J'ai entièrement refait le site en 2 mois : architecture, référencement des 80 pages, balisage, performances et contenus. Le site tourne sous WordPress avec le constructeur Elementor, et il est hébergé chez Hostinger."
+      "Helmo Rénovation is a French all-trades renovation company (interior work, energy retrofits, projects for professionals) that delivers turnkey projects with its own in-house teams.",
+      "I rebuilt the site from the ground up in 2 months: architecture, SEO for all 80 pages, markup, performance and content. The site runs on WordPress with the Elementor page builder and is hosted on Hostinger."
     ],
     "work": [
       {
-        "title": "Architecture du site",
-        "text": "Une offre très large, réorganisée en silos thématiques clairs pour que Google comme les visiteurs comprennent immédiatement la structure.",
+        "title": "Site architecture",
+        "text": "A very broad offering, reorganized into clear topic silos so both Google and visitors instantly understand the structure.",
         "points": [
-          "Trois silos principaux : rénovation intérieure, rénovation énergétique et offre pour les professionnels.",
-          "Sous-pages par type de logement, par pièce et par corps de métier (isolation, chauffage, ventilation, électricité, plomberie…).",
-          "Maillage interne entre pages d'un même silo et fil d'Ariane sur l'ensemble du site."
+          "Three main silos: interior renovation, energy renovation and services for professionals.",
+          "Sub-pages by property type, by room and by trade (insulation, heating, ventilation, electrical, plumbing…).",
+          "Internal linking between pages of the same silo and breadcrumbs across the whole site."
         ]
       },
       {
-        "title": "Référencement des 80 pages",
-        "text": "Chaque page cible une intention de recherche précise et a été optimisée individuellement.",
+        "title": "SEO for all 80 pages",
+        "text": "Each page targets a specific search intent and was optimized individually.",
         "points": [
-          "Balise title et meta description uniques et rédigées pour le clic.",
-          "Un seul H1 par page et une hiérarchie H2/H3 cohérente.",
-          "Sitemap XML segmenté (pages, articles, catégories) pour faciliter l'exploration."
+          "Unique title tags and meta descriptions written to earn the click.",
+          "A single H1 per page and a consistent H2/H3 hierarchy.",
+          "Segmented XML sitemap (pages, posts, categories) to make crawling easier."
         ]
       },
       {
-        "title": "Images et textes alternatifs",
-        "text": "Toutes les images ont été renommées et décrites pour être comprises par les moteurs et accessibles aux lecteurs d'écran.",
+        "title": "Images and alt text",
+        "text": "Every image was renamed and described so search engines understand it and screen readers can announce it.",
         "points": [
-          "Attributs alt descriptifs, rédigés en fonction du contenu réel de l'image et du mot-clé de la page.",
-          "Conversion au format WebP et chargement différé (lazy loading) des visuels hors écran."
+          "Descriptive alt attributes, written from the actual image content and the page's target keyword.",
+          "WebP conversion and lazy loading for off-screen visuals."
         ]
       },
       {
-        "title": "Balisage et données structurées",
-        "text": "Un balisage schema.org complet pour que Google et les IA identifient clairement l'entreprise, ses pages et sa structure.",
+        "title": "Markup and structured data",
+        "text": "Complete schema.org markup so Google and AI engines clearly identify the company, its pages and its structure.",
         "points": [
-          "Organization et LocalBusiness pour l'identité de l'entreprise.",
-          "WebSite et WebPage sur chaque page.",
-          "BreadcrumbList pour exposer l'arborescence dans les résultats de recherche."
+          "Organization and LocalBusiness for the company's identity.",
+          "WebSite and WebPage on every page.",
+          "BreadcrumbList to expose the site tree in search results."
         ]
       },
       {
-        "title": "Optimisation des temps de chargement",
-        "text": "Un site Elementor riche en visuels, allégé pour rester rapide sur mobile.",
+        "title": "Page speed optimization",
+        "text": "A visually rich Elementor site, slimmed down to stay fast on mobile.",
         "points": [
-          "Cache serveur LiteSpeed, proposé nativement par Hostinger.",
-          "Images compressées en WebP et chargement différé.",
-          "Nettoyage des éléments Elementor et des scripts inutiles."
+          "LiteSpeed server cache, provided natively by Hostinger.",
+          "Images compressed to WebP and lazy-loaded.",
+          "Cleanup of unused Elementor elements and scripts."
         ]
       },
       {
-        "title": "Automatisation de la génération d'articles",
-        "text": "Un processus automatisé de production d'articles de blog pour alimenter le site en contenus ciblés, de façon régulière et sans charge manuelle."
+        "title": "Automated article generation",
+        "text": "An automated blog production process that keeps the site supplied with targeted content on a regular schedule, with no manual workload."
       },
       {
-        "title": "Refonte de la FAQ pour le GEO",
-        "text": "Les FAQ ont été réécrites pour être reprises par les moteurs génératifs (ChatGPT, Gemini, Perplexity…).",
+        "title": "FAQ rewrite for GEO",
+        "text": "The FAQs were rewritten to be picked up by generative engines (ChatGPT, Gemini, Perplexity…).",
         "points": [
-          "Questions formulées naturellement, comme un client les poserait à une IA.",
-          "Réponse directe dès la première phrase, puis le détail.",
-          "Formulations courtes et factuelles, faciles à citer."
+          "Questions phrased naturally, the way a customer would ask an AI.",
+          "A direct answer in the very first sentence, then the details.",
+          "Short, factual wording that is easy to quote."
         ]
       }
     ],
     "design": {
-      "summary": "Côté interface : un bleu nuit qui inspire confiance, un orange réservé aux appels à l'action et une seule police, Poppins, pour une lecture rapide sur mobile.",
+      "summary": "On the interface side: a night blue that builds trust, an orange reserved for calls to action, and a single typeface, Poppins, for fast reading on mobile.",
       "fontFamily": "Poppins",
       "palette": [
-        { "name": "Bleu nuit", "hex": "#001C28", "role": "Couleur primaire" },
-        { "name": "Orange Helmo", "hex": "#FF7920", "role": "Appels à l'action" },
-        { "name": "Pêche clair", "hex": "#FFF2E9", "role": "Fonds de mise en avant" },
-        { "name": "Blanc", "hex": "#FFFFFF", "role": "Fonds et texte sur sombre" }
+        { "name": "Night blue", "hex": "#001C28", "role": "Primary color" },
+        { "name": "Helmo orange", "hex": "#FF7920", "role": "Calls to action" },
+        { "name": "Light peach", "hex": "#FFF2E9", "role": "Highlight backgrounds" },
+        { "name": "White", "hex": "#FFFFFF", "role": "Backgrounds and text on dark" }
       ]
     },
     "seoScores": []

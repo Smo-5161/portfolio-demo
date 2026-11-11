@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-// Stub du futur proxy de Server-Side Tracking : log brut, aucun traitement.
+// Stub for the future server-side tracking proxy: raw log, no processing.
 export async function POST(request: Request) {
   let body: unknown = null;
   try {

@@ -1,5 +1,5 @@
-// URL publique du site. Sur Vercel, VERCEL_PROJECT_PRODUCTION_URL est fourni automatiquement.
-// Pour un domaine personnalisé, définir NEXT_PUBLIC_SITE_URL (ex : https://antoinesmolar.com).
+// Public site URL. On Vercel, VERCEL_PROJECT_PRODUCTION_URL is provided automatically.
+// For a custom domain, set NEXT_PUBLIC_SITE_URL (e.g. https://antoinesmolar.com).
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -9,16 +9,16 @@ export const SITE_URL =
 export const contact = {
   name: "Antoine Smolar",
   jobTitle: "Growth Marketer & Product Builder",
-  phoneDisplay: "07 69 34 94 81",
+  phoneDisplay: "+33 7 69 34 94 81",
   phoneIntl: "+33769349481",
   email: "antoine.smolar.23@neoma-bs.com",
   linkedin: "https://www.linkedin.com/in/antoine-smolar/",
 };
 
 export const routes = [
-  { path: "/", label: "Accueil" },
-  { path: "/sites-web", label: "Sites Web" },
+  { path: "/", label: "Home" },
+  { path: "/websites", label: "Websites" },
   { path: "/saas", label: "SaaS" },
-  { path: "/outils-internes", label: "Outils Internes" },
+  { path: "/internal-tools", label: "Internal Tools" },
   { path: "/architecture-lab", label: "Architecture & SEO/GEO/CRO Lab" },
 ];

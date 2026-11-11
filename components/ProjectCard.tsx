@@ -16,18 +16,18 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                     {s}
                   </li>
                 ))}
-                {p.duration && <li className="chip chip-magenta">Durée : {p.duration}</li>}
+                {p.duration && <li className="chip chip-magenta">Duration: {p.duration}</li>}
               </ul>
             )}
             {p.stack && (
               <p className="mt-3 text-sm text-night-700">
-                <span className="font-semibold">Stack :</span> {p.stack.join(" · ")}
+                <span className="font-semibold">Stack:</span> {p.stack.join(" · ")}
               </p>
             )}
           </div>
           {p.url && (
             <a href={p.url} className="btn btn-primary" target="_blank" rel="noopener">
-              Voir {host} <span aria-hidden="true">↗</span>
+              Visit {host} <span aria-hidden="true">↗</span>
             </a>
           )}
         </div>
@@ -35,9 +35,9 @@ export default function ProjectCard({ project: p }: { project: Project }) {
 
       <div className="p-6 sm:p-8 space-y-10">
         {p.context && (
-          <section aria-labelledby={`${p.id}-contexte`}>
-            <h3 id={`${p.id}-contexte`} className="text-xl mb-3">
-              Contexte du projet
+          <section aria-labelledby={`${p.id}-context`}>
+            <h3 id={`${p.id}-context`} className="text-xl mb-3">
+              Project context
             </h3>
             <div className="space-y-3 text-night-700 leading-relaxed max-w-3xl">
               {p.context.map((c, i) => (
@@ -48,9 +48,9 @@ export default function ProjectCard({ project: p }: { project: Project }) {
         )}
 
         {p.work && (
-          <section aria-labelledby={`${p.id}-travaux`}>
-            <h3 id={`${p.id}-travaux`} className="text-xl mb-4">
-              Ce que j&apos;ai fait
+          <section aria-labelledby={`${p.id}-work`}>
+            <h3 id={`${p.id}-work`} className="text-xl mb-4">
+              What I did
             </h3>
             <ol className="grid gap-4 md:grid-cols-2">
               {p.work.map((w, i) => (
@@ -82,11 +82,11 @@ export default function ProjectCard({ project: p }: { project: Project }) {
         {p.seoScores && (
           <section aria-labelledby={`${p.id}-seo`}>
             <h3 id={`${p.id}-seo`} className="text-xl mb-3">
-              Scores SEO
+              SEO scores
             </h3>
             {p.seoScores.length === 0 ? (
               <p className="rounded-lg border border-dashed border-violet-300 bg-violet-100 p-6 text-center text-night-500">
-                Captures des scores SEO à venir.
+                SEO score screenshots coming soon.
               </p>
             ) : (
               <ul className="grid gap-4 sm:grid-cols-2">
@@ -95,15 +95,15 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                     <p className="font-semibold">{s.label}</p>
                     {(s.before || s.after) && (
                       <p className="text-sm text-night-700">
-                        {s.before && <>Avant : {s.before} </>}
-                        {s.after && <>→ Après : {s.after}</>}
+                        {s.before && <>Before: {s.before} </>}
+                        {s.after && <>→ After: {s.after}</>}
                       </p>
                     )}
                     {s.image && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={s.image}
-                        alt={`Capture : ${s.label}`}
+                        alt={`Screenshot: ${s.label}`}
                         className="mt-3 rounded border border-stroke"
                       />
                     )}
@@ -115,9 +115,9 @@ export default function ProjectCard({ project: p }: { project: Project }) {
         )}
 
         {p.design && (
-          <section aria-labelledby={`${p.id}-da`}>
-            <h3 id={`${p.id}-da`} className="text-xl mb-2">
-              Direction artistique
+          <section aria-labelledby={`${p.id}-design`}>
+            <h3 id={`${p.id}-design`} className="text-xl mb-2">
+              Visual identity
             </h3>
             <p className="text-sm text-night-700 leading-relaxed mb-4 max-w-3xl">
               {p.design.summary}

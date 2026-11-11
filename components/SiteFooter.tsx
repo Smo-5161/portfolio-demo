@@ -2,7 +2,7 @@ import { contact } from "@/lib/site";
 
 export default function SiteFooter() {
   const items = [
-    { label: "Téléphone", value: contact.phoneDisplay, href: `tel:${contact.phoneIntl}` },
+    { label: "Phone", value: contact.phoneDisplay, href: `tel:${contact.phoneIntl}` },
     { label: "Email", value: contact.email, href: `mailto:${contact.email}` },
     { label: "LinkedIn", value: "linkedin.com/in/antoine-smolar", href: contact.linkedin, external: true },
   ];
@@ -11,7 +11,7 @@ export default function SiteFooter() {
     <footer id="contact" className="mt-24 bg-night-900 text-white scroll-mt-14">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-magenta-300">Contact</p>
-        <h2 className="text-2xl mb-6">Travaillons ensemble</h2>
+        <h2 className="text-2xl mb-6">Let's work together</h2>
         <address className="not-italic">
           <ul className="grid gap-4 sm:grid-cols-3">
             {items.map((i) => (

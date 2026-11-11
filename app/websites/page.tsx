@@ -2,12 +2,12 @@ import ProjectSection from "@/components/ProjectSection";
 import data from "@/data/sites.json";
 import type { Project } from "@/lib/types";
 
-export default function SitesWebPage() {
+export default function WebsitesPage() {
   return (
     <ProjectSection
-      title="Sites Web"
+      title="Websites"
       items={data as Project[]}
-      emptyMessage="Aucun projet publié pour le moment. Section en cours d'optimisation."
+      emptyMessage="No projects published yet. This section is being optimized."
     />
   );
 }

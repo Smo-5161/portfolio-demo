@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default function ProjectSection({ title, items, emptyMessage }: Props) {
-  // Données structurées : liste des projets en CreativeWork (lisible par Google et les LLM).
+  // Structured data: projects listed as CreativeWork (readable by Google and LLMs).
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",

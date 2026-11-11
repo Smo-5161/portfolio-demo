@@ -1,12 +1,12 @@
-// Source unique pour la FAQ : sert au rendu HTML ET au JSON-LD FAQPage.
+// Single source for the FAQ: used for the HTML rendering AND the FAQPage JSON-LD.
 export type FaqSource = { label: string; url: string };
 export type FaqItem = { question: string; answer: string; sources: FaqSource[] };
 
 export const faq: FaqItem[] = [
   {
-    question: "Le SEO sert-il encore à quelque chose maintenant que tout le monde utilise l'IA ?",
+    question: "Does SEO still matter now that everyone uses AI?",
     answer:
-      "Oui : la recherche organique génère encore 53,3 % du trafic web traçable, soit plus de dix fois les réseaux sociaux organiques (5 %). Les assistants IA progressent vite, mais Google reste de loin la première source de visites, et un site bien référencé est aussi la matière première dont se servent les moteurs génératifs.",
+      "Yes: organic search still drives 53.3% of all trackable website traffic, more than ten times organic social media (5%). AI assistants are growing fast, but Google remains by far the largest source of visits, and a well-ranked site is also the raw material generative engines draw on.",
     sources: [
       {
         label: "BrightEdge – Organic Share of Traffic Increases to 53%",
@@ -15,9 +15,9 @@ export const faq: FaqItem[] = [
     ],
   },
   {
-    question: "C'est quoi le GEO, et pourquoi s'en occuper dès maintenant ?",
+    question: "What is GEO, and why should I care about it now?",
     answer:
-      "Le GEO consiste à rendre un site citable par les IA génératives (ChatGPT, Gemini, Perplexity…), et ce canal a déjà généré en moyenne 770,7 millions de visites par mois entre juin 2025 et mai 2026, soit plus du double de l'année précédente (+117 %). Concrètement, cela passe par des réponses claires, des données chiffrées, des sources et des données structurées que les modèles peuvent extraire facilement.",
+      "GEO (Generative Engine Optimization) means making a site quotable by AI engines like ChatGPT, Gemini or Perplexity, and that channel already drove an average of 770.7 million visits per month between June 2025 and May 2026, more than double the previous year (+117%). In practice, it comes down to clear answers, hard numbers, sources and structured data that models can extract easily.",
     sources: [
       {
         label: "Similarweb – AI Referral Traffic by Industry",
@@ -26,9 +26,9 @@ export const faq: FaqItem[] = [
     ],
   },
   {
-    question: "Faut-il choisir entre SEO et GEO ?",
+    question: "Do I have to choose between SEO and GEO?",
     answer:
-      "Non : en 2026, le trafic issu des IA ne pèse encore que 0,32 % du trafic total des sites, même s'il a été multiplié par 16 en moins de deux ans. Gartner anticipait de son côté une baisse de 25 % du volume des moteurs de recherche classiques d'ici 2026 au profit des chatbots : la bonne stratégie est donc de consolider le SEO tout en préparant le GEO.",
+      "No: in 2026, AI traffic still accounts for only 0.32% of total website traffic, even though it grew 16x in under two years. Gartner predicted a 25% drop in traditional search engine volume by 2026 in favor of chatbots, so the smart move is to strengthen SEO while preparing for GEO.",
     sources: [
       {
         label: "SE Ranking – AI traffic grew 16x from 2024 to 2026",
@@ -41,9 +41,9 @@ export const faq: FaqItem[] = [
     ],
   },
   {
-    question: "Pourquoi optimiser la conversion plutôt qu'acheter plus de trafic ?",
+    question: "Why optimize conversion instead of buying more traffic?",
     answer:
-      "Parce que la plupart des visiteurs repartent sans rien faire : le taux de conversion moyen d'un site e-commerce tourne autour de 2 à 3 %. Passer de 2 % à 3 % augmente le chiffre d'affaires de 50 % à trafic constant, sans un euro de publicité en plus.",
+      "Because most visitors leave without doing anything: the average e-commerce conversion rate sits around 2–3%. Going from 2% to 3% increases revenue by 50% with the same traffic, without spending an extra cent on ads.",
     sources: [
       {
         label: "Blend Commerce – eCommerce Conversion Rate Benchmarks 2026",
@@ -52,9 +52,9 @@ export const faq: FaqItem[] = [
     ],
   },
   {
-    question: "L'UI/UX a-t-elle un impact mesurable sur les ventes ?",
+    question: "Does UI/UX have a measurable impact on sales?",
     answer:
-      "Oui : selon le Baymard Institute, un grand site e-commerce peut gagner jusqu'à 35 % de conversion simplement en améliorant le design de son tunnel de commande. Environ 70 % des paniers sont abandonnés, et la conception du checkout en est souvent la seule cause.",
+      "Yes: according to the Baymard Institute, a large e-commerce site can gain up to a 35% increase in conversion rate just by improving its checkout design. Around 70% of shopping carts are abandoned, and checkout design is often the sole cause.",
     sources: [
       {
         label: "Baymard Institute – Cart & Checkout Usability Research",
@@ -63,9 +63,9 @@ export const faq: FaqItem[] = [
     ],
   },
   {
-    question: "Une entreprise a-t-elle vraiment besoin d'outils internes sur mesure ?",
+    question: "Does a company really need custom internal tools?",
     answer:
-      "Souvent oui : selon le McKinsey Global Institute, les employés passent près de 20 % de leur semaine à chercher des informations internes ou la bonne personne pour les aider. Un outil interne qui centralise les données et automatise les tâches répétitives rend directement ce temps aux équipes.",
+      "Often, yes: according to the McKinsey Global Institute, employees spend nearly 20% of their workweek looking for internal information or tracking down colleagues who can help. An internal tool that centralizes data and automates repetitive tasks gives that time straight back to the team.",
     sources: [
       {
         label: "McKinsey Global Institute – The social economy",
@@ -74,12 +74,12 @@ export const faq: FaqItem[] = [
     ],
   },
   {
-    question: "Le no-code est-il assez sérieux pour construire des applications d'entreprise ?",
+    question: "Is no-code serious enough to build business applications?",
     answer:
-      "Oui : Gartner prévoyait que 70 % des nouvelles applications d'entreprise utiliseraient des technologies low-code ou no-code dès 2025, contre moins de 25 % en 2020. Le no-code permet de livrer en jours plutôt qu'en mois, ce qui est idéal pour tester un produit ou outiller une équipe métier.",
+      "Yes: Gartner predicted that 70% of new enterprise applications would use low-code or no-code technologies by 2025, up from less than 25% in 2020. No-code ships in days rather than months, which makes it ideal for testing a product or equipping a business team.",
     sources: [
       {
-        label: "Computerworld – Gartner : low-code development platforms",
+        label: "Computerworld – Gartner: low-code development platforms",
         url: "https://www.computerworld.com/article/1616390/low-code-development-platforms-to-grow-25-in-2023.html",
       },
     ],
