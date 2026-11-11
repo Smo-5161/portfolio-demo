@@ -5,7 +5,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
 
   return (
     <article id={p.id} className="card overflow-hidden scroll-mt-20">
-      <header className="p-6 sm:p-8 border-b border-stroke bg-linear-to-r from-violet-100 to-magenta-100">
+      <header className="p-6 sm:p-8 border-b border-stroke bg-linear-to-r from-gblue-100 via-white to-ggreen-100">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 className="text-2xl mb-3">{p.name}</h2>
@@ -16,11 +16,11 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                     {s}
                   </li>
                 ))}
-                {p.duration && <li className="chip chip-magenta">Duration: {p.duration}</li>}
+                {p.duration && <li className="chip chip-tonal">Duration: {p.duration}</li>}
               </ul>
             )}
             {p.stack && (
-              <p className="mt-3 text-sm text-night-700">
+              <p className="mt-3 text-sm text-ink-700">
                 <span className="font-semibold">Stack:</span> {p.stack.join(" · ")}
               </p>
             )}
@@ -39,7 +39,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
             <h3 id={`${p.id}-context`} className="text-xl mb-3">
               Project context
             </h3>
-            <div className="space-y-3 text-night-700 leading-relaxed max-w-3xl">
+            <div className="space-y-3 text-ink-700 leading-relaxed max-w-3xl">
               {p.context.map((c, i) => (
                 <p key={i}>{c}</p>
               ))}
@@ -56,17 +56,17 @@ export default function ProjectCard({ project: p }: { project: Project }) {
               {p.work.map((w, i) => (
                 <li key={w.title} className="card p-5">
                   <h4 className="text-base mb-2 flex items-baseline gap-2">
-                    <span className="chip shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="chip chip-tonal shrink-0">{String(i + 1).padStart(2, "0")}</span>
                     {w.title}
                   </h4>
-                  <p className="text-sm text-night-700 leading-relaxed">{w.text}</p>
+                  <p className="text-sm text-ink-700 leading-relaxed">{w.text}</p>
                   {w.points && (
                     <ul className="mt-3 space-y-1.5">
                       {w.points.map((pt) => (
-                        <li key={pt} className="flex gap-2 text-sm text-night-700">
+                        <li key={pt} className="flex gap-2 text-sm text-ink-700">
                           <span
                             aria-hidden="true"
-                            className="mt-1.5 block w-1.5 h-1.5 shrink-0 rounded-full bg-magenta-600"
+                            className="mt-1.5 block w-1.5 h-1.5 shrink-0 rounded-full bg-gblue-500"
                           />
                           {pt}
                         </li>
@@ -85,7 +85,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
               SEO scores
             </h3>
             {p.seoScores.length === 0 ? (
-              <p className="rounded-lg border border-dashed border-violet-300 bg-violet-100 p-6 text-center text-night-500">
+              <p className="rounded-2xl border border-dashed border-gblue-300 bg-gblue-100 p-6 text-center text-ink-500">
                 SEO score screenshots coming soon.
               </p>
             ) : (
@@ -94,7 +94,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                   <li key={s.label} className="card p-4">
                     <p className="font-semibold">{s.label}</p>
                     {(s.before || s.after) && (
-                      <p className="text-sm text-night-700">
+                      <p className="text-sm text-ink-700">
                         {s.before && <>Before: {s.before} </>}
                         {s.after && <>→ After: {s.after}</>}
                       </p>
@@ -104,7 +104,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                       <img
                         src={s.image}
                         alt={`Screenshot: ${s.label}`}
-                        className="mt-3 rounded border border-stroke"
+                        className="mt-3 rounded-xl border border-stroke"
                       />
                     )}
                   </li>
@@ -119,7 +119,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
             <h3 id={`${p.id}-design`} className="text-xl mb-2">
               Visual identity
             </h3>
-            <p className="text-sm text-night-700 leading-relaxed mb-4 max-w-3xl">
+            <p className="text-sm text-ink-700 leading-relaxed mb-4 max-w-3xl">
               {p.design.summary}
             </p>
             <ul className="flex flex-wrap gap-3">
@@ -131,7 +131,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                     style={{ backgroundColor: c.hex }}
                   />
                   <span>
-                    <strong>{c.name}</strong> <code className="text-night-500">{c.hex}</code>
+                    <strong>{c.name}</strong> <code className="text-ink-500">{c.hex}</code>
                   </span>
                 </li>
               ))}

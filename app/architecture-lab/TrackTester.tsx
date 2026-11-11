@@ -33,7 +33,7 @@ export default function TrackTester() {
       >
         {loading ? "Sending…" : "Trigger a test event"}
       </button>
-      <pre className="mt-4 rounded bg-night-900 text-violet-200 p-4 text-xs font-mono overflow-auto">
+      <pre className="mt-4 rounded-2xl bg-ink-900 text-gblue-200 p-4 text-xs font-mono overflow-auto">
         {output}
       </pre>
     </div>

@@ -1,144 +1,167 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Design system — inspired by Microsoft Fluent Design
-   Pastel / desaturated palette: night blue, magenta, violet, white.
+   Design system — inspired by Google Material Design 3
+   Google's four brand hues, slightly shifted (softer, a touch deeper).
    Every text/background pair meets WCAG AA contrast (≥ 4.5:1).
+   Decorative-only shades (bars, dots, blobs) are marked "decor".
 ------------------------------------------------------------------- */
 @theme {
-  --font-sans: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "Cascadia Code", Consolas, "SFMono-Regular", monospace;
+  --font-sans: "Google Sans Flex", "Google Sans", Roboto, system-ui, -apple-system, Arial, sans-serif;
+  --font-mono: "Google Sans Code", "Roboto Mono", Consolas, monospace;
 
-  /* Night blue */
-  --color-night-900: #1f2a44; /* main text, footer */
-  --color-night-700: #3a4766;
-  --color-night-500: #5b6478; /* secondary text */
-  --color-night-100: #e6e9f0;
+  /* Ink (neutral greys) */
+  --color-ink-900: #1f2124; /* main text, footer */
+  --color-ink-700: #3c4043;
+  --color-ink-500: #5f6368; /* secondary text */
+  --color-ink-100: #e8eaed;
 
-  /* Violet (action color) */
-  --color-violet-600: #6a5fa3; /* buttons, links */
-  --color-violet-300: #c9c3e6;
-  --color-violet-200: #d9d3ef;
-  --color-violet-100: #ece9f7;
+  /* Blue (primary / actions) */
+  --color-gblue-800: #1a4ba6; /* hover */
+  --color-gblue-600: #2563d0; /* buttons, links */
+  --color-gblue-500: #4a86e8; /* decor */
+  --color-gblue-300: #a9c6f5;
+  --color-gblue-200: #d3e2fb;
+  --color-gblue-100: #eaf1fd;
 
-  /* Magenta (accent) */
-  --color-magenta-600: #9a527a;
-  --color-magenta-300: #e3bdd1;
-  --color-magenta-200: #ebcfdd;
-  --color-magenta-100: #f7e8f0;
+  /* Red */
+  --color-gred-600: #c5392e;
+  --color-gred-500: #e2574c; /* decor */
+  --color-gred-300: #f3b3ad;
+  --color-gred-200: #f8d3cf;
+  --color-gred-100: #fcecea;
+
+  /* Yellow */
+  --color-gyellow-500: #f2b630; /* decor */
+  --color-gyellow-300: #f9dc8e;
+  --color-gyellow-100: #fef6e0;
+
+  /* Green */
+  --color-ggreen-600: #1e7a45;
+  --color-ggreen-500: #3aa466; /* decor */
+  --color-ggreen-300: #a7dbbc;
+  --color-ggreen-100: #e7f5ec;
 
   /* Surfaces */
-  --color-surface: #f7f7fb;
-  --color-stroke: #e3e1ee;
+  --color-surface: #f8f9fa;
+  --color-stroke: #dadce0;
 
-  --radius-fluent: 8px;
-  --shadow-fluent-2: 0 1px 2px rgb(31 42 68 / 0.06), 0 0 2px rgb(31 42 68 / 0.06);
-  --shadow-fluent-8: 0 4px 8px rgb(31 42 68 / 0.08), 0 0 2px rgb(31 42 68 / 0.06);
-  --shadow-fluent-16: 0 8px 16px rgb(31 42 68 / 0.1), 0 0 2px rgb(31 42 68 / 0.06);
+  --radius-card: 20px;
+  --shadow-elev-1: 0 1px 2px rgb(60 64 67 / 0.15), 0 1px 3px 1px rgb(60 64 67 / 0.08);
+  --shadow-elev-2: 0 1px 2px rgb(60 64 67 / 0.2), 0 2px 6px 2px rgb(60 64 67 / 0.12);
 }
 
 @layer base {
   body {
     background: var(--color-surface);
-    color: var(--color-night-900);
+    color: var(--color-ink-900);
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 {
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: -0.01em;
+  }
+  h1 {
+    letter-spacing: -0.025em;
   }
   a {
     color: inherit;
   }
   :focus-visible {
-    outline: 2px solid var(--color-violet-600);
+    outline: 2px solid var(--color-gblue-600);
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 }
 
 @layer components {
-  /* Fluent card: white, 8px corners, light elevation */
+  /* Material card: white, generous radius, flat until hovered */
   .card {
     background: #fff;
     border: 1px solid var(--color-stroke);
-    border-radius: var(--radius-fluent);
-    box-shadow: var(--shadow-fluent-2);
+    border-radius: var(--radius-card);
   }
   .card-interactive {
-    transition: box-shadow 150ms ease, transform 150ms ease, border-color 150ms ease;
+    transition: box-shadow 200ms ease, border-color 200ms ease;
   }
   .card-interactive:hover {
-    box-shadow: var(--shadow-fluent-16);
-    border-color: var(--color-violet-300);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-elev-2);
+    border-color: transparent;
   }
 
-  /* Buttons */
+  /* Pill buttons */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1.25rem;
-    border-radius: 4px;
-    font-weight: 600;
+    height: 2.5rem;
+    padding: 0 1.5rem;
+    border-radius: 999px;
+    font-weight: 500;
     font-size: 0.875rem;
-    transition: background-color 150ms ease;
+    letter-spacing: 0.01em;
+    transition: background-color 200ms ease, box-shadow 200ms ease;
   }
   .btn-primary {
-    background: var(--color-violet-600);
+    background: var(--color-gblue-600);
     color: #fff;
   }
   .btn-primary:hover {
-    background: var(--color-night-700);
+    background: var(--color-gblue-800);
+    box-shadow: var(--shadow-elev-1);
   }
   .btn-secondary {
-    background: #fff;
-    color: var(--color-night-900);
+    background: transparent;
+    color: var(--color-gblue-600);
     border: 1px solid var(--color-stroke);
   }
   .btn-secondary:hover {
-    background: var(--color-violet-100);
+    background: var(--color-gblue-100);
   }
 
-  /* Chip */
+  /* Material assist chip */
   .chip {
-    display: inline-block;
-    padding: 0.125rem 0.625rem;
-    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    height: 1.75rem;
+    padding: 0 0.75rem;
+    border-radius: 8px;
     font-size: 0.75rem;
-    font-weight: 600;
-    background: var(--color-violet-100);
-    color: var(--color-night-900);
+    font-weight: 500;
+    background: #fff;
+    border: 1px solid var(--color-stroke);
+    color: var(--color-ink-700);
   }
-  .chip-magenta {
-    background: var(--color-magenta-100);
+  .chip-tonal {
+    background: var(--color-gblue-100);
+    border-color: transparent;
+    color: var(--color-gblue-800);
   }
 
   /* Text link */
   .link {
-    color: var(--color-violet-600);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    color: var(--color-gblue-600);
+    text-decoration: none;
   }
   .link:hover {
-    color: var(--color-magenta-600);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   /* Section eyebrow */
   .eyebrow {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-magenta-600);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gblue-600);
   }
 
-  /* Pastel hero gradient */
+  /* Hero: soft blobs in the four brand hues */
   .hero-gradient {
     background:
-      radial-gradient(60% 80% at 0% 0%, var(--color-violet-200) 0%, transparent 70%),
-      radial-gradient(50% 70% at 100% 20%, var(--color-magenta-200) 0%, transparent 70%),
+      radial-gradient(35% 60% at 8% 10%, var(--color-gblue-200) 0%, transparent 70%),
+      radial-gradient(30% 55% at 92% 15%, var(--color-gred-200) 0%, transparent 70%),
+      radial-gradient(30% 50% at 75% 100%, var(--color-gyellow-100) 0%, transparent 70%),
+      radial-gradient(30% 55% at 25% 100%, var(--color-ggreen-100) 0%, transparent 70%),
       #fff;
   }
 }

@@ -5,35 +5,39 @@ const skills = [
   {
     title: "SEO (Search Engine Optimization)",
     text: "Technical audits, information architecture, performance and content built around search intent, to capture qualified, lasting organic traffic.",
-    tone: "violet",
+    tone: "blue",
   },
   {
     title: "GEO (Generative Engine Optimization)",
     text: "Structuring content and data (JSON-LD, direct answers, sourced figures) so it can be understood and cited by ChatGPT, Claude, Gemini, Perplexity or Mistral.",
-    tone: "magenta",
+    tone: "red",
   },
   {
     title: "CRO (Conversion Rate Optimization)",
     text: "User journey analysis, tracking (GTM, server-side), heatmaps and A/B testing to turn more visitors into customers without increasing acquisition spend.",
-    tone: "night",
+    tone: "yellow",
   },
   {
     title: "UI/UX (User Interface / User Experience)",
     text: "Clear, frictionless interfaces designed from usage data, so every screen serves a specific goal.",
-    tone: "magenta",
+    tone: "green",
   },
   {
     title: "No-code app development",
     text: "Fast delivery of SaaS products and internal tools with no-code and low-code platforms, to validate an idea or equip a team within days.",
-    tone: "violet",
+    tone: "blue",
   },
 ] as const;
 
-const toneBar = {
-  violet: "bg-violet-300",
-  magenta: "bg-magenta-300",
-  night: "bg-night-700",
+// Each skill takes one of the four brand hues: a decor bar + a tonal toggle.
+const tone = {
+  blue: { bar: "bg-gblue-500", toggle: "bg-gblue-100 text-gblue-600" },
+  red: { bar: "bg-gred-500", toggle: "bg-gred-100 text-gred-600" },
+  yellow: { bar: "bg-gyellow-500", toggle: "bg-gyellow-100 text-ink-900" },
+  green: { bar: "bg-ggreen-500", toggle: "bg-ggreen-100 text-ggreen-600" },
 };
+
+const projectTones = ["bg-gblue-100!", "bg-gred-100!", "bg-gyellow-100!", "bg-ggreen-100!"];
 
 const projects = [
   {
@@ -74,13 +78,13 @@ export default function Home() {
             <h1 id="profile-title" className="text-4xl sm:text-5xl mb-5 max-w-3xl">
               Growth Marketer &amp; Product Builder
             </h1>
-            <p className="text-lg text-night-700 mb-3 max-w-2xl">
+            <p className="text-lg text-ink-700 mb-3 max-w-2xl">
               I grow digital products by combining acquisition, conversion and product
               building: making a site visible on Google and in generative AI, turning that
               traffic into customers, then shipping the apps and tools that keep the business
               running.
             </p>
-            <p className="text-night-500 mb-8 max-w-2xl">
+            <p className="text-ink-500 mb-8 max-w-2xl">
               This site is both my portfolio and my lab: every optimization is applied,
               measured and documented live.
             </p>
@@ -106,18 +110,18 @@ export default function Home() {
               <li key={s.title}>
                 <details className="group card overflow-hidden">
                   <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <div aria-hidden="true" className={`h-1 ${toneBar[s.tone]}`} />
-                    <div className="flex items-center justify-between gap-4 p-6 hover:bg-violet-100/50 transition-colors">
+                    <div aria-hidden="true" className={`h-1.5 ${tone[s.tone].bar}`} />
+                    <div className="flex items-center justify-between gap-4 p-6 hover:bg-surface transition-colors">
                       <h3 className="text-lg">{s.title}</h3>
                       <span
                         aria-hidden="true"
-                        className="grid place-items-center w-8 h-8 shrink-0 rounded-full bg-violet-100 text-violet-600 transition-transform duration-200 group-open:rotate-45"
+                        className={`grid place-items-center w-9 h-9 shrink-0 rounded-full text-lg ${tone[s.tone].toggle} transition-transform duration-200 group-open:rotate-45`}
                       >
                         +
                       </span>
                     </div>
                   </summary>
-                  <p className="px-6 pb-6 -mt-2 text-sm text-night-500 leading-relaxed">
+                  <p className="px-6 pb-6 -mt-2 text-sm text-ink-500 leading-relaxed">
                     {s.text}
                   </p>
                 </details>
@@ -143,17 +147,17 @@ export default function Home() {
               <li key={p.href}>
                 <Link
                   href={p.href}
-                  className={`card card-interactive block h-full p-6 ${
-                    i % 2 === 0 ? "bg-violet-100!" : "bg-magenta-100!"
+                  className={`card card-interactive block h-full p-6 border-transparent! ${
+                    projectTones[i % projectTones.length]
                   }`}
                 >
                   <h3 className="text-lg mb-1 flex items-center justify-between gap-2">
                     {p.label}
-                    <span aria-hidden="true" className="text-violet-600">
+                    <span aria-hidden="true" className="grid place-items-center w-8 h-8 rounded-full bg-white text-gblue-600">
                       →
                     </span>
                   </h3>
-                  <p className="text-sm text-night-700">{p.text}</p>
+                  <p className="text-sm text-ink-700">{p.text}</p>
                 </Link>
               </li>
             ))}
@@ -172,8 +176,8 @@ export default function Home() {
             {faq.map((item) => (
               <article key={item.question} className="card p-6">
                 <h3 className="text-base mb-2">{item.question}</h3>
-                <p className="text-night-700 leading-relaxed mb-3">{item.answer}</p>
-                <p className="text-xs text-night-500">
+                <p className="text-ink-700 leading-relaxed mb-3">{item.answer}</p>
+                <p className="text-xs text-ink-500">
                   Source{item.sources.length > 1 ? "s" : ""}:{" "}
                   {item.sources.map((s, i) => (
                     <span key={s.url}>

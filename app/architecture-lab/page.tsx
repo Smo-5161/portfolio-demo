@@ -18,17 +18,17 @@ export default function ArchitectureLabPage() {
 
         <section className="card p-6">
           <h2 className="text-xl mb-2">GEO / Crawlability Inspector</h2>
-          <p className="text-sm text-night-500 mb-3">JSON-LD currently injected:</p>
-          <pre className="rounded bg-night-900 text-violet-200 p-4 text-xs font-mono overflow-auto">
+          <p className="text-sm text-ink-500 mb-3">JSON-LD currently injected:</p>
+          <pre className="rounded-2xl bg-ink-900 text-gblue-200 p-4 text-xs font-mono overflow-auto">
             {"// No JSON-LD injected"}
           </pre>
         </section>
 
         <section className="card p-6">
           <h2 className="text-xl mb-4">Performance &amp; Metrics Logs</h2>
-          <div className="rounded border border-stroke overflow-hidden">
+          <div className="rounded-xl border border-stroke overflow-hidden">
             <table className="w-full text-sm">
-              <thead className="bg-surface text-left text-night-500">
+              <thead className="bg-surface text-left text-ink-500">
                 <tr>
                   <th className="p-3 font-semibold">Metric</th>
                   <th className="p-3 font-semibold">Value</th>
