@@ -37,7 +37,7 @@ const skills: Skill[] = [
   },
 ];
 
-const projectTones = ["bg-slate-100!", "bg-clay-100!", "bg-sand-100!", "bg-sage-100!"];
+const projectTones = ["bg-brand-100!", "bg-accent-100!", "bg-accent-50!", "bg-brand-50!"];
 
 const projects = [
   {

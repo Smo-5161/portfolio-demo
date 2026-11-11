@@ -12,7 +12,7 @@ type Props = {
   emptyMessage: string;
 };
 
-const tones = ["bg-slate-100!", "bg-clay-100!", "bg-sand-100!", "bg-sage-100!"];
+const tones = ["bg-brand-100!", "bg-accent-100!", "bg-accent-50!", "bg-brand-50!"];
 
 export default function ProjectSection({ path, title, items, emptyMessage }: Props) {
   // Internal linking: every project page links to the other sections of the portfolio.

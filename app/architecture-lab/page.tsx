@@ -86,13 +86,13 @@ const faqRules = [
   { title: "Visible, never hidden", text: "The FAQ sits on its own page rather than being hidden: text shown to robots but not to visitors breaks Google’s spam policies." },
 ];
 
-const tones = ["bg-slate-100", "bg-clay-100", "bg-sand-100", "bg-sage-100"];
+const tones = ["bg-brand-100", "bg-accent-100", "bg-accent-50", "bg-brand-50"];
 
 function StatusChip({ status }: { status: Status }) {
   return status === "live" ? (
-    <span className="chip bg-sage-100! border-transparent!">● Live</span>
+    <span className="chip bg-brand-50! border-transparent!">● Live</span>
   ) : (
-    <span className="chip bg-sand-100! border-transparent!">○ Planned</span>
+    <span className="chip bg-accent-50! border-transparent!">○ Planned</span>
   );
 }
 
@@ -166,7 +166,7 @@ export default function ArchitectureLabPage() {
           <p className="text-sm text-ink-700 max-w-3xl mb-8 -mt-4 rounded-2xl bg-white/70 border border-stroke px-4 py-3">
             <strong className="font-medium">No tech background?</strong> Each section below is a card
             with a short{" "}
-            <span className="rounded-full bg-sage-100 px-2 py-0.5">In plain words</span>{" "}
+            <span className="rounded-full bg-brand-50 px-2 py-0.5">In plain words</span>{" "}
             explanation. Click a card to open the technical details.
           </p>
           <ul className="grid grid-cols-2 sm:grid-cols-5 gap-3">
@@ -184,7 +184,7 @@ export default function ArchitectureLabPage() {
         <ul className="max-w-6xl mx-auto px-6 py-2 flex gap-1 overflow-x-auto text-sm whitespace-nowrap">
           {toc.map((t) => (
             <li key={t.id}>
-              <a href={`#${t.id}`} className="block px-3 py-1.5 rounded-full text-ink-700 hover:bg-slate-100">
+              <a href={`#${t.id}`} className="block px-3 py-1.5 rounded-full text-ink-700 hover:bg-brand-100">
                 {t.label}
               </a>
             </li>
@@ -259,11 +259,11 @@ export default function ArchitectureLabPage() {
             ))}
           </ul>
           <ol className="mt-6 grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
-            <FlowNode title="Request" detail="Googlebot, GPTBot, a visitor…" tone="bg-slate-100" />
+            <FlowNode title="Request" detail="Googlebot, GPTBot, a visitor…" tone="bg-brand-100" />
             <Arrow />
-            <FlowNode title="Vercel edge" detail="Pre-rendered HTML served from cache" tone="bg-clay-100" />
+            <FlowNode title="Vercel edge" detail="Pre-rendered HTML served from cache" tone="bg-accent-100" />
             <Arrow />
-            <FlowNode title="Complete HTML" detail="Text, headings, links and JSON-LD in the first byte" tone="bg-sage-100" />
+            <FlowNode title="Complete HTML" detail="Text, headings, links and JSON-LD in the first byte" tone="bg-brand-50" />
           </ol>
         </Section>
 
@@ -290,10 +290,10 @@ export default function ArchitectureLabPage() {
             <div className="card p-6">
               <h3 className="text-base mb-4">Heading hierarchy</h3>
               <ul className="space-y-2 text-sm font-mono">
-                <li className="rounded-lg bg-slate-100 px-3 py-2">H1 · one per page (page subject)</li>
-                <li className="rounded-lg bg-clay-100 px-3 py-2 ml-6">H2 · each section (My skills, Portfolio…)</li>
-                <li className="rounded-lg bg-sand-100 px-3 py-2 ml-12">H3 · each card (a skill, a project, a question)</li>
-                <li className="rounded-lg bg-sage-100 px-3 py-2 ml-18">H4 · details inside a project</li>
+                <li className="rounded-lg bg-brand-100 px-3 py-2">H1 · one per page (page subject)</li>
+                <li className="rounded-lg bg-accent-100 px-3 py-2 ml-6">H2 · each section (My skills, Portfolio…)</li>
+                <li className="rounded-lg bg-accent-50 px-3 py-2 ml-12">H3 · each card (a skill, a project, a question)</li>
+                <li className="rounded-lg bg-brand-50 px-3 py-2 ml-18">H4 · details inside a project</li>
               </ul>
             </div>
           </div>
@@ -377,19 +377,19 @@ Sitemap: /sitemap.xml`}
             <div className="card p-6">
               <h3 className="text-base mb-4">Anatomy of an answer</h3>
               <ol className="space-y-3">
-                <li className="rounded-2xl bg-slate-100 p-4">
+                <li className="rounded-2xl bg-brand-100 p-4">
                   <span className="block text-xs text-ink-500 mb-1">① Question, phrased naturally</span>
                   <span className="font-medium">{faq[0].question}</span>
                 </li>
-                <li className="rounded-2xl bg-clay-100 p-4">
+                <li className="rounded-2xl bg-accent-100 p-4">
                   <span className="block text-xs text-ink-500 mb-1">② Direct answer + figure in the first sentence</span>
                   {faq[0].answer.split(". ")[0]}.
                 </li>
-                <li className="rounded-2xl bg-sand-100 p-4">
+                <li className="rounded-2xl bg-accent-50 p-4">
                   <span className="block text-xs text-ink-500 mb-1">③ Context in one or two sentences</span>
                   {faq[0].answer.split(". ").slice(1).join(". ")}
                 </li>
-                <li className="rounded-2xl bg-sage-100 p-4">
+                <li className="rounded-2xl bg-brand-50 p-4">
                   <span className="block text-xs text-ink-500 mb-1">④ Source at the end</span>
                   {faq[0].sources[0].label}
                 </li>
@@ -415,16 +415,16 @@ Sitemap: /sitemap.xml`}
           intro="Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. GA4 measures what happens, Clarity shows how (heatmaps, recordings, rage clicks). Consent is handled by a banner, Google Consent Mode v2 and Clarity Consent API v2 (live): until a visitor accepts, both tools run without cookies."
         >
           <ol className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
-            <FlowNode title="Browser + consent banner" detail="Consent Mode v2: denied by default" tone="bg-slate-100" />
+            <FlowNode title="Browser + consent banner" detail="Consent Mode v2: denied by default" tone="bg-brand-100" />
             <Arrow />
-            <FlowNode title="Google Tag Manager" detail={`Web container ${GTM_ID}`} tone="bg-clay-100" />
+            <FlowNode title="Google Tag Manager" detail={`Web container ${GTM_ID}`} tone="bg-accent-100" />
             <Arrow />
             <li className="grid gap-3">
-              <span className="rounded-2xl px-4 py-3 bg-sand-100">
+              <span className="rounded-2xl px-4 py-3 bg-accent-50">
                 <span className="block font-medium">Google Analytics 4</span>
                 <span className="block text-xs text-ink-700 mt-0.5">Events &amp; key events</span>
               </span>
-              <span className="rounded-2xl px-4 py-3 bg-sage-100">
+              <span className="rounded-2xl px-4 py-3 bg-brand-50">
                 <span className="block font-medium">Microsoft Clarity</span>
                 <span className="block text-xs text-ink-700 mt-0.5">Project {CLARITY_ID} · cookieless until consent</span>
               </span>
@@ -451,7 +451,7 @@ Sitemap: /sitemap.xml`}
                     <td className="p-3 text-ink-700">{e.trigger}</td>
                     <td className="p-3 font-mono text-xs text-ink-700">{e.params.join(", ")}</td>
                     <td className="p-3">
-                      {e.keyEvent ? <span className="chip bg-clay-100! border-transparent!">★ Conversion</span> : "—"}
+                      {e.keyEvent ? <span className="chip bg-accent-100! border-transparent!">★ Conversion</span> : "—"}
                     </td>
                     <td className="p-3 text-ink-700">{e.tool}</td>
                     <td className="p-3">
@@ -483,13 +483,13 @@ Sitemap: /sitemap.xml`}
           }
         >
           <ol className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr]">
-            <FlowNode title="Browser" detail="One lightweight request" tone="bg-slate-100" />
+            <FlowNode title="Browser" detail="One lightweight request" tone="bg-brand-100" />
             <Arrow />
-            <FlowNode title="sgtm.mydomain.com" detail="First-party subdomain" tone="bg-clay-100" />
+            <FlowNode title="sgtm.mydomain.com" detail="First-party subdomain" tone="bg-accent-100" />
             <Arrow />
-            <FlowNode title="Server GTM on Stape" detail="Cleans, enriches, filters" tone="bg-sand-100" />
+            <FlowNode title="Server GTM on Stape" detail="Cleans, enriches, filters" tone="bg-accent-50" />
             <Arrow />
-            <FlowNode title="GA4 · Google Ads · Meta CAPI" detail="Server-to-server" tone="bg-sage-100" />
+            <FlowNode title="GA4 · Google Ads · Meta CAPI" detail="Server-to-server" tone="bg-brand-50" />
           </ol>
 
           <div className="grid gap-4 mt-8 md:grid-cols-3">
@@ -516,7 +516,7 @@ Sitemap: /sitemap.xml`}
             </div>
           </div>
 
-          <div className="card p-6 mt-4 bg-sand-100! border-transparent!">
+          <div className="card p-6 mt-4 bg-accent-50! border-transparent!">
             <h3 className="text-base mb-2">What about visitors who refuse cookies?</h3>
             <p className="text-sm text-ink-700 leading-relaxed">
               Server-side tracking does not override a refusal. This site already runs a consent

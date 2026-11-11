@@ -1,7 +1,7 @@
 import { contact } from "@/lib/site";
 import CookieSettingsButton from "./CookieSettingsButton";
 
-const tiles = ["bg-slate-100", "bg-clay-100", "bg-sage-100"];
+const tiles = ["bg-brand-100", "bg-accent-100", "bg-brand-50"];
 
 export default function SiteFooter() {
   const items = [

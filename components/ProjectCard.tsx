@@ -5,7 +5,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
 
   return (
     <article id={p.id} className="card overflow-hidden scroll-mt-20">
-      <header className="p-6 sm:p-8 border-b border-stroke bg-linear-to-r from-slate-100 via-white to-sage-100">
+      <header className="p-6 sm:p-8 border-b border-stroke bg-linear-to-r from-brand-100 via-white to-brand-50">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 className="text-2xl mb-3">{p.name}</h2>
@@ -94,7 +94,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
               SEO scores
             </h3>
             {p.seoScores.length === 0 ? (
-              <p className="rounded-2xl border border-dashed border-ink-300 bg-slate-100 p-6 text-center text-ink-500">
+              <p className="rounded-2xl border border-dashed border-ink-300 bg-brand-100 p-6 text-center text-ink-500">
                 SEO score screenshots coming soon.
               </p>
             ) : (

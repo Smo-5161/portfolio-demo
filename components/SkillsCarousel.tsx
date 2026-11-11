@@ -9,10 +9,11 @@ export type Skill = {
 };
 
 const tones = {
-  blue: { bar: "bg-slate-100", soft: "bg-slate-100", label: "text-ink-900", dot: "bg-slate-100" },
-  red: { bar: "bg-clay-100", soft: "bg-clay-100", label: "text-ink-900", dot: "bg-clay-100" },
-  yellow: { bar: "bg-sand-100", soft: "bg-sand-100", label: "text-ink-900", dot: "bg-sand-100" },
-  green: { bar: "bg-sage-100", soft: "bg-sage-100", label: "text-ink-900", dot: "bg-sage-100" },
+  // Two-colour identity: skills alternate between the teal brand and the apricot accent.
+  blue: { bar: "bg-brand-700", soft: "bg-brand-50", label: "text-brand-900", dot: "bg-brand-700" },
+  red: { bar: "bg-accent-500", soft: "bg-accent-50", label: "text-brand-900", dot: "bg-accent-500" },
+  yellow: { bar: "bg-brand-700", soft: "bg-brand-50", label: "text-brand-900", dot: "bg-brand-700" },
+  green: { bar: "bg-accent-500", soft: "bg-accent-50", label: "text-brand-900", dot: "bg-accent-500" },
 };
 
 /**
@@ -78,7 +79,7 @@ export default function SkillsCarousel({ skills }: { skills: readonly Skill[] })
               className="w-full shrink-0 snap-center"
             >
               <div className="card overflow-hidden h-full">
-                <div aria-hidden="true" className={`h-3 ${t.bar}`} />
+                <div aria-hidden="true" className={`h-1.5 ${t.bar}`} />
                 <div className="grid gap-8 p-8 sm:p-12 md:grid-cols-[auto_1fr] md:items-center">
                   <span
                     aria-hidden="true"
@@ -107,7 +108,7 @@ export default function SkillsCarousel({ skills }: { skills: readonly Skill[] })
               aria-label={`Show skill ${i + 1}: ${s.title}`}
               aria-current={active === i}
               className={`h-2.5 rounded-full transition-all duration-300 ${
-                active === i ? `w-8 ring-1 ring-ink-300 ${tones[s.tone].dot}` : "w-2.5 bg-ink-100 hover:bg-ink-300"
+                active === i ? `w-8 ${tones[s.tone].dot}` : "w-2.5 bg-ink-100 hover:bg-ink-300"
               }`}
             />
           ))}
@@ -127,7 +128,7 @@ export default function SkillsCarousel({ skills }: { skills: readonly Skill[] })
             onClick={() => goTo(active + 1)}
             disabled={active === skills.length - 1}
             aria-label="Next skill"
-            className="grid place-items-center w-11 h-11 rounded-full bg-slate-100 text-ink-900 hover:shadow-md disabled:opacity-40 disabled:hover:shadow-none transition-colors"
+            className="grid place-items-center w-11 h-11 rounded-full bg-brand-700 text-white hover:bg-brand-900 disabled:opacity-40 disabled:hover:bg-brand-700 transition-colors"
           >
             →
           </button>

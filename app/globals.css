@@ -1,34 +1,38 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Design system — Material-inspired layout, own palette
-   Four muted “earth & mineral” hues (slate, sage, sand, clay) + warm neutral inks.
-   All text is ink on white/pastel: WCAG AA contrast everywhere.
+   Design system — two-colour identity: deep teal (brand) + apricot (accent),
+   on cool neutrals. Every text/background pair meets WCAG AA (≥ 4.5:1).
 ------------------------------------------------------------------- */
 @theme {
   --font-sans: "Google Sans Flex", "Google Sans", Roboto, system-ui, -apple-system, Arial, sans-serif;
   --font-mono: "Google Sans Code", "Roboto Mono", Consolas, monospace;
 
-  /* Ink (warm neutrals) */
-  --color-ink-900: #22201d; /* main text, footer */
-  --color-ink-700: #45413b;
-  --color-ink-500: #5a554d; /* secondary text */
-  --color-ink-300: #a39d93; /* decor */
-  --color-ink-100: #ebe8e2;
+  /* Ink (cool neutrals, tinted toward the brand teal) */
+  --color-ink-900: #1b2427; /* main text */
+  --color-ink-700: #3b484b;
+  --color-ink-500: #52605f; /* secondary text */
+  --color-ink-300: #9aa8a6; /* decor */
+  --color-ink-100: #e3eae9;
 
-  /* The only four hues on the site. Text always uses ink. */
-  --color-slate-100: #d5dded;
-  --color-clay-100: #f0d3c6;
-  --color-sand-100: #efdfc2;
-  --color-sage-100: #d3e4d4;
+  /* Brand: deep teal */
+  --color-brand-900: #0d3a40; /* hover, strong headings */
+  --color-brand-700: #145c63; /* buttons, links, eyebrows */
+  --color-brand-100: #d3e8e6;
+  --color-brand-50: #ebf4f3;
+
+  /* Accent: apricot */
+  --color-accent-500: #e8995b; /* decor only (bars, dots) */
+  --color-accent-100: #f9dfc9;
+  --color-accent-50: #fcefe3;
 
   /* Surfaces */
-  --color-surface: #f8f6f2;
-  --color-stroke: #ddd8cf;
+  --color-surface: #f7f9f8;
+  --color-stroke: #d5dfdd;
 
   --radius-card: 20px;
-  --shadow-elev-1: 0 1px 2px rgb(60 54 46 / 0.15), 0 1px 3px 1px rgb(60 54 46 / 0.08);
-  --shadow-elev-2: 0 1px 2px rgb(60 54 46 / 0.2), 0 2px 6px 2px rgb(60 54 46 / 0.12);
+  --shadow-elev-1: 0 1px 2px rgb(13 58 64 / 0.15), 0 1px 3px 1px rgb(13 58 64 / 0.08);
+  --shadow-elev-2: 0 1px 2px rgb(13 58 64 / 0.2), 0 2px 6px 2px rgb(13 58 64 / 0.12);
 }
 
 @layer base {
@@ -48,7 +52,7 @@
     color: inherit;
   }
   :focus-visible {
-    outline: 2px solid var(--color-ink-900);
+    outline: 2px solid var(--color-brand-700);
     outline-offset: 2px;
     border-radius: 8px;
   }
@@ -83,11 +87,12 @@
     transition: background-color 200ms ease, box-shadow 200ms ease;
   }
   .btn-primary {
-    background: var(--color-slate-100);
-    color: var(--color-ink-900);
+    background: var(--color-brand-700);
+    color: #fff;
   }
   .btn-primary:hover {
-    box-shadow: var(--shadow-elev-2);
+    background: var(--color-brand-900);
+    box-shadow: var(--shadow-elev-1);
   }
   .btn-secondary {
     background: #fff;
@@ -95,7 +100,8 @@
     border: 1px solid var(--color-stroke);
   }
   .btn-secondary:hover {
-    background: var(--color-sage-100);
+    background: var(--color-brand-50);
+    border-color: var(--color-brand-100);
   }
 
   /* Material assist chip */
@@ -112,36 +118,36 @@
     color: var(--color-ink-700);
   }
   .chip-tonal {
-    background: var(--color-slate-100);
+    background: var(--color-brand-50);
     border-color: transparent;
-    color: var(--color-ink-900);
+    color: var(--color-brand-900);
   }
 
   /* Text link */
   .link {
-    color: var(--color-ink-900);
+    color: var(--color-brand-700);
     text-decoration: underline;
-    text-decoration-color: var(--color-ink-300);
+    text-decoration-color: var(--color-brand-100);
     text-underline-offset: 3px;
   }
   .link:hover {
-    text-decoration-color: var(--color-ink-900);
+    text-decoration-color: var(--color-brand-700);
   }
 
   /* Section eyebrow */
   .eyebrow {
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-ink-500);
+    color: var(--color-brand-700);
   }
 
-  /* Hero: soft blobs in the four brand hues */
+  /* Hero: soft teal and apricot glow */
   .hero-gradient {
     background:
-      radial-gradient(45% 75% at 5% 5%, var(--color-slate-100) 0%, transparent 75%),
-      radial-gradient(40% 70% at 95% 10%, var(--color-clay-100) 0%, transparent 75%),
-      radial-gradient(40% 65% at 75% 100%, var(--color-sand-100) 0%, transparent 75%),
-      radial-gradient(40% 70% at 25% 100%, var(--color-sage-100) 0%, transparent 75%),
+      radial-gradient(45% 75% at 5% 5%, var(--color-brand-100) 0%, transparent 75%),
+      radial-gradient(40% 70% at 95% 10%, var(--color-accent-100) 0%, transparent 75%),
+      radial-gradient(40% 65% at 75% 100%, var(--color-accent-50) 0%, transparent 75%),
+      radial-gradient(40% 70% at 25% 100%, var(--color-brand-50) 0%, transparent 75%),
       #fff;
   }
 }
