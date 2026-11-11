@@ -22,6 +22,10 @@ ${faq
   )
   .join("\n\n")}
 
+## CV
+
+- [Antoine Smolar — CV (PDF)](${SITE_URL}/cv/Antoine-Smolar-CV.pdf)
+
 ## Contact
 
 - Phone: ${contact.phoneIntl}

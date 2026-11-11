@@ -1,10 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
+import cvPreview from "@/public/cv/cv-preview.webp";
 import { pageMetadata } from "@/lib/seo";
 import { JsonLd, profilePageJsonLd } from "@/lib/jsonld";
 import { faq, faqJsonLd } from "@/lib/faq";
 import SkillsCarousel, { type Skill } from "@/components/SkillsCarousel";
 
 export const metadata = pageMetadata("/");
+
+const CV_PDF = "/cv/Antoine-Smolar-CV.pdf";
 
 const skills: Skill[] = [
   {
@@ -75,29 +79,53 @@ export default function Home() {
       {/* Section 1: Profile */}
       <section id="profile" aria-labelledby="profile-title" className="scroll-mt-14">
         <div className="hero-gradient border-b border-stroke">
-          <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
-            <p className="eyebrow mb-3">Portfolio &amp; Technical Lab</p>
-            <h1 id="profile-title" className="text-4xl sm:text-5xl mb-5 max-w-3xl">
-              Growth Marketer &amp; Product Builder
-            </h1>
-            <p className="text-lg text-ink-700 mb-3 max-w-2xl">
-              I grow digital products by combining acquisition, conversion and product
-              building: making a site visible on Google and in generative AI, turning that
-              traffic into customers, then shipping the apps and tools that keep the business
-              running.
-            </p>
-            <p className="text-ink-500 mb-8 max-w-2xl">
-              This site is both my portfolio and my lab: every optimization is applied,
-              measured and documented live.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="#portfolio" className="btn btn-primary">
-                View portfolio
-              </a>
-              <a href="#contact" className="btn btn-secondary">
-                Get in touch
-              </a>
+          <div className="max-w-6xl mx-auto px-6 pt-16 pb-16 grid gap-12 lg:grid-cols-[3fr_2fr] lg:items-center">
+            <div>
+              <h1 id="profile-title" className="text-4xl sm:text-5xl mb-5 max-w-3xl">
+                Growth Marketer &amp; Product Builder
+              </h1>
+              <p className="text-lg text-ink-700 mb-8 max-w-2xl">
+                I grow digital products by combining acquisition, conversion and product
+                building: making a site visible on Google and in generative AI, turning that
+                traffic into customers, then shipping the apps and tools that keep the business
+                running.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="#portfolio" className="btn btn-primary">
+                  View portfolio
+                </a>
+                <a href={CV_PDF} className="btn btn-secondary" download>
+                  Download my CV (PDF)
+                </a>
+                <a href="#contact" className="btn btn-secondary">
+                  Get in touch
+                </a>
+              </div>
             </div>
+
+            {/* CV preview: image of page 1, links to the full PDF (also crawlable by Google). */}
+            <figure className="mx-auto w-full max-w-sm lg:max-w-none">
+              <a
+                href={CV_PDF}
+                target="_blank"
+                rel="noopener"
+                className="group block overflow-hidden rounded-[20px] border border-stroke bg-white shadow-[var(--shadow-elev-2)] transition-transform duration-300 hover:-translate-y-1"
+              >
+                <Image
+                  src={cvPreview}
+                  alt="CV of Antoine Smolar, Digital Transformation & Operations Project Manager: education at NEOMA and Akita International University, experience at AK Company, Kryptosphere AI Division, Helmo Rénovation and SIRTOM, certifications from Google, Semrush and HubSpot, and skills in SEO, GEO, CRO, UX/UI and no-code."
+                  priority
+                  sizes="(min-width: 1024px) 400px, 90vw"
+                  className="h-auto w-full"
+                />
+              </a>
+              <figcaption className="mt-3 flex items-center justify-between text-sm text-ink-500">
+                <span>My CV</span>
+                <a href={CV_PDF} target="_blank" rel="noopener" className="link">
+                  Open full size ↗
+                </a>
+              </figcaption>
+            </figure>
           </div>
         </div>
 
