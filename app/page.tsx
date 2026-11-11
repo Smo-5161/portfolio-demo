@@ -35,6 +35,11 @@ const skills: Skill[] = [
     text: "Fast delivery of SaaS products and internal tools with no-code and low-code platforms, to validate an idea or equip a team within days.",
     tone: "blue",
   },
+  {
+    title: "Digital & AI transformation (ERP, CRM, AI tools)",
+    text: "Bringing business software and AI into the way teams actually work: Odoo (ERP & CRM) and HR software rollouts like Factorial, n8n workflows that connect tools and remove manual tasks, and AI assistants built on Claude and Mistral, backed by hands-on workshops so teams really adopt them.",
+    tone: "red",
+  },
 ];
 
 const projectTones = ["bg-brand-100!", "bg-accent-100!", "bg-accent-50!", "bg-brand-50!"];

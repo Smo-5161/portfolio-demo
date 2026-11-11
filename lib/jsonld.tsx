@@ -21,6 +21,10 @@ export const personJsonLd = {
     "Conversion Rate Optimization",
     "UI/UX Design",
     "No-code app development",
+    "Digital transformation",
+    "AI integration",
+    "ERP and CRM integration (Odoo)",
+    "Workflow automation (n8n)",
   ],
 };
 
