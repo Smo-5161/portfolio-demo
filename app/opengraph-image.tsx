@@ -6,7 +6,7 @@ export const alt = `${contact.name} — ${contact.jobTitle}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const pastels = ["#eaf1fd", "#fcecea", "#fef6e0", "#e7f5ec"];
+const pastels = ["#d4e3fc", "#f9d9d4", "#fbe7b5", "#d0ecd9"];
 const skills = ["SEO", "GEO", "CRO", "UI/UX", "No-code"];
 
 export default function OpengraphImage() {

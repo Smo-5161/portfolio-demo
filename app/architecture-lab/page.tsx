@@ -1,4 +1,3 @@
-import TrackTester from "./TrackTester";
 import LabSection from "@/components/LabSection";
 import LabToggleAll from "@/components/LabToggleAll";
 import { pageMetadata } from "@/lib/seo";
@@ -22,7 +21,6 @@ const toc = [
   { id: "tracking", label: "Analytics" },
   { id: "server-side", label: "Server-side" },
   { id: "dashboards", label: "Dashboards" },
-  { id: "live-demo", label: "Live demo" },
 ];
 
 const pageDetails: Record<string, { rendering: string; content: string }> = {
@@ -38,7 +36,6 @@ const machineFiles = [
   { path: "/robots.txt", role: "Crawl rules, AI crawlers allowed, sitemap link" },
   { path: "/sitemap.xml", role: "Every page with priority and update frequency" },
   { path: "/llms.txt", role: "Markdown summary of the site for LLMs" },
-  { path: "/api/track", role: "Server endpoint for the tracking demo" },
 ];
 
 const stack = [
@@ -559,19 +556,6 @@ Sitemap: /sitemap.xml`}
               </li>
             ))}
           </ul>
-        </Section>
-
-        {/* 9. Live demo */}
-        <Section
-          id="live-demo"
-          plain="Click the button: your click is sent to this site’s own server, which replies instantly with the message shown below. It is a miniature version of how a server-side tracking system receives an event."
-          eyebrow="09"
-          title="Live demo: server-side event"
-          intro="This button sends an event to the site's own server endpoint (/api/track), the future entry point of the server-side pipeline. The response is shown below."
-        >
-          <div className="card p-6">
-            <TrackTester />
-          </div>
         </Section>
       </div>
     </main>

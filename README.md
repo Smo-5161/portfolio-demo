@@ -28,7 +28,6 @@ npx vercel        # ou import du repo GitHub sur vercel.com
 | `/saas` | Reads `data/saas.json` |
 | `/internal-tools` | Reads `data/tools.json` |
 | `/architecture-lab` | Bouton test tracking, inspecteur JSON-LD, tableau métriques |
-| `POST /api/track` | Stub : `console.log(body)` → `{ "status": "received_stub" }` |
 | `/robots.txt` | Généré par `app/robots.ts` : robots IA autorisés, `/api/` exclu, lien sitemap |
 | `/sitemap.xml` | Généré par `app/sitemap.ts` |
 | `/llms.txt` | Résumé Markdown du site pour les LLM |

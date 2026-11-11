@@ -12,19 +12,19 @@
   /* Ink (neutral greys) */
   --color-ink-900: #1f2124; /* main text, footer */
   --color-ink-700: #3c4043;
-  --color-ink-500: #5f6368; /* secondary text */
+  --color-ink-500: #51565c; /* secondary text */
   --color-ink-300: #9aa0a6; /* decor */
   --color-ink-100: #e8eaed;
 
   /* The only four hues on the site (pastels). Text always uses ink. */
-  --color-gblue-100: #eaf1fd;
-  --color-gred-100: #fcecea;
-  --color-gyellow-100: #fef6e0;
-  --color-ggreen-100: #e7f5ec;
+  --color-gblue-100: #d4e3fc;
+  --color-gred-100: #f9d9d4;
+  --color-gyellow-100: #fbe7b5;
+  --color-ggreen-100: #d0ecd9;
 
   /* Surfaces */
   --color-surface: #f8f9fa;
-  --color-stroke: #dadce0;
+  --color-stroke: #d3d6db;
 
   --radius-card: 20px;
   --shadow-elev-1: 0 1px 2px rgb(60 64 67 / 0.15), 0 1px 3px 1px rgb(60 64 67 / 0.08);

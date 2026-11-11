@@ -110,8 +110,7 @@ export default function Home() {
                   className="h-auto w-full"
                 />
               </a>
-              <figcaption className="mt-3 flex items-center justify-between text-sm text-ink-500">
-                <span>My CV</span>
+              <figcaption className="mt-3 text-right text-sm text-ink-500">
                 <a href={CV_PDF} target="_blank" rel="noopener" className="link">
                   Open full size ↗
                 </a>

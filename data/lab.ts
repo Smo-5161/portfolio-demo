@@ -70,14 +70,6 @@ export const trackingEvents: TrackingEvent[] = [
     tool: "GA4 + Clarity tag",
     status: "planned",
   },
-  {
-    name: "test_conversion",
-    trigger: "“Trigger a test event” button on this page",
-    params: ["event", "timestamp"],
-    keyEvent: false,
-    tool: "/api/track (server)",
-    status: "live",
-  },
 ];
 
 export type ScreenshotSlot = {
