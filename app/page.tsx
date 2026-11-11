@@ -8,38 +8,39 @@ export const metadata = pageMetadata("/");
 
 const CV_PDF = "/cv/Antoine-Smolar-CV.pdf";
 
-type Skill = { title: string; text: string; tone: "blue" | "red" | "yellow" | "green" };
+type Skill = { short: string; name: string; text: string };
 
+// Kept short on purpose so all six fit on one line on desktop.
 const skills: Skill[] = [
   {
-    title: "SEO (Search Engine Optimization)",
-    text: "Technical audits, information architecture, performance and content built around search intent, to capture qualified, lasting organic traffic.",
-    tone: "blue",
+    short: "SEO",
+    name: "Search Engine Optimization",
+    text: "Technical audits, site architecture and content that ranks.",
   },
   {
-    title: "GEO (Generative Engine Optimization)",
-    text: "Structuring content and data (JSON-LD, direct answers, sourced figures) so it can be understood and cited by ChatGPT, Claude, Gemini, Perplexity or Mistral.",
-    tone: "red",
+    short: "GEO",
+    name: "Generative Engine Optimization",
+    text: "Content and data that AI engines understand and cite.",
   },
   {
-    title: "CRO (Conversion Rate Optimization)",
-    text: "User journey analysis, tracking (GTM, server-side), heatmaps and A/B testing to turn more visitors into customers without increasing acquisition spend.",
-    tone: "yellow",
+    short: "CRO",
+    name: "Conversion Rate Optimization",
+    text: "Tracking, heatmaps and A/B tests that turn visits into leads.",
   },
   {
-    title: "UI/UX (User Interface / User Experience)",
-    text: "Clear, frictionless interfaces designed from usage data, so every screen serves a specific goal.",
-    tone: "green",
+    short: "UI/UX",
+    name: "User Interface & Experience",
+    text: "Clear, frictionless interfaces built from usage data.",
   },
   {
-    title: "No-code app development",
-    text: "Fast delivery of SaaS products and internal tools with no-code and low-code platforms, to validate an idea or equip a team within days.",
-    tone: "blue",
+    short: "No-code",
+    name: "App development",
+    text: "SaaS products and internal tools shipped in days.",
   },
   {
-    title: "Digital & AI transformation (ERP, CRM, AI tools)",
-    text: "Bringing business software and AI into the way teams actually work: Odoo (ERP & CRM) and HR software rollouts like Factorial, n8n workflows that connect tools and remove manual tasks, and AI assistants built on Claude and Mistral, backed by hands-on workshops so teams really adopt them.",
-    tone: "red",
+    short: "Digital & AI",
+    name: "Transformation",
+    text: "Odoo, n8n and Claude/Mistral rolled out, with team training.",
   },
 ];
 
@@ -140,13 +141,19 @@ export default function Home() {
           <h2 id="skills-title" className="text-3xl mb-6">
             My skills
           </h2>
-          {/* Compact band: every skill visible at once, two-colour accent bar per card. */}
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {/* One line on desktop: every skill visible at once, alternating teal / apricot accent. */}
+          <ul className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {skills.map((s, i) => (
-              <li key={s.title}>
-                <article className="card h-full p-4 border-l-4!" style={{ borderLeftColor: i % 2 === 0 ? "var(--color-brand-700)" : "var(--color-accent-500)" }}>
-                  <h3 className="text-sm font-medium mb-1">{s.title}</h3>
-                  <p className="text-xs text-ink-700 leading-relaxed">{s.text}</p>
+              <li key={s.short}>
+                <article
+                  className="card h-full p-4 border-t-4!"
+                  style={{ borderTopColor: i % 2 === 0 ? "var(--color-brand-700)" : "var(--color-accent-500)" }}
+                >
+                  <h3 className="text-lg leading-tight">
+                    {s.short}
+                    <span className="block text-xs font-normal text-ink-500 mt-0.5">{s.name}</span>
+                  </h3>
+                  <p className="text-xs text-ink-700 leading-snug mt-2">{s.text}</p>
                 </article>
               </li>
             ))}
@@ -158,7 +165,7 @@ export default function Home() {
       <section
         id="portfolio"
         aria-labelledby="portfolio-title"
-        className="scroll-mt-14 bg-white border-y border-stroke"
+        className="scroll-mt-14 bg-white border-t border-stroke"
       >
         <div className="max-w-6xl mx-auto px-6 py-16">
           <p className="eyebrow mb-2">Work</p>

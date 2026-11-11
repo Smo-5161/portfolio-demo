@@ -11,7 +11,7 @@ export default function SiteFooter() {
   ];
 
   return (
-    <footer id="contact" className="mt-24 bg-white border-t border-stroke scroll-mt-14">
+    <footer id="contact" className="bg-white border-t border-stroke scroll-mt-14">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <p className="mb-2 text-sm font-medium text-ink-500">Contact</p>
         <h2 className="text-2xl mb-6">Let's work together</h2>
