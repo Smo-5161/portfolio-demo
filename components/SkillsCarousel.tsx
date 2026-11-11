@@ -9,10 +9,10 @@ export type Skill = {
 };
 
 const tones = {
-  blue: { bar: "bg-gblue-100", soft: "bg-gblue-100", label: "text-ink-900", dot: "bg-gblue-100" },
-  red: { bar: "bg-gred-100", soft: "bg-gred-100", label: "text-ink-900", dot: "bg-gred-100" },
-  yellow: { bar: "bg-gyellow-100", soft: "bg-gyellow-100", label: "text-ink-900", dot: "bg-gyellow-100" },
-  green: { bar: "bg-ggreen-100", soft: "bg-ggreen-100", label: "text-ink-900", dot: "bg-ggreen-100" },
+  blue: { bar: "bg-slate-100", soft: "bg-slate-100", label: "text-ink-900", dot: "bg-slate-100" },
+  red: { bar: "bg-clay-100", soft: "bg-clay-100", label: "text-ink-900", dot: "bg-clay-100" },
+  yellow: { bar: "bg-sand-100", soft: "bg-sand-100", label: "text-ink-900", dot: "bg-sand-100" },
+  green: { bar: "bg-sage-100", soft: "bg-sage-100", label: "text-ink-900", dot: "bg-sage-100" },
 };
 
 /**
@@ -127,7 +127,7 @@ export default function SkillsCarousel({ skills }: { skills: readonly Skill[] })
             onClick={() => goTo(active + 1)}
             disabled={active === skills.length - 1}
             aria-label="Next skill"
-            className="grid place-items-center w-11 h-11 rounded-full bg-gblue-100 text-ink-900 hover:shadow-md disabled:opacity-40 disabled:hover:shadow-none transition-colors"
+            className="grid place-items-center w-11 h-11 rounded-full bg-slate-100 text-ink-900 hover:shadow-md disabled:opacity-40 disabled:hover:shadow-none transition-colors"
           >
             →
           </button>

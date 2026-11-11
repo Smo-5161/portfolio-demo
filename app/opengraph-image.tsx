@@ -6,7 +6,7 @@ export const alt = `${contact.name} — ${contact.jobTitle}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const pastels = ["#d4e3fc", "#f9d9d4", "#fbe7b5", "#d0ecd9"];
+const pastels = ["#d5dded", "#f0d3c6", "#efdfc2", "#d3e4d4"];
 const skills = ["SEO", "GEO", "CRO", "UI/UX", "No-code"];
 
 export default function OpengraphImage() {
@@ -21,17 +21,17 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           padding: 72,
           background: "#ffffff",
-          color: "#1f2124",
+          color: "#22201d",
           fontFamily: "sans-serif",
         }}
       >
         <div style={{ display: "flex", gap: 12 }}>
           {pastels.map((c) => (
-            <div key={c} style={{ width: 28, height: 28, borderRadius: 14, background: c, border: "2px solid #dadce0" }} />
+            <div key={c} style={{ width: 28, height: 28, borderRadius: 14, background: c, border: "2px solid #ddd8cf" }} />
           ))}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 40, color: "#5f6368" }}>{contact.name}</div>
+          <div style={{ fontSize: 40, color: "#5a554d" }}>{contact.name}</div>
           <div style={{ fontSize: 72, fontWeight: 600, letterSpacing: -2, lineHeight: 1.1 }}>
             Growth Marketer &amp; Product Builder
           </div>

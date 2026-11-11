@@ -64,7 +64,7 @@ export default function LabSection({ id, eyebrow, title, plain, children }: Prop
           </div>
           <span
             aria-hidden="true"
-            className={`grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gblue-100 text-lg transition-transform duration-300 ${
+            className={`grid h-10 w-10 shrink-0 place-items-center rounded-full bg-slate-100 text-lg transition-transform duration-300 ${
               open ? "rotate-45" : ""
             }`}
           >
@@ -73,7 +73,7 @@ export default function LabSection({ id, eyebrow, title, plain, children }: Prop
         </div>
 
         {plain && (
-          <div className="mt-5 max-w-3xl rounded-2xl bg-ggreen-100 p-5">
+          <div className="mt-5 max-w-3xl rounded-2xl bg-sage-100 p-5">
             <p className="mb-1 flex items-center gap-2 text-sm font-medium">
               <span aria-hidden="true" className="grid h-6 w-6 place-items-center rounded-full bg-white text-xs">
                 i

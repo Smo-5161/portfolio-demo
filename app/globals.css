@@ -1,34 +1,34 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Design system — inspired by Google Material Design 3
-   Only four pastel hues (blue, red, yellow, green) + neutral ink greys.
+   Design system — Material-inspired layout, own palette
+   Four muted “earth & mineral” hues (slate, sage, sand, clay) + warm neutral inks.
    All text is ink on white/pastel: WCAG AA contrast everywhere.
 ------------------------------------------------------------------- */
 @theme {
   --font-sans: "Google Sans Flex", "Google Sans", Roboto, system-ui, -apple-system, Arial, sans-serif;
   --font-mono: "Google Sans Code", "Roboto Mono", Consolas, monospace;
 
-  /* Ink (neutral greys) */
-  --color-ink-900: #1f2124; /* main text, footer */
-  --color-ink-700: #3c4043;
-  --color-ink-500: #51565c; /* secondary text */
-  --color-ink-300: #9aa0a6; /* decor */
-  --color-ink-100: #e8eaed;
+  /* Ink (warm neutrals) */
+  --color-ink-900: #22201d; /* main text, footer */
+  --color-ink-700: #45413b;
+  --color-ink-500: #5a554d; /* secondary text */
+  --color-ink-300: #a39d93; /* decor */
+  --color-ink-100: #ebe8e2;
 
-  /* The only four hues on the site (pastels). Text always uses ink. */
-  --color-gblue-100: #d4e3fc;
-  --color-gred-100: #f9d9d4;
-  --color-gyellow-100: #fbe7b5;
-  --color-ggreen-100: #d0ecd9;
+  /* The only four hues on the site. Text always uses ink. */
+  --color-slate-100: #d5dded;
+  --color-clay-100: #f0d3c6;
+  --color-sand-100: #efdfc2;
+  --color-sage-100: #d3e4d4;
 
   /* Surfaces */
-  --color-surface: #f8f9fa;
-  --color-stroke: #d3d6db;
+  --color-surface: #f8f6f2;
+  --color-stroke: #ddd8cf;
 
   --radius-card: 20px;
-  --shadow-elev-1: 0 1px 2px rgb(60 64 67 / 0.15), 0 1px 3px 1px rgb(60 64 67 / 0.08);
-  --shadow-elev-2: 0 1px 2px rgb(60 64 67 / 0.2), 0 2px 6px 2px rgb(60 64 67 / 0.12);
+  --shadow-elev-1: 0 1px 2px rgb(60 54 46 / 0.15), 0 1px 3px 1px rgb(60 54 46 / 0.08);
+  --shadow-elev-2: 0 1px 2px rgb(60 54 46 / 0.2), 0 2px 6px 2px rgb(60 54 46 / 0.12);
 }
 
 @layer base {
@@ -83,7 +83,7 @@
     transition: background-color 200ms ease, box-shadow 200ms ease;
   }
   .btn-primary {
-    background: var(--color-gblue-100);
+    background: var(--color-slate-100);
     color: var(--color-ink-900);
   }
   .btn-primary:hover {
@@ -95,7 +95,7 @@
     border: 1px solid var(--color-stroke);
   }
   .btn-secondary:hover {
-    background: var(--color-ggreen-100);
+    background: var(--color-sage-100);
   }
 
   /* Material assist chip */
@@ -112,7 +112,7 @@
     color: var(--color-ink-700);
   }
   .chip-tonal {
-    background: var(--color-gblue-100);
+    background: var(--color-slate-100);
     border-color: transparent;
     color: var(--color-ink-900);
   }
@@ -138,10 +138,10 @@
   /* Hero: soft blobs in the four brand hues */
   .hero-gradient {
     background:
-      radial-gradient(45% 75% at 5% 5%, var(--color-gblue-100) 0%, transparent 75%),
-      radial-gradient(40% 70% at 95% 10%, var(--color-gred-100) 0%, transparent 75%),
-      radial-gradient(40% 65% at 75% 100%, var(--color-gyellow-100) 0%, transparent 75%),
-      radial-gradient(40% 70% at 25% 100%, var(--color-ggreen-100) 0%, transparent 75%),
+      radial-gradient(45% 75% at 5% 5%, var(--color-slate-100) 0%, transparent 75%),
+      radial-gradient(40% 70% at 95% 10%, var(--color-clay-100) 0%, transparent 75%),
+      radial-gradient(40% 65% at 75% 100%, var(--color-sand-100) 0%, transparent 75%),
+      radial-gradient(40% 70% at 25% 100%, var(--color-sage-100) 0%, transparent 75%),
       #fff;
   }
 }
