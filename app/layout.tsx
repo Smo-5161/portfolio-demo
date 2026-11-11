@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Analytics from "@/components/Analytics";
+import Analytics, { GTM_ID } from "@/components/Analytics";
 import "./globals.css";
 
 // État "zéro" SEO : métadonnées par défaut de create-next-app, rien de plus.
@@ -14,7 +14,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
+      <Analytics />
       <body className="bg-white text-black font-sans">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <div className="max-w-3xl mx-auto p-6">
           <nav className="mb-8 border-b border-gray-300 pb-2 text-sm">
             <Link href="/" className="underline">
@@ -23,7 +32,6 @@ export default function RootLayout({
           </nav>
           {children}
         </div>
-        <Analytics />
       </body>
     </html>
   );

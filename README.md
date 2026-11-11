@@ -6,7 +6,7 @@ Squelette Next.js (App Router, React 19, TypeScript strict, Tailwind v4) en éta
 
 ```bash
 npm install
-cp .env.example .env.local   # analytics désactivés par défaut
+
 npm run dev
 ```
 
@@ -36,7 +36,7 @@ npx vercel        # ou import du repo GitHub sur vercel.com
 - Métadonnées par défaut (`Create Next App`), pas d'OpenGraph / Twitter Cards
 - Aucun JSON-LD, aucun `sitemap.ts`
 - robots.txt sans règles pour les bots LLM
-- GA4 + Clarity câblés mais désactivés (`NEXT_PUBLIC_ANALYTICS_ENABLED=false`)
+- GTM (`GTM-TWFXM6B4`) + Clarity actifs sur toutes les pages (`components/Analytics.tsx`)
 
 ## Ajouter un projet
 
