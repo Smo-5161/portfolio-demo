@@ -1,14 +1,15 @@
 import TrackTester from "./TrackTester";
+import { pageMetadata } from "@/lib/seo";
 import { routes } from "@/lib/site";
 import { aiBotGroups, aiBots } from "@/lib/ai-bots";
 import { faq, faqJsonLd } from "@/lib/faq";
-import { personJsonLd, projectListJsonLd } from "@/lib/jsonld";
+import { JsonLd, breadcrumbJsonLd, profilePageJsonLd, projectListJsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { trackingEvents, screenshots, type Status } from "@/data/lab";
-import { GTM_ID } from "@/components/Analytics";
+import { GTM_ID, CLARITY_ID } from "@/lib/tracking";
 import sites from "@/data/sites.json";
 import type { Project } from "@/lib/types";
 
-const CLARITY_ID = "zc1u4r8qm1";
+export const metadata = pageMetadata("/architecture-lab");
 
 const toc = [
   { id: "architecture", label: "Architecture" },
@@ -56,13 +57,25 @@ const landmarks = [
 ];
 
 const jsonLdBlocks = [
-  { type: "Person", where: "Every page", why: "Tells Google and LLMs who the site is about, with contacts and skills.", data: personJsonLd },
+  { type: "WebSite", where: "Every page", why: "Names the site and links it to its author.", data: websiteJsonLd },
+  {
+    type: "ProfilePage + Person",
+    where: "Home page",
+    why: "Google's type for a page about one person: who the site is about, with contacts and skills.",
+    data: profilePageJsonLd,
+  },
   { type: "FAQPage", where: "Home page", why: `${faq.length} questions and answers, eligible for rich results and easy for LLMs to quote.`, data: faqJsonLd },
   {
     type: "ItemList + CreativeWork",
     where: "Project pages",
     why: "Each project is a work credited to Antoine Smolar.",
     data: projectListJsonLd("Websites", sites as Project[]),
+  },
+  {
+    type: "BreadcrumbList",
+    where: "Every inner page",
+    why: "Shows the page's place in the site (Home › Websites) in search results.",
+    data: breadcrumbJsonLd("/websites", "Websites"),
   },
 ];
 
@@ -136,8 +149,12 @@ export default function ArchitectureLabPage() {
 
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd("/architecture-lab", "Architecture & SEO/GEO/CRO Lab")} />
       <div className="hero-gradient border-b border-stroke">
         <div className="max-w-6xl mx-auto px-6 py-14">
+          <nav aria-label="Breadcrumb" className="text-sm text-ink-500 mb-4">
+            <a href="/" className="link">Home</a> <span aria-hidden="true">›</span> Lab
+          </nav>
           <p className="eyebrow mb-2">Proof of work</p>
           <h1 className="text-4xl mb-4">Architecture &amp; SEO/GEO/CRO Lab</h1>
           <p className="text-lg text-ink-700 max-w-3xl mb-8">
@@ -379,10 +396,10 @@ Sitemap: /sitemap.xml`}
           id="tracking"
           eyebrow="06"
           title="Analytics & tracking"
-          intro="Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. GA4 measures what happens; Clarity shows how (heatmaps, recordings, rage clicks)."
+          intro="Google Tag Manager loads on every page and drives Google Analytics 4; Microsoft Clarity loads once the visitor accepts cookies. GA4 measures what happens, Clarity shows how (heatmaps, recordings, rage clicks). Consent is handled by a banner and Google Consent Mode v2 (live)."
         >
           <ol className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
-            <FlowNode title="Browser" detail="Clicks, scrolls, page views" tone="bg-gblue-100" />
+            <FlowNode title="Browser + consent banner" detail="Consent Mode v2: denied by default" tone="bg-gblue-100" />
             <Arrow />
             <FlowNode title="Google Tag Manager" detail={`Web container ${GTM_ID}`} tone="bg-gred-100" />
             <Arrow />
@@ -393,7 +410,7 @@ Sitemap: /sitemap.xml`}
               </span>
               <span className="rounded-2xl px-4 py-3 bg-ggreen-100">
                 <span className="block font-medium">Microsoft Clarity</span>
-                <span className="block text-xs text-ink-700 mt-0.5">Project {CLARITY_ID}</span>
+                <span className="block text-xs text-ink-700 mt-0.5">Project {CLARITY_ID} · after consent</span>
               </span>
             </li>
           </ol>
@@ -485,11 +502,11 @@ Sitemap: /sitemap.xml`}
           <div className="card p-6 mt-4 bg-gyellow-100! border-transparent!">
             <h3 className="text-base mb-2">What about visitors who refuse cookies?</h3>
             <p className="text-sm text-ink-700 leading-relaxed">
-              Server-side tracking does not override a refusal. The setup pairs it with a consent
-              banner and Google Consent Mode v2 in advanced mode: when consent is denied, tags only
+              Server-side tracking does not override a refusal. This site already runs a consent
+              banner with Google Consent Mode v2 in advanced mode: when consent is denied, tags only
               send anonymous cookieless pings (no identifiers, no cookies), and GA4 and Google Ads
-              use them to model the missing conversions. The data recovered this way stays
-              aggregated and GDPR-compliant.
+              use them to model the missing conversions. Microsoft Clarity only loads after the
+              visitor accepts. The data recovered this way stays aggregated and GDPR-compliant.
             </p>
           </div>
         </Section>

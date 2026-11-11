@@ -6,6 +6,9 @@ export const SITE_URL =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "http://localhost:3000");
 
+// Date of the last real content update (used in the sitemap). Change it when content changes.
+export const SITE_UPDATED = "2026-11-11";
+
 export const contact = {
   name: "Antoine Smolar",
   jobTitle: "Growth Marketer & Product Builder",
@@ -15,10 +18,55 @@ export const contact = {
   linkedin: "https://www.linkedin.com/in/antoine-smolar/",
 };
 
-export const routes = [
-  { path: "/", label: "Home" },
-  { path: "/websites", label: "Websites" },
-  { path: "/saas", label: "SaaS" },
-  { path: "/internal-tools", label: "Internal Tools" },
-  { path: "/architecture-lab", label: "Architecture & SEO/GEO/CRO Lab" },
+export type RouteInfo = {
+  path: string;
+  label: string;
+  /** <title> of the page (the layout appends " | Antoine Smolar"). */
+  title: string;
+  /** Meta description: ~150 characters, shown under the title in Google. */
+  description: string;
+};
+
+export const routes: RouteInfo[] = [
+  {
+    path: "/",
+    label: "Home",
+    title: "Antoine Smolar — Growth Marketer & Product Builder (SEO, GEO, CRO)",
+    description:
+      "Growth Marketer & Product Builder: SEO, GEO for ChatGPT and AI search, conversion optimization, UI/UX and no-code apps. Portfolio, case studies and live lab.",
+  },
+  {
+    path: "/websites",
+    label: "Websites",
+    title: "Website case studies: SEO & UX redesigns",
+    description:
+      "Website redesigns built for search and conversion: site architecture, technical SEO, structured data, page speed and GEO-ready FAQs, with real results.",
+  },
+  {
+    path: "/saas",
+    label: "SaaS",
+    title: "SaaS products built from idea to launch",
+    description:
+      "SaaS products designed and built end to end, like Omi.ai, an AI onboarding platform with process capture, RAG knowledge base and an AI mentor.",
+  },
+  {
+    path: "/internal-tools",
+    label: "Internal Tools",
+    title: "Internal tools & business apps",
+    description:
+      "Internal tools and no-code business apps that automate repetitive work and centralize company data for teams.",
+  },
+  {
+    path: "/architecture-lab",
+    label: "Architecture & SEO/GEO/CRO Lab",
+    title: "SEO, GEO & tracking lab: how this site is built",
+    description:
+      "A visual report on this site: architecture, semantic markup, JSON-LD, AI crawlers in robots.txt, GEO-ready FAQ, GA4, Clarity and server-side tracking.",
+  },
 ];
+
+export function routeInfo(path: string): RouteInfo {
+  const r = routes.find((x) => x.path === path);
+  if (!r) throw new Error(`Unknown route ${path}`);
+  return r;
+}

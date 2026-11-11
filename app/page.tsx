@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+import { JsonLd, profilePageJsonLd } from "@/lib/jsonld";
 import { faq, faqJsonLd } from "@/lib/faq";
 import SkillsCarousel, { type Skill } from "@/components/SkillsCarousel";
+
+export const metadata = pageMetadata("/");
 
 const skills: Skill[] = [
   {
@@ -65,10 +69,8 @@ const projects = [
 export default function Home() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <JsonLd data={profilePageJsonLd} />
+      <JsonLd data={faqJsonLd} />
 
       {/* Section 1: Profile */}
       <section id="profile" aria-labelledby="profile-title" className="scroll-mt-14">

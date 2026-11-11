@@ -1,4 +1,5 @@
 import { contact } from "@/lib/site";
+import CookieSettingsButton from "./CookieSettingsButton";
 
 const tiles = ["bg-gblue-100", "bg-gred-100", "bg-ggreen-100"];
 
@@ -30,8 +31,11 @@ export default function SiteFooter() {
             ))}
           </ul>
         </address>
-        <p className="text-xs text-ink-500 mt-10">
-          © {new Date().getFullYear()} {contact.name}
+        <p className="text-xs text-ink-500 mt-10 flex flex-wrap gap-4">
+          <span>
+            © {new Date().getFullYear()} {contact.name}
+          </span>
+          <CookieSettingsButton />
         </p>
       </div>
     </footer>

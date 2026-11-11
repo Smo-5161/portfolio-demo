@@ -1,18 +1,43 @@
 import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 
-// GTM + Microsoft Clarity, loaded on every page via the root layout.
-// GA4 is configured inside the GTM container.
-export const GTM_ID = "GTM-TWFXM6B4";
-const CLARITY_ID = "zc1u4r8qm1";
+// Google Tag Manager on every page. GA4 is configured inside the GTM container.
+// Microsoft Clarity is NOT loaded here: ConsentBanner loads it only after the visitor accepts.
+import { GTM_ID, CONSENT_KEY } from "@/lib/tracking";
+
+export { GTM_ID };
+
+/**
+ * Google Consent Mode v2 (advanced): before GTM loads, everything is "denied" by default.
+ * Google tags then send only anonymous cookieless pings until the visitor accepts.
+ * A choice saved on a previous visit is re-applied immediately.
+ */
+const consentDefaults = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  analytics_storage: 'denied', wait_for_update: 500
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', true);
+try {
+  if (localStorage.getItem('${CONSENT_KEY}') === 'granted') {
+    gtag('consent', 'update', {
+      ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+  }
+} catch (e) {}
+`;
 
 export default function Analytics() {
   return (
     <>
-      <GoogleTagManager gtmId={GTM_ID} />
-      <Script id="ms-clarity" strategy="afterInteractive">
-        {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`}
+      <Script id="consent-defaults" strategy="beforeInteractive">
+        {consentDefaults}
       </Script>
+      <GoogleTagManager gtmId={GTM_ID} />
     </>
   );
 }
