@@ -148,7 +148,7 @@ export default function Home() {
               <li key={s.short} className="relative h-24">
                 <article
                   tabIndex={0}
-                  className={`group card absolute inset-x-0 top-0 z-0 cursor-default p-4 border-t-4! outline-none transition-[transform,box-shadow] duration-300 ease-out hover:z-30 hover:scale-[1.45] hover:shadow-xl focus-within:z-30 focus-within:scale-[1.45] focus-within:shadow-xl ${
+                  className={`group card absolute inset-x-0 top-0 z-0 cursor-default p-4 border-t-4! outline-none transition-[scale,box-shadow] duration-300 ease-out hover:z-30 hover:scale-[1.45] hover:shadow-xl focus-within:z-30 focus-within:scale-[1.45] focus-within:shadow-xl ${
                     i === 0 ? "origin-top-left" : i === skills.length - 1 ? "origin-top-right" : "origin-top"
                   }`}
                   style={{ borderTopColor: i % 2 === 0 ? "var(--color-brand-700)" : "var(--color-accent-500)" }}
