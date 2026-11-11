@@ -141,19 +141,27 @@ export default function Home() {
           <h2 id="skills-title" className="text-3xl mb-6">
             My skills
           </h2>
-          {/* One line on desktop: every skill visible at once, alternating teal / apricot accent. */}
+          {/* One line of titles; hovering (or tapping / focusing) a card zooms it like a magnifying
+              glass and reveals its text. The text is always in the HTML, only folded on screen. */}
           <ul className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {skills.map((s, i) => (
-              <li key={s.short}>
+              <li key={s.short} className="relative h-24">
                 <article
-                  className="card h-full p-4 border-t-4!"
+                  tabIndex={0}
+                  className={`group card absolute inset-x-0 top-0 z-0 cursor-default p-4 border-t-4! outline-none transition-[transform,box-shadow] duration-300 ease-out hover:z-30 hover:scale-[1.45] hover:shadow-xl focus-within:z-30 focus-within:scale-[1.45] focus-within:shadow-xl ${
+                    i === 0 ? "origin-top-left" : i === skills.length - 1 ? "origin-top-right" : "origin-top"
+                  }`}
                   style={{ borderTopColor: i % 2 === 0 ? "var(--color-brand-700)" : "var(--color-accent-500)" }}
                 >
                   <h3 className="text-lg leading-tight">
                     {s.short}
                     <span className="block text-xs font-normal text-ink-500 mt-0.5">{s.name}</span>
                   </h3>
-                  <p className="text-xs text-ink-700 leading-snug mt-2">{s.text}</p>
+                  <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] group-focus-within:grid-rows-[1fr]">
+                    <p className="overflow-hidden text-xs text-ink-700 leading-snug">
+                      <span className="block pt-2">{s.text}</span>
+                    </p>
+                  </div>
                 </article>
               </li>
             ))}
