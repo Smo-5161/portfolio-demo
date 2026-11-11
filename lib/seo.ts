@@ -20,7 +20,16 @@ export function pageMetadata(path: string, options: { noindex?: boolean } = {}):
     title: path === "/" ? { absolute: r.title } : r.title,
     description: r.description,
     alternates: { canonical: path },
-    openGraph: { url: path, title: r.title, description: r.description, images: [shareImage] },
+    openGraph: {
+      // Repeated on every page: a page-level openGraph replaces the root one entirely.
+      type: "website",
+      siteName: `${contact.name} — Portfolio`,
+      locale: "en_US",
+      url: path,
+      title: r.title,
+      description: r.description,
+      images: [shareImage],
+    },
     twitter: { card: "summary_large_image", title: r.title, description: r.description, images: [shareImage.url] },
     ...(options.noindex && { robots: { index: false, follow: true } }),
   };
