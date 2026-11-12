@@ -1,36 +1,41 @@
 [
   {
     "id": "vibe-coding-workshop-neoma",
-    "name": "Vibe coding workshop with Lovable — NEOMA",
-    "description": "A hands-on workshop at NEOMA Business School to introduce students to vibe coding and the rise of no-code: each team picked a small local business with no website and built a website proposal for it in one hour with Lovable.",
+    "name": "Live Build Challenge — vibe coding workshop at NEOMA",
+    "description": "A free 3-hour workshop at NEOMA Business School in Reims to introduce students to vibe coding and the rise of no-code: find a local business that needs a website, build it a redesign with Lovable, then pitch it to the owner. Co-organised with two friends.",
     "scope": [
       "Workshop",
+      "Co-organiser",
       "Vibe coding",
       "No-code",
       "Lovable"
     ],
-    "duration": "1-hour build",
+    "duration": "3 hours (2 April 2026)",
     "stack": [
       "Lovable"
     ],
-    "links": [
-      {
-        "label": "Build Challenge NEOMA on Instagram",
-        "url": "https://www.instagram.com/build.challenge.neoma/"
-      }
-    ],
     "context": [
-      "Most business students have never built software. The goal of the workshop was to show them that this has changed: with AI-assisted \"vibe coding\" tools, describing what you want in plain language is enough to get a working website, which opens product building to non-developers.",
-      "The workshop was held at NEOMA Business School with the Build Challenge NEOMA student community."
+      "Most business students have never built software. The goal of the Live Build Challenge was to show them that this has changed: with AI-assisted \"vibe coding\" tools, describing what you want in plain language is enough to get a working website, which opens product building to non-developers.",
+      "The event took place on 2 April 2026, from 2 to 6 pm, at NEOMA Business School in Reims. Entry was free and no technical background was required. I organised it with two friends."
     ],
     "work": [
       {
-        "title": "The challenge",
-        "text": "Choose a real business or small shop that has no website, and build it a website proposal in one hour.",
+        "title": "3 hours, 3 steps, 1 business",
+        "text": "The challenge followed a real freelance sales cycle.",
         "points": [
-          "Pick the business and understand what its customers need to find online.",
-          "Prompt Lovable to generate the site, then iterate on sections, content and design.",
-          "Present the result to the room."
+          "Hunting: search Google Maps to find a local business that needs a website.",
+          "Build: with 100 Lovable credits provided, generate a professional redesign with AI, without writing code.",
+          "Pitch: contact the owner with immediate proof of value, the site already built."
+        ]
+      },
+      {
+        "title": "My role",
+        "text": "A shared organisation with two friends, where I covered several parts.",
+        "points": [
+          "Helped organise the event.",
+          "Set up the room and the equipment.",
+          "Led the first part of the workshop: the opening presentation and facilitation.",
+          "Acted as technical assistant during the build, explaining technical details and answering participants' questions."
         ]
       },
       {
@@ -39,12 +44,22 @@
       },
       {
         "title": "Key takeaway",
-        "text": "No-code and AI tools turn an idea into a usable prototype in an hour. The value moves to choosing the right problem, writing clear instructions and judging the result."
+        "text": "No-code and AI tools turn an idea into a usable prototype in an afternoon. The value moves to choosing the right problem, writing clear instructions and judging the result."
       }
     ],
     "gallery": {
-      "title": "Photos",
+      "title": "Photos & event visuals",
       "items": [
+        {
+          "src": "/projects/vibe-coding-workshop/live-build-challenge-poster.webp",
+          "alt": "Live Build Challenge poster: create and sell your first website in 3 hours, 2 April, 2 to 6 pm, free entry, NEOMA Business School, Reims",
+          "caption": "Event poster"
+        },
+        {
+          "src": "/projects/vibe-coding-workshop/live-build-challenge-steps.webp",
+          "alt": "Live Build Challenge programme: 3 hours, 3 steps, 1 business — hunting on Google Maps, building with Lovable, pitching to the owner; no technical prerequisites",
+          "caption": "The 3 steps of the challenge"
+        },
         {
           "src": "/projects/vibe-coding-workshop/lovable-workshop-neoma.webp",
           "alt": "Two students presenting their Lovable project, a website for a local butcher's shop, on a projected screen showing the generated code during the vibe coding workshop at NEOMA",
