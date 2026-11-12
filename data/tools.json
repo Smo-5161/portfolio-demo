@@ -2,12 +2,13 @@
   {
     "id": "sirtom-factorial",
     "name": "SIRTOM — Factorial HR software rollout",
-    "description": "Internship at a public waste-management authority: I took over the rollout of Factorial, an HR software nobody in the organisation could use yet, configured it to the authority's practices, especially staff scheduling, and trained the teams.",
+    "description": "Internship at a public waste-management authority: I rolled out the Factorial HR software for all 67 staff, replacing paper and an Excel absence file, configured it to the authority's rules and drove adoption, including for field teams with little or no digital literacy.",
     "scope": [
       "Internship",
       "Digital transformation",
       "HR software",
-      "Change management"
+      "Change management",
+      "Training"
     ],
     "duration": "3 months (2024)",
     "stack": [
@@ -21,7 +22,8 @@
     ],
     "context": [
       "SIRTOM de la région Flers-Condé is the public authority in charge of household waste collection and reduction for the Flers-Condé area, in Normandy. I was an intern at its head office from 13 May to 12 August 2024.",
-      "The organisation had Factorial, a cloud HR software, but nobody internally knew how to use it. My mission was to take it over, set it up for the way the authority actually works and get the teams using it."
+      "HR was run on paper, with an Excel file for absences. The authority had subscribed to Factorial, a cloud HR software, but nobody internally knew how to use it. My mission was to take it over, set it up for the way the authority actually works and get all 67 staff, across every department, using it.",
+      "The software was fully configured and in use three weeks before the end of my internship, which left time to follow its adoption and to work on other projects."
     ],
     "work": [
       {
@@ -29,20 +31,56 @@
         "text": "I learned Factorial on my own, to the point where, as the authority's general director wrote in her recommendation letter, I knew it better than the vendor."
       },
       {
-        "title": "Configuration to local practices",
-        "text": "I configured the tool around the authority's existing rules rather than forcing a generic setup, in particular for staff schedules (plannings)."
+        "title": "Full HR configuration",
+        "text": "I moved every HR process that was on paper or in Excel into the software and set it up around the authority's own rules.",
+        "points": [
+          "Time tracking (clock-in) and staff schedules.",
+          "Employment statuses: public-sector contract staff, fixed-term and permanent contracts, and more.",
+          "Absences and leave balances: paid leave, RTT days, recoverable hours, counter resets and leave carried over from one year to the next.",
+          "Organisation chart, approval chain and permissions, so each manager sees and validates only their own team.",
+          "HR documents stored in one place."
+        ]
       },
       {
-        "title": "Team training",
-        "text": "I trained the head-office staff who would use the software day to day, so the tool kept being used after my internship."
+        "title": "Fitting the tool to real constraints",
+        "text": "The authority's reality did not match the software's defaults.",
+        "points": [
+          "Many different employment statuses, each with its own leave and hour rules.",
+          "Collection crews working on a one-week-on, one-week-off schedule rotation, which the software did not support natively and which the vendor's support team considered impossible."
+        ]
+      },
+      {
+        "title": "Training 67 people with documentation",
+        "text": "There was no time to train everyone one by one, so I wrote documentation per department, each team receiving only the parts that concerned it."
+      },
+      {
+        "title": "Visual and video guides for field teams",
+        "text": "Part of the collection crews had very limited computer skills, and some had difficulty reading, which threatened both training and adoption. For them I replaced written guides with step-by-step visual and video tutorials: no need to read, just repeat the actions shown."
+      },
+      {
+        "title": "Adoption follow-up",
+        "text": "After go-live, I followed adoption closely: answering many questions, training staff and convincing the most reluctant ones to switch."
+      },
+      {
+        "title": "Results",
+        "text": "What changed for the organisation.",
+        "points": [
+          "Several hours of HR work saved every week.",
+          "Fewer lost documents, and records much easier to find.",
+          "More accurate time tracking than the paper system, which was easy to get wrong or misuse."
+        ]
       },
       {
         "title": "Other missions during the internship",
         "text": "Alongside the rollout, I contributed to the wider work of the organisation.",
         "points": [
           "A response to an ADEME call for projects (French Agency for Ecological Transition) to obtain funding.",
-          "Communication projects for residents on waste sorting and waste reduction."
+          "Communication and marketing projects for residents on waste sorting and waste reduction."
         ]
+      },
+      {
+        "title": "Why there are no screenshots",
+        "text": "The dashboards and the documentation stay private: they contain personal data about employees (schedules, statuses, salaries) and internal processes."
       }
     ]
   },
