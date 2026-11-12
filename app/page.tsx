@@ -130,7 +130,6 @@ export default function Home() {
             <figure className="mx-auto w-full max-w-sm lg:max-w-none">
               <a
                 href={CV_PDF}
-                aria-label="Open my CV (PDF) full size"
                 target="_blank"
                 rel="noopener"
                 className="group block overflow-hidden rounded-[20px] border border-stroke bg-white shadow-[var(--shadow-elev-2)] transition-transform duration-300 hover:-translate-y-1"
