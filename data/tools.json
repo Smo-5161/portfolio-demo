@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": "chauffechauffe-crm",
+    "name": "ChauffeChauffe — CRM & ERP prototype",
+    "url": "https://chauffe-chauffe-nine.vercel.app/clients",
+    "urlLabel": "Open the prototype",
+    "description": "Team school project: a clickable CRM/ERP prototype for a heating maintenance company, built from a business case, when the assignment only asked for a feature plan and UI mock-ups.",
+    "scope": [
+      "School project",
+      "Team work",
+      "CRM / ERP",
+      "UX"
+    ],
+    "context": [
+      "ChauffeChauffe is a fictional family business repairing water heaters in Poitiers, used as a case study in class. The course material described a company running on paper: a customer complaint letter (a client left without heating for over a month), statements from the secretary and the technicians, and the paper service report slip they fill in after each call.",
+      "The assignment only asked for a theoretical deliverable: a plan of the features and of the user interface for a new internal tool. Our team decided to go further and build a working prototype that anyone can click through. It is a group project: the result is a team effort, not mine alone."
+    ],
+    "work": [
+      {
+        "title": "Diagnosis from the case",
+        "text": "The documents pointed to a few root causes behind the client's month without heating.",
+        "points": [
+          "Appointments managed in a paper planner, while technicians booked their own clients without telling the secretary.",
+          "Parts ordered only once the landlord had signed and posted back the invoice; delivered parts left unprocessed for two days; a second part forgotten.",
+          "No shared knowledge: each technician kept manuals and repair notes in his own way (personal folders, annotated paper manuals, memory), so the next technician arrived without the history."
+        ]
+      },
+      {
+        "title": "Clients and scheduling",
+        "text": "One record per client and a weekly calendar for the whole team.",
+        "points": [
+          "Client file with address, equipment model and maintenance contract.",
+          "Weekly technician calendar showing each person's real constraints (finishes at 3:30 pm, recently hired, prefers distant jobs…) so the secretary can plan with them instead of around them."
+        ]
+      },
+      {
+        "title": "Parts order pipeline",
+        "text": "Every order is visible from approval to delivery, linked to its client and technician.",
+        "points": [
+          "Four stages: awaiting approval, ordered, in transit, delivered.",
+          "Estimated delivery date on each order, so no part sits forgotten at the office."
+        ]
+      },
+      {
+        "title": "Shared knowledge base",
+        "text": "Manuals, procedures, safety notes and field tips per equipment model, written by the technicians and available to everyone, including new hires."
+      },
+      {
+        "title": "Billing (ERP)",
+        "text": "Invoices tracked from draft to payment, with the split between tenant and owner.",
+        "points": [
+          "Draft, sent, paid and cancelled statuses, totals invoiced, collected and pending.",
+          "Cost split between tenant and property owner, the step that blocked the repair in the case; CSV export."
+        ]
+      },
+      {
+        "title": "What the prototype is",
+        "text": "A clickable front end running on local demo data inspired by the case: it shows the experience and the data model, it is not connected to a real back end."
+      }
+    ]
+  }
+]
