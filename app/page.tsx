@@ -130,6 +130,7 @@ export default function Home() {
             <figure className="mx-auto w-full max-w-sm lg:max-w-none">
               <a
                 href={CV_PDF}
+                aria-label="Open my CV (PDF) full size"
                 target="_blank"
                 rel="noopener"
                 className="group block overflow-hidden rounded-[20px] border border-stroke bg-white shadow-[var(--shadow-elev-2)] transition-transform duration-300 hover:-translate-y-1"
@@ -142,17 +143,6 @@ export default function Home() {
                   className="h-auto w-full"
                 />
               </a>
-              <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm text-ink-500">
-                <span>
-                  Recommended by{" "}
-                  <a href={LETTERS_PDF} target="_blank" rel="noopener" className="link">
-                    HELMO Rénovation, SIRTOM Flers-Condé and NEOMA Business School
-                  </a>
-                </span>
-                <a href={CV_PDF} target="_blank" rel="noopener" className="link shrink-0">
-                  Open full size ↗
-                </a>
-              </figcaption>
             </figure>
           </div>
         </div>
