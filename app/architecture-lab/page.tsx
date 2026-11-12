@@ -619,20 +619,37 @@ Sitemap: /sitemap.xml`}
           <ul className="grid gap-4 sm:grid-cols-2">
             {screenshots.map((s, i) => (
               <li key={s.id} className="card overflow-hidden">
-                {s.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={s.image} alt={`${s.title}: ${s.description}`} className="w-full border-b border-stroke" />
-                ) : (
-                  <div
-                    className={`grid place-items-center aspect-video border-b border-dashed border-ink-300 ${tones[i % tones.length]}`}
-                  >
-                    <span className="text-sm text-ink-500">Screenshot coming soon</span>
-                  </div>
-                )}
-                <div className="p-4">
-                  <h3 className="text-base">{s.title}</h3>
-                  <p className="text-sm text-ink-700">{s.description}</p>
-                </div>
+                <figure>
+                  {s.image ? (
+                    <a href={s.image} target="_blank" rel="noopener" className="block border-b border-stroke bg-white">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={s.image}
+                        alt={s.alt ?? `${s.title}: ${s.description}`}
+                        width={s.width}
+                        height={s.height}
+                        loading="lazy"
+                        className="h-auto w-full"
+                      />
+                    </a>
+                  ) : (
+                    <div
+                      className={`grid place-items-center aspect-video border-b border-dashed border-ink-300 ${tones[i % tones.length]}`}
+                    >
+                      <span className="text-sm text-ink-500">Screenshot coming soon</span>
+                    </div>
+                  )}
+                  <figcaption className="p-4">
+                    <h3 className="text-base">{s.title}</h3>
+                    <p className="text-sm text-ink-700">{s.description}</p>
+                    {s.note && <p className="mt-2 text-sm text-ink-700">{s.note}</p>}
+                    {s.date && (
+                      <p className="mt-2 text-xs text-ink-500">
+                        Captured on <time dateTime={s.date}>{new Date(s.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</time>
+                      </p>
+                    )}
+                  </figcaption>
+                </figure>
               </li>
             ))}
           </ul>

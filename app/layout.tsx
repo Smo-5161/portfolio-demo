@@ -48,6 +48,9 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
+// Tracking only on the production deployment: preview URLs and local dev stay out of GA4 and Clarity.
+const TRACKING = process.env.VERCEL_ENV === "production";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -56,8 +59,9 @@ export default function RootLayout({
       <Script id="consent-defaults" strategy="beforeInteractive">
         {consentDefaults}
       </Script>
-      <Analytics />
+      {TRACKING && <Analytics />}
       <body className="font-sans">
+        {TRACKING && (
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
@@ -66,6 +70,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        )}
         <JsonLd data={websiteJsonLd} />
         <SiteHeader />
         <div id="content">{children}</div>
