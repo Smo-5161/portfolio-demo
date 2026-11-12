@@ -191,7 +191,7 @@ export default function Home() {
           <h2 id="portfolio-title" className="text-3xl mb-8">
             Portfolio
           </h2>
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {projects.map((p, i) =>
               isEmptySection(p.href) ? (
                 // No content yet: shown as upcoming, not linked to an empty page.
