@@ -63,7 +63,7 @@ export const routes: RouteInfo[] = [
     portfolio: true,
     title: "Internal tools & digital transformation",
     description:
-      "Internal tools, business apps and digital transformation projects that automate repetitive work, centralize company data and modernize how teams operate.",
+      "Internal tools, business apps and digital transformation projects, like the rollout of the Factorial HR software at a public waste authority, that automate work and modernize how teams operate.",
   },
   {
     path: "/workshops",
