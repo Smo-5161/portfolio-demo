@@ -159,7 +159,7 @@ export default function Home() {
               <li key={s.short} className="relative h-24">
                 <article
                   tabIndex={0}
-                  className={`group card absolute inset-x-0 top-0 z-0 cursor-default p-4 border-t-4! outline-none transition-[scale,box-shadow] duration-300 ease-out hover:z-30 hover:scale-[1.45] hover:shadow-xl focus-within:z-30 focus-within:scale-[1.45] focus-within:shadow-xl ${
+                  className={`group card absolute inset-x-0 top-0 z-0 min-h-24 cursor-default p-4 border-t-4! outline-none transition-[scale,box-shadow] duration-300 ease-out hover:z-30 hover:scale-[1.45] hover:shadow-xl focus-within:z-30 focus-within:scale-[1.45] focus-within:shadow-xl ${
                     i === 0 ? "origin-top-left" : i === skills.length - 1 ? "origin-top-right" : "origin-top"
                   }`}
                   style={{ borderTopColor: i % 2 === 0 ? "var(--color-brand-700)" : "var(--color-accent-500)" }}
@@ -197,9 +197,9 @@ export default function Home() {
                 // No content yet: shown as upcoming, not linked to an empty page.
                 <li key={p.href}>
                   <div className="card block h-full p-6 border-dashed! bg-surface!">
-                    <h3 className="text-lg mb-1 flex items-center justify-between gap-2">
-                      {p.label}
-                      <span className="chip">Coming soon</span>
+                    <h3 className="text-lg mb-1 flex items-start justify-between gap-3">
+                      <span>{p.label}</span>
+                      <span className="chip shrink-0 whitespace-nowrap mt-0.5">Coming soon</span>
                     </h3>
                     <p className="text-sm text-ink-500">{p.text}</p>
                   </div>
@@ -212,11 +212,11 @@ export default function Home() {
                       projectTones[i % projectTones.length]
                     }`}
                   >
-                    <h3 className="text-lg mb-1 flex items-center justify-between gap-2">
-                      {p.label}
+                    <h3 className="text-lg mb-1 flex items-start justify-between gap-3">
+                      <span>{p.label}</span>
                       <span
                         aria-hidden="true"
-                        className="grid place-items-center w-8 h-8 rounded-full bg-white text-ink-900"
+                        className="grid place-items-center w-8 h-8 shrink-0 rounded-full bg-white text-ink-900"
                       >
                         →
                       </span>
