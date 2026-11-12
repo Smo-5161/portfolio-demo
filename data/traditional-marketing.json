@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "id": "sirtom-shared-composters",
+    "name": "SIRTOM — Shared composters launch campaign",
+    "description": "Communication campaign for the launch of shared composters across a public waste authority's territory. The campaign was produced by an agency; I took part in deciding what to brief and ask for, and pushed for a message built on money rather than ecology.",
+    "scope": [
+      "Internship",
+      "Campaign brief",
+      "Public communication",
+      "Team work"
+    ],
+    "duration": "2024",
+    "context": [
+      "Since 1 January 2024, French law requires bio-waste to be sorted at source. To help residents do it, SIRTOM de la région Flers-Condé launched shared composters across its territory, in Normandy, and needed a campaign to announce them.",
+      "The campaign was designed and produced by an external agency, not by me. During my internship I took part in the decisions on what to brief the agency on, how to answer its proposals and what to ask for."
+    ],
+    "work": [
+      {
+        "title": "Choosing the angle: savings, not ecology",
+        "text": "I suggested putting the financial side first: the real savings composting brings to the authority, which directly limits increases in the waste collection tax paid by residents.",
+        "points": [
+          "My reading of the audience: the area was not very receptive to environmental messages, and a genuine ecology awareness campaign would need far more time and budget.",
+          "So the message had to speak to residents' immediate, practical concerns, starting with their tax bill."
+        ]
+      },
+      {
+        "title": "Working with the agency",
+        "text": "I took part in the back-and-forth with the agency: reviewing its proposals, deciding on the answers and on the requests to send back."
+      },
+      {
+        "title": "Where the campaign ran",
+        "text": "The visuals were used across the authority's channels.",
+        "points": [
+          "All of SIRTOM's social media accounts.",
+          "Printed communication documents.",
+          "The livery of the waste collection trucks that drive across the whole territory."
+        ]
+      }
+    ],
+    "gallery": {
+      "title": "Campaign visuals",
+      "items": [
+        {
+          "alt": "Social media visual from the shared composters campaign",
+          "caption": "Social media"
+        },
+        {
+          "alt": "Printed communication document from the shared composters campaign",
+          "caption": "Print"
+        },
+        {
+          "alt": "Waste collection truck livery from the shared composters campaign",
+          "caption": "Truck livery"
+        }
+      ]
+    },
+    "note": "Campaign designed and produced by an external agency; my role was in the brief and the decisions."
+  }
+]

@@ -77,6 +77,33 @@ export default function ProjectCard({ project: p }: { project: Project }) {
           </section>
         )}
 
+        {p.gallery && (
+          <section aria-labelledby={`${p.id}-gallery`}>
+            <h3 id={`${p.id}-gallery`} className="text-xl mb-3">
+              {p.gallery.title}
+            </h3>
+            <ul className="grid gap-4 sm:grid-cols-3">
+              {p.gallery.items.map((g) => (
+                <li key={g.alt}>
+                  <figure>
+                    {g.src ? (
+                      <a href={g.src} target="_blank" rel="noopener" className="block overflow-hidden rounded-xl border border-stroke">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={g.src} alt={g.alt} loading="lazy" className="h-auto w-full" />
+                      </a>
+                    ) : (
+                      <div className="grid aspect-[4/3] place-items-center rounded-xl border border-dashed border-ink-300 bg-brand-50 text-sm text-ink-500">
+                        Image coming soon
+                      </div>
+                    )}
+                    {g.caption && <figcaption className="mt-2 text-sm text-ink-500">{g.caption}</figcaption>}
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {p.slides && (
           <section aria-labelledby={`${p.id}-slides`}>
             <h3 id={`${p.id}-slides`} className="text-xl mb-3">

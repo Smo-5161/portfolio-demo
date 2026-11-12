@@ -29,6 +29,8 @@ export type Project = {
   seoScores?: SeoScore[];
   /** Short, discreet note shown at the end of the details (e.g. why no screenshots). */
   note?: string;
+  /** Image gallery; an item without src is shown as a placeholder slot. */
+  gallery?: { title: string; items: { src?: string; alt: string; caption?: string }[] };
   /** Presentation deck shown in a slide viewer (images) with a downloadable PDF. */
   slides?: {
     title: string;
