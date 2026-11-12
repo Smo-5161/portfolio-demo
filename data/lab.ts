@@ -124,8 +124,6 @@ export const screenshots: ScreenshotSlot[] = [
     date: "2026-11-12",
     note: "An early snapshot: the pages still had the default \"Create Next App\" title and tracking also ran on preview URLs. Since then, every page has its own title and tracking only loads on the production domain.",
   },
-  { id: "ga4-overview", title: "GA4 — Overview", description: "Users, sessions and engagement over time." },
-  { id: "ga4-key-events", title: "GA4 — Key events", description: "Leads and outbound project clicks." },
   {
     id: "clarity-heatmap",
     title: "Clarity — Click heatmap",
@@ -137,6 +135,8 @@ export const screenshots: ScreenshotSlot[] = [
     date: "2026-11-12",
     note: "The CV is what visitors click first, and they click inside it on the experience and skills lines, so they want the detail. The skill cards also got clicks although they were not links: likely part of the 25% dead clicks seen in the overview. Fix applied: they no longer lift on hover, so only real links look clickable.",
   },
+  { id: "ga4-overview", title: "GA4 — Overview", description: "Users, sessions and engagement over time." },
+  { id: "ga4-key-events", title: "GA4 — Key events", description: "Leads and outbound project clicks." },
   { id: "search-console", title: "Search Console", description: "Impressions, clicks and indexed pages." },
   { id: "stape", title: "Stape — server container", description: "Server-side requests and recovered events." },
 ];
