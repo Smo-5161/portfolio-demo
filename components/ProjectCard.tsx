@@ -21,6 +21,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                 {p.duration && <li className="chip chip-tonal">Duration: {p.duration}</li>}
               </ul>
             )}
+            {p.description && <p className="mt-3 max-w-3xl text-ink-700 leading-relaxed">{p.description}</p>}
             {p.stack && (
               <p className="mt-3 text-sm text-ink-700">
                 <span className="font-semibold">Stack:</span> {p.stack.join(" · ")}
@@ -44,7 +45,25 @@ export default function ProjectCard({ project: p }: { project: Project }) {
         </div>
       </header>
 
-      <div className="p-6 sm:p-8 space-y-10">
+      {/*
+        Details are folded in a native <details>: the full text stays in the server HTML
+        (read by Google and LLMs, found by Ctrl+F) and one click opens it. No CSS hiding, no cloaking.
+      */}
+      <details className="group/details">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-6 py-4 sm:px-8 font-semibold text-brand-700 hover:bg-brand-50 [&::-webkit-details-marker]:hidden">
+          <span>
+            <span className="group-open/details:hidden">Show project details</span>
+            <span className="hidden group-open/details:inline">Hide project details</span>
+            <span className="sr-only"> — {p.name}</span>
+          </span>
+          <span
+            aria-hidden="true"
+            className="grid h-8 w-8 place-items-center rounded-full border border-stroke bg-white transition-transform group-open/details:rotate-180"
+          >
+            ↓
+          </span>
+        </summary>
+      <div className="p-6 sm:p-8 space-y-10 border-t border-stroke">
         {p.context && (
           <section aria-labelledby={`${p.id}-context`}>
             <h3 id={`${p.id}-context`} className="text-xl mb-3">
@@ -167,6 +186,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
           </section>
         )}
       </div>
+      </details>
     </article>
   );
 }

@@ -49,7 +49,6 @@ export default function SlideViewer({ title, slides, labels, pdf, width = 1600, 
           height={height}
           sizes="(min-width: 1152px) 1050px, 95vw"
           className="h-auto w-full"
-          priority={i === 0}
         />
         {/* Preload neighbours so navigation feels instant */}
         {[i - 1, i + 1]
