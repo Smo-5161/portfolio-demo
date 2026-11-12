@@ -79,6 +79,11 @@ const projects = [
     text: "Challenges tackled in limited time: the team, the prototype and the outcome.",
   },
   {
+    href: "/traditional-marketing",
+    label: "Traditional Marketing",
+    text: "The human side of marketing: brand, events, partnerships and field campaigns.",
+  },
+  {
     href: "/architecture-lab",
     label: "Architecture & SEO/GEO/CRO Lab",
     text: "Behind the scenes of this site: tracking, structured data and metrics.",
@@ -186,7 +191,7 @@ export default function Home() {
           <h2 id="portfolio-title" className="text-3xl mb-8">
             Portfolio
           </h2>
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {projects.map((p, i) =>
               isEmptySection(p.href) ? (
                 // No content yet: shown as upcoming, not linked to an empty page.

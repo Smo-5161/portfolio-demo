@@ -90,6 +90,14 @@ export const routes: RouteInfo[] = [
       "Hackathons Antoine Smolar took part in: the challenge, the team, the prototype built in limited time and the outcome.",
   },
   {
+    path: "/traditional-marketing",
+    label: "Traditional Marketing",
+    portfolio: true,
+    title: "Traditional marketing: brand, events and campaigns",
+    description:
+      "The human side of marketing by Antoine Smolar: brand, events, partnerships, print and field campaigns, with their goals and results.",
+  },
+  {
     path: "/architecture-lab",
     label: "Architecture & SEO/GEO/CRO Lab",
     portfolio: true,

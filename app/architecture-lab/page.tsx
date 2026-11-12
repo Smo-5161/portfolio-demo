@@ -42,6 +42,7 @@ const pageDetails: Record<string, { rendering: string; content: string }> = {
   "/workshops": { rendering: "Static (SSG)", content: "Talks from data/workshops.json" },
   "/research": { rendering: "Static (SSG)", content: "Projects from data/research.json" },
   "/hackathons": { rendering: "Static (SSG)", content: "Hackathons from data/hackathons.json" },
+  "/traditional-marketing": { rendering: "Static (SSG)", content: "Campaigns from data/traditional-marketing.json" },
   "/architecture-lab": { rendering: "Static (SSG)", content: "This report" },
   "/faq": { rendering: "Static (SSG)", content: "Sourced FAQ, built for GEO" },
 };
