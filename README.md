@@ -1,8 +1,8 @@
 # Antoine Smolar — Portfolio & Technical Lab
 
-Live site: **https://portfolio-demo-lilac-five.vercel.app**
+Live site: **https://antoine-smolar.vercel.app**
 
-A portfolio that doubles as a working demonstration of web architecture, SEO, GEO (Generative Engine Optimization) and CRO tooling. The [Architecture Lab](https://portfolio-demo-lilac-five.vercel.app/architecture-lab) page explains, section by section, how the site is built.
+A portfolio that doubles as a working demonstration of web architecture, SEO, GEO (Generative Engine Optimization) and CRO tooling. The [Architecture Lab](https://antoine-smolar.vercel.app/architecture-lab) page explains, section by section, how the site is built.
 
 ## How this site was built
 
