@@ -46,7 +46,7 @@
         "text": "The authority's reality did not match the software's defaults.",
         "points": [
           "Many different employment statuses, each with its own leave and hour rules.",
-          "Collection crews working on a one-week-on, one-week-off schedule rotation, which the software did not support natively and which the vendor's support team considered impossible.",
+          "Collection crews working on a one-week-on, one-week-off schedule rotation, a pattern the software was not designed to handle.",
           "My workaround for the rotation: Factorial lets you set a validity period on each schedule, so I created two schedules for these employees and made them alternate, each one active one week and inactive the next. I entered these alternating periods far into the future, up to the employees' likely retirement age (with a wide margin, since I chose not to ask anyone their age), so the rotation runs on its own with no manual changes."
         ]
       },
