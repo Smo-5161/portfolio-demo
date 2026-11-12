@@ -15,7 +15,11 @@ export const repoFile = (path: string) => `${REPO_URL}/blob/main/${path}`;
 
 export const contact = {
   name: "Antoine Smolar",
-  jobTitle: "Growth Marketer & Product Builder",
+  // Schema.org Person.jobTitle: what Antoine actually is today, not a job he has not held yet.
+  jobTitle: "Business Administration student",
+  // One-line positioning shown under the name (home hero, share image, llms.txt).
+  tagline:
+    "Business student · I build websites, apps and tools, and make them findable on Google and AI engines",
   phoneDisplay: "+33 7 69 34 94 81",
   phoneIntl: "+33769349481",
   email: "antoine.smolar.23@neoma-bs.com",
@@ -37,9 +41,9 @@ export const routes: RouteInfo[] = [
   {
     path: "/",
     label: "Home",
-    title: "Antoine Smolar — Growth Marketer & Product Builder (SEO, GEO, CRO)",
+    title: "Antoine Smolar — Portfolio: SEO, GEO, no-code & digital transformation",
     description:
-      "Growth Marketer & Product Builder: SEO, GEO for ChatGPT and AI search, conversion optimization, UI/UX and no-code apps. Portfolio, case studies and live lab.",
+      "Antoine Smolar, business student at NEOMA: websites, SaaS and internal tools, SEO and GEO for AI search, no-code apps. Case studies and a live technical lab.",
   },
   {
     path: "/websites",

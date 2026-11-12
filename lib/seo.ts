@@ -7,7 +7,7 @@ const shareImage = {
   url: "/opengraph-image",
   width: 1200,
   height: 630,
-  alt: `${contact.name} — ${contact.jobTitle}`,
+  alt: `${contact.name} — Portfolio: SEO, GEO, no-code & digital transformation`,
 };
 
 /**

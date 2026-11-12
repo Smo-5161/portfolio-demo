@@ -35,6 +35,12 @@ export default function SiteFooter() {
           <span>
             © {new Date().getFullYear()} {contact.name}
           </span>
+          <span>
+            Skills showcase, vibe-coded with Claude under my direction ·{" "}
+            <a href="/architecture-lab" className="underline underline-offset-2 hover:text-ink-900">
+              How it&apos;s built
+            </a>
+          </span>
           <a href="/faq" className="underline underline-offset-2 hover:text-ink-900">
             FAQ
           </a>
