@@ -161,7 +161,7 @@ export default function Home() {
             {skills.map((s, i) => (
               <li key={s.short}>
                 <article
-                  className={`card card-interactive h-full p-4 border-transparent! transition-[translate,box-shadow] duration-200 hover:-translate-y-0.5 ${
+                  className={`card h-full p-4 border-transparent! ${
                     projectTones[i % projectTones.length]
                   }`}
                 >
