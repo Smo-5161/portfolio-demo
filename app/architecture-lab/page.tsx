@@ -31,6 +31,7 @@ const toc = [
   { id: "tracking", label: "Analytics" },
   { id: "server-side", label: "Server-side" },
   { id: "dashboards", label: "Dashboards" },
+  { id: "variant-demo", label: "Variant demo" },
 ];
 
 const pageDetails: Record<string, { rendering: string; content: string }> = {
@@ -120,6 +121,7 @@ function Section({
   title,
   intro,
   plain,
+  cta,
   code,
   children,
 }: {
@@ -131,6 +133,7 @@ function Section({
   plain?: string;
   /** Repository paths shown as "See the code" links. */
   code?: string[];
+  cta?: { label: string; href: string };
   children: React.ReactNode;
 }) {
   // Collapsible card: title + plain words always visible; details expand on click,
@@ -141,6 +144,7 @@ function Section({
       eyebrow={eyebrow}
       title={title}
       plain={plain}
+      cta={cta}
       code={code?.map((path) => ({ label: path, href: repoFile(path) }))}
     >
       {intro && <div className="text-ink-700 leading-relaxed max-w-3xl mb-6">{intro}</div>}
@@ -619,6 +623,68 @@ Sitemap: /sitemap.xml`}
               </li>
             ))}
           </ul>
+        </Section>
+
+        {/* 9. Variant selector demo */}
+        <Section
+          id="variant-demo"
+          eyebrow="09"
+          title="Live demo: variant selector & faceted URLs"
+          cta={{ label: "Open the demo", href: "/lab/variant-selector" }}
+          code={["components/VariantSelector.tsx", "app/lab/variant-selector/page.tsx", "data/demo-product.ts"]}
+          plain="On e-commerce sites, every colour or size choice can create a new web address. Thousands of near-identical pages waste Google’s time and split ranking signals between them. This demo keeps the selector smooth for shoppers while telling Google which version is the real one, and measures every choice for conversion analysis."
+          intro="A product page with colour and size selectors and a live SEO inspector. The selection is kept in the URL (shareable links, working back button), and the inspector shows, for each state, the canonical and robots tags such a page should send."
+        >
+          <div className="card overflow-x-auto mb-6">
+            <table className="w-full text-sm">
+              <thead className="bg-surface text-left text-ink-500">
+                <tr>
+                  <th className="p-3 font-medium">Parameter</th>
+                  <th className="p-3 font-medium">Indexable?</th>
+                  <th className="p-3 font-medium">Canonical</th>
+                  <th className="p-3 font-medium">Why</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["color", "Yes", "?color=sand (itself)", "Different images and real searches (“sand t-shirt”)."],
+                  ["size", "No", "?color=sand", "Same content for a searcher: no new page for Google."],
+                  ["sort, combined filters", "No", "?color=sand", "Prevents an explosion of near-duplicate URLs."],
+                ].map(([param, idx, canon, why]) => (
+                  <tr key={param} className="border-t border-stroke align-top">
+                    <td className="p-3 font-mono">{param}</td>
+                    <td className="p-3">{idx}</td>
+                    <td className="p-3 font-mono text-xs">{canon}</td>
+                    <td className="p-3 text-ink-700">{why}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="card p-5">
+              <h3 className="text-base mb-2">Structured data</h3>
+              <p className="text-sm text-ink-700">
+                Variants are described with <code>ProductGroup</code>, <code>hasVariant</code> and{" "}
+                <code>variesBy</code>, Google’s format for products with variants.
+              </p>
+            </div>
+            <div className="card p-5">
+              <h3 className="text-base mb-2">Conversion tracking</h3>
+              <p className="text-sm text-ink-700">
+                Each choice pushes a GA4 e-commerce event (<code>view_item</code>,{" "}
+                <code>select_variant</code>) with the variant to the dataLayer, shown live in the demo.
+              </p>
+            </div>
+            <div className="card p-5">
+              <h3 className="text-base mb-2">Why the demo is noindex</h3>
+              <p className="text-sm text-ink-700">
+                The product is fictional. The page is noindex, absent from the sitemap and llms.txt,
+                and its JSON-LD is displayed as code instead of being injected: marking up a fake
+                product as real would be misleading structured data.
+              </p>
+            </div>
+          </div>
         </Section>
       </div>
     </main>

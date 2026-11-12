@@ -10,6 +10,8 @@ type Props = {
   title: string;
   /** Plain-language explanation, always visible. */
   plain?: string;
+  /** Optional call to action, visible even when the card is collapsed. */
+  cta?: { label: string; href: string };
   /** Source files on GitHub related to this section. */
   code?: { label: string; href: string }[];
   /** Technical details: server-rendered, collapsed on screen but always in the HTML. */
@@ -21,7 +23,7 @@ type Props = {
  * at all times (never display:none, never removed): crawlers and LLMs read everything.
  * Only the on-screen height animates between 0 and auto.
  */
-export default function LabSection({ id, eyebrow, title, plain, code, children }: Props) {
+export default function LabSection({ id, eyebrow, title, plain, cta, code, children }: Props) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
 
@@ -84,6 +86,16 @@ export default function LabSection({ id, eyebrow, title, plain, code, children }
             </p>
             <p className="text-sm leading-relaxed text-ink-700">{plain}</p>
           </div>
+        )}
+
+        {cta && (
+          <a
+            href={cta.href}
+            onClick={(e) => e.stopPropagation()}
+            className="btn btn-primary mt-5"
+          >
+            {cta.label} →
+          </a>
         )}
 
         {code && code.length > 0 && (
