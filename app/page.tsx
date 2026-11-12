@@ -8,6 +8,7 @@ import { JsonLd, profilePageJsonLd } from "@/lib/jsonld";
 export const metadata = pageMetadata("/");
 
 const CV_PDF = "/cv/Antoine-Smolar-CV.pdf";
+const LETTERS_PDF = "/cv/Antoine-Smolar-Recommendation-Letters.pdf";
 
 type Skill = { short: string; name: string; text: string };
 
@@ -116,6 +117,9 @@ export default function Home() {
                 <a href={CV_PDF} className="btn btn-secondary" download>
                   Download my CV (PDF)
                 </a>
+                <a href={LETTERS_PDF} className="btn btn-secondary" target="_blank" rel="noopener">
+                  Recommendation letters (PDF)
+                </a>
                 <a href="#contact" className="btn btn-secondary">
                   Get in touch
                 </a>
@@ -138,8 +142,14 @@ export default function Home() {
                   className="h-auto w-full"
                 />
               </a>
-              <figcaption className="mt-3 text-right text-sm text-ink-500">
-                <a href={CV_PDF} target="_blank" rel="noopener" className="link">
+              <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm text-ink-500">
+                <span>
+                  Recommended by{" "}
+                  <a href={LETTERS_PDF} target="_blank" rel="noopener" className="link">
+                    HELMO Rénovation, SIRTOM Flers-Condé and NEOMA Business School
+                  </a>
+                </span>
+                <a href={CV_PDF} target="_blank" rel="noopener" className="link shrink-0">
                   Open full size ↗
                 </a>
               </figcaption>

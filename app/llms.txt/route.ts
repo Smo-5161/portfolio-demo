@@ -26,6 +26,7 @@ ${faq
 ## CV
 
 - [Antoine Smolar — CV (PDF)](${SITE_URL}/cv/Antoine-Smolar-CV.pdf)
+- [Recommendation letters (PDF)](${SITE_URL}/cv/Antoine-Smolar-Recommendation-Letters.pdf): HELMO Rénovation (founder & CEO, 2026 internship), SIRTOM de la région Flers-Condé (general director, 2024 internship; French original + English translation), NEOMA Business School (professor, Live Business Transition Case course)
 
 ## Contact
 
