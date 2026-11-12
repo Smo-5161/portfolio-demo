@@ -5,7 +5,7 @@
    on cool neutrals. Every text/background pair meets WCAG AA (≥ 4.5:1).
 ------------------------------------------------------------------- */
 @theme {
-  --font-sans: "Google Sans Flex", "Google Sans", Roboto, system-ui, -apple-system, Arial, sans-serif;
+  --font-sans: var(--font-brand), Roboto, system-ui, -apple-system, Arial, sans-serif;
   --font-mono: "Google Sans Code", "Roboto Mono", Consolas, monospace;
 
   /* Ink (cool neutrals, tinted toward the brand teal) */

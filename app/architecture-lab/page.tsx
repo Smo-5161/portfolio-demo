@@ -12,6 +12,9 @@ import type { Project } from "@/lib/types";
 
 export const metadata = pageMetadata("/architecture-lab");
 
+// FAQ entry used to illustrate the answer anatomy.
+const sample = faq.find((q) => q.question.startsWith("Does SEO")) ?? faq[0];
+
 const toc = [
   { id: "architecture", label: "Architecture" },
   { id: "stack", label: "Code & stack" },
@@ -37,7 +40,7 @@ const pageDetails: Record<string, { rendering: string; content: string }> = {
 const machineFiles = [
   { path: "/robots.txt", role: "Crawl rules, AI crawlers allowed, sitemap link" },
   { path: "/sitemap.xml", role: "Every page with priority and update frequency" },
-  { path: "/llms.txt", role: "Markdown summary of the site for LLMs" },
+  { path: "/llms.txt", role: "Markdown summary of the site for LLMs (an emerging convention: whether major AI engines actually use it is not yet proven)" },
 ];
 
 const stack = [
@@ -406,7 +409,7 @@ Sitemap: /sitemap.xml`}
           plain="When someone asks ChatGPT a question, it looks for short, clear, trustworthy answers it can quote. So every answer in this FAQ starts with the direct answer and a figure, then adds context, then names its source: exactly the shape an AI likes to reuse. On a portfolio, a FAQ about SEO statistics isn’t really useful to visitors: it is here to show the method. So instead of cluttering the home page, it has its own page, linked from the footer. It is not hidden, though: showing robots text that people can’t see is a classic black-hat trick that Google penalizes."
           eyebrow="05"
           title="A FAQ built for GEO"
-          intro={<>Generative engines quote short, self-contained, sourced answers. Every FAQ entry follows the same anatomy. On this portfolio the FAQ is a demonstration of SEO/GEO structuring rather than content for visitors, so it lives on a dedicated page, <a href="/faq" className="link">/faq</a>, linked from the footer, instead of the home page.</>}
+          intro={<>Generative engines quote short, self-contained, sourced answers. Every FAQ entry follows the same anatomy. On this portfolio the FAQ is a demonstration of SEO/GEO structuring rather than content for visitors, so it lives on a dedicated page, <a href="/faq" className="link">/faq</a>, linked from the footer, instead of the home page. It opens with three questions about me, so an AI asked “Who is Antoine Smolar?” finds a direct, sourced answer. Since 2023 Google only shows FAQ rich results for government and health sites: the FAQPage markup here targets meaning and LLMs, not rich snippets. Every figure is observed data (no forecasts) and the page shows its last update date.</>}
         >
           <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
             <div className="card p-6">
@@ -414,19 +417,19 @@ Sitemap: /sitemap.xml`}
               <ol className="space-y-3">
                 <li className="rounded-2xl bg-brand-100 p-4">
                   <span className="block text-xs text-ink-500 mb-1">① Question, phrased naturally</span>
-                  <span className="font-medium">{faq[0].question}</span>
+                  <span className="font-medium">{sample.question}</span>
                 </li>
                 <li className="rounded-2xl bg-accent-100 p-4">
                   <span className="block text-xs text-ink-500 mb-1">② Direct answer + figure in the first sentence</span>
-                  {faq[0].answer.split(". ")[0]}.
+                  {sample.answer.split(". ")[0]}.
                 </li>
                 <li className="rounded-2xl bg-accent-50 p-4">
                   <span className="block text-xs text-ink-500 mb-1">③ Context in one or two sentences</span>
-                  {faq[0].answer.split(". ").slice(1).join(". ")}
+                  {sample.answer.split(". ").slice(1).join(". ")}
                 </li>
                 <li className="rounded-2xl bg-brand-50 p-4">
                   <span className="block text-xs text-ink-500 mb-1">④ Source at the end</span>
-                  {faq[0].sources[0].label}
+                  {sample.sources[0].label}
                 </li>
               </ol>
             </div>

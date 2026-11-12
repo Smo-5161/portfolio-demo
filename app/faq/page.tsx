@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
-import { faq, faqJsonLd } from "@/lib/faq";
+import { FAQ_UPDATED, faq, faqJsonLd } from "@/lib/faq";
 import { JsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 
 export const metadata = pageMetadata("/faq");
@@ -28,12 +28,16 @@ export default function FaqPage() {
           </nav>
           <h1 className="text-4xl mb-4">Frequently asked questions</h1>
           <p className="text-ink-700 max-w-2xl">
-            Short answers on SEO, GEO, conversion, UX and internal tools, each with a sourced
-            figure in the first sentence.{" "}
+            Who I am and what I build, then short answers on SEO, GEO, conversion, UX and internal
+            tools, each with a sourced figure in the first sentence.{" "}
             <Link href="/architecture-lab#faq-structure" className="link">
               Why this page exists and how it is built
             </Link>
             .
+          </p>
+          <p className="text-sm text-ink-500 mt-3">
+            Last updated <time dateTime={FAQ_UPDATED}>12 November 2026</time>. Observed data only, no
+            forecasts.
           </p>
         </div>
       </div>

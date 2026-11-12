@@ -7,7 +7,7 @@ export const SITE_URL =
     : "http://localhost:3000");
 
 // Date of the last real content update (used in the sitemap). Change it when content changes.
-export const SITE_UPDATED = "2026-11-11";
+export const SITE_UPDATED = "2026-11-12";
 
 // Public source code of this site.
 export const REPO_URL = "https://github.com/Smo-5161/portfolio-demo";

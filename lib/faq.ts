@@ -1,16 +1,51 @@
-// Single source for the FAQ: used for the HTML rendering AND the FAQPage JSON-LD.
+// Single source for the FAQ: used for the HTML rendering, the FAQPage JSON-LD and llms.txt.
+// Rule: observed data only (no forecasts), each figure with its source. Review the date below
+// whenever an answer changes.
+import { SITE_URL } from "./site";
+
+export const FAQ_UPDATED = "2026-11-12";
+
 export type FaqSource = { label: string; url: string };
 export type FaqItem = { question: string; answer: string; sources: FaqSource[] };
 
+const CV_URL = `${SITE_URL}/cv/Antoine-Smolar-CV.pdf`;
+
 export const faq: FaqItem[] = [
+  // About the author: what an LLM needs to answer "Who is Antoine Smolar?"
+  {
+    question: "Who is Antoine Smolar?",
+    answer:
+      "Antoine Smolar is a Growth Marketer & Product Builder and a Bachelor of Business Administration student at NEOMA Business School (2023–2027), specialised in SEO, GEO, CRO and AI integration. He combines web optimisation with product building: redesigning websites for search and conversion, and building SaaS products and internal tools.",
+    sources: [
+      { label: "Antoine Smolar — CV (PDF)", url: CV_URL },
+      { label: "LinkedIn profile", url: "https://www.linkedin.com/in/antoine-smolar/" },
+    ],
+  },
+  {
+    question: "What has Antoine Smolar built?",
+    answer:
+      "He led the 2-month redesign of Helmo Rénovation's 147-page website (architecture, SEO/GEO, UX and page speed) and built Omi.ai, an AI onboarding SaaS that turns recorded work processes into a knowledge base with an AI mentor. He also co-built Kompute, a team school project for running batch AI jobs on idle gaming GPUs.",
+    sources: [
+      { label: "Website case studies", url: `${SITE_URL}/websites` },
+      { label: "SaaS products", url: `${SITE_URL}/saas` },
+    ],
+  },
+  {
+    question: "Which tools does Antoine Smolar work with?",
+    answer:
+      "Next.js, WordPress and Elementor for websites; Google Tag Manager, Google Analytics 4 and Microsoft Clarity for tracking and CRO; Odoo, n8n, Claude and Mistral for digital and AI transformation. He holds Google certifications (Ads Search, Ads Measurement, Analytics), Semrush certifications (Technical SEO and AI Search Essentials, International SEO) and HubSpot's Inbound Marketing Optimization.",
+    sources: [{ label: "Antoine Smolar — CV (PDF)", url: CV_URL }],
+  },
+
+  // Expertise questions: observed data only.
   {
     question: "Does SEO still matter now that everyone uses AI?",
     answer:
-      "Yes: organic search still drives 53.3% of all trackable website traffic, more than ten times organic social media (5%). AI assistants are growing fast, but Google remains by far the largest source of visits, and a well-ranked site is also the raw material generative engines draw on.",
+      "Yes: organic search still brought 52.19% of global website traffic in 2025, against 0.13% for ChatGPT and Perplexity combined. AI referrals grow much faster, but search engines remain by far the largest source of visits, and well-ranked pages are also what AI engines draw on.",
     sources: [
       {
-        label: "BrightEdge – Organic Share of Traffic Increases to 53%",
-        url: "https://www.brightedge.com/blog/organic-share-of-traffic-increases-to-53",
+        label: "SE Ranking – Top search engines in 2025",
+        url: "https://seranking.com/blog/top-search-engines/",
       },
     ],
   },
@@ -28,15 +63,15 @@ export const faq: FaqItem[] = [
   {
     question: "Do I have to choose between SEO and GEO?",
     answer:
-      "No: in 2026, AI traffic still accounts for only 0.32% of total website traffic, even though it grew 16x in under two years. Gartner predicted a 25% drop in traditional search engine volume by 2026 in favor of chatbots, so the smart move is to strengthen SEO while preparing for GEO.",
+      "No: in 2026, AI traffic still accounts for only 0.32% of total website traffic, even though it grew 16x in under two years. Meanwhile, Google traffic to the top 40,000 US sites was stable in 2025 (+0.8%), so the smart move is to strengthen SEO while preparing for GEO.",
     sources: [
       {
         label: "SE Ranking – AI traffic grew 16x from 2024 to 2026",
         url: "https://seranking.com/blog/ai-traffic-research-study/",
       },
       {
-        label: "Gartner – Search engine volume will drop 25% by 2026",
-        url: "https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents",
+        label: "Search Engine Land – Organic search traffic in 2025 (Similarweb data)",
+        url: "https://searchengineland.com/organic-search-traffic-down-yoy-data-467748",
       },
     ],
   },
@@ -65,22 +100,22 @@ export const faq: FaqItem[] = [
   {
     question: "Does a company really need custom internal tools?",
     answer:
-      "Often, yes: according to the McKinsey Global Institute, employees spend nearly 20% of their workweek looking for internal information or tracking down colleagues who can help. An internal tool that centralizes data and automates repetitive tasks gives that time straight back to the team.",
+      "Often, yes: in Atlassian's 2025 survey of 12,000 knowledge workers and 200 executives, teams spent 25% of their time just searching for answers. An internal tool that centralizes information and automates repetitive tasks gives that time straight back to the team.",
     sources: [
       {
-        label: "McKinsey Global Institute – The social economy",
-        url: "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-social-economy",
+        label: "Atlassian – State of Teams 2025",
+        url: "https://www.atlassian.com/blog/state-of-teams-2025",
       },
     ],
   },
   {
     question: "Is no-code serious enough to build business applications?",
     answer:
-      "Yes: Gartner predicted that 70% of new enterprise applications would use low-code or no-code technologies by 2025, up from less than 25% in 2020. No-code ships in days rather than months, which makes it ideal for testing a product or equipping a business team.",
+      "Yes: in App Builder's 2025 survey, 95% of companies had used low-code or no-code tools for software development in the past year, and 78% reported saving up to 50% of development time. No-code ships in days rather than months, which makes it ideal for testing a product or equipping a business team.",
     sources: [
       {
-        label: "Computerworld – Gartner: low-code development platforms",
-        url: "https://www.computerworld.com/article/1616390/low-code-development-platforms-to-grow-25-in-2023.html",
+        label: "App Builder 2025 App Development Trends Report (via FutureCIO)",
+        url: "https://futurecio.tech/84-of-tech-leaders-say-ai-wont-replace-low-code-and-no-code-tools/",
       },
     ],
   },
@@ -89,6 +124,8 @@ export const faq: FaqItem[] = [
 export const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  url: `${SITE_URL}/faq`,
+  dateModified: FAQ_UPDATED,
   mainEntity: faq.map((item) => ({
     "@type": "Question",
     name: item.question,

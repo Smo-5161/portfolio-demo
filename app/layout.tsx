@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Google_Sans_Flex } from "next/font/google";
 import Analytics, { consentDefaults } from "@/components/Analytics";
 import ConsentBanner from "@/components/ConsentBanner";
 import SiteHeader from "@/components/SiteHeader";
@@ -10,6 +11,15 @@ import { SITE_URL, contact, routeInfo } from "@/lib/site";
 import "./globals.css";
 
 const home = routeInfo("/");
+
+// Font served from this site (no third-party stylesheet), with a size-adjusted fallback
+// so the swap causes no layout shift.
+const brandFont = Google_Sans_Flex({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-brand",
+  adjustFontFallback: true,
+});
 
 // Site-wide defaults. Each page overrides title, description and canonical via lib/seo.ts.
 export const metadata: Metadata = {
@@ -44,16 +54,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400..700&display=swap"
-        />
-      </head>
+    <html lang="en" className={`scroll-smooth ${brandFont.variable}`}>
       <Script id="consent-defaults" strategy="beforeInteractive">
         {consentDefaults}
       </Script>
