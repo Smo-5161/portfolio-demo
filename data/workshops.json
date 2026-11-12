@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": "vibe-coding-workshop-neoma",
+    "name": "Vibe coding workshop with Lovable — NEOMA",
+    "description": "A hands-on workshop at NEOMA Business School to introduce students to vibe coding and the rise of no-code: each team picked a small local business with no website and built a website proposal for it in one hour with Lovable.",
+    "scope": [
+      "Workshop",
+      "Vibe coding",
+      "No-code",
+      "Lovable"
+    ],
+    "duration": "1-hour build",
+    "stack": [
+      "Lovable"
+    ],
+    "links": [
+      {
+        "label": "Build Challenge NEOMA on Instagram",
+        "url": "https://www.instagram.com/build.challenge.neoma/"
+      }
+    ],
+    "context": [
+      "Most business students have never built software. The goal of the workshop was to show them that this has changed: with AI-assisted \"vibe coding\" tools, describing what you want in plain language is enough to get a working website, which opens product building to non-developers.",
+      "The workshop was held at NEOMA Business School with the Build Challenge NEOMA student community."
+    ],
+    "work": [
+      {
+        "title": "The challenge",
+        "text": "Choose a real business or small shop that has no website, and build it a website proposal in one hour.",
+        "points": [
+          "Pick the business and understand what its customers need to find online.",
+          "Prompt Lovable to generate the site, then iterate on sections, content and design.",
+          "Present the result to the room."
+        ]
+      },
+      {
+        "title": "What students saw in practice",
+        "text": "Beyond the visual result, the demos showed what the tool produces under the hood: a real code base with components, assets and SEO tags (title, description, Open Graph, structured data), and features such as a booking system that need a back end to go live."
+      },
+      {
+        "title": "Key takeaway",
+        "text": "No-code and AI tools turn an idea into a usable prototype in an hour. The value moves to choosing the right problem, writing clear instructions and judging the result."
+      }
+    ],
+    "gallery": {
+      "title": "Photos",
+      "items": [
+        {
+          "src": "/projects/vibe-coding-workshop/lovable-workshop-neoma.webp",
+          "alt": "Two students presenting their Lovable project, a website for a local butcher's shop, on a projected screen showing the generated code during the vibe coding workshop at NEOMA",
+          "caption": "A team presents the website it built for a local butcher's shop in Lovable."
+        }
+      ]
+    }
+  }
+]
