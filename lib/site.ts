@@ -75,11 +75,19 @@ export const routes: RouteInfo[] = [
   },
   {
     path: "/research",
-    label: "Research & Hackathons",
+    label: "Research & School Projects",
     portfolio: true,
-    title: "Research projects & hackathons",
+    title: "Research & school projects",
     description:
-      "Research projects and hackathons by Antoine Smolar: the problem tackled, the prototype built and the results.",
+      "Research and school projects by Antoine Smolar: the question explored, the method, the deliverable and what was learned.",
+  },
+  {
+    path: "/hackathons",
+    label: "Hackathons",
+    portfolio: true,
+    title: "Hackathons",
+    description:
+      "Hackathons Antoine Smolar took part in: the challenge, the team, the prototype built in limited time and the outcome.",
   },
   {
     path: "/architecture-lab",

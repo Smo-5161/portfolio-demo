@@ -10,9 +10,9 @@ export default function ResearchPage() {
   return (
     <ProjectSection
       path="/research"
-      title="Research & Hackathons"
+      title="Research & School Projects"
       items={data as Project[]}
-      emptyMessage="No research projects or hackathons listed yet."
+      emptyMessage="No research or school projects listed yet."
     />
   );
 }

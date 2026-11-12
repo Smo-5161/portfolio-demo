@@ -4,11 +4,13 @@ import { routes } from "./site";
 import tools from "@/data/tools.json";
 import workshops from "@/data/workshops.json";
 import research from "@/data/research.json";
+import hackathons from "@/data/hackathons.json";
 
 const counts: Record<string, number> = {
   "/internal-tools": tools.length,
   "/workshops": workshops.length,
   "/research": research.length,
+  "/hackathons": hackathons.length,
 };
 
 export const isEmptySection = (path: string) => counts[path] === 0;

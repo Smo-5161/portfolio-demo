@@ -70,8 +70,13 @@ const projects = [
   },
   {
     href: "/research",
-    label: "Research & Hackathons",
-    text: "Research projects and hackathons: the problem, the prototype and what came out of it.",
+    label: "Research & School Projects",
+    text: "Research and school projects: the question, the method and the deliverable.",
+  },
+  {
+    href: "/hackathons",
+    label: "Hackathons",
+    text: "Challenges tackled in limited time: the team, the prototype and the outcome.",
   },
   {
     href: "/architecture-lab",
