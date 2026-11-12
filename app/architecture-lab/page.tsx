@@ -1,10 +1,17 @@
 import LabSection from "@/components/LabSection";
 import LabToggleAll from "@/components/LabToggleAll";
 import { pageMetadata } from "@/lib/seo";
-import { REPO_URL, repoFile, routes } from "@/lib/site";
-import { aiBotGroups, aiBots } from "@/lib/ai-bots";
+import { REPO_URL, SITE_UPDATED, repoFile, routes } from "@/lib/site";
+import { aiBotCategories, aiBots } from "@/lib/ai-bots";
 import { faq, faqJsonLd } from "@/lib/faq";
-import { JsonLd, breadcrumbJsonLd, profilePageJsonLd, projectListJsonLd, websiteJsonLd } from "@/lib/jsonld";
+import {
+  JsonLd,
+  breadcrumbJsonLd,
+  labArticleJsonLd,
+  profilePageJsonLd,
+  projectListJsonLd,
+  websiteJsonLd,
+} from "@/lib/jsonld";
 import { trackingEvents, screenshots, type Status } from "@/data/lab";
 import { GTM_ID, CLARITY_ID } from "@/lib/tracking";
 import sites from "@/data/sites.json";
@@ -75,6 +82,12 @@ const jsonLdBlocks = [
     where: "Project pages",
     why: "Each project is a work credited to Antoine Smolar.",
     data: projectListJsonLd("Websites", sites as Project[]),
+  },
+  {
+    type: "TechArticle",
+    where: "This Lab page",
+    why: "Presents this report as a technical article, with its author and its publication and update dates.",
+    data: labArticleJsonLd,
   },
   {
     type: "BreadcrumbList",
@@ -165,6 +178,7 @@ export default function ArchitectureLabPage() {
   return (
     <main>
       <JsonLd data={breadcrumbJsonLd("/architecture-lab", "Architecture & SEO/GEO/CRO Lab")} />
+      <JsonLd data={labArticleJsonLd} />
       <div className="hero-gradient border-b border-stroke">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <nav aria-label="Breadcrumb" className="text-sm text-ink-500 mb-4">
@@ -176,6 +190,9 @@ export default function ArchitectureLabPage() {
             How this site is built to be found by Google, understood and quoted by AI engines,
             and measured end to end. Every number below is read from the site&apos;s own
             configuration, not typed by hand.
+          </p>
+          <p className="text-sm text-ink-500 -mt-6 mb-8">
+            By Antoine Smolar · Last updated <time dateTime={SITE_UPDATED}>12 November 2026</time>
           </p>
           <p className="text-sm text-ink-700 max-w-3xl mb-8 -mt-4 rounded-2xl bg-white/70 border border-stroke px-4 py-3">
             <strong className="font-medium">No tech background?</strong> Each section below is a card
@@ -355,14 +372,17 @@ export default function ArchitectureLabPage() {
         <Section
           id="robots"
           code={["lib/ai-bots.ts", "app/robots.ts"]}
-          plain="robots.txt is the doorman of a website: a small public file telling automated visitors (robots) what they are allowed to read. Many sites block AI robots without knowing it, so ChatGPT or Gemini can never learn about them or quote them. This site names each AI company’s robots and lets them in: the first step to appearing in AI-generated answers, which is what GEO is about."
+          plain="robots.txt is the doorman of a website: a small public file telling automated visitors (robots) what they are allowed to read. AI companies send different robots for different jobs: learning from pages, finding pages to quote, and opening a page when someone asks about it. Here each job is listed separately and a clear choice is made for each one: all are welcome, because the goal of this portfolio is to be known and quoted by AI assistants."
           eyebrow="04"
           title="robots.txt & AI crawlers"
           intro={
             <>
-              Every major AI crawler is named and explicitly allowed, so the site can be used to
-              train, index and answer in ChatGPT, Claude, Gemini, Mistral, DeepSeek, Grok and
-              Perplexity. Only <code>/api/</code> is excluded. See the live file at{" "}
+              AI crawlers do three different jobs: collecting pages to train models, indexing pages
+              for AI search, and fetching a page live when a user asks about it. robots.txt names them
+              in one group per job, so each can be allowed or blocked separately. On this public
+              portfolio all three are allowed on purpose; a site protecting its content would usually
+              block training only. Deprecated tokens (anthropic-ai, Claude-Web) were removed. See the
+              live file at{" "}
               <a href="/robots.txt" className="link">
                 /robots.txt
               </a>
@@ -370,33 +390,34 @@ export default function ArchitectureLabPage() {
             </>
           }
         >
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {aiBotGroups.map((g, i) => (
-              <li key={g.vendor} className="card overflow-hidden">
+          <ul className="grid gap-4 md:grid-cols-2">
+            {aiBotCategories.map((c, i) => (
+              <li key={c.id} className="card overflow-hidden">
                 <div className={`px-5 py-3 ${tones[i % tones.length]}`}>
-                  <span className="font-medium">{g.vendor}</span>{" "}
-                  <span className="text-sm text-ink-700">· {g.product}</span>
+                  <span className="font-medium">{c.label}</span>
+                  <span className="block text-sm text-ink-700">{c.what}</span>
                 </div>
-                <ul className="flex flex-wrap gap-2 p-5">
-                  {g.bots.map((b) => (
-                    <li key={b} className="chip font-mono">
-                      {b}
+                <ul className="flex flex-wrap gap-2 px-5 pt-4">
+                  {c.bots.map((b) => (
+                    <li key={b.name} className="chip font-mono" title={b.vendor}>
+                      {b.name}
                     </li>
                   ))}
                 </ul>
-                {g.note && <p className="px-5 pb-4 -mt-2 text-xs text-ink-500">{g.note}</p>}
+                <p className="px-5 py-4 text-sm text-ink-700">
+                  <span className="font-medium text-ink-900">Decision: </span>
+                  {c.decision}
+                </p>
               </li>
             ))}
           </ul>
           <pre className="mt-6 overflow-auto rounded-xl border border-stroke bg-surface p-4 text-xs font-mono">
-            {`User-Agent: ${aiBots.slice(0, 3).join("\nUser-Agent: ")}
-User-Agent: …  (${aiBots.length} AI crawlers in total)
-Allow: /
-Disallow: /api/
+            {`${aiBotCategories
+              .map((c) => `# ${c.label}\nUser-Agent: ${c.bots.map((b) => b.name).join("\nUser-Agent: ")}\nAllow: /`)
+              .join("\n\n")}
 
 User-Agent: *
 Allow: /
-Disallow: /api/
 
 Sitemap: /sitemap.xml`}
           </pre>
@@ -561,8 +582,10 @@ Sitemap: /sitemap.xml`}
               Server-side tracking does not override a refusal. This site already runs a consent
               banner with Google Consent Mode v2 in advanced mode: when consent is denied, tags only
               send anonymous cookieless pings (no identifiers, no cookies), and GA4 and Google Ads
-              use them to model the missing conversions. Microsoft Clarity runs without cookies until the
-              visitor accepts. The data recovered this way stays aggregated and GDPR-compliant.
+              use them to model the missing conversions. The data recovered this way stays aggregated.
+              Microsoft Clarity, by design, still collects cookieless data before any choice. Since
+              French guidance generally treats session recording as requiring consent, the Clarity tag
+              in GTM is set to wait for the visitor to accept analytics cookies.
             </p>
           </div>
         </Section>

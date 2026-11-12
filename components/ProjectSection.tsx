@@ -2,7 +2,7 @@ import Link from "next/link";
 import EmptyState from "./EmptyState";
 import ProjectCard from "./ProjectCard";
 import type { Project } from "@/lib/types";
-import { routes } from "@/lib/site";
+import { publishedRoutes } from "@/lib/portfolio-data";
 import { JsonLd, breadcrumbJsonLd, projectListJsonLd } from "@/lib/jsonld";
 
 type Props = {
@@ -16,7 +16,7 @@ const tones = ["bg-brand-100!", "bg-accent-100!", "bg-accent-50!", "bg-brand-50!
 
 export default function ProjectSection({ path, title, items, emptyMessage }: Props) {
   // Internal linking: every project page links to the other sections of the portfolio.
-  const others = routes.filter((r) => r.portfolio && r.path !== path);
+  const others = publishedRoutes.filter((r) => r.portfolio && r.path !== path);
 
   return (
     <main>

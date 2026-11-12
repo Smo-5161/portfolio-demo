@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isEmptySection } from "@/lib/portfolio-data";
 import Image from "next/image";
 import cvPreview from "@/public/cv/cv-preview.webp";
 import { pageMetadata } from "@/lib/seo";
@@ -181,24 +182,40 @@ export default function Home() {
             Portfolio
           </h2>
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p, i) => (
-              <li key={p.href}>
-                <Link
-                  href={p.href}
-                  className={`card card-interactive block h-full p-6 border-transparent! ${
-                    projectTones[i % projectTones.length]
-                  }`}
-                >
-                  <h3 className="text-lg mb-1 flex items-center justify-between gap-2">
-                    {p.label}
-                    <span aria-hidden="true" className="grid place-items-center w-8 h-8 rounded-full bg-white text-ink-900">
-                      →
-                    </span>
-                  </h3>
-                  <p className="text-sm text-ink-700">{p.text}</p>
-                </Link>
-              </li>
-            ))}
+            {projects.map((p, i) =>
+              isEmptySection(p.href) ? (
+                // No content yet: shown as upcoming, not linked to an empty page.
+                <li key={p.href}>
+                  <div className="card block h-full p-6 border-dashed! bg-surface!">
+                    <h3 className="text-lg mb-1 flex items-center justify-between gap-2">
+                      {p.label}
+                      <span className="chip">Coming soon</span>
+                    </h3>
+                    <p className="text-sm text-ink-500">{p.text}</p>
+                  </div>
+                </li>
+              ) : (
+                <li key={p.href}>
+                  <Link
+                    href={p.href}
+                    className={`card card-interactive block h-full p-6 border-transparent! ${
+                      projectTones[i % projectTones.length]
+                    }`}
+                  >
+                    <h3 className="text-lg mb-1 flex items-center justify-between gap-2">
+                      {p.label}
+                      <span
+                        aria-hidden="true"
+                        className="grid place-items-center w-8 h-8 rounded-full bg-white text-ink-900"
+                      >
+                        →
+                      </span>
+                    </h3>
+                    <p className="text-sm text-ink-700">{p.text}</p>
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
         </div>
       </section>

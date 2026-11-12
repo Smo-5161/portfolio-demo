@@ -1,4 +1,5 @@
-import { SITE_URL, contact, routes } from "@/lib/site";
+import { SITE_URL, contact } from "@/lib/site";
+import { publishedRoutes } from "@/lib/portfolio-data";
 import { faq } from "@/lib/faq";
 
 // /llms.txt: Markdown summary of the site for LLMs (llmstxt.org convention).
@@ -11,7 +12,7 @@ export function GET() {
 
 ## Pages
 
-${routes.map((r) => `- [${r.label}](${SITE_URL}${r.path === "/" ? "" : r.path})`).join("\n")}
+${publishedRoutes.map((r) => `- [${r.label}](${SITE_URL}${r.path === "/" ? "" : r.path})`).join("\n")}
 
 ## FAQ
 

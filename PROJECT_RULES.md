@@ -28,7 +28,7 @@ This site is a portfolio and a live demonstration of web architecture, SEO, GEO 
 
 ## 5. Crawlability
 
-- `robots.txt` names and explicitly allows the crawlers of every major AI assistant (ChatGPT, Claude, Gemini, Mistral, DeepSeek, Grok, Perplexity…); only `/api/` is excluded.
+- `robots.txt` groups AI crawlers by job (model training, AI search indexing, user-triggered fetch) and states a decision for each group; on this public portfolio all are allowed. Deprecated or undocumented tokens are labelled as such.
 - `sitemap.xml` lists indexable pages with a real last-update date.
 - `llms.txt` provides a Markdown summary of the site for LLMs.
 - A portfolio page with no entry yet is `noindex` and left out of the sitemap until content is added.

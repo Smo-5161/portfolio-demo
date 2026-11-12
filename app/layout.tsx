@@ -29,12 +29,10 @@ export const metadata: Metadata = {
   applicationName: `${contact.name} — Portfolio`,
   authors: [{ name: contact.name, url: contact.linkedin }],
   creator: contact.name,
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: `${contact.name} — Portfolio`,
     locale: "en_US",
-    url: "/",
     title: home.title,
     description: home.description,
   },

@@ -1,8 +1,9 @@
 // Structured data (schema.org JSON-LD) shared across pages and shown on the Architecture Lab.
-import { SITE_URL, contact } from "./site";
+import { REPO_URL, SITE_UPDATED, SITE_URL, contact } from "./site";
 import type { Project } from "./types";
 
 const PERSON_ID = `${SITE_URL}/#person`;
+const SITE_CREATED = "2026-11-11";
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
 export const personJsonLd = {
@@ -14,7 +15,25 @@ export const personJsonLd = {
   url: SITE_URL,
   email: `mailto:${contact.email}`,
   telephone: contact.phoneIntl,
-  sameAs: [contact.linkedin],
+  image: `${SITE_URL}/antoine-smolar.jpg`,
+  sameAs: [contact.linkedin, "https://github.com/Smo-5161"],
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "NEOMA Business School" },
+    { "@type": "CollegeOrUniversity", name: "Akita International University" },
+  ],
+  hasCredential: [
+    ["Google Ads Search Professional Certification", "Google"],
+    ["Google Ads Measurement Certification", "Google"],
+    ["Google Analytics Certification", "Google"],
+    ["Technical SEO and AI Search Essentials", "Semrush"],
+    ["International SEO", "Semrush"],
+    ["Inbound Marketing Optimization", "HubSpot"],
+  ].map(([name, issuer]) => ({
+    "@type": "EducationalOccupationalCredential",
+    name,
+    credentialCategory: "certification",
+    recognizedBy: { "@type": "Organization", name: issuer },
+  })),
   knowsAbout: [
     "Search Engine Optimization",
     "Generative Engine Optimization",
@@ -44,8 +63,23 @@ export const profilePageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   url: SITE_URL,
+  dateCreated: SITE_CREATED,
+  dateModified: SITE_UPDATED,
   isPartOf: { "@id": WEBSITE_ID },
   mainEntity: personJsonLd,
+};
+
+/** The Architecture Lab is a technical write-up: TechArticle with author and dates. */
+export const labArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  headline: "How this portfolio is built: architecture, SEO, GEO and tracking",
+  url: `${SITE_URL}/architecture-lab`,
+  author: { "@id": PERSON_ID },
+  datePublished: SITE_CREATED,
+  dateModified: SITE_UPDATED,
+  isPartOf: { "@id": WEBSITE_ID },
+  codeRepository: REPO_URL,
 };
 
 export function breadcrumbJsonLd(path: string, label: string) {

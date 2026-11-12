@@ -65,7 +65,9 @@ export default function ProjectCard({ project: p }: { project: Project }) {
               {p.work.map((w, i) => (
                 <li key={w.title} className="card p-5">
                   <h4 className="text-base mb-2 flex items-baseline gap-2">
-                    <span className="chip chip-tonal shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                    <span aria-hidden="true" className="chip chip-tonal shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>{" "}
                     {w.title}
                   </h4>
                   <p className="text-sm text-ink-700 leading-relaxed">{w.text}</p>
