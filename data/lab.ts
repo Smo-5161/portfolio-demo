@@ -133,7 +133,7 @@ export const screenshots: ScreenshotSlot[] = [
     height: 707,
     alt: "Microsoft Clarity click heatmap of the home page (66 page views, 60 clicks), on an earlier version of the hero: the CV preview is the most clicked element (6 clicks, 10%), followed by the skill cards No-code App development (4 clicks), UI/UX User Interface & Experience (4) and Showcase and e-commerce sites (3); click hot spots sit on the experience and skills parts of the CV",
     date: "2026-11-12",
-    note: "The CV is what visitors click first, and they click inside it on the experience and skills lines, so they want the detail. The skill cards also got clicks although they were not links: likely part of the 25% dead clicks seen in the overview. Fix applied: they no longer lift on hover, so only real links look clickable.",
+    note: "These few data points come from friends and family browsing the site on my computer, not from real visitors. The CV is what they clicked first, and they clicked inside it on the experience and skills lines, so they wanted the detail. The skill cards also got clicks although they were not links: likely part of the 25% dead clicks seen in the overview. Fix applied: they no longer lift on hover, so only real links look clickable.",
   },
   { id: "ga4-overview", title: "GA4 — Overview", description: "Users, sessions and engagement over time." },
   { id: "ga4-key-events", title: "GA4 — Key events", description: "Leads and outbound project clicks." },
