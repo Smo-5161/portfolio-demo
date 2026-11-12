@@ -151,3 +151,8 @@
       #fff;
   }
 }
+
+/* Lab sections targeted by the URL hash are open from the first paint (see LabSection). */
+section:target:not([data-ready]) > .lab-panel {
+  grid-template-rows: 1fr;
+}

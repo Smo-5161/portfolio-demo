@@ -25,6 +25,9 @@ type Props = {
  */
 export default function LabSection({ id, eyebrow, title, plain, cta, code, children }: Props) {
   const [open, setOpen] = useState(false);
+  // Until hydration, CSS (:target) opens a section targeted by the URL hash at first paint,
+  // so the page does not jump when React opens it (no layout shift).
+  const [ready, setReady] = useState(false);
   const panelId = useId();
 
   // Open the section when it is targeted by a link (#robots…) or by "Expand all".
@@ -34,6 +37,7 @@ export default function LabSection({ id, eyebrow, title, plain, cta, code, child
 
   useEffect(() => {
     syncWithHash();
+    setReady(true);
     const onAll = (e: Event) => setOpen((e as CustomEvent<boolean>).detail);
     window.addEventListener("hashchange", syncWithHash);
     window.addEventListener(LAB_TOGGLE_ALL, onAll);
@@ -46,7 +50,12 @@ export default function LabSection({ id, eyebrow, title, plain, cta, code, child
   const toggle = () => setOpen((o) => !o);
 
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="card scroll-mt-28 overflow-hidden">
+    <section
+      id={id}
+      aria-labelledby={`${id}-title`}
+      className="card scroll-mt-28 overflow-hidden"
+      data-ready={ready ? "" : undefined}
+    >
       <div onClick={toggle} className="cursor-pointer p-6 sm:p-8 transition-colors hover:bg-surface">
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -123,7 +132,7 @@ export default function LabSection({ id, eyebrow, title, plain, cta, code, child
 
       <div
         id={panelId}
-        className={`grid transition-[grid-template-rows] duration-500 ease-out ${
+        className={`lab-panel grid transition-[grid-template-rows] duration-200 ease-out ${
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >

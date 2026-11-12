@@ -614,7 +614,7 @@ Sitemap: /sitemap.xml`}
           plain="These are the reporting screens of the tools described above, taken on this site. They show the setup works end to end and data comes in. With a portfolio’s low traffic, they illustrate the tools rather than a full analysis."
           eyebrow="08"
           title="Dashboards, heatmaps & reports"
-          intro="Screenshots from the tools above, updated as the site collects data."
+          intro="Screenshots from the tools above."
         >
           <ul className="grid gap-4 sm:grid-cols-2">
             {screenshots.map((s, i) => (

@@ -89,7 +89,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                     {g.src ? (
                       <a href={g.src} target="_blank" rel="noopener" className="block overflow-hidden rounded-xl border border-stroke">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={g.src} alt={g.alt} loading="lazy" className="h-auto w-full" />
+                        <img src={g.src} alt={g.alt} width={g.width} height={g.height} loading="lazy" className="h-auto w-full" />
                       </a>
                     ) : (
                       <div className="grid aspect-[4/3] place-items-center rounded-xl border border-dashed border-ink-300 bg-brand-50 text-sm text-ink-500">

@@ -30,7 +30,7 @@ export type Project = {
   /** Short, discreet note shown at the end of the details (e.g. why no screenshots). */
   note?: string;
   /** Image gallery; an item without src is shown as a placeholder slot. */
-  gallery?: { title: string; items: { src?: string; alt: string; caption?: string }[] };
+  gallery?: { title: string; items: { src?: string; alt: string; caption?: string; width?: number; height?: number }[] };
   /** Presentation deck shown in a slide viewer (images) with a downloadable PDF. */
   slides?: {
     title: string;

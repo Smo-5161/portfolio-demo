@@ -53,17 +53,23 @@
         {
           "src": "/projects/vibe-coding-workshop/live-build-challenge-poster.webp",
           "alt": "Live Build Challenge poster: create and sell your first website in 3 hours, 2 April, 2 to 6 pm, free entry, NEOMA Business School, Reims",
-          "caption": "Event poster"
+          "caption": "Event poster",
+          "width": 1198,
+          "height": 1200
         },
         {
           "src": "/projects/vibe-coding-workshop/live-build-challenge-steps.webp",
           "alt": "Live Build Challenge programme: 3 hours, 3 steps, 1 business — hunting on Google Maps, building with Lovable, pitching to the owner; no technical prerequisites",
-          "caption": "The 3 steps of the challenge"
+          "caption": "The 3 steps of the challenge",
+          "width": 1198,
+          "height": 1200
         },
         {
           "src": "/projects/vibe-coding-workshop/lovable-workshop-neoma.webp",
           "alt": "Two students presenting their Lovable project, a website for a local butcher's shop, on a projected screen showing the generated code during the vibe coding workshop at NEOMA",
-          "caption": "A team presents the website it built for a local butcher's shop in Lovable."
+          "caption": "A team presents the website it built for a local butcher's shop in Lovable.",
+          "width": 1080,
+          "height": 1440
         }
       ]
     }
