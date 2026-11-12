@@ -4,6 +4,7 @@ import Image from "next/image";
 import cvPreview from "@/public/cv/cv-preview.webp";
 import { pageMetadata } from "@/lib/seo";
 import { JsonLd, profilePageJsonLd } from "@/lib/jsonld";
+import { contact } from "@/lib/site";
 
 export const metadata = pageMetadata("/");
 
@@ -13,6 +14,7 @@ const LETTERS_PDF = "/cv/Antoine-Smolar-Recommendation-Letters.pdf";
 type Skill = { short: string; name: string; text: string };
 
 // Kept short on purpose so all six fit on one line on desktop.
+// Wording rule: describe what Antoine has actually done or trained on, never more.
 const skills: Skill[] = [
   {
     short: "SEO",
@@ -27,12 +29,12 @@ const skills: Skill[] = [
   {
     short: "CRO",
     name: "Conversion Rate Optimization",
-    text: "Tracking, heatmaps and A/B tests that turn visits into leads.",
+    text: "Tracking setup (GTM, GA4, Clarity) and the fundamentals of reading heatmaps and funnels.",
   },
   {
     short: "UI/UX",
     name: "User Interface & Experience",
-    text: "Clear, frictionless interfaces built from usage data.",
+    text: "Clear, frictionless interfaces, designed to be measured and improved.",
   },
   {
     short: "No-code",
@@ -101,14 +103,15 @@ export default function Home() {
         <div className="hero-gradient border-b border-stroke">
           <div className="max-w-6xl mx-auto px-6 pt-16 pb-16 grid gap-12 lg:grid-cols-[3fr_2fr] lg:items-center">
             <div>
-              <h1 id="profile-title" className="text-4xl sm:text-5xl mb-5 max-w-3xl">
-                Growth Marketer &amp; Product Builder
+              <h1 id="profile-title" className="text-4xl sm:text-5xl mb-3 max-w-3xl">
+                {contact.name}
               </h1>
+              <p className="text-xl text-ink-900 mb-5 max-w-2xl">{contact.tagline}</p>
               <p className="text-lg text-ink-700 mb-8 max-w-2xl">
-                I grow digital products by combining acquisition, conversion and product
-                building: making a site visible on Google and in generative AI, turning that
-                traffic into customers, then shipping the apps and tools that keep the business
-                running.
+                I combine marketing and product building: making a site visible on Google and in
+                generative AI, measuring what visitors do, and building the apps and tools a
+                business runs on. This portfolio gathers my internships, school projects and side
+                builds, with what worked and what is still unfinished.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#portfolio" className="btn btn-primary">
@@ -151,27 +154,20 @@ export default function Home() {
           <h2 id="skills-title" className="text-3xl mb-6">
             My skills
           </h2>
-          {/* One line of titles; hovering (or tapping / focusing) a card zooms it like a magnifying
-              glass and reveals its text. The text is always in the HTML, only folded on screen. */}
-          <ul className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+          {/* Same look as the portfolio cards (tonal backgrounds, no border). Every card shows its
+              full text and stays in the grid flow: hovering only lifts it slightly, so cards never
+              overlap their neighbours, even when the page is zoomed. */}
+          <ul className="grid auto-rows-fr gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {skills.map((s, i) => (
-              <li key={s.short} className="relative h-24">
+              <li key={s.short}>
                 <article
-                  tabIndex={0}
-                  className={`group card absolute inset-x-0 top-0 z-0 min-h-24 cursor-default p-4 border-t-4! outline-none transition-[scale,box-shadow] duration-300 ease-out hover:z-30 hover:scale-[1.45] hover:shadow-xl focus-within:z-30 focus-within:scale-[1.45] focus-within:shadow-xl ${
-                    i === 0 ? "origin-top-left" : i === skills.length - 1 ? "origin-top-right" : "origin-top"
+                  className={`card card-interactive h-full p-4 border-transparent! transition-[translate,box-shadow] duration-200 hover:-translate-y-0.5 ${
+                    projectTones[i % projectTones.length]
                   }`}
-                  style={{ borderTopColor: i % 2 === 0 ? "var(--color-brand-700)" : "var(--color-accent-500)" }}
                 >
-                  <h3 className="text-lg leading-tight">
-                    {s.short}
-                    <span className="block text-xs font-normal text-ink-500 mt-0.5">{s.name}</span>
-                  </h3>
-                  <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] group-focus-within:grid-rows-[1fr]">
-                    <p className="overflow-hidden text-xs text-ink-700 leading-snug">
-                      <span className="block pt-2">{s.text}</span>
-                    </p>
-                  </div>
+                  <h3 className="text-lg leading-tight">{s.short}</h3>
+                  <p className="text-xs font-medium text-ink-700 mt-0.5">{s.name}</p>
+                  <p className="text-xs text-ink-700 leading-snug mt-2">{s.text}</p>
                 </article>
               </li>
             ))}
@@ -196,10 +192,11 @@ export default function Home() {
                 // No content yet: shown as upcoming, not linked to an empty page.
                 <li key={p.href}>
                   <div className="card block h-full p-6 border-dashed! bg-surface!">
-                    <h3 className="text-lg mb-1 flex items-start justify-between gap-3">
-                      <span>{p.label}</span>
+                    {/* Badge kept outside the heading so the h3 text is just the section name. */}
+                    <div className="mb-1 flex items-start justify-between gap-3">
+                      <h3 className="text-lg">{p.label}</h3>
                       <span className="chip shrink-0 whitespace-nowrap mt-0.5">Coming soon</span>
-                    </h3>
+                    </div>
                     <p className="text-sm text-ink-500">{p.text}</p>
                   </div>
                 </li>
@@ -211,15 +208,15 @@ export default function Home() {
                       projectTones[i % projectTones.length]
                     }`}
                   >
-                    <h3 className="text-lg mb-1 flex items-start justify-between gap-3">
-                      <span>{p.label}</span>
+                    <div className="mb-1 flex items-start justify-between gap-3">
+                      <h3 className="text-lg">{p.label}</h3>
                       <span
                         aria-hidden="true"
                         className="grid place-items-center w-8 h-8 shrink-0 rounded-full bg-white text-ink-900"
                       >
                         →
                       </span>
-                    </h3>
+                    </div>
                     <p className="text-sm text-ink-700">{p.text}</p>
                   </Link>
                 </li>

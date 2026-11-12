@@ -15,7 +15,7 @@ export const faq: FaqItem[] = [
   {
     question: "Who is Antoine Smolar?",
     answer:
-      "Antoine Smolar is a Growth Marketer & Product Builder and a Bachelor of Business Administration student at NEOMA Business School (2023–2027), specialised in SEO, GEO, CRO and AI integration. He combines web optimisation with product building: redesigning websites for search and conversion, and building SaaS products and internal tools.",
+      "Antoine Smolar is a Bachelor of Business Administration student at NEOMA Business School (2023–2027) who builds websites, apps and internal tools and makes them findable on Google and AI engines. His work so far comes from internships, school projects and side builds: a website redesign for search and conversion, SaaS prototypes, an HR software rollout and AI workshops.",
     sources: [
       { label: "Antoine Smolar — CV (PDF)", url: CV_URL },
       { label: "LinkedIn profile", url: "https://www.linkedin.com/in/antoine-smolar/" },
@@ -33,8 +33,14 @@ export const faq: FaqItem[] = [
   {
     question: "Which tools does Antoine Smolar work with?",
     answer:
-      "Next.js, WordPress and Elementor for websites; Google Tag Manager, Google Analytics 4 and Microsoft Clarity for tracking and CRO; Odoo, n8n, Claude and Mistral for digital and AI transformation. He holds Google certifications (Ads Search, Ads Measurement, Analytics), Semrush certifications (Technical SEO and AI Search Essentials, International SEO) and HubSpot's Inbound Marketing Optimization.",
+      "Next.js, WordPress and Elementor for websites; Google Tag Manager, Google Analytics 4 and Microsoft Clarity for tracking, which he sets up hands-on (he has trained on CRO analysis such as heatmaps and funnels but not yet practised it on real traffic); Odoo, n8n, Claude and Mistral for digital and AI transformation. He holds Google certifications (Ads Search, Ads Measurement, Analytics), Semrush certifications (Technical SEO and AI Search Essentials, International SEO) and HubSpot's Inbound Marketing Optimization.",
     sources: [{ label: "Antoine Smolar — CV (PDF)", url: CV_URL }],
+  },
+  {
+    question: "How was this website built?",
+    answer:
+      "It was vibe-coded with Claude as a coding partner, under Antoine Smolar's direction: he defined the site architecture, semantic markup, robots.txt and AI crawler rules, structured data, llms.txt and the GEO-ready FAQ in a written brief the AI had to follow. The site is a skills showcase reached from his CV and LinkedIn, not a site meant to attract search traffic, which is why it runs on a free Vercel domain and documents server-side tracking instead of running it.",
+    sources: [{ label: "Architecture & SEO/GEO/CRO Lab", url: `${SITE_URL}/architecture-lab` }],
   },
 
   // Expertise questions: observed data only.

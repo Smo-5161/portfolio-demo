@@ -208,10 +208,20 @@ export default function ArchitectureLabPage() {
           </p>
           <div className="mb-8 max-w-3xl rounded-2xl border border-stroke bg-white/80 p-5">
             <p className="text-sm text-ink-700 mb-4">
-              <strong className="font-medium text-ink-900">Built with AI, directed by me.</strong> The code
-              was written with Claude as a coding partner. The brief, the architecture, the SEO/GEO
-              requirements, the content and every decision are mine, set out in a written brief and a
-              set of project rules the assistant had to follow.
+              <strong className="font-medium text-ink-900">Built with AI, directed by me.</strong> This
+              site was vibe-coded: Claude wrote the code as a coding partner. What I brought is the part
+              that makes it work for search and AI engines: the site architecture, the semantic markup
+              and heading structure, robots.txt and the AI crawler policy, structured data, llms.txt,
+              the GEO-ready FAQ, the choice of stack and the tracking plan. All of it was set out in a
+              written brief and a set of project rules the assistant had to follow.
+            </p>
+            <p className="text-sm text-ink-700 mb-4">
+              <strong className="font-medium text-ink-900">Why this site stays small on purpose.</strong>{" "}
+              This is a skills showcase, not a site meant to rank or attract traffic: its visitors come
+              from my CV and LinkedIn. That explains a few deliberate choices: no paid custom domain, and
+              no live server-side tracking, since running a server container for a handful of visits
+              would only burn resources for no useful data. Those parts are designed and documented to
+              show I know how to set them up, not deployed.
             </p>
             <div className="flex flex-wrap gap-2">
               <a href={REPO_URL} target="_blank" rel="noopener" className="btn btn-primary">
@@ -329,7 +339,7 @@ export default function ArchitectureLabPage() {
         <Section
           id="markup"
           code={["lib/jsonld.tsx", "lib/seo.ts"]}
-          plain="HTML tags work like labels on a filing cabinet: “this is the main title”, “this is a section”, “this is the contact address”. Clear labels help Google and AI tools understand what each part of a page is. JSON-LD goes one step further: it is an ID card hidden in the page, in a format machines read directly (“this site belongs to Antoine Smolar, Growth Marketer, here is his LinkedIn”). It helps Google display richer results and helps AI assistants describe a person or a company accurately."
+          plain="HTML tags work like labels on a filing cabinet: “this is the main title”, “this is a section”, “this is the contact address”. Clear labels help Google and AI tools understand what each part of a page is. JSON-LD goes one step further: it is an ID card hidden in the page, in a format machines read directly (“this site belongs to Antoine Smolar, a business student, here is his LinkedIn”). It helps Google display richer results and helps AI assistants describe a person or a company accurately."
           eyebrow="03"
           title="Semantic markup & structured data"
           intro="HTML tags describe what each block is, and JSON-LD states the facts explicitly so search engines and LLMs don't have to guess."
@@ -475,7 +485,7 @@ Sitemap: /sitemap.xml`}
         <Section
           id="tracking"
           code={["components/Analytics.tsx", "components/ConsentBanner.tsx", "data/lab.ts"]}
-          plain="Google Analytics counts what happens: how many visitors, what they click, how many get in touch. Microsoft Clarity shows how it happens: heatmaps of where people click and anonymous replays of visits, to spot what confuses them. Google Tag Manager is the control panel that switches these tools on without touching the site’s code. A “conversion” is an action that matters for the business, here contacting me. And the cookie banner asks visitors for permission first, as European law requires."
+          plain="Google Analytics counts what happens: how many visitors, what they click, how many get in touch. Microsoft Clarity shows how it happens: heatmaps of where people click and anonymous replays of visits, to spot what confuses them. Google Tag Manager is the control panel that switches these tools on without touching the site’s code. A “conversion” is an action that matters for the business, here contacting me. And the cookie banner asks visitors for permission first, as European law requires. Where I stand: I installed and configured this stack myself, from the consent banner to GTM, GA4 and Clarity. I have trained on reading heatmaps, session recordings and conversion funnels, but I haven’t yet analysed real traffic to drive a design or business decision. That is the next step, and the part where I would need some ramp-up time on a real project."
           eyebrow="06"
           title="Analytics & tracking"
           intro="Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. GA4 measures what happens, Clarity shows how (heatmaps, recordings, rage clicks). Consent is handled by a banner, Google Consent Mode v2 and Clarity Consent API v2 (live): until a visitor accepts, both tools run without cookies."
@@ -533,7 +543,7 @@ Sitemap: /sitemap.xml`}
         {/* 7. Server-side */}
         <Section
           id="server-side"
-          plain="Today, measurement tools run inside the visitor’s browser, where ad blockers and privacy settings often switch them off: part of the visits simply goes uncounted, like a shop door counter that misses some customers. Server-side tracking moves this work to my own server: the browser sends one message to my own address, and my server passes it on to Google and the other tools. Measurement becomes more complete and more reliable, and the page gets lighter. It does not override anyone’s choice: if a visitor refuses cookies, only anonymous statistics are kept."
+          plain="Today, measurement tools run inside the visitor’s browser, where ad blockers and privacy settings often switch them off: part of the visits simply goes uncounted, like a shop door counter that misses some customers. Server-side tracking moves this work to my own server: the browser sends one message to my own address, and my server passes it on to Google and the other tools. Measurement becomes more complete and more reliable, and the page gets lighter. It does not override anyone’s choice: if a visitor refuses cookies, only anonymous statistics are kept. Not deployed on purpose: with a portfolio’s traffic, a server container would cost resources without producing meaningful data. The setup is designed and documented; I understand how it works and why it matters, and I would expect a learning curve the first time I run it in production."
           eyebrow="07"
           title="Server-side tracking with Stape"
           intro={
@@ -589,9 +599,10 @@ Sitemap: /sitemap.xml`}
               banner with Google Consent Mode v2 in advanced mode: when consent is denied, tags only
               send anonymous cookieless pings (no identifiers, no cookies), and GA4 and Google Ads
               use them to model the missing conversions. The data recovered this way stays aggregated.
-              Microsoft Clarity, by design, still collects cookieless data before any choice. Since
-              French guidance generally treats session recording as requiring consent, the Clarity tag
-              in GTM is set to wait for the visitor to accept analytics cookies.
+              Microsoft Clarity, by design, still collects cookieless data before any choice (Clarity
+              Consent API v2), and that is how it runs on this site today. Since French guidance
+              generally treats session recording as requiring consent, the next step is to make the
+              Clarity tag in GTM fire only after the visitor accepts analytics cookies.
             </p>
           </div>
         </Section>
@@ -600,7 +611,7 @@ Sitemap: /sitemap.xml`}
         <Section
           id="dashboards"
           code={["data/lab.ts"]}
-          plain="These are the actual reporting screens of the tools described above. They prove the setup works end to end: data comes in, and it turns into charts and insights a team can act on."
+          plain="These are the reporting screens of the tools described above, taken on this site. They show the setup works end to end and data comes in. With a portfolio’s low traffic, they illustrate the tools rather than a full analysis."
           eyebrow="08"
           title="Dashboards, heatmaps & reports"
           intro="Screenshots from the tools above, updated as the site collects data."

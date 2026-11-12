@@ -6,9 +6,9 @@ import { faq } from "@/lib/faq";
 export const dynamic = "force-static";
 
 export function GET() {
-  const body = `# ${contact.name} — ${contact.jobTitle}
+  const body = `# ${contact.name}
 
-> Portfolio and technical lab: SEO, GEO (Generative Engine Optimization), CRO (Conversion Rate Optimization), UI/UX and no-code app development.
+> ${contact.tagline}. Portfolio and technical lab: SEO, GEO (Generative Engine Optimization), tracking setup, UI/UX and no-code app development. A skills showcase reached from his CV and LinkedIn, vibe-coded with Claude under his direction; not built to attract search traffic.
 
 ## Pages
 
