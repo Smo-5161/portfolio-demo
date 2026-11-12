@@ -112,7 +112,6 @@ export const screenshots: ScreenshotSlot[] = [
     height: 398,
     alt: "Microsoft Clarity panels: referrers vercel.com (36 sessions) and a preview deployment (3); browser Chrome 100% of 40 sessions; performance score 83/100 from 2 page views, LCP 0.87 s (good), INP 100 ms (good), CLS 0.2 (needs improvement)",
     date: "2026-11-12",
-    note: "Real-user CLS of 0.2 versus 0 in the lab, measured on 2 page views of early builds. The likely causes are fixed: report sections opened from a link are open from the first paint, expand animations end inside the 500 ms window that follows a click, and every image declares its size.",
   },
   {
     id: "clarity-top-pages",

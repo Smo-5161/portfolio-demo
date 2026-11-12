@@ -155,8 +155,8 @@ export default function Home() {
             My skills
           </h2>
           {/* Same look as the portfolio cards (tonal backgrounds, no border). Every card shows its
-              full text and stays in the grid flow: hovering only lifts it slightly, so cards never
-              overlap their neighbours, even when the page is zoomed. */}
+              full text and stays in the grid flow. They are not links, so they have no hover effect
+              (a lift made visitors click them, see the Clarity heatmap in the Lab). */}
           <ul className="grid auto-rows-fr gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {skills.map((s, i) => (
               <li key={s.short}>
