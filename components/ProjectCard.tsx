@@ -1,4 +1,5 @@
 import type { Project } from "@/lib/types";
+import SlideViewer from "./SlideViewer";
 
 export default function ProjectCard({ project: p }: { project: Project }) {
   const host = p.url ? new URL(p.url).host.replace(/^www\./, "") : null;
@@ -53,6 +54,15 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                 <p key={i}>{c}</p>
               ))}
             </div>
+          </section>
+        )}
+
+        {p.slides && (
+          <section aria-labelledby={`${p.id}-slides`}>
+            <h3 id={`${p.id}-slides`} className="text-xl mb-3">
+              {p.slides.title}
+            </h3>
+            <SlideViewer title={`${p.name} — ${p.slides.title}`} slides={p.slides.images} pdf={p.slides.pdf} />
           </section>
         )}
 

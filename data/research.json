@@ -53,7 +53,28 @@
           "Risk matrix (supply chain, currency, skills) with a mitigation for each, and a clear list of what Airbus should not do."
         ]
       }
-    ]
+    ],
+    "slides": {
+      "title": "Final presentation",
+      "images": [
+        "/projects/airbus-botswana/slide-1.webp",
+        "/projects/airbus-botswana/slide-2.webp",
+        "/projects/airbus-botswana/slide-3.webp",
+        "/projects/airbus-botswana/slide-4.webp",
+        "/projects/airbus-botswana/slide-5.webp",
+        "/projects/airbus-botswana/slide-6.webp",
+        "/projects/airbus-botswana/slide-7.webp",
+        "/projects/airbus-botswana/slide-8.webp",
+        "/projects/airbus-botswana/slide-9.webp",
+        "/projects/airbus-botswana/slide-10.webp",
+        "/projects/airbus-botswana/slide-11.webp",
+        "/projects/airbus-botswana/slide-12.webp",
+        "/projects/airbus-botswana/slide-13.webp",
+        "/projects/airbus-botswana/slide-14.webp",
+        "/projects/airbus-botswana/slide-15.webp"
+      ],
+      "pdf": "/projects/airbus-botswana/airbus-botswana-final-presentation.pdf"
+    }
   },
   {
     "id": "devinci-apac",
@@ -88,6 +109,24 @@
           "Australia: direct exporting, thanks to low entry barriers, a shared language and a very large trail network."
         ]
       }
-    ]
+    ],
+    "slides": {
+      "title": "Our presentation",
+      "images": [
+        "/projects/devinci-apac/slide-1.webp",
+        "/projects/devinci-apac/slide-2.webp",
+        "/projects/devinci-apac/slide-3.webp",
+        "/projects/devinci-apac/slide-4.webp",
+        "/projects/devinci-apac/slide-5.webp",
+        "/projects/devinci-apac/slide-6.webp",
+        "/projects/devinci-apac/slide-7.webp",
+        "/projects/devinci-apac/slide-8.webp",
+        "/projects/devinci-apac/slide-9.webp",
+        "/projects/devinci-apac/slide-10.webp",
+        "/projects/devinci-apac/slide-11.webp",
+        "/projects/devinci-apac/slide-12.webp"
+      ],
+      "pdf": "/projects/devinci-apac/devinci-apac-presentation.pdf"
+    }
   }
 ]

@@ -27,4 +27,6 @@ export type Project = {
   work?: WorkBlock[];
   design?: DesignSystem;
   seoScores?: SeoScore[];
+  /** Presentation deck shown in a slide viewer (images) with a downloadable PDF. */
+  slides?: { title: string; images: string[]; pdf?: string };
 };
