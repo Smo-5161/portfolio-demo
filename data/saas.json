@@ -4,7 +4,7 @@
     "name": "Omi.ai — Onboarding Mentor Intelligence",
     "url": "https://obi-ai-three.vercel.app/",
     "urlLabel": "Visit the site",
-    "description": "An AI onboarding SaaS that captures an employee's business processes and turns them into a per-role knowledge base, so new hires learn the job with an AI mentor that cites its sources.",
+    "description": "An AI onboarding SaaS, currently a working MVP, that turns an employee's recorded and narrated work sessions into a per-role knowledge base, so new hires learn the job with an AI mentor that cites its sources.",
     "scope": [
       "Product",
       "Full-stack",
@@ -18,31 +18,32 @@
       "Tailwind CSS 4",
       "Supabase (Postgres + pgvector)",
       "OpenAI / Mistral",
-      "Chrome extension (Manifest V3)",
       "Zod",
       "Vercel"
     ],
     "context": [
       "When someone leaves a company, their know-how usually leaves with them: the processes live in their head, not in a document. Omi.ai solves that by recording how the outgoing employee actually works, then turning it into procedures and a knowledge base the new hire can question.",
-      "I designed and built the product end to end: the capture extension, the AI pipeline that writes the procedures, the retrieval system behind the chat, the onboarding guide, the analytics and the marketing site."
+      "I designed and built the product end to end: the recording and upload flow, the AI pipeline that writes the procedures, the retrieval system behind the chat, the onboarding guide, the analytics and the marketing site.",
+      "Current status: a working MVP, ready for first user tests. In this version, the employee records a work session while explaining it out loud, then uploads it: Omi turns it into procedures added to the role's Brain, and into a written PDF document. This approach was chosen over capturing on-screen actions directly with Microsoft Clarity's open-source recording technology, for two reasons: it delivered a working product for early tests sooner, and there was a real risk that the AI would struggle to understand what happens on screen without someone explaining it. Automatic capture stays on the roadmap, and the product will evolve with test feedback."
     ],
     "work": [
       {
         "title": "Process capture",
-        "text": "Two ways to record a process, with privacy built in from the first click.",
+        "text": "In the MVP, a process is captured as a recorded work session narrated out loud.",
         "points": [
-          "A Chrome extension (Omi Capture) that turns actions in any web tool into readable steps.",
-          "Sensitive data (emails, IBANs, numbers) masked at the source, before anything leaves the browser.",
-          "Or a simple screen recording with voice: the narration is transcribed and key frames are described by a vision model."
+          "The employee records their screen while explaining what they do and why, then uploads the video.",
+          "The narration is transcribed and key frames are described by a vision model.",
+          "Planned next: a browser extension that captures on-screen actions automatically, based on Microsoft Clarity's open-source recording technology."
         ]
       },
       {
         "title": "AI-written procedures",
         "text": "From a capture and a spoken narration, Omi drafts a step-by-step procedure (SOP).",
         "points": [
-          "Every step cites the captured actions and narration lines it comes from.",
+          "Every step cites the narration lines and moments of the recording it comes from.",
           "Coverage score and warnings displayed for review.",
-          "Nothing is used by the AI until a human has reviewed and published it."
+          "Nothing is used by the AI until a human has reviewed and published it.",
+          "Each procedure is also produced as a written PDF document, ready to share outside the app."
         ]
       },
       {
