@@ -101,7 +101,7 @@ export const screenshots: ScreenshotSlot[] = [
     height: 496,
     alt: "Microsoft Clarity dashboard for one day: 40 sessions (23 bot sessions excluded), 1 page per session, 80.40% average scroll depth, 1.3 min active time; 40 unique users; rage clicks 0%, dead clicks 25% (10 sessions), excessive scrolling 0%, quick backs 0%",
     date: "2026-11-12",
-    note: "Mostly test visits during development, coming from the Vercel dashboard. The 25% dead clicks point to elements that look clickable but are not: a lead for the next UX pass.",
+    note: "These sessions come from friends and family I let browse the site to get some data to show, not from real visitors. The 25% dead clicks point to elements that look clickable but are not: a lead for the next UX pass.",
   },
   {
     id: "clarity-traffic-performance",
