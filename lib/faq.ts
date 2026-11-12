@@ -24,7 +24,7 @@ export const faq: FaqItem[] = [
   {
     question: "What has Antoine Smolar built?",
     answer:
-      "He led the 2-month redesign of Helmo Rénovation's 147-page website (architecture, SEO/GEO, UX and page speed) and built Omi.ai, an AI onboarding SaaS that turns recorded work processes into a knowledge base with an AI mentor. He also co-built Kompute, a team school project for running batch AI jobs on idle gaming GPUs.",
+      "He led the 2-month redesign of Helmo Rénovation's 147-page website (architecture, SEO/GEO, UX and page speed) and built Omi.ai, an AI onboarding SaaS (currently a working MVP) that turns recorded, narrated work sessions into a knowledge base with an AI mentor. He also co-built Kompute, a team school project for running batch AI jobs on idle gaming GPUs.",
     sources: [
       { label: "Website case studies", url: `${SITE_URL}/websites` },
       { label: "SaaS products", url: `${SITE_URL}/saas` },
