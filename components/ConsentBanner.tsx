@@ -5,8 +5,7 @@ import { CONSENT_KEY } from "@/lib/tracking";
 
 type Choice = "granted" | "denied";
 
-// Typed locally (not via "declare global") to avoid clashing with the dataLayer type
-// already declared by @next/third-parties.
+// Typed locally (not via "declare global") so the tracking globals stay scoped to this file.
 type TrackingWindow = Window & {
   dataLayer?: unknown[];
   clarity?: (...args: unknown[]) => void;
