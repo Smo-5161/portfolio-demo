@@ -61,8 +61,8 @@ const projects = [
   },
   {
     href: "/internal-tools",
-    label: "Internal Tools",
-    text: "Business apps that automate and centralize the way teams work.",
+    label: "Internal Tools & Digital Transformation",
+    text: "Business apps and digital projects that automate and modernize the way teams work.",
   },
   {
     href: "/workshops",

@@ -59,11 +59,11 @@ export const routes: RouteInfo[] = [
   },
   {
     path: "/internal-tools",
-    label: "Internal Tools",
+    label: "Internal Tools & Digital Transformation",
     portfolio: true,
-    title: "Internal tools & business apps",
+    title: "Internal tools & digital transformation",
     description:
-      "Internal tools and no-code business apps that automate repetitive work and centralize company data for teams.",
+      "Internal tools, business apps and digital transformation projects that automate repetitive work, centralize company data and modernize how teams operate.",
   },
   {
     path: "/workshops",

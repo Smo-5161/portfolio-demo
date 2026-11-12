@@ -10,9 +10,9 @@ export default function InternalToolsPage() {
   return (
     <ProjectSection
       path="/internal-tools"
-      title="Apps & Internal Tools"
+      title="Internal Tools & Digital Transformation"
       items={data as Project[]}
-      emptyMessage="No internal tools listed yet."
+      emptyMessage="No internal tools or digital transformation projects listed yet."
     />
   );
 }
