@@ -107,8 +107,30 @@ export function projectListJsonLd(title: string, items: Project[]) {
         ...(p.url && { url: p.url }),
         ...(p.description && { description: p.description }),
         creator: { "@id": PERSON_ID },
+        ...(p.slides && { hasPart: deckJsonLd(p) }),
       },
     })),
+  };
+}
+
+/** A slide deck as a PresentationDigitalDocument. Team work: Antoine is a contributor, not the sole author. */
+function deckJsonLd(p: Project) {
+  const s = p.slides!;
+  return {
+    "@type": "PresentationDigitalDocument",
+    name: `${p.name} — ${s.title}`,
+    inLanguage: "en",
+    numberOfPages: s.images.length,
+    contributor: { "@id": PERSON_ID },
+    ...(s.pdf && { url: `${SITE_URL}${s.pdf}`, encodingFormat: "application/pdf" }),
+    ...(s.transcript && {
+      hasPart: s.transcript.map((t, i) => ({
+        "@type": "CreativeWork",
+        position: i + 1,
+        name: t.title,
+        image: `${SITE_URL}${s.images[i]}`,
+      })),
+    }),
   };
 }
 

@@ -7,6 +7,8 @@ type Props = {
   title: string;
   /** Slide images in order, e.g. /projects/x/slide-1.webp */
   slides: string[];
+  /** Slide titles, used in alt texts so each image says what it shows. */
+  labels?: string[];
   /** Downloadable PDF of the same deck. */
   pdf?: string;
   width?: number;
@@ -17,7 +19,7 @@ type Props = {
  * One slide at a time, readable at full width. Arrows, keyboard (← →) and a thumbnail strip.
  * Only the current slide and its neighbours are loaded; the full deck is also offered as a PDF.
  */
-export default function SlideViewer({ title, slides, pdf, width = 1600, height = 900 }: Props) {
+export default function SlideViewer({ title, slides, labels, pdf, width = 1600, height = 900 }: Props) {
   const [i, setI] = useState(0);
   const stripRef = useRef<HTMLOListElement>(null);
   const go = useCallback((n: number) => setI(Math.max(0, Math.min(slides.length - 1, n))), [slides.length]);
@@ -42,7 +44,7 @@ export default function SlideViewer({ title, slides, pdf, width = 1600, height =
         <Image
           key={slides[i]}
           src={slides[i]}
-          alt={`${title} — slide ${i + 1} of ${slides.length}`}
+          alt={`${title} — slide ${i + 1} of ${slides.length}${labels?.[i] ? `: ${labels[i]}` : ""}`}
           width={width}
           height={height}
           sizes="(min-width: 1152px) 1050px, 95vw"
@@ -108,7 +110,7 @@ export default function SlideViewer({ title, slides, pdf, width = 1600, height =
             <button
               type="button"
               onClick={() => go(n)}
-              aria-label={`Go to slide ${n + 1}`}
+              aria-label={`Go to slide ${n + 1}${labels?.[n] ? `: ${labels[n]}` : ""}`}
               aria-current={n === i}
               className={`block w-28 overflow-hidden rounded-lg border-2 transition-colors ${
                 n === i ? "border-brand-700" : "border-transparent opacity-70 hover:opacity-100"

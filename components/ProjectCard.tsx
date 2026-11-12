@@ -1,4 +1,5 @@
 import type { Project } from "@/lib/types";
+import SlideTranscript from "./SlideTranscript";
 import SlideViewer from "./SlideViewer";
 
 export default function ProjectCard({ project: p }: { project: Project }) {
@@ -62,7 +63,13 @@ export default function ProjectCard({ project: p }: { project: Project }) {
             <h3 id={`${p.id}-slides`} className="text-xl mb-3">
               {p.slides.title}
             </h3>
-            <SlideViewer title={`${p.name} — ${p.slides.title}`} slides={p.slides.images} pdf={p.slides.pdf} />
+            <SlideViewer
+              title={`${p.name} — ${p.slides.title}`}
+              slides={p.slides.images}
+              labels={p.slides.transcript?.map((t) => t.title)}
+              pdf={p.slides.pdf}
+            />
+            {p.slides.transcript && <SlideTranscript id={p.id} slides={p.slides.transcript} />}
           </section>
         )}
 

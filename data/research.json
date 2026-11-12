@@ -73,7 +73,162 @@
         "/projects/airbus-botswana/slide-14.webp",
         "/projects/airbus-botswana/slide-15.webp"
       ],
-      "pdf": "/projects/airbus-botswana/airbus-botswana-final-presentation.pdf"
+      "pdf": "/projects/airbus-botswana/airbus-botswana-final-presentation.pdf",
+      "transcript": [
+        {
+          "title": "Airbus in Botswana",
+          "text": [
+            "Final presentation by Albert Vallée-Duval, Nathan Souillard, Gabriel Thillay and Antoine Smolar."
+          ]
+        },
+        {
+          "title": "Agenda",
+          "text": [
+            "Synthesis of mid-term insights",
+            "Internal & competitive assessment",
+            "Targeted segment",
+            "Recommended entry strategy: strategic joint venture",
+            "Partnership architecture & governance",
+            "Location & innovation network",
+            "Implementation roadmap",
+            "Required capabilities & investment",
+            "Risk prioritisation",
+            "Critical guidance",
+            "Business case & actionable recommendations"
+          ],
+          "list": "ol"
+        },
+        {
+          "title": "Synthesis of mid-term insights",
+          "text": [
+            "Use AviaDev 2026 (Gaborone, June) to sign and announce the partnership with the Civil Aviation Authority of Botswana (50+ countries and 48+ airlines).",
+            "Legal shield: best intellectual-property protection in the region (Property Rights 74.1, Judicial Effectiveness 70.5). Safest option in the region for a capital-intensive manufacturing facility.",
+            "Strong scores in Fiscal Health (90.4) and Trade Freedom (78.8), low inflation of 2.82%, and an educated workforce (79% advanced education).",
+            "The strategic pivot: Airbus is shifting from a market-seeking approach to an efficiency-seeking one."
+          ]
+        },
+        {
+          "title": "Internal & competitive assessment",
+          "text": [
+            "Existing footprint : Airbus already operates in Botswana through defence contracts (H125 Police / Super Puma Army) :",
+            "Established institutional relationship while competitors must build from scratch",
+            "Capability gap to close : Embraer (sold 3 jets to Air Botswana) and Leonardo are converting sales into lock-in via local aftersales. Airbus has the MRO (Maintenance, Repair, Overhaul) and training capabilities at group level to counter this, but has no local deployment yet.",
+            "The competitive lever : A local technical footprint at SSKIA transforms Airbus from distant supplier to ecosystem anchor.",
+            "For clients, switching costs is structural rather than contractual.",
+            "The strategic implication : Airbus's A220-300 product advantage only becomes durable if backed by a local service presence, which justifies the entry mode choice..."
+          ]
+        },
+        {
+          "title": "Targeted segment: why helicopters & MRO?",
+          "text": [
+            "The Choice: Segment focus on MRO (Maintenance, Repair, Overhaul) and Completion (Customization)",
+            "Evidence: Highest recurring revenue logic. It fits the local manufacturing limitations (5.55% of GDP) by focusing on high-skill services (79% advanced education)."
+          ]
+        },
+        {
+          "title": "Recommended entry strategy: strategic joint venture",
+          "text": [
+            "Mode: Joint Venture (JV) with the Botswana Development Corporation (BDC) and CAAB.",
+            "Why? Botswana's Investment Freedom is moderate (50.0). Partnering with the BDC grants Airbus \"National Project Status\", which fast-tracks work permits and land acquisition within the Special Economic Zone.",
+            "A 100% subsidiary would be seen as foreign extraction, while a simple licensing agreement would risk our IP.",
+            "A JV offers the right balance of local legitimacy and corporate control."
+          ]
+        },
+        {
+          "title": "Partnership architecture & governance",
+          "text": [
+            "Equity & responsibility split: Airbus (51%) / BDC (49%).",
+            "Airbus role: technology transfer, global supply-chain integration and EASA certification.",
+            "BDC role: local infrastructure management, labour relations and government liaison.",
+            "Technical veto: Airbus keeps 100% veto power over safety protocols, maintenance standards and IP-related decisions.",
+            "Judicial safeguard: contractual enforcement is backed by Botswana's high Judicial Efficiency score (70.5)."
+          ]
+        },
+        {
+          "title": "Location & innovation network",
+          "text": [
+            "Local supply & maintenance cluster: integration of regional SMEs for non-critical component supply, reducing lead times and building ecosystem resilience.",
+            "Strategic SEZ hub (Gaborone): direct runway access at Sir Seretse Khama International Airport for flight testing and client handovers; SEZ benefits include corporate tax exemptions, streamlined customs and zero import duties on critical aviation parts.",
+            "Applied R&D partnership (BIUST University): engineering adaptations for \"hot, high and dusty\" African operating environments, with a continuous feedback loop between local academia and Airbus engineers to improve fleet reliability."
+          ]
+        },
+        {
+          "title": "Implementation roadmap (2026–2028)",
+          "text": [
+            "Phase 1 — Foundation & certification (2026): secure SEZ land allocation and start building a climate-controlled facility; obtain dual EASA (Europe) and CAAB (Botswana) site certifications; establish a secure Durban–Gaborone logistics corridor.",
+            "Phase 2 — Operations & commercial launch (2027): inaugurate the MRO facility alongside AviaDev Africa; start regional maintenance contracts targeting fleets across the 16 SADC countries.",
+            "Phase 3 — Expansion to a completion centre (2028): move from maintenance to final assembly with a Regional Completion Center for local customisation of Airbus helicopter kits (medical, VIP or military configurations)."
+          ]
+        },
+        {
+          "title": "Required capabilities & investment",
+          "text": [
+            "Financial commitment ($30M–$35M CAPEX): hangar construction, specialised diagnostic tooling, spare-parts inventory and advanced MRO equipment.",
+            "Human capital & knowledge transfer: an Airbus training programme with European experts forming a core local team; target of 40+ local engineers and technicians certified to EASA standards within three years.",
+            "Logistics & supply-chain security: fast-track route from Durban port to the SEZ, and 3-month buffer stocks of critical avionics to avoid AOG (Aircraft On Ground) delays."
+          ]
+        },
+        {
+          "title": "Sustainability criteria (ESG)",
+          "text": [
+            "Environmental — Solar-powered infrastructure: Botswana's 320+ sunny days a year could cover 30% of the hangar's energy needs; phased use of Sustainable Aviation Fuel (SAF) for engine tests and maintenance flights, in line with Airbus's Net Zero 2050 roadmap.",
+            "Social — Knowledge transfer with BIUST University to certify 50+ local technicians to EASA standards within three years; maintenance support for anti-poaching and wildlife-monitoring fleets (e.g. Okavango Delta surveillance).",
+            "Governance — Airbus's global anti-corruption standards applied within the JV (Botswana is the least corrupt country in the region, Government Integrity 60.1); joint oversight with the BDC and quarterly public reporting against IFRS standards."
+          ]
+        },
+        {
+          "title": "Risk prioritisation",
+          "text": [
+            "Risks ranked on a probability × impact matrix."
+          ],
+          "table": {
+            "head": [
+              "Risk",
+              "Probability / impact",
+              "Mitigation"
+            ],
+            "rows": [
+              [
+                "Supply chain",
+                "High / High",
+                "3-month buffer stock of critical avionics in the SEZ"
+              ],
+              [
+                "Currency volatility",
+                "Medium / High",
+                "Contracts denominated in USD for regional clients"
+              ],
+              [
+                "Skill gap",
+                "High / Medium",
+                "Partnership with BIUST for a steady talent pipeline"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "What Airbus should not do",
+          "text": [
+            "No heavy manufacturing: do not build fuselages or wings (no local heavy industry).",
+            "No operations outside the SEZ: higher taxes and red tape would kill the business case.",
+            "No early diversification: focus strictly on helicopters and MRO for the first five years."
+          ]
+        },
+        {
+          "title": "Business case & actionable recommendations",
+          "text": [
+            "Returns: break-even in year 5; strategic return through a lock-in effect that supports future A220 sales.",
+            "Immediate actions: sign the agreement with the Botswana Development Corporation and secure a land plot at SSKIA.",
+            "Success factor: make Gaborone the technical face of Airbus in Africa."
+          ]
+        },
+        {
+          "title": "Thank you",
+          "text": [
+            "Thank you. Any questions?"
+          ]
+        }
+      ]
     }
   },
   {
@@ -126,7 +281,206 @@
         "/projects/devinci-apac/slide-11.webp",
         "/projects/devinci-apac/slide-12.webp"
       ],
-      "pdf": "/projects/devinci-apac/devinci-apac-presentation.pdf"
+      "pdf": "/projects/devinci-apac/devinci-apac-presentation.pdf",
+      "transcript": [
+        {
+          "title": "Expanding Devinci in Asia",
+          "text": [
+            "Presentation by Nathan, Antoine, Gabriel, Romain and Albert."
+          ]
+        },
+        {
+          "title": "Table of contents",
+          "text": [
+            "Strategic Context & Decision Overview",
+            "Evaluation of International Expansion History",
+            "SWOT ANALYSIS",
+            "Comparative Market Attractiveness Analysis",
+            "Competitive Positioning in Target Markets",
+            "Strategic Market Selection & Prioritization",
+            "Recommended Market Entry Strategy"
+          ],
+          "list": "ol"
+        },
+        {
+          "title": "Context and decision to be made",
+          "text": [
+            "Context: founded in 1987 in Quebec, Devinci is a bike manufacturer known for high-performance aluminium frames and strong R&D. By 2018 it had expanded into the U.S. and Europe, with exports at 55% of sales in 2016.",
+            "A new corporate objective targets 20% annual growth, and the threat of U.S. tariffs makes diversification essential.",
+            "Decision: Global Brand Manager Simon Brodeur must propose a strategy to reach 1,000 mountain-bike sales a year in the APAC region within three years — which markets to prioritise and which entry modes best limit risk while ensuring growth."
+          ]
+        },
+        {
+          "title": "Evaluation of Devinci's international efforts to date",
+          "text": [
+            "Performance: Exports grew from 5% (2010) to 55% (2016) of total sales.",
+            "Approach: Glocal strategy, centralized R&D and high-end manufacturing in Canada with local logistics support.",
+            "Choice of Regions: Initial expansion focused on culturally similar or high-demand",
+            "Western markets (U.S. and Europe).",
+            "While the first U.S. attempt failed in 2006, the second expansion in 2011 was successful due to better risk management and a focus on high-end mountain bikes."
+          ]
+        },
+        {
+          "title": "SWOT analysis",
+          "text": [
+            "Strengths: Patent (Split Pivot); reputation; brand identity (Steve Smith)",
+            "Weaknesses: Low brand awareness; export costs",
+            "Opportunities: China: latent demand of US$2.2 billion; Japan: 543 ski resorts; Australia / New Zealand: 14,117 km / 9,447 km of trails",
+            "Threats: Import taxes in some countries (China 13%); cultural complexity (partnerships); strong established competitors (Giant, Merida)"
+          ]
+        },
+        {
+          "title": "Attractiveness of each proposed foreign market",
+          "text": [],
+          "table": {
+            "head": [
+              "Criteria",
+              "Japan",
+              "Australia",
+              "New Zealand",
+              "China"
+            ],
+            "rows": [
+              [
+                "Market potential",
+                "$761M latent demand, high per-capita income",
+                "$161M latent demand, stable high-value enthusiast base",
+                "$22M demand, high concentration of core mountain-bike fans",
+                "$2.2B (highest in region), fast-growing middle class"
+              ],
+              [
+                "Import tariffs",
+                "0%",
+                "5%",
+                "5%",
+                "13%"
+              ],
+              [
+                "Ease of business",
+                "Rank 34, strong contract enforcement",
+                "Rank 14, efficient cross-border trade",
+                "Rank 1 (easiest place to do business)",
+                "Rank 78, high regulatory complexity"
+              ],
+              [
+                "Structural fit",
+                "543 ski resorts (downhill hubs)",
+                "14,117 km of trails",
+                "9,447 km of trails, national cycling culture",
+                "34 km of recorded trails, focus on racing events"
+              ],
+              [
+                "Psychic distance",
+                "Power Distance 54, needs local partners",
+                "Individualism 90 (close to Canada/US)",
+                "Individualism 79 (compatible brand values)",
+                "Power Distance 80, risk of tech leakage"
+              ],
+              [
+                "Strategic priority",
+                "Primary (invest/grow)",
+                "Primary (invest/grow)",
+                "Selective (niche focus)",
+                "Secondary (selective/JV)"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Universal competitive advantages",
+          "text": [
+            "Technological expertise: all high-end models use the patented Split Pivot suspension, a clear advantage over mass-market competitors.",
+            "R&D excellence: a 15-person R&D department, including five full-time engineers.",
+            "\"Made in Canada\" prestige: as the last mass producer of bikes in Canada, Devinci leverages a boutique image and aluminium-welding craftsmanship.",
+            "Racing credibility: the Devinci Global Racing team provides technical feedback and builds awareness among enthusiasts."
+          ]
+        },
+        {
+          "title": "Devinci's competitive strengths per market",
+          "text": [],
+          "table": {
+            "head": [
+              "Market",
+              "Devinci's specific competitive strengths"
+            ],
+            "rows": [
+              [
+                "Australia",
+                "Shock-resistant aluminium frames suited to 14,117 km of trails; Individualism score of 90 matches the \"Ride Canadian\" lifestyle branding."
+              ],
+              [
+                "New Zealand",
+                "High-end enthusiast niche with low psychic distance (Individualism 79, ease of business rank 1); New Zealand athletes on the 2018 racing team give local legitimacy to the Spartan and Wilson models."
+              ],
+              [
+                "Japan",
+                "Downhill focus (Wilson) matches 543 ski resorts used as gravity-riding hubs; 0% tariff protects margins or funds local promotion."
+              ],
+              [
+                "China",
+                "In a market dominated by low-cost bikes, Devinci's boutique status and high-end carbon assembly signal quality to premium clients."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Market to prioritise",
+          "text": [],
+          "table": {
+            "head": [
+              "Country",
+              "Market attractiveness",
+              "Competitive strength",
+              "Zone"
+            ],
+            "rows": [
+              [
+                "Japan",
+                "High (5/5): $761M demand, 0% tariff, $37k income per capita",
+                "High (4/5): 543 ski resorts for downhill models",
+                "A"
+              ],
+              [
+                "Australia",
+                "High (4/5): $161M demand, 5% tariff, ease of business rank 14",
+                "High (5/5): 14,117 km of trails, English-speaking",
+                "A"
+              ],
+              [
+                "New Zealand",
+                "Medium (3/5): $22M demand, ease of business rank 1, 5% tariff",
+                "High (4/5): 9,447 km of trails, English-speaking, renowned local riders on the racing team",
+                "A/B"
+              ],
+              [
+                "China",
+                "High (5/5): $2.2B demand, but ease of business rank 78 and 13% tariff",
+                "Low (2/5): 34 km of trails, high cultural distance (Power Distance 80)",
+                "B/C"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Market to prioritise: matrix",
+          "text": [
+            "Prioritisation matrix crossing market attractiveness and competitive strength: Japan and Australia in zone A, New Zealand in zone A/B, China in zone B/C."
+          ]
+        },
+        {
+          "title": "Recommended modes of entry",
+          "text": [
+            "Japan — joint venture: a local partner navigates the high Power Distance (54) and relationship-based distribution; a JV helps target the 543 ski resorts for the Wilson downhill line; costs and management effort are shared while the 0% tariff keeps prices competitive.",
+            "Australia — direct exporting: low entry barriers and high cultural similarity to Canada; ease of business (rank 14) and a shared language make direct retailer relationships easy; 14,117 km of trails offer a volume market."
+          ]
+        },
+        {
+          "title": "Thank you",
+          "text": [
+            "Thank you for listening."
+          ]
+        }
+      ]
     }
   }
 ]

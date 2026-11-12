@@ -28,5 +28,19 @@ export type Project = {
   design?: DesignSystem;
   seoScores?: SeoScore[];
   /** Presentation deck shown in a slide viewer (images) with a downloadable PDF. */
-  slides?: { title: string; images: string[]; pdf?: string };
+  slides?: {
+    title: string;
+    images: string[];
+    pdf?: string;
+    /** Text of each slide, in order, rendered as HTML so crawlers and LLMs can read the deck. */
+    transcript?: SlideText[];
+  };
+};
+
+/** Text version of one slide: a title plus paragraphs (or an ordered list) and an optional table. */
+export type SlideText = {
+  title: string;
+  text: string[];
+  list?: "ol";
+  table?: { head: string[]; rows: string[][] };
 };
