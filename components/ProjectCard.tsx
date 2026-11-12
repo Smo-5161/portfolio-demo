@@ -185,6 +185,8 @@ export default function ProjectCard({ project: p }: { project: Project }) {
             </ul>
           </section>
         )}
+
+        {p.note && <p className="text-xs text-ink-500 italic">{p.note}</p>}
       </div>
       </details>
     </article>

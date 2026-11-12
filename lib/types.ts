@@ -27,6 +27,8 @@ export type Project = {
   work?: WorkBlock[];
   design?: DesignSystem;
   seoScores?: SeoScore[];
+  /** Short, discreet note shown at the end of the details (e.g. why no screenshots). */
+  note?: string;
   /** Presentation deck shown in a slide viewer (images) with a downloadable PDF. */
   slides?: {
     title: string;

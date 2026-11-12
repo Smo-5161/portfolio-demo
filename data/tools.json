@@ -70,20 +70,9 @@
           "Fewer lost documents, and records much easier to find.",
           "More accurate time tracking than the paper system, which was easy to get wrong or misuse."
         ]
-      },
-      {
-        "title": "Other missions during the internship",
-        "text": "Alongside the rollout, I contributed to the wider work of the organisation.",
-        "points": [
-          "A response to an ADEME call for projects (French Agency for Ecological Transition) to obtain funding.",
-          "Communication and marketing projects for residents on waste sorting and waste reduction."
-        ]
-      },
-      {
-        "title": "Why there are no screenshots",
-        "text": "The dashboards and the documentation stay private: they contain personal data about employees (schedules, statuses, salaries) and internal processes."
       }
-    ]
+    ],
+    "note": "No screenshots: the dashboards and documentation stay private, as they contain employees' personal data and internal processes."
   },
   {
     "id": "chauffechauffe-crm",
