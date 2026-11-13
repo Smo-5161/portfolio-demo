@@ -39,7 +39,7 @@ const skills: Skill[] = [
   {
     short: "No-code",
     name: "App development",
-    text: "SaaS products and internal tools shipped in days.",
+    text: "SaaS products and internal tools shipped in days, vibe coded with Claude Code.",
   },
   {
     short: "Digital & AI",
