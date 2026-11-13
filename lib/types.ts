@@ -24,6 +24,8 @@ export type Project = {
   scope?: string[];
   stack?: string[];
   duration?: string;
+  /** When the project ran: "2026", "2026-06" or "2026-04-02"; ongoing = still in progress. */
+  period?: { start: string; end?: string; ongoing?: boolean };
   work?: WorkBlock[];
   design?: DesignSystem;
   seoScores?: SeoScore[];

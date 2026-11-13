@@ -134,3 +134,24 @@ export function routeInfo(path: string): RouteInfo {
   if (!r) throw new Error(`Unknown route ${path}`);
   return r;
 }
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+/** "2026" / "Jun 2026" / "2 Apr 2026" from "2026" / "2026-06" / "2026-04-02". */
+function partialDate(iso: string) {
+  const [y, m, d] = iso.split("-");
+  if (!m) return y;
+  return `${d ? `${Number(d)} ` : ""}${MONTHS[Number(m) - 1]} ${y}`;
+}
+/** "Jun – Aug 2026", "Oct 2026 – present", "Mar 2026", "May – Aug 2024". */
+export function formatPeriod(p: { start: string; end?: string; ongoing?: boolean }) {
+  if (p.ongoing) return `${partialDate(p.start)} – present`;
+  if (!p.end) return partialDate(p.start);
+  const [sy] = p.start.split("-");
+  const [ey] = p.end.split("-");
+  const start = sy === ey ? partialDate(p.start).replace(` ${sy}`, "") : partialDate(p.start);
+  return `${start} – ${partialDate(p.end)}`;
+}
+/** ISO 8601 interval for schema.org temporalCoverage: "2026-06/2026-08", "2026-10/..". */
+export function periodInterval(p: { start: string; end?: string; ongoing?: boolean }) {
+  return p.ongoing ? `${p.start}/..` : p.end ? `${p.start}/${p.end}` : p.start;
+}

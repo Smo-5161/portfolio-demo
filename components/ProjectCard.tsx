@@ -1,3 +1,4 @@
+import { formatPeriod, periodInterval } from "@/lib/site";
 import type { Project } from "@/lib/types";
 import SlideTranscript from "./SlideTranscript";
 import SlideViewer from "./SlideViewer";
@@ -11,14 +12,20 @@ export default function ProjectCard({ project: p }: { project: Project }) {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 className="text-2xl mb-3">{p.name}</h2>
-            {(p.scope || p.duration) && (
+            {(p.scope || p.duration || p.period) && (
               <ul className="flex flex-wrap gap-2">
                 {p.scope?.map((s) => (
                   <li key={s} className="chip bg-white!">
                     {s}
                   </li>
                 ))}
-                {p.duration && <li className="chip chip-tonal">Duration: {p.duration}</li>}
+                {(p.period || p.duration) && (
+                  <li className="chip chip-tonal">
+                    {p.period && <time dateTime={periodInterval(p.period)}>{formatPeriod(p.period)}</time>}
+                    {p.period && p.duration && " · "}
+                    {p.duration}
+                  </li>
+                )}
               </ul>
             )}
             {p.description && <p className="mt-3 max-w-3xl text-ink-700 leading-relaxed">{p.description}</p>}

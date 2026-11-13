@@ -5,8 +5,19 @@
     "url": "https://helmo-renovation.fr/",
     "description": "Full redesign (SEO, UI and UX) of a 147-page WordPress site (64 site pages and 83 blog articles) for an all-trades renovation company, delivered in 2 months.",
     "duration": "2 months",
-    "scope": ["Technical SEO", "GEO", "UI/UX", "Performance"],
-    "stack": ["WordPress", "Elementor", "Hostinger", "AIOSEO", "LiteSpeed Cache"],
+    "scope": [
+      "Technical SEO",
+      "GEO",
+      "UI/UX",
+      "Performance"
+    ],
+    "stack": [
+      "WordPress",
+      "Elementor",
+      "Hostinger",
+      "AIOSEO",
+      "LiteSpeed Cache"
+    ],
     "context": [
       "Helmo Rénovation is a French all-trades renovation company (interior work, energy retrofits, projects for professionals) that delivers turnkey projects with its own in-house teams.",
       "I rebuilt the site from the ground up in 2 months: architecture, SEO for all 147 pages (64 site pages and 83 blog articles), markup, performance and content. The site runs on WordPress with the Elementor page builder and is hosted on Hostinger."
@@ -74,12 +85,32 @@
       "summary": "On the interface side: a night blue that builds trust, an orange reserved for calls to action, and a single typeface, Poppins, for fast reading on mobile.",
       "fontFamily": "Poppins",
       "palette": [
-        { "name": "Night blue", "hex": "#001C28", "role": "Primary color" },
-        { "name": "Helmo orange", "hex": "#FF7920", "role": "Calls to action" },
-        { "name": "Light peach", "hex": "#FFF2E9", "role": "Highlight backgrounds" },
-        { "name": "White", "hex": "#FFFFFF", "role": "Backgrounds and text on dark" }
+        {
+          "name": "Night blue",
+          "hex": "#001C28",
+          "role": "Primary color"
+        },
+        {
+          "name": "Helmo orange",
+          "hex": "#FF7920",
+          "role": "Calls to action"
+        },
+        {
+          "name": "Light peach",
+          "hex": "#FFF2E9",
+          "role": "Highlight backgrounds"
+        },
+        {
+          "name": "White",
+          "hex": "#FFFFFF",
+          "role": "Backgrounds and text on dark"
+        }
       ]
     },
-    "seoScores": []
+    "seoScores": [],
+    "period": {
+      "start": "2026-06",
+      "end": "2026-08"
+    }
   }
 ]

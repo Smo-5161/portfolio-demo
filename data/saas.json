@@ -81,7 +81,11 @@
           "Analytics for each role: coverage score, onboarding velocity and blocking points."
         ]
       }
-    ]
+    ],
+    "period": {
+      "start": "2026-10",
+      "ongoing": true
+    }
   },
   {
     "id": "kompute",
@@ -102,7 +106,8 @@
     "context": [
       "Kompute was built as a group project for an entrepreneurship class. The result is a team effort, not mine alone.",
       "It grew out of a personal project I had put on hold: I had hit a technical wall on security, since running other people’s workloads safely on private computers demands a level of sandboxing and isolation expertise I did not have yet. Rather than ship something unsafe, I paused it, and the class gave the team a chance to rethink the idea as a business: who needs it, what it should cost, and what a credible first version looks like.",
-      "Kompute is a student project: there are no customers, no providers and no revenue. The site says so openly."
+      "Kompute is a student project: there are no customers, no providers and no revenue. The site says so openly.",
+      "The school project runs from September to December 2026. I may pick Kompute up again later, once I have the security skills it needs and depending on how the AI compute market evolves."
     ],
     "work": [
       {
@@ -149,6 +154,10 @@
           "The marketplace dashboard (providers, wallet, payouts) is a mock-up with demo data."
         ]
       }
-    ]
+    ],
+    "period": {
+      "start": "2026-09",
+      "end": "2026-12"
+    }
   }
 ]

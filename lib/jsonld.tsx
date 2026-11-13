@@ -1,5 +1,5 @@
 // Structured data (schema.org JSON-LD) shared across pages and shown on the Architecture Lab.
-import { REPO_URL, SITE_URL, contact, pageUpdated } from "./site";
+import { REPO_URL, SITE_URL, contact, pageUpdated, periodInterval } from "./site";
 import type { Project } from "./types";
 
 const PERSON_ID = `${SITE_URL}/#person`;
@@ -106,6 +106,7 @@ export function projectListJsonLd(title: string, items: Project[]) {
         name: p.name,
         ...(p.url && { url: p.url }),
         ...(p.description && { description: p.description }),
+        ...(p.period && { dateCreated: p.period.start, temporalCoverage: periodInterval(p.period) }),
         creator: { "@id": PERSON_ID },
         ...(p.slides && { hasPart: deckJsonLd(p) }),
       },

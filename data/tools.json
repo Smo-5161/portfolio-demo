@@ -10,7 +10,7 @@
       "Change management",
       "Training"
     ],
-    "duration": "3 months (2024)",
+    "duration": "3 months",
     "stack": [
       "Factorial"
     ],
@@ -73,7 +73,11 @@
         ]
       }
     ],
-    "note": "No screenshots: the dashboards and documentation stay private, as they contain employees' personal data and internal processes."
+    "note": "No screenshots: the dashboards and documentation stay private, as they contain employees' personal data and internal processes.",
+    "period": {
+      "start": "2024-05",
+      "end": "2024-08"
+    }
   },
   {
     "id": "chauffechauffe-crm",
@@ -133,6 +137,9 @@
         "title": "What the prototype is",
         "text": "A clickable front end running on local demo data inspired by the case: it shows the experience and the data model, it is not connected to a real back end."
       }
-    ]
+    ],
+    "period": {
+      "start": "2026-03"
+    }
   }
 ]

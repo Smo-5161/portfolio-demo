@@ -10,7 +10,7 @@
       "No-code",
       "Lovable"
     ],
-    "duration": "3 hours (2 April 2026)",
+    "duration": "3 hours",
     "stack": [
       "Lovable"
     ],
@@ -72,6 +72,9 @@
           "height": 1440
         }
       ]
+    },
+    "period": {
+      "start": "2026-04-02"
     }
   }
 ]
