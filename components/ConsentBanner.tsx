@@ -14,10 +14,13 @@ const w = () => window as unknown as TrackingWindow;
 
 export const OPEN_CONSENT_EVENT = "open-consent";
 
-function gtag(...args: unknown[]) {
+// gtag.js only reads real `arguments` objects from the dataLayer: a plain array is ignored,
+// so the consent update must be pushed with `arguments`, exactly like Google's snippet.
+function gtag(..._args: unknown[]) {
   const win = w();
   win.dataLayer = win.dataLayer || [];
-  win.dataLayer.push(args);
+  // eslint-disable-next-line prefer-rest-params
+  win.dataLayer.push(arguments);
 }
 
 /**
@@ -38,14 +41,12 @@ function clarityConsent(choice: Choice) {
   win.clarity("consentv2", { ad_Storage: choice, analytics_Storage: choice });
 }
 
+function consentState(value: Choice) {
+  return { ad_storage: value, ad_user_data: value, ad_personalization: value, analytics_storage: value };
+}
+
 function applyChoice(choice: Choice) {
-  const value = choice;
-  gtag("consent", "update", {
-    ad_storage: value,
-    ad_user_data: value,
-    ad_personalization: value,
-    analytics_storage: value,
-  });
+  gtag("consent", "update", consentState(choice));
   w().dataLayer?.push({ event: "consent_update", consent: choice });
   clarityConsent(choice);
 }
@@ -59,7 +60,11 @@ export default function ConsentBanner() {
     try {
       saved = localStorage.getItem(CONSENT_KEY);
     } catch {}
-    if (saved === "granted" || saved === "denied") clarityConsent(saved);
+    // Returning visitor: re-apply the saved choice to Google tags and Clarity on every page load.
+    if (saved === "granted" || saved === "denied") {
+      gtag("consent", "update", consentState(saved));
+      clarityConsent(saved);
+    }
     if (saved !== "granted" && saved !== "denied") setOpen(true);
 
     const reopen = () => setOpen(true);
