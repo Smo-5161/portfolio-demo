@@ -2,7 +2,7 @@
   {
     "id": "sirtom-shared-composters",
     "name": "SIRTOM — Shared composters launch campaign",
-    "description": "Communication campaign for the launch of shared composters across a public waste authority's territory. The campaign was produced by an agency; I took part in deciding what to brief and ask for, and pushed for a message built on money rather than ecology.",
+    "description": "Communication campaign for the launch of shared composters across a public waste authority's territory, produced by an agency. I took part in the brief and the decisions; my proposal to lead with the financial impact was not kept, but the final campaign builds on a close idea: the value we throw away.",
     "scope": [
       "Internship",
       "Campaign brief",
@@ -15,11 +15,28 @@
     ],
     "work": [
       {
-        "title": "Choosing the angle: savings, not ecology",
-        "text": "I suggested putting the financial side first: the real savings composting brings to the authority, which directly limits increases in the waste collection tax paid by residents.",
+        "title": "My proposal: talk money, not ecology",
+        "text": "I suggested leading with the financial side: the real savings composting brings to the authority, which directly limits increases in the waste collection tax paid by residents.",
         "points": [
           "My reading of the audience: the area was not very receptive to environmental messages, and a genuine ecology awareness campaign would need far more time and budget.",
-          "So the message had to speak to residents' immediate, practical concerns, starting with their tax bill."
+          "So the message had to speak to residents' immediate, practical concerns."
+        ]
+      },
+      {
+        "title": "What was decided: the value we throw away",
+        "text": "The direct financial argument was not kept. The final campaign stays on the same ground, though: food scraps as something valuable that gets wasted, rather than an environmental duty.",
+        "points": [
+          "The tagline: “Your food scraps have real value. Don’t waste it: compost.”",
+          "The headline plays on French slang for money: “blé, oseille, radis, avoine, patates” are crops, and most of them also mean cash. Variants follow the same idea: “Balance le blé !”, “Par ici l’oseille !”, “Donne-moi des patates !”.",
+          "The brochure backs it with figures: food and green waste make up more than 30% of household bins, about 4,000 tonnes a year on the territory, and collecting and treating them costs more every year."
+        ]
+      },
+      {
+        "title": "A compost wheel for children",
+        "text": "A rotating cardboard disc shows, item by item, what can go in the composter, in moderation or not at all. The aim was assumed: make it playful enough to intrigue children.",
+        "points": [
+          "Short term: children push their household to start composting.",
+          "Long term: they learn the habit very young, a slow but lasting investment in awareness."
         ]
       },
       {
@@ -28,11 +45,12 @@
       },
       {
         "title": "Where the campaign ran",
-        "text": "The visuals were used across the authority's channels.",
+        "text": "One visual line, declined across every touchpoint.",
         "points": [
-          "All of SIRTOM's social media accounts.",
-          "Printed communication documents.",
-          "The livery of the waste collection trucks that drive across the whole territory."
+          "Posters (main visual and three variants) and wind flags for events.",
+          "A composter-shaped flyer with a QR code to the authority's website.",
+          "A brochure explaining why and how to compost.",
+          "Tote bags, the compost wheel, SIRTOM's social media and the livery of the waste collection trucks."
         ]
       }
     ],
@@ -40,20 +58,64 @@
       "title": "Campaign visuals",
       "items": [
         {
-          "alt": "Social media visual from the shared composters campaign",
-          "caption": "Social media"
+          "src": "/projects/sirtom-shared-composters/poster-main.webp",
+          "alt": "Main campaign poster: the words blé, oseille, radis, avoine, patates (crops that are also French slang for money) above a wooden composter surrounded by fruit and vegetables; tagline: your food scraps have real value, don't waste it, compost",
+          "caption": "Main poster",
+          "width": 1000,
+          "height": 1414
         },
         {
-          "alt": "Printed communication document from the shared composters campaign",
-          "caption": "Print"
+          "src": "/projects/sirtom-shared-composters/posters-variants.webp",
+          "alt": "Three poster variants: Balance le blé ! with an ear of wheat, Par ici l'oseille ! with a sorrel leaf, Donne-moi des patates ! with a potato peel, each growing out of a small composter",
+          "caption": "Poster variants",
+          "width": 1400,
+          "height": 661
         },
         {
-          "alt": "Waste collection truck livery from the shared composters campaign",
-          "caption": "Truck livery"
+          "src": "/projects/sirtom-shared-composters/compost-wheel.webp",
+          "alt": "Children's compost wheel, both sides: a rotating disc sorting waste into compost, in moderation or not at all (fruit and vegetable peelings, coffee, eggshells, meat and fish, cans, oils, garden waste), titled Ces déchets se compostent-ils ?",
+          "caption": "Compost wheel for children",
+          "width": 1400,
+          "height": 712
+        },
+        {
+          "src": "/projects/sirtom-shared-composters/composter-flyer.webp",
+          "alt": "Composter-shaped flyer: front reads blé, oseille, radis, avoine, patates; back reads this composter contains real riches, find out why, with a QR code to sirtom-flers-conde.fr",
+          "caption": "Composter-shaped flyer",
+          "width": 1354,
+          "height": 691
+        },
+        {
+          "src": "/projects/sirtom-shared-composters/brochure-outside.webp",
+          "alt": "Brochure outside spread: how to get a composter from SIRTOM depending on housing type, contact details, and the cover with the main campaign visual",
+          "caption": "Brochure, outside",
+          "width": 1400,
+          "height": 990
+        },
+        {
+          "src": "/projects/sirtom-shared-composters/brochure-inside.webp",
+          "alt": "Brochure inside spread: food and green waste are more than 30% of household bins, about 4,000 tonnes a year on SIRTOM's territory; collection and treatment costs rise every year; benefits of compost for soil, water retention and biodiversity",
+          "caption": "Brochure, inside",
+          "width": 1400,
+          "height": 990
+        },
+        {
+          "src": "/projects/sirtom-shared-composters/tote-bags.webp",
+          "alt": "Three tote bag designs repeating the poster variants: an ear of wheat, a potato peel and a sorrel leaf above a small composter, with the campaign tagline",
+          "caption": "Tote bags",
+          "width": 1400,
+          "height": 662
+        },
+        {
+          "src": "/projects/sirtom-shared-composters/wind-flags.webp",
+          "alt": "Two sides of an event wind flag: fruit and vegetable icons, the words blé, oseille, radis, avoine, patates, the tagline and a QR code on a composter",
+          "caption": "Wind flags",
+          "width": 900,
+          "height": 1417
         }
       ]
     },
-    "note": "Campaign designed and produced by an external agency; my role was in the brief and the decisions.",
+    "note": "Campaign designed and produced by an external agency for SIRTOM de la région Flers-Condé; my role was in the brief and the decisions.",
     "period": {
       "start": "2024"
     }

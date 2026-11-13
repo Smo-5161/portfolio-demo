@@ -89,7 +89,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
             <h3 id={`${p.id}-gallery`} className="text-xl mb-3">
               {p.gallery.title}
             </h3>
-            <ul className={`grid gap-4 ${p.gallery.items.length === 1 ? "max-w-md" : "sm:grid-cols-3"}`}>
+            <ul className={`grid gap-4 ${p.gallery.items.length === 1 ? "max-w-md" : "items-start sm:grid-cols-2 lg:grid-cols-3"}`}>
               {p.gallery.items.map((g) => (
                 <li key={g.alt}>
                   <figure>
