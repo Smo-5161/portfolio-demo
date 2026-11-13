@@ -33,7 +33,7 @@ export const faq: FaqItem[] = [
   {
     question: "Which tools does Antoine Smolar work with?",
     answer:
-      "Next.js, WordPress and Elementor for websites; Google Tag Manager, Google Analytics 4 and Microsoft Clarity for tracking, which he sets up hands-on (he has trained on CRO analysis such as heatmaps and funnels but not yet practised it on real traffic); Odoo, n8n, Claude and Mistral for digital and AI transformation. He holds Google certifications (Ads Search, Ads Measurement, Analytics), Semrush certifications (Technical SEO and AI Search Essentials, International SEO) and HubSpot's Inbound Marketing Optimization.",
+      "Next.js, WordPress and Elementor for websites; Google Tag Manager, Google Analytics 4 and Microsoft Clarity for tracking, which he sets up hands-on (he has trained on CRO analysis such as heatmaps and funnels but not yet practised it on real traffic); for digital and AI transformation, the Factorial HR software (rolled out and taught to a whole organisation), plus Odoo, n8n, Claude and Mistral, learned on his own with no client project to show yet. He holds Google certifications (Ads Search, Ads Measurement, Analytics), Semrush certifications (Technical SEO and AI Search Essentials, International SEO) and HubSpot's Inbound Marketing Optimization.",
     sources: [{ label: "Antoine Smolar — CV (PDF)", url: CV_URL }],
   },
   {

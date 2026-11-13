@@ -44,7 +44,7 @@ const skills: Skill[] = [
   {
     short: "Digital & AI",
     name: "Transformation",
-    text: "Odoo, n8n and Claude/Mistral rolled out, with team training.",
+    text: "Factorial rolled out with team training; self-taught on Odoo, n8n and Claude/Mistral.",
   },
 ];
 

@@ -30,7 +30,7 @@ export const contact = {
   jobTitle: "Business Administration student",
   // One-line positioning shown under the name (home hero, share image, llms.txt).
   tagline:
-    "Business student · I build websites, apps and tools, and make them findable on Google and AI engines",
+    "Business student · Targeting Digital Transformation & Operations Project Manager roles",
   phoneDisplay: "+33 7 69 34 94 81",
   phoneIntl: "+33769349481",
   email: "antoine.smolar.23@neoma-bs.com",

@@ -3,7 +3,7 @@
     "id": "helmo-renovation",
     "name": "Helmo Rénovation",
     "url": "https://helmo-renovation.fr/",
-    "description": "Full redesign (SEO, UI and UX) of a 147-page WordPress site (64 site pages and 83 blog articles) for an all-trades renovation company, delivered in 2 months.",
+    "description": "Full redesign (SEO, UI and UX) of a WordPress site for an all-trades renovation company, delivered in 2 months with an assistant I trained: 64 site pages rebuilt and optimized (the 147-page site also carries 83 blog articles, which I did not handle).",
     "duration": "2 months",
     "scope": [
       "Technical SEO",
@@ -20,9 +20,18 @@
     ],
     "context": [
       "Helmo Rénovation is a French all-trades renovation company (interior work, energy retrofits, projects for professionals) that delivers turnkey projects with its own in-house teams.",
-      "I rebuilt the site from the ground up in 2 months: architecture, SEO for all 147 pages (64 site pages and 83 blog articles), markup, performance and content. The site runs on WordPress with the Elementor page builder and is hosted on Hostinger."
+      "I led the rebuild of the site in 2 months: architecture, SEO for the 64 site pages, markup, performance and UI. The site runs on WordPress with the Elementor page builder and is hosted on Hostinger. The 83 blog articles were not part of my work."
     ],
     "work": [
+      {
+        "title": "Team and my role",
+        "text": "A two-person web team: me and an assistant I trained while we built the site.",
+        "points": [
+          "I directed the work and often built model pages for the assistant to reproduce.",
+          "I split the tasks; by the end, each of us owned a set of pages, so site-wide changes no longer had to be shared out again.",
+          "The assistant handled simple no-code changes; I took care of global CSS issues, caching and new requests from the CEO."
+        ]
+      },
       {
         "title": "Site architecture",
         "text": "A very broad offering, reorganized into clear topic silos so both Google and visitors instantly understand the structure.",
@@ -33,7 +42,7 @@
         ]
       },
       {
-        "title": "SEO for all 147 pages",
+        "title": "SEO for the 64 site pages",
         "text": "Each page targets a specific search intent and was optimized individually.",
         "points": [
           "Unique title tags and meta descriptions written to earn the click.",
@@ -66,10 +75,6 @@
           "Images compressed to WebP and lazy-loaded.",
           "Cleanup of unused Elementor elements and scripts."
         ]
-      },
-      {
-        "title": "Automated article generation",
-        "text": "An automated blog production process that keeps the site supplied with targeted content on a regular schedule, with no manual workload: 83 articles published so far."
       },
       {
         "title": "FAQ rewrite for GEO",
@@ -107,7 +112,6 @@
         }
       ]
     },
-    "seoScores": [],
     "period": {
       "start": "2026-06",
       "end": "2026-08"
