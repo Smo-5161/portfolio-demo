@@ -13,7 +13,7 @@ import {
   websiteJsonLd,
 } from "@/lib/jsonld";
 import { trackingEvents, screenshots, type Status, type EventType } from "@/data/lab";
-import { GTM_ID, CLARITY_ID } from "@/lib/tracking";
+import { GTM_ID, CLARITY_ID, GA4_ID } from "@/lib/tracking";
 import sites from "@/data/sites.json";
 import type { Project } from "@/lib/types";
 
@@ -492,7 +492,7 @@ Sitemap: /sitemap.xml`}
           plain="Google Analytics counts what happens: how many visitors, what they click, how many get in touch. Microsoft Clarity shows how it happens: heatmaps of where people click and anonymous replays of visits, to spot what confuses them. Google Tag Manager is the control panel that switches these tools on without touching the site’s code. A “conversion” is an action that matters for the business, here contacting me. And the cookie banner asks visitors for permission first, as European law requires. Where I stand: I installed and configured this stack myself, from the consent banner to GTM, GA4 and Clarity. I have trained on reading heatmaps, session recordings and conversion funnels, but I haven’t yet analysed real traffic to drive a design or business decision. That is the next step, and the part where I would need some ramp-up time on a real project."
           eyebrow="06"
           title="Analytics & tracking"
-          intro="Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. GA4 measures what happens, Clarity shows how (heatmaps, recordings, rage clicks). Consent is handled by a banner, Google Consent Mode v2 and Clarity Consent API v2 (live): until a visitor accepts, both tools run without cookies."
+          intro="Live since 13 November 2026. Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. The site pushes its own events to the dataLayer; GTM turns them into GA4 events (container version 3), each one checked in GA4's real-time report. Consent is handled by a banner, Google Consent Mode v2 and Clarity Consent API v2: until a visitor accepts, both tools run without cookies."
         >
           <ol className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
             <FlowNode title="Browser + consent banner" detail="Consent Mode v2: denied by default" tone="bg-brand-100" />
@@ -502,7 +502,7 @@ Sitemap: /sitemap.xml`}
             <li className="grid gap-3">
               <span className="rounded-2xl px-4 py-3 bg-accent-50">
                 <span className="block font-medium">Google Analytics 4</span>
-                <span className="block text-xs text-ink-700 mt-0.5">Events &amp; key events</span>
+                <span className="block text-xs text-ink-700 mt-0.5">Property {GA4_ID} · 1 conversion, 4 key events</span>
               </span>
               <span className="rounded-2xl px-4 py-3 bg-brand-50">
                 <span className="block font-medium">Microsoft Clarity</span>
@@ -514,9 +514,22 @@ Sitemap: /sitemap.xml`}
           <h3 className="text-lg mt-10 mb-2">Tracking plan</h3>
           <p className="text-sm text-ink-700 mb-4 max-w-3xl">
             One conversion, the real goal of a portfolio: being contacted. Key events are the signals of strong
-            interest that lead there (opening the CV, reading a project, visiting it). The site already pushes these
-            events to the dataLayer; the matching GTM tags and GA4 key events are the next step.
+            interest that lead there (opening the CV, reading a project, visiting it). The site pushes each event to
+            the dataLayer with its parameters, a GTM custom-event trigger fires the matching GA4 event tag, and every
+            event was verified in GA4&apos;s real-time report. GA4 itself no longer separates conversions from key
+            events, so the hierarchy lives in this plan: only <code>generate_lead</code> would be imported into
+            Google Ads as a conversion.
           </p>
+          <div className="mb-4 max-w-3xl rounded-2xl bg-accent-50 p-4 text-sm text-ink-700">
+            <p className="font-medium text-ink-900">What testing caught</p>
+            <p className="mt-1">
+              The first real-time test showed every hit still flagged as &ldquo;consent denied&rdquo; after clicking
+              Accept. Cause: the banner pushed the consent update as a plain array, which gtag.js ignores (it only
+              reads <code>arguments</code> objects), and returning visitors never had their saved choice re-applied.
+              Both fixed in <code>components/ConsentBanner.tsx</code>, then re-tested: hits now carry the granted
+              state.
+            </p>
+          </div>
           <div className="card overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="bg-surface text-left text-ink-500">
