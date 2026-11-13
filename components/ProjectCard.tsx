@@ -6,7 +6,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
   const host = p.url ? new URL(p.url).host.replace(/^www\./, "") : null;
 
   return (
-    <article id={p.id} className="card overflow-hidden scroll-mt-20">
+    <article id={p.id} data-project-id={p.id} className="card overflow-hidden scroll-mt-20">
       <header className="p-6 sm:p-8 border-b border-stroke bg-linear-to-r from-brand-100 via-white to-brand-50">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
@@ -49,7 +49,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
         Details are folded in a native <details>: the full text stays in the server HTML
         (read by Google and LLMs, found by Ctrl+F) and one click opens it. No CSS hiding, no cloaking.
       */}
-      <details className="group/details">
+      <details className="group/details" data-track="project-details">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-6 py-4 sm:px-8 font-semibold text-brand-700 hover:bg-brand-50 [&::-webkit-details-marker]:hidden">
           <span>
             <span className="group-open/details:hidden">Show project details</span>

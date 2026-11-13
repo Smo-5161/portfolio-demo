@@ -12,7 +12,7 @@ import {
   projectListJsonLd,
   websiteJsonLd,
 } from "@/lib/jsonld";
-import { trackingEvents, screenshots, type Status } from "@/data/lab";
+import { trackingEvents, screenshots, type Status, type EventType } from "@/data/lab";
 import { GTM_ID, CLARITY_ID } from "@/lib/tracking";
 import sites from "@/data/sites.json";
 import type { Project } from "@/lib/types";
@@ -110,11 +110,15 @@ const faqRules = [
 const tones = ["bg-brand-100", "bg-accent-100", "bg-accent-50", "bg-brand-50"];
 
 function StatusChip({ status }: { status: Status }) {
-  return status === "live" ? (
-    <span className="chip bg-brand-50! border-transparent!">● Live</span>
-  ) : (
-    <span className="chip bg-accent-50! border-transparent!">○ Planned</span>
-  );
+  if (status === "live") return <span className="chip bg-brand-50! border-transparent!">● Live</span>;
+  if (status === "datalayer") return <span className="chip bg-brand-50! border-transparent!">◐ In dataLayer</span>;
+  return <span className="chip bg-accent-50! border-transparent!">○ Planned</span>;
+}
+
+function TypeChip({ type }: { type: EventType }) {
+  if (type === "conversion") return <span className="chip bg-accent-100! border-transparent!">★ Conversion</span>;
+  if (type === "key_event") return <span className="chip bg-brand-100! border-transparent!">◆ Key event</span>;
+  return <>—</>;
 }
 
 function Section({
@@ -507,7 +511,12 @@ Sitemap: /sitemap.xml`}
             </li>
           </ol>
 
-          <h3 className="text-lg mt-10 mb-4">Tracking plan</h3>
+          <h3 className="text-lg mt-10 mb-2">Tracking plan</h3>
+          <p className="text-sm text-ink-700 mb-4 max-w-3xl">
+            One conversion, the real goal of a portfolio: being contacted. Key events are the signals of strong
+            interest that lead there (opening the CV, reading a project, visiting it). The site already pushes these
+            events to the dataLayer; the matching GTM tags and GA4 key events are the next step.
+          </p>
           <div className="card overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="bg-surface text-left text-ink-500">
@@ -515,7 +524,7 @@ Sitemap: /sitemap.xml`}
                   <th className="p-3 font-medium">Event</th>
                   <th className="p-3 font-medium">Trigger</th>
                   <th className="p-3 font-medium">Parameters</th>
-                  <th className="p-3 font-medium">Key event</th>
+                  <th className="p-3 font-medium">Type</th>
                   <th className="p-3 font-medium">Sent to</th>
                   <th className="p-3 font-medium">Status</th>
                 </tr>
@@ -527,7 +536,7 @@ Sitemap: /sitemap.xml`}
                     <td className="p-3 text-ink-700">{e.trigger}</td>
                     <td className="p-3 font-mono text-xs text-ink-700">{e.params.join(", ")}</td>
                     <td className="p-3">
-                      {e.keyEvent ? <span className="chip bg-accent-100! border-transparent!">★ Conversion</span> : "—"}
+                      <TypeChip type={e.type} />
                     </td>
                     <td className="p-3 text-ink-700">{e.tool}</td>
                     <td className="p-3">

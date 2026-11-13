@@ -2,64 +2,71 @@
 // Tracking status: "live" = configured and verified, "planned" = specified, not yet deployed.
 // Flip a status (or edit an event) here and the Lab page updates.
 
-export type Status = "live" | "planned";
+/**
+ * live = GA4 tag configured and verified; datalayer = the site already pushes the event,
+ * the GTM tag is still to configure; planned = specified only.
+ */
+export type Status = "live" | "datalayer" | "planned";
+
+/** conversion = the real goal (contact); key_event = strong interest signal; event = context. */
+export type EventType = "conversion" | "key_event" | "event";
 
 export type TrackingEvent = {
   name: string;
   trigger: string;
   params: string[];
-  keyEvent: boolean; // GA4 "key event" (conversion)
+  type: EventType;
   tool: string;
   status: Status;
 };
 
 export const trackingEvents: TrackingEvent[] = [
   {
-    name: "page_view",
-    trigger: "Every page load (GA4 enhanced measurement)",
-    params: ["page_location", "page_title"],
-    keyEvent: false,
-    tool: "GA4",
-    status: "planned",
-  },
-  {
-    name: "scroll_depth",
-    trigger: "Scroll past 25 / 50 / 75 / 90% of the page",
-    params: ["percent_scrolled"],
-    keyEvent: false,
-    tool: "GA4",
-    status: "planned",
-  },
-  {
-    name: "cta_click",
-    trigger: "Click on “View portfolio” or “Get in touch”",
-    params: ["cta_label", "cta_location"],
-    keyEvent: false,
+    name: "generate_lead",
+    trigger: "Click on my phone number, email or LinkedIn, anywhere on the site",
+    params: ["contact_method", "link_location"],
+    type: "conversion",
     tool: "GA4 + Clarity tag",
-    status: "planned",
+    status: "datalayer",
   },
   {
-    name: "faq_view",
-    trigger: "Visit to the /faq page (from the footer link)",
-    params: ["page_referrer"],
-    keyEvent: false,
+    name: "cv_click",
+    trigger: "Click on the CV (download button or preview image)",
+    params: ["link_location"],
+    type: "key_event",
+    tool: "GA4 + Clarity tag",
+    status: "datalayer",
+  },
+  {
+    name: "portfolio_scroll_50",
+    trigger: "Scroll past 50% of a portfolio page (once per page view)",
+    params: ["portfolio_section"],
+    type: "key_event",
     tool: "GA4",
-    status: "planned",
+    status: "datalayer",
+  },
+  {
+    name: "project_expand",
+    trigger: "Open “Show project details” on a project",
+    params: ["project_id", "portfolio_section"],
+    type: "key_event",
+    tool: "GA4 + Clarity tag",
+    status: "datalayer",
   },
   {
     name: "project_outbound_click",
-    trigger: "Click on a project button (Helmo, Omi.ai…)",
+    trigger: "Click on a link to see a project (e.g. the Helmo Rénovation site)",
     params: ["project_id", "link_url"],
-    keyEvent: true,
+    type: "key_event",
     tool: "GA4 + Clarity tag",
-    status: "planned",
+    status: "datalayer",
   },
   {
-    name: "generate_lead",
-    trigger: "Click on phone, email or LinkedIn in the contact block",
-    params: ["contact_method"],
-    keyEvent: true,
-    tool: "GA4 + Clarity tag",
+    name: "page_view",
+    trigger: "Every page load (GA4 enhanced measurement)",
+    params: ["page_location", "page_title"],
+    type: "event",
+    tool: "GA4",
     status: "planned",
   },
 ];

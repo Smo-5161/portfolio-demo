@@ -1,3 +1,4 @@
+import TrackingEvents from "@/components/TrackingEvents";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Google_Sans_Flex } from "next/font/google";
@@ -7,7 +8,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { JsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { GTM_ID } from "@/lib/tracking";
-import { SITE_URL, contact, routeInfo } from "@/lib/site";
+import { SITE_URL, contact, routeInfo, routes } from "@/lib/site";
 import "./globals.css";
 
 const home = routeInfo("/");
@@ -75,6 +76,7 @@ export default function RootLayout({
         <SiteHeader />
         <div id="content">{children}</div>
         <SiteFooter />
+        <TrackingEvents portfolioPaths={routes.filter((r) => r.portfolio).map((r) => r.path)} />
         <ConsentBanner />
       </body>
     </html>
