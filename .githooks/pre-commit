@@ -1,0 +1,3 @@
+#!/bin/sh
+# Keep each page's "last updated" date in sync with the content changed in this commit.
+node scripts/page-dates.mjs >/dev/null && git add lib/page-dates.json

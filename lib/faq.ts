@@ -1,9 +1,9 @@
 // Single source for the FAQ: used for the HTML rendering, the FAQPage JSON-LD and llms.txt.
 // Rule: observed data only (no forecasts), each figure with its source. Review the date below
 // whenever an answer changes.
-import { SITE_URL } from "./site";
+import { SITE_URL, pageUpdated } from "./site";
 
-export const FAQ_UPDATED = "2026-11-12";
+export const FAQ_UPDATED = pageUpdated("/faq");
 
 export type FaqSource = { label: string; url: string };
 export type FaqItem = { question: string; answer: string; sources: FaqSource[] };

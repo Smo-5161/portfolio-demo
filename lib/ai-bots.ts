@@ -1,5 +1,5 @@
 // AI crawlers named in robots.txt, grouped by what they do.
-// Single source: used by app/robots.ts AND displayed on the Architecture Lab page.
+// Single source: used by app/robots.txt/route.ts AND displayed on the Architecture Lab page.
 //
 // Policy for this site: every category is allowed. The content is public and the goal is
 // to be known and cited by AI assistants, including through their training data.

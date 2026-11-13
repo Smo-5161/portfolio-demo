@@ -113,7 +113,7 @@ export const screenshots: ScreenshotSlot[] = [
   {
     id: "clarity-traffic-performance",
     title: "Clarity — Traffic & real-user performance",
-    description: "Referrers, browsers and Core Web Vitals measured on real visits.",
+    description: "Referrers, browsers and Core Web Vitals measured on actual browser sessions (friends and family).",
     image: "/lab/clarity-traffic-performance.webp",
     width: 1044,
     height: 398,

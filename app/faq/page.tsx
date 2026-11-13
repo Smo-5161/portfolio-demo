@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { FAQ_UPDATED, faq, faqJsonLd } from "@/lib/faq";
+import { formatDate } from "@/lib/site";
 import { JsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 
 export const metadata = pageMetadata("/faq");
@@ -36,7 +37,7 @@ export default function FaqPage() {
             .
           </p>
           <p className="text-sm text-ink-500 mt-3">
-            Last updated <time dateTime={FAQ_UPDATED}>12 November 2026</time>. Observed data only, no
+            Last updated <time dateTime={FAQ_UPDATED}>{formatDate(FAQ_UPDATED)}</time>. Observed data only, no
             forecasts.
           </p>
         </div>

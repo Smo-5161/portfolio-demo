@@ -3,6 +3,7 @@ import EmptyState from "./EmptyState";
 import ProjectCard from "./ProjectCard";
 import type { Project } from "@/lib/types";
 import { publishedRoutes } from "@/lib/portfolio-data";
+import { formatDate, pageUpdated } from "@/lib/site";
 import { JsonLd, breadcrumbJsonLd, projectListJsonLd } from "@/lib/jsonld";
 
 type Props = {
@@ -34,6 +35,9 @@ export default function ProjectSection({ path, title, items, emptyMessage }: Pro
             <span aria-hidden="true">›</span> {title}
           </nav>
           <h1 className="text-4xl">{title}</h1>
+          <p className="mt-3 text-sm text-ink-500">
+            Last updated <time dateTime={pageUpdated(path)}>{formatDate(pageUpdated(path))}</time>
+          </p>
         </div>
       </div>
       <div className="max-w-6xl mx-auto px-6 py-12">

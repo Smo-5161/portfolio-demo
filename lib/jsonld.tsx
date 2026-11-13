@@ -1,5 +1,5 @@
 // Structured data (schema.org JSON-LD) shared across pages and shown on the Architecture Lab.
-import { REPO_URL, SITE_UPDATED, SITE_URL, contact } from "./site";
+import { REPO_URL, SITE_URL, contact, pageUpdated } from "./site";
 import type { Project } from "./types";
 
 const PERSON_ID = `${SITE_URL}/#person`;
@@ -64,7 +64,7 @@ export const profilePageJsonLd = {
   "@type": "ProfilePage",
   url: SITE_URL,
   dateCreated: SITE_CREATED,
-  dateModified: SITE_UPDATED,
+  dateModified: pageUpdated("/"),
   isPartOf: { "@id": WEBSITE_ID },
   mainEntity: personJsonLd,
 };
@@ -77,7 +77,7 @@ export const labArticleJsonLd = {
   url: `${SITE_URL}/architecture-lab`,
   author: { "@id": PERSON_ID },
   datePublished: SITE_CREATED,
-  dateModified: SITE_UPDATED,
+  dateModified: pageUpdated("/architecture-lab"),
   isPartOf: { "@id": WEBSITE_ID },
   codeRepository: REPO_URL,
 };

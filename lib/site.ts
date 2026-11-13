@@ -1,3 +1,4 @@
+import pageDates from "./page-dates.json";
 // Public site URL. On Vercel, VERCEL_PROJECT_PRODUCTION_URL is provided automatically.
 // For a custom domain, set NEXT_PUBLIC_SITE_URL (e.g. https://antoinesmolar.com).
 export const SITE_URL =
@@ -7,7 +8,17 @@ export const SITE_URL =
     : "http://localhost:3000");
 
 // Date of the last real content update (used in the sitemap). Change it when content changes.
-export const SITE_UPDATED = "2026-11-12";
+/** Last update of each page = last commit on its content files (scripts/page-dates.mjs). */
+export const PAGE_DATES = pageDates as Record<string, string>;
+export function pageUpdated(path: string) {
+  return PAGE_DATES[path] ?? SITE_UPDATED;
+}
+/** Most recent page update across the site. */
+export const SITE_UPDATED = Object.values(pageDates as Record<string, string>).sort().pop() ?? "2026-11-11";
+/** "13 November 2026" */
+export function formatDate(iso: string) {
+  return new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+}
 
 // Public source code of this site.
 export const REPO_URL = "https://github.com/Smo-5161/portfolio-demo";

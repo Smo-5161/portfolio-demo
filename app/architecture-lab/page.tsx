@@ -1,7 +1,7 @@
 import LabSection from "@/components/LabSection";
 import LabToggleAll from "@/components/LabToggleAll";
 import { pageMetadata } from "@/lib/seo";
-import { REPO_URL, SITE_UPDATED, repoFile, routes } from "@/lib/site";
+import { REPO_URL, formatDate, pageUpdated, repoFile, routes } from "@/lib/site";
 import { aiBotCategories, aiBots } from "@/lib/ai-bots";
 import { faq, faqJsonLd } from "@/lib/faq";
 import {
@@ -202,7 +202,7 @@ export default function ArchitectureLabPage() {
             configuration, not typed by hand.
           </p>
           <p className="text-sm text-ink-500 -mt-6 mb-8">
-            By Antoine Smolar · Last updated <time dateTime={SITE_UPDATED}>12 November 2026</time>
+            By Antoine Smolar · Last updated <time dateTime={pageUpdated("/architecture-lab")}>{formatDate(pageUpdated("/architecture-lab"))}</time>
           </p>
           <p className="text-sm text-ink-700 max-w-3xl mb-8 -mt-4 rounded-2xl bg-white/70 border border-stroke px-4 py-3">
             <strong className="font-medium">No tech background?</strong> Each section below is a card
@@ -391,7 +391,7 @@ export default function ArchitectureLabPage() {
         {/* 4. robots.txt */}
         <Section
           id="robots"
-          code={["lib/ai-bots.ts", "app/robots.ts"]}
+          code={["lib/ai-bots.ts", "app/robots.txt/route.ts"]}
           plain="robots.txt is the doorman of a website: a small public file telling automated visitors (robots) what they are allowed to read. AI companies send different robots for different jobs: learning from pages, finding pages to quote, and opening a page when someone asks about it. Here each job is listed separately and a clear choice is made for each one: all are welcome, because the goal of this portfolio is to be known and quoted by AI assistants."
           eyebrow="04"
           title="robots.txt & AI crawlers"
