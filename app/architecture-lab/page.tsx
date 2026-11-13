@@ -623,7 +623,7 @@ Sitemap: /sitemap.xml`}
               use them to model the missing conversions. The data recovered this way stays aggregated.
               Microsoft Clarity is stricter: since French guidance generally treats session recording
               as requiring consent, the Clarity tag in GTM requires <code>analytics_storage</code>{" "}
-              (GTM consent check, container version 4). It fires on page load if the visitor already
+              (GTM consent check, container version 5). It fires on page load if the visitor already
               accepted, or on the <code>consent_update</code> event the moment they click Accept. Before
               that, no Clarity request leaves the browser, checked on a visit with cookies cleared.
             </p>
