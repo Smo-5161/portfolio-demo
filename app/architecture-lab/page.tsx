@@ -492,7 +492,7 @@ Sitemap: /sitemap.xml`}
           plain="Google Analytics counts what happens: how many visitors, what they click, how many get in touch. Microsoft Clarity shows how it happens: heatmaps of where people click and anonymous replays of visits, to spot what confuses them. Google Tag Manager is the control panel that switches these tools on without touching the site’s code. A “conversion” is an action that matters for the business, here contacting me. And the cookie banner asks visitors for permission first, as European law requires. Where I stand: I installed and configured this stack myself, from the consent banner to GTM, GA4 and Clarity. I have trained on reading heatmaps, session recordings and conversion funnels, but I haven’t yet analysed real traffic to drive a design or business decision. That is the next step, and the part where I would need some ramp-up time on a real project."
           eyebrow="06"
           title="Analytics & tracking"
-          intro="Live since 13 November 2026. Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. The site pushes its own events to the dataLayer; GTM turns them into GA4 events (container version 3), each one checked in GA4's real-time report. Consent is handled by a banner, Google Consent Mode v2 and Clarity Consent API v2: until a visitor accepts, both tools run without cookies."
+          intro="Live since 13 November 2026. Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. The site pushes its own events to the dataLayer; GTM turns them into GA4 events, each one checked in GA4's real-time report. Consent is handled by a banner, Google Consent Mode v2 and Clarity Consent API v2: until a visitor accepts, GA4 only sends anonymous cookieless pings and Clarity does not load at all."
         >
           <ol className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
             <FlowNode title="Browser + consent banner" detail="Consent Mode v2: denied by default" tone="bg-brand-100" />
@@ -506,7 +506,7 @@ Sitemap: /sitemap.xml`}
               </span>
               <span className="rounded-2xl px-4 py-3 bg-brand-50">
                 <span className="block font-medium">Microsoft Clarity</span>
-                <span className="block text-xs text-ink-700 mt-0.5">Project {CLARITY_ID} · cookieless until consent</span>
+                <span className="block text-xs text-ink-700 mt-0.5">Project {CLARITY_ID} · loads only after consent</span>
               </span>
             </li>
           </ol>
@@ -621,10 +621,11 @@ Sitemap: /sitemap.xml`}
               banner with Google Consent Mode v2 in advanced mode: when consent is denied, tags only
               send anonymous cookieless pings (no identifiers, no cookies), and GA4 and Google Ads
               use them to model the missing conversions. The data recovered this way stays aggregated.
-              Microsoft Clarity, by design, still collects cookieless data before any choice (Clarity
-              Consent API v2), and that is how it runs on this site today. Since French guidance
-              generally treats session recording as requiring consent, the next step is to make the
-              Clarity tag in GTM fire only after the visitor accepts analytics cookies.
+              Microsoft Clarity is stricter: since French guidance generally treats session recording
+              as requiring consent, the Clarity tag in GTM requires <code>analytics_storage</code>{" "}
+              (GTM consent check, container version 4). It fires on page load if the visitor already
+              accepted, or on the <code>consent_update</code> event the moment they click Accept. Before
+              that, no Clarity request leaves the browser, checked on a visit with cookies cleared.
             </p>
           </div>
         </Section>

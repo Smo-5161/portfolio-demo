@@ -24,21 +24,23 @@ function gtag(..._args: unknown[]) {
 }
 
 /**
- * Clarity is loaded by the GTM container (Microsoft Clarity tag). Without consent it runs
- * cookieless; this passes the visitor's choice through Clarity's Consent API v2.
- * The stub queues the call if Clarity hasn't loaded yet.
+ * Clarity is loaded by the GTM container, only once analytics consent is granted (GTM consent
+ * check on the tag, fired on page load or on the consent_update event). This passes the
+ * visitor's choice through Clarity's Consent API v2.
+ * No stub is created here: the GTM template skips loading Clarity when window.clarity already
+ * exists, so the call waits (up to 15 s) for the real script instead.
  */
 function clarityConsent(choice: Choice) {
-  const win = w();
-  if (!win.clarity) {
-    const q: unknown[] = [];
-    const stub = (...args: unknown[]) => {
-      q.push(args);
-    };
-    (stub as unknown as { q: unknown[] }).q = q;
-    win.clarity = stub;
-  }
-  win.clarity("consentv2", { ad_Storage: choice, analytics_Storage: choice });
+  const send = () => w().clarity?.("consentv2", { ad_Storage: choice, analytics_Storage: choice });
+  if (w().clarity) return send();
+  if (choice === "denied") return; // Clarity never loads without consent: nothing to tell it.
+  let tries = 0;
+  const timer = window.setInterval(() => {
+    if (w().clarity || ++tries > 30) {
+      window.clearInterval(timer);
+      send();
+    }
+  }, 500);
 }
 
 function consentState(value: Choice) {
