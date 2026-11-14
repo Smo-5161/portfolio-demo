@@ -1,4 +1,5 @@
 "use client";
+// Cookie banner: stores the choice, updates Google Consent Mode and Clarity consent.
 
 import { useEffect, useState } from "react";
 import { CONSENT_KEY } from "@/lib/tracking";

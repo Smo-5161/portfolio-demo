@@ -1,4 +1,5 @@
 "use client";
+// Slide deck viewer: one slide at a time, keyboard and thumbnail navigation, PDF download.
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";

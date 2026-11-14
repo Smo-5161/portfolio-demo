@@ -1,3 +1,4 @@
+// FAQ page: renders lib/faq.ts as visible Q&A plus FAQPage JSON-LD.
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { FAQ_UPDATED, faq, faqJsonLd } from "@/lib/faq";

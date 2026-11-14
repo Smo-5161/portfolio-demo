@@ -4,7 +4,7 @@
     "name": "Omi.ai — Onboarding Mentor Intelligence",
     "url": "https://obi-ai-three.vercel.app/",
     "urlLabel": "Visit the site",
-    "description": "An AI onboarding SaaS, currently a working MVP, that turns an employee's recorded and narrated work sessions into a per-role knowledge base, so new hires learn the job with an AI mentor that cites its sources.",
+    "description": "An AI onboarding SaaS, now a working MVP: an employee's recorded, narrated work sessions become a knowledge base per role, and new hires learn with an AI mentor that cites its sources.",
     "scope": [
       "Product",
       "Full-stack",
@@ -22,73 +22,63 @@
       "Vercel"
     ],
     "context": [
-      "When someone leaves a company, their know-how usually leaves with them: the processes live in their head, not in a document. Omi.ai solves that by recording how the outgoing employee actually works, then turning it into procedures and a knowledge base the new hire can question.",
-      "I designed and built the product end to end: the recording and upload flow, the AI pipeline that writes the procedures, the retrieval system behind the chat, the onboarding guide, the analytics and the marketing site.",
-      "Current status: a working MVP, ready for first user tests. In this version, the employee records a work session while explaining it out loud, then uploads it: Omi turns it into procedures added to the role's Brain, and into a written PDF document. This approach was chosen over capturing on-screen actions directly with Microsoft Clarity's open-source recording technology, for two reasons: it delivered a working product for early tests sooner, and there was a real risk that the AI would struggle to understand what happens on screen without someone explaining it. Automatic capture stays on the roadmap.",
-      "Omi.ai is incubated at NEOMA Business School."
+      "When someone leaves, their know-how often leaves with them. Omi.ai records how they actually work and turns it into procedures the new hire can question.",
+      "I designed and built it end to end: recording and upload, the AI pipeline, the retrieval behind the chat, the onboarding guide, analytics and the marketing site. Omi.ai is incubated at NEOMA Business School.",
+      "Status: a working MVP, ready for first user tests. I chose narrated recordings over capturing on-screen actions (Microsoft Clarity's open-source recording technology) because it reached testers sooner, and an AI might well misread a screen nobody explains."
     ],
     "work": [
       {
         "title": "Why the MVP stays as it is for now",
-        "text": "I don't change a product in a vacuum. Once there is a working base, the field and real use decide what comes next, not my guesses.",
+        "text": "I don't change a product in a vacuum: once the base works, real use decides what comes next.",
         "points": [
-          "The MVP is frozen until it has gathered enough feedback from real users: no new features or redesigns on assumptions.",
-          "Omi moves to phase two (automatic capture, the next features) only when that feedback is satisfying: not perfect, but good enough against my own criteria.",
-          "This is the method described on the home page, applied: ship a working version fast, then refine on observed results."
+          "No new features or redesigns until enough real users have given feedback.",
+          "Phase two starts only when that feedback is good enough by my own criteria. Not perfect, good enough."
         ]
       },
       {
-        "title": "Process capture",
-        "text": "In the MVP, a process is captured as a recorded work session narrated out loud.",
+        "title": "Capture and AI-written procedures",
+        "text": "The employee records their screen while explaining it out loud, then uploads the video.",
         "points": [
-          "The employee records their screen while explaining what they do and why, then uploads the video.",
-          "The narration is transcribed and key frames are described by a vision model.",
-          "Planned next: a browser extension that captures on-screen actions automatically, based on Microsoft Clarity's open-source recording technology."
-        ]
-      },
-      {
-        "title": "AI-written procedures",
-        "text": "From a capture and a spoken narration, Omi drafts a step-by-step procedure (SOP).",
-        "points": [
-          "Every step cites the narration lines and moments of the recording it comes from.",
-          "Coverage score and warnings displayed for review.",
-          "Nothing is used by the AI until a human has reviewed and published it.",
-          "Each procedure is also produced as a written PDF document, ready to share outside the app."
+          "The narration is transcribed and a vision model describes key frames.",
+          "Omi drafts a step-by-step procedure (SOP); each step cites its narration lines and recording moments.",
+          "A coverage score and warnings guide the review. Nothing reaches the AI until a human publishes it.",
+          "Each procedure also exports as a PDF.",
+          "Phase two: a browser extension capturing on-screen actions automatically, on Clarity's open-source technology."
         ]
       },
       {
         "title": "A \"Brain\" per role (RAG)",
-        "text": "Published procedures become a searchable knowledge base for each job.",
+        "text": "Published procedures become a searchable knowledge base per job.",
         "points": [
-          "One step = one excerpt, embedded and stored in Supabase with pgvector.",
-          "Works with OpenAI or Mistral, and falls back to local BM25 search with no API key.",
-          "Each excerpt records the model that encoded it, so two indexes are never mixed."
+          "One step = one excerpt, embedded in Supabase with pgvector.",
+          "OpenAI or Mistral, with a local BM25 fallback when there's no API key.",
+          "Each excerpt records its embedding model, so indexes never mix."
         ]
       },
       {
         "title": "Omi Companion, the AI mentor",
-        "text": "A chat that answers new hires only from published procedures.",
+        "text": "A chat that answers from published procedures only.",
         "points": [
-          "Every answer shows its sources (procedure, step, moment in the recording).",
-          "Says \"I don't know\" below a calibrated relevance threshold and suggests who to contact instead."
+          "Every answer cites procedure, step and recording moment.",
+          "Below a calibrated relevance threshold it says \"I don't know\" and suggests who to ask."
         ]
       },
       {
         "title": "Onboarding guide and Obsidian export",
-        "text": "The knowledge base is turned into ready-to-read onboarding material.",
+        "text": "",
         "points": [
           "A five-module guide per role: the job, its rhythm, procedures in learning order, contacts, edge cases.",
-          "Flagged as outdated as soon as a published procedure changes; Markdown export.",
-          "A full Obsidian vault export where roles, tools and contacts are linked in a graph."
+          "Flagged as outdated when a procedure changes; Markdown export.",
+          "A full Obsidian vault, with roles, tools and contacts linked in a graph."
         ]
       },
       {
         "title": "Measured quality",
-        "text": "The AI is evaluated, not just demoed.",
+        "text": "Evaluated, not just demoed.",
         "points": [
           "Unit tests on masking, procedure generation, chunking and answers.",
-          "Evaluation on a demo Brain: 10/10 on known questions and 6/8 on unseen ones; off-topic questions are refused.",
-          "Analytics for each role: coverage score, onboarding velocity and blocking points."
+          "Demo Brain: 10/10 on known questions, 6/8 on unseen ones, off-topic questions refused.",
+          "Per-role analytics: coverage, onboarding velocity, blocking points."
         ]
       }
     ],
@@ -102,7 +92,7 @@
     "name": "Kompute — batch AI jobs on idle gaming GPUs",
     "url": "https://kompute.vercel.app/",
     "urlLabel": "Visit the site",
-    "description": "Student team project (entrepreneurship class): a marketplace that runs small teams' batch AI jobs on gaming PCs that would otherwise sit idle. Stopped as a real business; it continues only as a class project.",
+    "description": "Entrepreneurship class team project: a marketplace running small teams' batch AI jobs on idle gaming PCs. Stopped as a business; it continues only as the class project.",
     "scope": [
       "School project",
       "Team work",
@@ -114,73 +104,56 @@
       "Vercel"
     ],
     "context": [
-      "Kompute was built as a group project for an entrepreneurship class. The result is a team effort, not mine alone.",
-      "It grew out of a personal project I had put on hold: I had hit a technical wall on security, since running other people’s workloads safely on private computers demands a level of sandboxing and isolation expertise I did not have yet. Rather than ship something unsafe, I paused it, and the class gave the team a chance to rethink the idea as a business: who needs it, what it should cost, and what a credible first version looks like.",
-      "Kompute is a student project: there are no customers, no providers and no revenue. The site says so openly.",
-      "Status: I have stopped Kompute as a real business (see why below). It continues only as the class project, which started in September 2026 and is still running."
+      "It started as a personal project I'd paused: running other people's workloads safely on private PCs needs sandboxing skills I didn't have, and I wouldn't ship something unsafe. The class let our team rethink it as a business: who needs it, what it should cost, what a credible first version looks like. A team effort, not mine alone.",
+      "No customers, providers or revenue, and the site says so. The class project started in September 2026 and is still running."
     ],
     "work": [
       {
         "title": "The idea",
-        "text": "Small AI teams need GPU power for batch work, while millions of gaming GPUs sit unused most of the day. Kompute connects the two.",
+        "text": "Small AI teams need GPU power for batch work; millions of gaming GPUs sit idle most of the day.",
         "points": [
-          "Teams send non-sensitive, interruptible jobs that fit on a single GPU: embeddings, batch inference (classify, tag, summarise), transcription of public audio and similar runs.",
-          "Gamers rent out their idle PC and keep 85% of what each job pays.",
-          "Not a fit by design: large multi-GPU training, real-time serving, and any personal or confidential data."
+          "Jobs that fit: non-sensitive, interruptible, single-GPU (embeddings, batch inference to classify, tag or summarise, transcription of public audio…).",
+          "Gamers keep 85% of what each job pays and choose their hours; games always come first, and the job moves as soon as one starts.",
+          "Not a fit: multi-GPU training, real-time serving, personal or confidential data."
         ]
       },
       {
         "title": "How it works",
-        "text": "Consumer machines can disappear at any moment, so the system is built around that.",
+        "text": "Built for PCs that can vanish at any moment.",
         "points": [
-          "Each job is split into small chunks, and every finished chunk is saved as a checkpoint.",
-          "The agent on the gaming PC pulls work over HTTPS: nothing ever connects into the player’s home network.",
-          "PCs send a heartbeat every 2 seconds; after 10 seconds of silence the job goes back to the queue and resumes on another machine from its last checkpoint.",
-          "A few random items are recomputed and compared before delivery, and the team receives one result file, in order."
+          "Jobs split into checkpointed chunks.",
+          "The gaming PC pulls work over HTTPS; nothing connects into the player's home network.",
+          "Heartbeat every 2 s; after 10 s of silence the job resumes on another machine from its last checkpoint.",
+          "Random items recomputed before delivery; one ordered result file.",
+          "For teams, a cheaper option for work that can wait a few minutes: no cloud GPUs to rent or maintain, and help packaging their first job."
         ]
       },
       {
-        "title": "What it brings",
-        "text": "A cheaper option for work that can wait a few minutes, and a fair deal for the people providing the hardware.",
+        "title": "Business model and what is built",
+        "text": "Pricing tested in interviews, not yet validated by payments: €0.30–0.40 per GPU-hour, 15% commission.",
         "points": [
-          "For teams: batch compute without renting or maintaining cloud GPUs, with help packaging their first job.",
-          "For gamers: income from an idle PC, chosen availability hours, and games always come first (the job moves elsewhere as soon as a game starts)."
-        ]
-      },
-      {
-        "title": "Business model, tested in interviews",
-        "text": "Pricing hypotheses put in front of potential users during interviews, not yet validated by payments.",
-        "points": [
-          "0.30 to 0.40 € per GPU-hour for teams.",
-          "15% platform commission, 85% to the provider."
-        ]
-      },
-      {
-        "title": "What is actually built",
-        "text": "A working proof of concept, with an honest line between what runs and what is illustrative.",
-        "points": [
-          "A live demo runs a real embeddings job on a separate worker that saves checkpoints, can be unplugged mid-job and resumes (on a CPU server, not a gaming GPU).",
-          "A quote form that stores requests in a database, answered by hand.",
+          "A live demo runs a real embeddings job that survives being unplugged (on a CPU server, not a gaming GPU).",
+          "A quote form saved to a database, answered by hand.",
           "The marketplace dashboard (providers, wallet, payouts) is a mock-up with demo data."
         ]
       },
       {
         "title": "Why I stopped Kompute as a business",
-        "text": "A deliberate decision, not a drift: the numbers and the skills did not add up.",
+        "text": "The skills and the numbers didn't add up.",
         "points": [
-          "Security first: running strangers' workloads on private computers is a high-stakes problem. It needs a high level of security and data-flow expertise, skills that take years to build and are mostly learned alongside experienced engineers. I could not get there in a reasonable time.",
-          "Then the economics, the bigger problem: margins per job are very thin, so the model only works with a huge number of customers. Winning that many customers would cost too much: the customer acquisition cost (CAC) would be too high for the revenue each one brings.",
-          "What stays: the shortage of computing power, and of graphics cards, is a real problem. I keep it in mind, hoping to find another angle of attack one day."
+          "Security: running strangers' code on someone's PC safely takes years of security and data-flow expertise, learned next to senior engineers. I couldn't get there fast enough.",
+          "Economics, the bigger problem: thin margins mean a huge customer base, and winning it would cost more (CAC) than each customer brings.",
+          "Still on my mind: computing power and graphics cards are scarce. Maybe another angle one day."
         ]
       },
       {
         "title": "What the business plan says, honestly",
-        "text": "In the class, we wrote the business plan as if we were launching for real, and kept it honest about what would be needed:",
+        "text": "Written as if we were launching for real:",
         "points": [
-          "Outside funding would be mandatory: a business angel, Bpifrance or a similar investor.",
-          "A co-founder specialised in security and data flows would be mandatory too.",
-          "The first customer-acquisition campaign would be decisive for the whole project.",
-          "The plan is a class exercise, but these are real observations and the decisions we would have taken in real life."
+          "Outside funding required (business angel, Bpifrance or similar).",
+          "A co-founder specialised in security and data flows required.",
+          "The first acquisition campaign would make or break it.",
+          "A class exercise, but real observations and the calls we'd have made."
         ]
       }
     ],

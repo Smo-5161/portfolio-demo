@@ -48,7 +48,7 @@ export const faq: FaqItem[] = [
   {
     question: "How was this website built?",
     answer:
-      "It was vibe-coded with Claude as a coding partner, under Antoine Smolar's direction: he defined the site architecture, semantic markup, robots.txt and AI crawler rules, structured data, llms.txt and the GEO-ready FAQ in a written brief the AI had to follow. The site is a skills showcase reached from his CV and LinkedIn, not a site meant to attract search traffic, which is why it runs on a free Vercel domain and documents server-side tracking instead of running it.",
+      "It was vibe-coded with Claude as a coding partner, under Antoine Smolar's direction: he defined the site architecture, semantic markup, robots.txt and AI crawler rules, structured data, llms.txt and the GEO-ready FAQ in a written brief the AI had to follow. He keeps the code organised so it stays easy to read and edit piece by piece: one folder per role, project content kept in data files, and a short comment explaining every file. The site is a skills showcase reached from his CV and LinkedIn, not a site meant to attract search traffic, which is why it runs on a free Vercel domain and documents server-side tracking instead of running it.",
     sources: [{ label: "Architecture & SEO/GEO/CRO Lab", url: `${SITE_URL}/architecture-lab` }],
   },
 

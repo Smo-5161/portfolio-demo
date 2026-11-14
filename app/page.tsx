@@ -1,3 +1,4 @@
+// Home page: profile (hero, CV, skills, method) and the portfolio grid.
 import Link from "next/link";
 import { isEmptySection } from "@/lib/portfolio-data";
 import Image from "next/image";
@@ -20,19 +21,19 @@ const method = [
   {
     step: "1",
     title: "Write the PRD first",
-    text: "A product requirements document complete enough to build from directly, so the first version works instead of being a sketch.",
+    text: "A requirements document detailed enough to build from directly, so the first version works instead of being a sketch.",
     proof: { label: "The PRD of this site", href: repoFile("docs/PRD.md") },
   },
   {
     step: "2",
     title: "Ship a working version, fast",
-    text: "A functional version at the minimum quality expected (it works, it is usable, it serves the main need), released as early as possible.",
+    text: "Released as early as possible, at the minimum quality expected: it works, it is usable, it serves the main need.",
     proof: { label: "Omi.ai, a working MVP", href: "/saas" },
   },
   {
     step: "3",
     title: "Refine on observed results",
-    text: "Polish comes once the product is live and real data shows where it matters, and it keeps going after release.",
+    text: "Polish comes once it is live and real data shows where it matters. It never really stops.",
     proof: { label: "What testing caught on this site", href: "/architecture-lab#tracking" },
   },
 ];
@@ -201,8 +202,8 @@ export default function Home() {
               How I work
             </h2>
             <p className="max-w-3xl text-ink-700 leading-relaxed">
-              I get a working product out as fast as possible, then refine it on real results. This
-              is what lets me carry several projects at the same time.
+              I get a working product out fast, then refine it on real results. It is how I keep
+              several projects going at once.
             </p>
             <ol className="mt-6 grid gap-4 md:grid-cols-3">
               {method.map((m) => (
@@ -221,9 +222,9 @@ export default function Home() {
               ))}
             </ol>
             <p className="mt-6 max-w-3xl text-sm text-ink-700 leading-relaxed">
-              <strong className="text-ink-900">The trade-off, owned:</strong> I favour effective volume
-              over perfectionism. A first version is less polished than it could be; the polish goes
-              where results show it matters, and I keep refining once it is deployed.
+              <strong className="text-ink-900">The trade-off:</strong> I favour effective volume over
+              perfectionism. A first version is less polished than it could be, and the polish goes
+              where results show it matters. I keep refining after launch.
             </p>
           </div>
         </div>

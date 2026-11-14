@@ -3,7 +3,7 @@
     "id": "helmo-renovation",
     "name": "Helmo Rénovation",
     "url": "https://helmo-renovation.fr/",
-    "description": "Full redesign (SEO, UI and UX) of a WordPress site for an all-trades renovation company, delivered in 2 months with an assistant I trained: 64 site pages rebuilt and optimized (the 147-page site also carries 83 blog articles, which I did not handle).",
+    "description": "A 2-month redesign of a renovation company's WordPress site: SEO, UI and UX for its 64 pages, with an assistant I trained. The 83 blog articles of the 147-page site weren't my work.",
     "duration": "2 months",
     "scope": [
       "Technical SEO",
@@ -19,70 +19,51 @@
       "LiteSpeed Cache"
     ],
     "context": [
-      "Helmo Rénovation is a French all-trades renovation company (interior work, energy retrofits, projects for professionals) that delivers turnkey projects with its own in-house teams.",
-      "I led the rebuild of the site in 2 months: architecture, SEO for the 64 site pages, markup, performance and UI. The site runs on WordPress with the Elementor page builder and is hosted on Hostinger. The 83 blog articles were not part of my work."
+      "Helmo Rénovation is a French all-trades renovation company (interiors, energy retrofits, professional projects) working turnkey with its own teams. The site runs on WordPress and Elementor, hosted by Hostinger."
     ],
     "work": [
       {
         "title": "Team and my role",
-        "text": "A two-person web team: me and an assistant I trained while we built the site.",
+        "text": "Two of us: me and an assistant I trained along the way.",
         "points": [
-          "I directed the work and often built model pages for the assistant to reproduce.",
-          "I split the tasks; by the end, each of us owned a set of pages, so site-wide changes no longer had to be shared out again.",
-          "The assistant handled simple no-code changes; I took care of global CSS issues, caching and new requests from the CEO."
+          "I directed the work and often built model pages for the assistant to copy.",
+          "I split the tasks; by the end we each owned a set of pages, so site-wide changes no longer needed sharing out.",
+          "The assistant did simple no-code edits; I handled global CSS, caching and the CEO's new requests."
         ]
       },
       {
         "title": "Site architecture",
-        "text": "A very broad offering, reorganized into clear topic silos so both Google and visitors instantly understand the structure.",
+        "text": "A broad offer sorted into clear topic silos.",
         "points": [
-          "Three main silos: interior renovation, energy renovation and services for professionals.",
-          "Sub-pages by property type, by room and by trade (insulation, heating, ventilation, electrical, plumbing…).",
-          "Internal linking between pages of the same silo and breadcrumbs across the whole site."
+          "Three silos: interior renovation, energy renovation, services for professionals.",
+          "Sub-pages by property type, room and trade (insulation, heating, ventilation, electrical, plumbing…).",
+          "Internal links within each silo, breadcrumbs everywhere."
         ]
       },
       {
         "title": "SEO for the 64 site pages",
-        "text": "Each page targets a specific search intent and was optimized individually.",
+        "text": "One search intent per page, each optimised on its own.",
         "points": [
-          "Unique title tags and meta descriptions written to earn the click.",
-          "A single H1 per page and a consistent H2/H3 hierarchy.",
-          "Segmented XML sitemap (pages, posts, categories) to make crawling easier."
+          "Unique titles and meta descriptions written to earn the click.",
+          "One H1 per page, a clean H2/H3 hierarchy.",
+          "A segmented XML sitemap (pages, posts, categories)."
         ]
       },
       {
-        "title": "Images and alt text",
-        "text": "Every image was renamed and described so search engines understand it and screen readers can announce it.",
+        "title": "Images, markup and speed",
+        "text": "Readable by machines, fast on mobile.",
         "points": [
-          "Descriptive alt attributes, written from the actual image content and the page's target keyword.",
-          "WebP conversion and lazy loading for off-screen visuals."
+          "Every image renamed, with alt text based on what it shows and the page's keyword, for search engines and screen readers.",
+          "schema.org markup: Organization and LocalBusiness, WebSite and WebPage on every page, BreadcrumbList.",
+          "LiteSpeed cache (built into Hostinger), WebP images lazy-loaded off screen, unused Elementor elements and scripts removed."
         ]
       },
       {
-        "title": "Markup and structured data",
-        "text": "Complete schema.org markup so Google and AI engines clearly identify the company, its pages and its structure.",
+        "title": "FAQ rewritten for GEO",
+        "text": "So ChatGPT, Gemini or Perplexity can quote it.",
         "points": [
-          "Organization and LocalBusiness for the company's identity.",
-          "WebSite and WebPage on every page.",
-          "BreadcrumbList to expose the site tree in search results."
-        ]
-      },
-      {
-        "title": "Page speed optimization",
-        "text": "A visually rich Elementor site, slimmed down to stay fast on mobile.",
-        "points": [
-          "LiteSpeed server cache, provided natively by Hostinger.",
-          "Images compressed to WebP and lazy-loaded.",
-          "Cleanup of unused Elementor elements and scripts."
-        ]
-      },
-      {
-        "title": "FAQ rewrite for GEO",
-        "text": "The FAQs were rewritten to be picked up by generative engines (ChatGPT, Gemini, Perplexity…).",
-        "points": [
-          "Questions phrased naturally, the way a customer would ask an AI.",
-          "A direct answer in the very first sentence, then the details.",
-          "Short, factual wording that is easy to quote."
+          "Questions worded the way a customer asks an AI.",
+          "The answer first, details after, in short factual sentences."
         ]
       }
     ],
@@ -115,6 +96,12 @@
     "period": {
       "start": "2026-06",
       "end": "2026-08"
-    }
+    },
+    "links": [
+      {
+        "label": "Read the recommendation letter",
+        "url": "/cv/Antoine-Smolar-Recommendation-Letters.pdf#page=1"
+      }
+    ]
   }
 ]

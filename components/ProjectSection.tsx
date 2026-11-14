@@ -1,3 +1,4 @@
+// A portfolio section page: title, last-updated date, project cards, JSON-LD and links to the other sections.
 import Link from "next/link";
 import EmptyState from "./EmptyState";
 import ProjectCard from "./ProjectCard";

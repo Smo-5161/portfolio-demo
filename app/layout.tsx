@@ -1,3 +1,4 @@
+// Root layout: metadata defaults, fonts, consent defaults, tracking (production only), header, footer and consent banner.
 import TrackingEvents from "@/components/TrackingEvents";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";

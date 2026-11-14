@@ -1,3 +1,4 @@
+// Sticky site header: logo and the three main anchors, kept on one line on phones.
 import Link from "next/link";
 
 const anchors = [

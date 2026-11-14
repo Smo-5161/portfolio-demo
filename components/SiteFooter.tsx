@@ -1,3 +1,4 @@
+// Site footer: contact tiles and utility links.
 import { REPO_URL, contact } from "@/lib/site";
 import CookieSettingsButton from "./CookieSettingsButton";
 

@@ -2,7 +2,7 @@
   {
     "id": "vibe-coding-workshop-neoma",
     "name": "Live Build Challenge — vibe coding workshop at NEOMA",
-    "description": "A free 3-hour workshop at NEOMA Business School in Reims to introduce students to vibe coding and the rise of no-code: find a local business that needs a website, build it a redesign with Lovable, then pitch it to the owner. Co-organised with two friends.",
+    "description": "A free 3-hour vibe coding workshop at NEOMA Reims, co-organised with two friends: find a local business that needs a website, rebuild it with Lovable, pitch it to the owner.",
     "scope": [
       "Workshop",
       "Co-organiser",
@@ -15,36 +15,35 @@
       "Lovable"
     ],
     "context": [
-      "Most business students have never built software. The goal of the Live Build Challenge was to show them that this has changed: with AI-assisted \"vibe coding\" tools, describing what you want in plain language is enough to get a working website, which opens product building to non-developers.",
-      "The event took place on 2 April 2026, from 2 to 6 pm, at NEOMA Business School in Reims. Entry was free and no technical background was required. I organised it with two friends."
+      "Most business students have never built software. We wanted to show that with AI \"vibe coding\" tools, describing what you want in plain words now gets you a working website, which opens product building to non-developers.",
+      "2 April 2026, 2 to 6 pm, NEOMA Business School, Reims. Free, no technical background needed."
     ],
     "work": [
       {
         "title": "3 hours, 3 steps, 1 business",
-        "text": "The challenge followed a real freelance sales cycle, one hour per step.",
+        "text": "A real freelance sales cycle, one hour per step:",
         "points": [
-          "Hunting (1 hour): search Google Maps to find a local business that needs a website.",
-          "Build (1 hour): with 100 Lovable credits provided, generate a professional redesign with AI, without writing code.",
-          "Pitch (1 hour): contact the owner with immediate proof of value, the site already built."
+          "Hunting: find a local business on Google Maps that needs a website.",
+          "Build: generate a professional redesign with Lovable (100 credits provided), no code written.",
+          "Pitch: contact the owner with the finished site as proof."
         ]
       },
       {
         "title": "My role",
-        "text": "A shared organisation with two friends, where I covered several parts.",
+        "text": "",
         "points": [
-          "Helped organise the event.",
-          "Set up the room and the equipment.",
-          "Led the first part of the workshop: the opening presentation and facilitation.",
-          "Acted as technical assistant during the build, explaining technical details and answering participants' questions."
+          "Helping organise the event, and setting up the room and equipment.",
+          "Leading the opening presentation and facilitation.",
+          "Technical help during the build: explaining details and answering participants' questions."
         ]
       },
       {
-        "title": "What students saw in practice",
-        "text": "Beyond the visual result, the demos showed what the tool produces under the hood: a real code base with components, assets and SEO tags (title, description, Open Graph, structured data), and features such as a booking system that need a back end to go live."
+        "title": "What students saw",
+        "text": "Behind the visuals, a real code base: components, assets, SEO tags (title, description, Open Graph, structured data), and features like booking that need a back end to go live."
       },
       {
-        "title": "Key takeaway",
-        "text": "No-code and AI tools turn an idea into a usable prototype in an afternoon. The value moves to choosing the right problem, writing clear instructions and judging the result."
+        "title": "Takeaway",
+        "text": "AI tools turn an idea into a prototype in an afternoon. The value shifts to picking the problem, giving clear instructions and judging the result."
       }
     ],
     "gallery": {

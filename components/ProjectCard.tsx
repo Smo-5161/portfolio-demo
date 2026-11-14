@@ -1,3 +1,4 @@
+// One project: header (title, tags, links) always visible, details folded in a native <details>.
 import { formatPeriod, periodInterval } from "@/lib/site";
 import type { Project } from "@/lib/types";
 import SlideTranscript from "./SlideTranscript";
@@ -140,7 +141,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
                     </span>{" "}
                     {w.title}
                   </h4>
-                  <p className="text-sm text-ink-700 leading-relaxed">{w.text}</p>
+                  {w.text && <p className="text-sm text-ink-700 leading-relaxed">{w.text}</p>}
                   {w.points && (
                     <ul className="mt-3 space-y-1.5">
                       {w.points.map((pt) => (

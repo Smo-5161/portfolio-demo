@@ -1,3 +1,4 @@
+// SaaS section: renders data/saas.json with ProjectSection.
 import ProjectSection from "@/components/ProjectSection";
 import data from "@/data/saas.json";
 import type { Project } from "@/lib/types";

@@ -1,3 +1,4 @@
+// Websites section: renders data/sites.json with ProjectSection.
 import ProjectSection from "@/components/ProjectSection";
 import data from "@/data/sites.json";
 import type { Project } from "@/lib/types";

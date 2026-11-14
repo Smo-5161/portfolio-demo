@@ -1,4 +1,5 @@
 "use client";
+// Footer button that reopens the cookie banner.
 
 import { OPEN_CONSENT_EVENT } from "./ConsentBanner";
 

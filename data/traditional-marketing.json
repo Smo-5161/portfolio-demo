@@ -2,7 +2,7 @@
   {
     "id": "rehau-recycle-for-good",
     "name": "REHAU — “Recycle for Good” CSR pilot",
-    "description": "Team project on a real company case: REHAU Window Solutions asked how to design a CSR pilot for 2025–2027 that overcomes consumer skepticism about recycled PVC in South-East Europe. Our answer: collect old PVC from residents and turn it into window renovations for rural schools in Serbia.",
+    "description": "Team project on a real company case: how REHAU Window Solutions could beat consumer distrust of recycled PVC in South-East Europe with a 2025–2027 CSR pilot. Our answer: turn residents' old PVC into window renovations for rural Serbian schools.",
     "scope": [
       "Team work",
       "Real company case",
@@ -13,37 +13,36 @@
       "start": "2026-01"
     },
     "context": [
-      "A real business case, not a simulation: REHAU Window Solutions, part of the German REHAU group, wrote it for the Belgrade Business International Case Competition (BBICC 2024). NEOMA used it in January 2026 in its International Case Study Competition course, where teams work like a consulting firm and pitch their recommendation as a client presentation.",
-      "Group 4 was a team of six: Antoine Smolar, Lucas Soler, Nathan Souillard, Gabriel Thillay, QingYun Tung and Albert Vallée-Duval. The result is a team effort; I presented the environment analysis and the solution. The original case document belongs to REHAU and the competition, so only our own deck is shown here."
+      "A real case, not a simulation: REHAU Window Solutions (German REHAU group) wrote it for the Belgrade Business International Case Competition (BBICC 2024). NEOMA used it in January 2026 in its International Case Study Competition course, where teams pitch like consultants to the client.",
+      "Group 4: Antoine Smolar, Lucas Soler, Nathan Souillard, Gabriel Thillay, QingYun Tung, Albert Vallée-Duval. A team effort. The case document belongs to REHAU and the competition, so only our deck is shown."
     ],
     "work": [
       {
         "title": "The problem",
-        "text": "REHAU had the credentials but not the hearts. Its sustainability work was real, yet invisible or unconvincing to the people who actually buy windows.",
+        "text": "Strong credentials, little public trust.",
         "points": [
-          "A strong position: REHAU Window Solutions has the strongest brand awareness in its sector in Serbia, Croatia, Bosnia and Herzegovina and North Macedonia, 25 years in Serbia and a new showroom in Belgrade.",
-          "A solid circular-economy record: the EcoPuls label for recycled profiles, CO2 emissions cut by 68% between 2018 and 2022, an EcoVadis gold medal.",
-          "But a consumer bias: in South-East Europe, recycled products are seen as “good for the planet” but of lower quality, and the circular economy is poorly understood.",
-          "An emotional gap: REHAU's success is mostly B2B, with little emotional bond with end users, and competitors could claim the sustainability topic first.",
-          "The question set: how can REHAU design a CSR pilot for 2025–2027 that overcomes this skepticism and makes it the emotional leader in sustainability, with a realistic plan, budget and risks?"
+          "The best-known brand in its sector in Serbia, Croatia, Bosnia and Herzegovina and North Macedonia; 25 years in Serbia; a new Belgrade showroom.",
+          "A circular-economy record: the EcoPuls recycled label, CO2 down 68% from 2018 to 2022, EcoVadis gold.",
+          "But buyers see recycled as good for the planet yet lower quality, and understand the circular economy poorly. REHAU's mostly B2B success had little bond with end users, leaving room for competitors to claim the topic.",
+          "The question: a 2025–2027 CSR pilot that wins that trust, with a realistic plan, budget and risks."
         ]
       },
       {
         "title": "Our recommendation",
-        "text": "“Recycle for Good”: a 2-year pilot in Serbia where residents bring old PVC, REHAU recycles it into new windows, and every set amount collected pays for the thermal renovation of a rural school.",
+        "text": "\"Recycle for Good\", a 2-year pilot in Serbia: residents bring old PVC, REHAU recycles it, and every set amount pays for a rural school's thermal renovation.",
         "points": [
           "The Novak Djokovic Foundation as partner, for reach and credibility.",
-          "€410,000 invested for €2.25M of projected incremental revenue over 24 months.",
-          "Recovered PVC replaces part of the virgin, oil-based raw material."
+          "€410,000 invested for €2.25M of projected extra revenue over 24 months.",
+          "Recovered PVC replaces some virgin, oil-based material."
         ]
       },
       {
         "title": "My part",
-        "text": "I worked on and presented the environment analysis (strengths, weaknesses, opportunities, threats, competition) and the solution itself, the PVC collection loop."
+        "text": "I worked on and presented the environment analysis (SWOT and competition) and the solution, the PVC collection loop."
       },
       {
         "title": "Methods",
-        "text": "SCQA framing, a MECE issue tree, PESTEL, SWOT, competitor mapping, a target persona, a phased roadmap, a scored risk matrix and a cost and revenue model."
+        "text": "SCQA, MECE issue tree, PESTEL, SWOT, competitor map, persona, phased roadmap, scored risk matrix, cost and revenue model."
       }
     ],
     "slides": {
@@ -384,12 +383,12 @@
         }
       ]
     },
-    "note": "Slide 2 (team photos) is left out to protect my teammates' privacy. The deck states its own AI use: Perplexity for source research and Gemini for structuring some paragraphs, reviewed by the team."
+    "note": "Slide 2 (team photos) is left out for my teammates' privacy. The deck discloses its AI use: Perplexity for sources, Gemini for some structure, all reviewed by the team."
   },
   {
     "id": "sirtom-shared-composters",
     "name": "SIRTOM — Shared composters launch campaign",
-    "description": "Communication campaign for the launch of shared composters across a public waste authority's territory, produced by an agency. I took part in the brief and the decisions; my proposal to lead with the financial impact was not kept, but the final campaign builds on a close idea: the value we throw away.",
+    "description": "Launch campaign for shared composters, produced by an agency for a public waste authority. I took part in the brief and decisions; my money-first idea wasn't kept, but the campaign landed close: the value we throw away.",
     "scope": [
       "Internship",
       "Campaign brief",
@@ -397,47 +396,40 @@
       "Team work"
     ],
     "context": [
-      "Since 1 January 2024, French law (the AGEC anti-waste law) requires bio-waste from households to be sorted at source, and it is up to local authorities to provide the solution. If residents do not sort, the authority bears the consequences and the cost. To help residents do it, SIRTOM de la région Flers-Condé launched shared composters across its territory, in Normandy, and needed a campaign to announce them.",
-      "The campaign was designed and produced by an external agency, not by me. During my internship I took part in the decisions on what to brief the agency on, how to answer its proposals and what to ask for."
+      "Since 1 January 2024, the AGEC law requires households to sort bio-waste, and local authorities must provide the means and bear the cost if residents don't. SIRTOM de la région Flers-Condé, in Normandy, launched shared composters and needed a campaign.",
+      "An external agency designed and produced it. During my internship I took part in briefing it, answering its proposals and deciding what to ask for."
     ],
     "work": [
       {
         "title": "My proposal: talk money, not ecology",
-        "text": "I suggested leading with the financial side: the real savings composting brings to the authority, which directly limits increases in the waste collection tax paid by residents.",
+        "text": "Lead with the savings composting brings, which directly limit rises in residents' waste tax.",
         "points": [
-          "My reading of the audience: the area was not very receptive to environmental messages, and a genuine ecology awareness campaign would need far more time and budget.",
-          "So the message had to speak to residents' immediate, practical concerns."
+          "The area wasn't very receptive to environmental messages, and a real awareness campaign would need far more time and budget, so the message had to meet everyday concerns."
         ]
       },
       {
         "title": "What was decided: the value we throw away",
-        "text": "The direct financial argument was not kept. The final campaign stays on the same ground, though: food scraps as something valuable that gets wasted, rather than an environmental duty.",
+        "text": "Not the money argument itself, but the same ground: food scraps as wasted value, not a green duty.",
         "points": [
-          "The tagline: “Your food scraps have real value. Don’t waste it: compost.”",
-          "The headline plays on French slang for money: “blé, oseille, radis, avoine, patates” are crops, and most of them also mean cash. Variants follow the same idea: “Balance le blé !”, “Par ici l’oseille !”, “Donne-moi des patates !”.",
-          "The brochure backs it with figures: food and green waste make up more than 30% of household bins, about 4,000 tonnes a year on the territory, and collecting and treating them costs more every year."
+          "Tagline: “Your food scraps have real value. Don’t waste it: compost.”",
+          "The headline “blé, oseille, radis, avoine, patates” lists crops that are mostly also French slang for cash; variants: “Balance le blé !”, “Par ici l’oseille !”, “Donne-moi des patates !”.",
+          "The brochure adds figures: food and green waste are over 30% of household bins, about 4,000 tonnes a year locally, with collection and treatment costs rising."
         ]
       },
       {
         "title": "A compost wheel for children",
-        "text": "A rotating cardboard disc shows, item by item, what can go in the composter, in moderation or not at all. The aim was assumed: make it playful enough to intrigue children.",
+        "text": "A rotating disc showing what goes in the composter, in moderation or not at all, designed as a game to intrigue kids.",
         "points": [
-          "Short term: children push their household to start composting.",
-          "Long term: they learn the habit very young, a slow but lasting investment in awareness."
+          "Short term: they push their household to compost.",
+          "Long term: the habit starts young, a slow but lasting investment."
         ]
       },
       {
-        "title": "Working with the agency",
-        "text": "I took part in the back-and-forth with the agency: reviewing its proposals, deciding on the answers and on the requests to send back."
-      },
-      {
-        "title": "Where the campaign ran",
-        "text": "One visual line, declined across every touchpoint.",
+        "title": "Where it ran",
+        "text": "",
         "points": [
-          "Posters (main visual and three variants) and wind flags for events.",
-          "A composter-shaped flyer with a QR code to the authority's website.",
-          "A brochure explaining why and how to compost.",
-          "Tote bags, the compost wheel, SIRTOM's social media and the livery of the waste collection trucks."
+          "Posters (main visual and three variants), event wind flags, a composter-shaped flyer with a QR code, a brochure.",
+          "Tote bags, the compost wheel, SIRTOM's social media and the collection trucks' livery."
         ]
       }
     ],
@@ -502,7 +494,6 @@
         }
       ]
     },
-    "note": "Campaign designed and produced by an external agency for SIRTOM de la région Flers-Condé; my role was in the brief and the decisions.",
     "period": {
       "start": "2024"
     }

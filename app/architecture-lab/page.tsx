@@ -1,3 +1,4 @@
+// Architecture & SEO/GEO/CRO Lab: how this site is built, section by section (content lives in data/lab.ts and lib/).
 import LabSection from "@/components/LabSection";
 import LabToggleAll from "@/components/LabToggleAll";
 import { pageMetadata } from "@/lib/seo";
@@ -218,6 +219,13 @@ export default function ArchitectureLabPage() {
               and heading structure, robots.txt and the AI crawler policy, structured data, llms.txt,
               the GEO-ready FAQ, the choice of stack and the tracking plan. All of it was set out in a
               written brief and a set of project rules the assistant had to follow.
+            </p>
+            <p className="text-sm text-ink-700 mb-4">
+              <strong className="font-medium text-ink-900">Vibe-coded, but organised.</strong> I watch how
+              the files are laid out: one folder per role (pages, components, data, shared logic), the
+              project content in data files rather than buried in the code, and a comment at the top of
+              each file saying what it does. Anyone, me included, can open the code later and read or change one small piece
+              without having to understand everything.
             </p>
             <p className="text-sm text-ink-700 mb-4">
               <strong className="font-medium text-ink-900">Why this site stays small on purpose.</strong>{" "}

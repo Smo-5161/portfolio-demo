@@ -1,4 +1,5 @@
 "use client";
+// Variant selector demo: URL-driven product variants with an SEO inspector and dataLayer events.
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { demoProduct, type DemoSize } from "@/data/demo-product";

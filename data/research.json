@@ -2,7 +2,7 @@
   {
     "id": "airbus-botswana",
     "name": "Airbus in Botswana — market entry strategy",
-    "description": "Team school project (NEOMA, Live Business Transition Case): an entry strategy for Airbus in Botswana, from the choice of segment to the joint-venture structure, roadmap, investment, ESG plan and risks.",
+    "description": "Team school project (NEOMA, Live Business Transition Case): an entry strategy for Airbus in Botswana, from segment choice to joint venture, roadmap, investment, ESG and risks.",
     "scope": [
       "School project",
       "Team work",
@@ -10,47 +10,43 @@
       "Business case"
     ],
     "context": [
-      "The brief, in a course built as a “live business transition case”: in teams of four, evaluate the strategic internationalisation of Airbus into a foreign market chosen from an approved list, assess the host country's business environment and its strategic fit with Airbus, and deliver a coherent market entry plan. The project mirrors a real corporate transition project and had to apply international business frameworks (PESTEL, CAGE, SWOT, VRIO, industry analysis, entry-mode theory, CSR).",
-      "Our team chose Botswana. After a mid-term presentation on the country, the final deliverable was a 20-minute presentation followed by questions, with a written learning document. It is a group project: the result is a team effort, not mine alone."
+      "Teams of four had to plan Airbus's entry into a country from an approved list, using international business frameworks (PESTEL, CAGE, SWOT, VRIO, industry analysis, entry-mode theory, CSR), like a real corporate transition project.",
+      "We chose Botswana: a mid-term country presentation, then a 20-minute final pitch with questions and a written learning document. A team effort, not mine alone."
     ],
     "work": [
       {
         "title": "The strategic pivot",
         "text": "From selling aircraft to anchoring a local ecosystem.",
         "points": [
-          "Shift from a market-seeking to an efficiency-seeking approach, based on Botswana's institutional strengths (property rights, judicial effectiveness, fiscal health, educated workforce).",
-          "Competitors were turning sales into lock-in through local after-sales; Airbus had the capabilities at group level but no local presence."
+          "Efficiency-seeking rather than market-seeking, built on Botswana's property rights, judicial effectiveness, fiscal health and educated workforce.",
+          "Competitors locked customers in through local after-sales; Airbus had the capabilities but no local presence."
         ]
       },
       {
-        "title": "Target segment",
-        "text": "Helicopter maintenance, repair and overhaul (MRO) and completion (customisation): recurring revenue and high-skill services that fit a country with limited heavy industry but a well-educated workforce."
-      },
-      {
-        "title": "Entry mode and governance",
-        "text": "A strategic joint venture with the Botswana Development Corporation and the civil aviation authority.",
+        "title": "Segment and entry mode",
+        "text": "Helicopter MRO (maintenance, repair, overhaul) and completion: recurring, skilled work suited to a country with little heavy industry.",
         "points": [
-          "51% Airbus / 49% partner: local legitimacy and fast-tracked permits, without the IP risk of licensing or the 'foreign extraction' image of a wholly owned subsidiary.",
+          "A 51/49 joint venture with the Botswana Development Corporation and the civil aviation authority: local legitimacy and faster permits, without licensing's IP risk or a subsidiary's \"foreign extraction\" image.",
           "Airbus keeps a technical veto on safety, maintenance standards and IP."
         ]
       },
       {
-        "title": "Location and roadmap 2026–2028",
-        "text": "A hub in the special economic zone at Gaborone airport, built in three phases.",
+        "title": "Roadmap 2026–2028",
+        "text": "A hub in Gaborone airport's special economic zone.",
         "points": [
-          "2026: land, facility construction, EASA and local certifications, logistics corridor from the port of Durban.",
-          "2027: MRO launch timed with the AviaDev Africa event; regional maintenance contracts.",
-          "2028: completion centre for medical, VIP or government helicopter configurations.",
-          "Applied R&D with a local university on 'hot, high and dusty' operating conditions."
+          "2026: land, construction, EASA and local certifications, a logistics corridor from Durban.",
+          "2027: MRO launch timed with AviaDev Africa; regional contracts.",
+          "2028: completion centre for medical, VIP or government configurations.",
+          "Applied R&D with a local university on \"hot, high and dusty\" conditions."
         ]
       },
       {
         "title": "Investment, ESG and risks",
-        "text": "A business case with its conditions of success.",
+        "text": "",
         "points": [
-          "$30–35M capex, 40+ local engineers and technicians trained to EASA standards, break-even in year 5.",
-          "ESG plan: solar power for part of the hangar's energy, sustainable aviation fuel for test flights, anti-corruption and audit transparency.",
-          "Risk matrix (supply chain, currency, skills) with a mitigation for each, and a clear list of what Airbus should not do."
+          "$30–35M capex, 40+ local staff trained to EASA standards, break-even in year 5.",
+          "Solar power for part of the hangar, sustainable aviation fuel for test flights, anti-corruption rules and transparent audits.",
+          "A risk matrix (supply chain, currency, skills) with mitigations, and what Airbus should not do."
         ]
       }
     ],
@@ -237,7 +233,7 @@
   {
     "id": "devinci-apac",
     "name": "Devinci — Asia-Pacific expansion strategy",
-    "description": "Team school project on a business case: which Asia-Pacific markets a Canadian mountain bike maker should prioritise, and how to enter them.",
+    "description": "Team school project: which Asia-Pacific markets a Canadian mountain bike maker should prioritise, and how to enter them.",
     "scope": [
       "School project",
       "Team work",
@@ -245,26 +241,26 @@
       "Market selection"
     ],
     "context": [
-      "A case study on Devinci, a Canadian bike manufacturer that wanted to reach 1,000 mountain bike sales a year in the Asia-Pacific region within three years. Our team of five had to decide which markets to prioritise and which entry modes would limit risk while supporting growth. The result is a team effort, not mine alone.",
-      "The original case, written by HEC Montréal and licensed to the school for teaching, is protected by copyright, so it cannot be published here. This page only presents our team's own analysis and recommendations."
+      "Devinci wanted 1,000 mountain bike sales a year in Asia-Pacific within three years. Our team of five chose the markets and entry modes, limiting risk while supporting growth. A team effort, not mine alone.",
+      "The HEC Montréal case is copyrighted and licensed to the school, so only our own analysis is shown."
     ],
     "work": [
       {
         "title": "Method",
-        "text": "From the company's track record to a market-by-market comparison.",
+        "text": "",
         "points": [
-          "Review of the brand's past international expansion and a SWOT analysis.",
-          "Comparison of Japan, Australia, New Zealand and China on market potential, import tariffs, ease of doing business, riding infrastructure and cultural distance.",
-          "Assessment of the brand's competitive strengths in each market, then a prioritisation matrix (attractiveness × competitive strength)."
+          "The brand's past international expansion and a SWOT.",
+          "Japan, Australia, New Zealand and China compared on market potential, tariffs, ease of business, trails and cultural distance.",
+          "Competitive strengths per market, then an attractiveness × strength matrix."
         ]
       },
       {
         "title": "Recommendation",
-        "text": "Two priority markets, each with its own entry mode.",
+        "text": "",
         "points": [
-          "Japan and Australia as priorities; New Zealand as a selective niche; China as a secondary, later option given its regulatory complexity and cultural distance.",
-          "Japan: joint venture, to navigate relationship-based distribution and reach ski resorts, the hubs for downhill riding.",
-          "Australia: direct exporting, thanks to low entry barriers, a shared language and a very large trail network."
+          "Japan and Australia first; New Zealand as a niche; China later (regulation, cultural distance).",
+          "Japan: a joint venture to handle relationship-based distribution and reach ski resorts, the hubs of downhill riding.",
+          "Australia: direct export, given low barriers, a shared language and a huge trail network."
         ]
       }
     ],

@@ -1,4 +1,5 @@
 "use client";
+// Button that opens or closes every Lab card at once.
 
 import { useState } from "react";
 import { LAB_TOGGLE_ALL } from "./LabSection";

@@ -1,4 +1,5 @@
 "use client";
+// Collapsible Lab card: plain-words summary always visible, technical details folded but in the HTML.
 
 import { useCallback, useEffect, useId, useState } from "react";
 
