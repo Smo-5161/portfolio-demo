@@ -14,10 +14,20 @@
     },
     "context": [
       "A real business case, not a simulation: REHAU Window Solutions, part of the German REHAU group, wrote it for the Belgrade Business International Case Competition (BBICC 2024). NEOMA used it in January 2026 in its International Case Study Competition course, where teams work like a consulting firm and pitch their recommendation as a client presentation.",
-      "The brief, in short: REHAU leads its market in South-East Europe and has a strong circular-economy record, but end consumers distrust recycled materials. The task was to design a 2025–2027 CSR initiative that makes the brand the emotional leader in sustainability, with a realistic plan, budget and risks.",
       "Group 4 was a team of six: Antoine Smolar, Lucas Soler, Nathan Souillard, Gabriel Thillay, QingYun Tung and Albert Vallée-Duval. The result is a team effort; I presented the environment analysis and the solution. The original case document belongs to REHAU and the competition, so only our own deck is shown here."
     ],
     "work": [
+      {
+        "title": "The problem",
+        "text": "REHAU had the credentials but not the hearts. Its sustainability work was real, yet invisible or unconvincing to the people who actually buy windows.",
+        "points": [
+          "A strong position: REHAU Window Solutions has the strongest brand awareness in its sector in Serbia, Croatia, Bosnia and Herzegovina and North Macedonia, 25 years in Serbia and a new showroom in Belgrade.",
+          "A solid circular-economy record: the EcoPuls label for recycled profiles, CO2 emissions cut by 68% between 2018 and 2022, an EcoVadis gold medal.",
+          "But a consumer bias: in South-East Europe, recycled products are seen as “good for the planet” but of lower quality, and the circular economy is poorly understood.",
+          "An emotional gap: REHAU's success is mostly B2B, with little emotional bond with end users, and competitors could claim the sustainability topic first.",
+          "The question set: how can REHAU design a CSR pilot for 2025–2027 that overcomes this skepticism and makes it the emotional leader in sustainability, with a realistic plan, budget and risks?"
+        ]
+      },
       {
         "title": "Our recommendation",
         "text": "“Recycle for Good”: a 2-year pilot in Serbia where residents bring old PVC, REHAU recycles it into new windows, and every set amount collected pays for the thermal renovation of a rural school.",
