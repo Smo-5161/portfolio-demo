@@ -43,7 +43,7 @@ export const trackingEvents: TrackingEvent[] = [
     params: ["link_location", "project_id"],
     type: "key_event",
     tool: "GA4 (via GTM)",
-    status: "datalayer",
+    status: "live",
   },
   {
     name: "demo_open",
@@ -51,7 +51,7 @@ export const trackingEvents: TrackingEvent[] = [
     params: ["demo", "link_location"],
     type: "key_event",
     tool: "GA4 (via GTM)",
-    status: "datalayer",
+    status: "live",
   },
   {
     name: "portfolio_scroll_50",
