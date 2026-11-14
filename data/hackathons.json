@@ -1,1 +1,49 @@
-[]
+[
+  {
+    "id": "final-business-simulation-neoma",
+    "name": "Final Business Simulation — Marketplace business game",
+    "description": "A one-week business game at NEOMA Business School in Reims: each team runs a bike company in the Marketplace simulation for eight quarters, competing against the other teams on a cumulative performance scorecard. Week of 16 November 2026.",
+    "scope": [
+      "Business game",
+      "Team work",
+      "Strategy",
+      "Upcoming"
+    ],
+    "period": {
+      "start": "2026-11-16",
+      "end": "2026-11-20"
+    },
+    "stack": [
+      "Marketplace Simulations (Business Management, bikes)"
+    ],
+    "context": [
+      "The Final Business Simulation is the closing course of the Global BBA: an intensive week, from 16 to 20 November 2026 on NEOMA's Reims campus, where students run a company end to end in Marketplace, an online business simulation used by business schools. Each team starts with the same company selling bikes and competes in the same market as the other teams.",
+      "Teams work in class with an instructor, can call on experts during the week and attend conferences, then keep working outside class hours. Decisions are made quarter by quarter, and each quarter unlocks new ones, following the way a new product is brought to market.",
+      "This week has not happened yet. This page will be updated afterwards with my team's strategy, my role and our result."
+    ],
+    "work": [
+      {
+        "title": "The brief: eight quarters to build a company",
+        "text": "Each quarter adds a new set of decisions.",
+        "points": [
+          "Quarter 1, organise the firm: name the company, sell shares to the executive team, assign responsibilities, set team norms and order a market survey.",
+          "Quarter 2, set up shop: analyse the survey, choose target segments and a strategy, design a brand for each segment, open sales offices and build a factory.",
+          "Quarter 3, test market: hire a sales force, price the brands, design advertising, schedule production and buy market research.",
+          "Quarter 4, adjust: review test-market data and correct brand design, pricing, advertising, sales force, production and quality control.",
+          "Quarter 5, invest: write a business plan and pitch venture capitalists, invest in R&D, expand coverage and production capacity.",
+          "Quarters 6 to 8, expand and refine: launch new features, grow the market, and allocate scarce resources better than the competition."
+        ]
+      },
+      {
+        "title": "How it is assessed",
+        "text": "Each student gets an individual grade, half individual and half team.",
+        "points": [
+          "25%: individual professional behaviour and an individual report.",
+          "25%: peer-to-peer assessment within the team.",
+          "25%: the team's ranking on the cumulative performance scorecard.",
+          "25%: team management and the final presentation."
+        ]
+      }
+    ]
+  }
+]
