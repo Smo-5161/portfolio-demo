@@ -38,6 +38,14 @@ const method = [
   },
 ];
 
+// How I rank tasks, highest priority first.
+const priorities = [
+  { level: "1", title: "Vital", text: "Structural: without it, the product doesn't work." },
+  { level: "2", title: "Profitable", text: "Brings a clear return on investment." },
+  { level: "3", title: "Efficient", text: "Saves time, effort or cost." },
+  { level: "4", title: "Polish", text: "Optimisation and refinement, once the rest is done." },
+];
+
 const skills: Skill[] = [
   {
     short: "SEO",
@@ -218,6 +226,20 @@ export default function Home() {
                   >
                     {m.proof.label} {m.proof.href.startsWith("http") ? "↗" : "→"}
                   </a>
+                </li>
+              ))}
+            </ol>
+            <h3 className="text-lg mt-8 mb-3">How I prioritise</h3>
+            <p className="max-w-3xl text-sm text-ink-700 leading-relaxed mb-4">
+              Every task gets a level, and I work top down:
+            </p>
+            <ol className="grid gap-3 grid-cols-2 lg:grid-cols-4">
+              {priorities.map((p) => (
+                <li key={p.level} className="card p-4">
+                  <p className="text-sm font-semibold text-brand-700">
+                    {p.level}. {p.title}
+                  </p>
+                  <p className="text-sm text-ink-700 leading-snug mt-1">{p.text}</p>
                 </li>
               ))}
             </ol>

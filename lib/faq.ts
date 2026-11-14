@@ -39,7 +39,7 @@ export const faq: FaqItem[] = [
   {
     question: "How does Antoine Smolar build a product?",
     answer:
-      "Fast first, refined after. He writes a product requirements document (PRD) complete enough to build from directly, ships a working version at the minimum quality expected as early as possible, then refines it once it is live and real results show where it matters, and keeps refining after release. He sees this method as what lets him run several projects at the same time; the trade-off he owns is favouring effective volume over perfectionism.",
+      "Fast first, refined after. He writes a product requirements document (PRD) complete enough to build from directly, ships a working version at the minimum quality expected as early as possible, then refines it once it is live and real results show where it matters, and keeps refining after release. He sees this method as what lets him run several projects at the same time; the trade-off he owns is favouring effective volume over perfectionism. He ranks tasks in four levels and works top down: 1. vital, structural to the product working; 2. profitable, with a clear return on investment; 3. efficiency gains, saving time or cost; 4. optimisation and polish.",
     sources: [
       { label: "PRD of this website (GitHub)", url: "https://github.com/Smo-5161/portfolio-demo/blob/main/docs/PRD.md" },
       { label: "Architecture & SEO/GEO/CRO Lab", url: `${SITE_URL}/architecture-lab` },
