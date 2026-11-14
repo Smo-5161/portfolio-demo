@@ -24,10 +24,19 @@
     "context": [
       "When someone leaves a company, their know-how usually leaves with them: the processes live in their head, not in a document. Omi.ai solves that by recording how the outgoing employee actually works, then turning it into procedures and a knowledge base the new hire can question.",
       "I designed and built the product end to end: the recording and upload flow, the AI pipeline that writes the procedures, the retrieval system behind the chat, the onboarding guide, the analytics and the marketing site.",
-      "Current status: a working MVP, ready for first user tests. In this version, the employee records a work session while explaining it out loud, then uploads it: Omi turns it into procedures added to the role's Brain, and into a written PDF document. This approach was chosen over capturing on-screen actions directly with Microsoft Clarity's open-source recording technology, for two reasons: it delivered a working product for early tests sooner, and there was a real risk that the AI would struggle to understand what happens on screen without someone explaining it. Automatic capture stays on the roadmap, and the product will evolve with test feedback.",
+      "Current status: a working MVP, ready for first user tests. In this version, the employee records a work session while explaining it out loud, then uploads it: Omi turns it into procedures added to the role's Brain, and into a written PDF document. This approach was chosen over capturing on-screen actions directly with Microsoft Clarity's open-source recording technology, for two reasons: it delivered a working product for early tests sooner, and there was a real risk that the AI would struggle to understand what happens on screen without someone explaining it. Automatic capture stays on the roadmap.",
       "Omi.ai is incubated at NEOMA Business School."
     ],
     "work": [
+      {
+        "title": "Why the MVP stays as it is for now",
+        "text": "I don't change a product in a vacuum. Once there is a working base, the field and real use decide what comes next, not my guesses.",
+        "points": [
+          "The MVP is frozen until it has gathered enough feedback from real users: no new features or redesigns on assumptions.",
+          "Omi moves to phase two (automatic capture, the next features) only when that feedback is satisfying: not perfect, but good enough against my own criteria.",
+          "This is the method described on the home page, applied: ship a working version fast, then refine on observed results."
+        ]
+      },
       {
         "title": "Process capture",
         "text": "In the MVP, a process is captured as a recorded work session narrated out loud.",
