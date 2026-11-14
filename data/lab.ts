@@ -38,6 +38,22 @@ export const trackingEvents: TrackingEvent[] = [
     status: "live",
   },
   {
+    name: "recommendation_letter_click",
+    trigger: "Click on a link to my recommendation letters (home page or a project card)",
+    params: ["link_location", "project_id"],
+    type: "key_event",
+    tool: "GA4 (via GTM)",
+    status: "datalayer",
+  },
+  {
+    name: "demo_open",
+    trigger: "Click to open the product page demo (colour and size variant selector)",
+    params: ["demo", "link_location"],
+    type: "key_event",
+    tool: "GA4 (via GTM)",
+    status: "datalayer",
+  },
+  {
     name: "portfolio_scroll_50",
     trigger: "Scroll past 50% of a portfolio page (once per page view)",
     params: ["portfolio_section"],

@@ -26,7 +26,7 @@ function locationOf(el: Element) {
 export default function TrackingEvents({ portfolioPaths }: { portfolioPaths: string[] }) {
   const pathname = usePathname();
 
-  // Clicks: contact (conversion), CV, links to projects.
+  // Clicks: contact (conversion), CV, recommendation letters, the variant demo, links to projects.
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       const a = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
@@ -46,6 +46,13 @@ export default function TrackingEvents({ portfolioPaths }: { portfolioPaths: str
       if (href.includes("Antoine-Smolar-CV.pdf")) return push("cv_click", { link_location: where });
 
       const project = a.closest("article[data-project-id]")?.getAttribute("data-project-id");
+
+      if (href.includes("Recommendation-Letters.pdf")) {
+        return push("recommendation_letter_click", { link_location: where, project_id: project ?? "" });
+      }
+
+      if (href.startsWith("/lab/variant-selector")) return push("demo_open", { demo: "variant-selector", link_location: where });
+
       if (project && a.origin !== window.location.origin) {
         push("project_outbound_click", { project_id: project, link_url: a.href });
       }
