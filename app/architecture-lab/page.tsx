@@ -401,7 +401,8 @@ export default function ArchitectureLabPage() {
               for AI search, and fetching a page live when a user asks about it. robots.txt names them
               in one group per job, so each can be allowed or blocked separately. On this public
               portfolio all three are allowed on purpose; a site protecting its content would usually
-              block training only. Deprecated tokens (anthropic-ai, Claude-Web) were removed. See the
+              block training only. Two extra groups cover a generic crawler (GoogleOther) and
+              undocumented tokens reported by third parties. Deprecated tokens (anthropic-ai, Claude-Web) were removed. See the
               live file at{" "}
               <a href="/robots.txt" className="link">
                 /robots.txt

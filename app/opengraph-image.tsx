@@ -47,7 +47,7 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 88, fontWeight: 600, letterSpacing: -2, lineHeight: 1.1 }}>{contact.name}</div>
           <div style={{ fontSize: 36, color: "#52605f", marginTop: 16, lineHeight: 1.3 }}>
-            Business student · websites, apps and tools, findable on Google and AI engines
+            {contact.tagline}
           </div>
         </div>
         <div style={{ display: "flex", gap: 16 }}>

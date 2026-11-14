@@ -6,7 +6,7 @@
 // A site protecting its content would typically block "training" and keep "search" + "user".
 
 export type BotCategory = {
-  id: "training" | "search" | "user" | "undocumented";
+  id: "training" | "search" | "user" | "other" | "undocumented";
   label: string;
   what: string;
   decision: string;
@@ -23,7 +23,6 @@ export const aiBotCategories: BotCategory[] = [
       { name: "GPTBot", vendor: "OpenAI" },
       { name: "ClaudeBot", vendor: "Anthropic" },
       { name: "Google-Extended", vendor: "Google (Gemini)" },
-      { name: "GoogleOther", vendor: "Google" },
       { name: "MistralAI-Training", vendor: "Mistral" },
       { name: "Applebot-Extended", vendor: "Apple" },
       { name: "Meta-ExternalAgent", vendor: "Meta" },
@@ -55,9 +54,16 @@ export const aiBotCategories: BotCategory[] = [
     ],
   },
   {
+    id: "other",
+    label: "Other crawlers",
+    what: "Generic crawlers used by a vendor's product and research teams, not tied to one documented AI use.",
+    decision: "Allowed: same public content, no reason to block.",
+    bots: [{ name: "GoogleOther", vendor: "Google" }],
+  },
+  {
     id: "undocumented",
     label: "Undocumented tokens",
-    what: "DeepSeek and xAI (Grok) publish no crawler documentation; these names are only observed in server logs.",
+    what: "DeepSeek and xAI (Grok) publish no crawler documentation; these names are reported by third parties.",
     decision: "Listed for completeness, with no guarantee they are used.",
     bots: [
       { name: "DeepSeekBot", vendor: "DeepSeek" },

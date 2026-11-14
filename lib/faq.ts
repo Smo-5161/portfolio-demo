@@ -15,7 +15,7 @@ export const faq: FaqItem[] = [
   {
     question: "Who is Antoine Smolar?",
     answer:
-      "Antoine Smolar is a Bachelor of Business Administration student at NEOMA Business School (2023–2027) who builds websites, apps and internal tools and makes them findable on Google and AI engines. His work so far comes from internships, school projects and side builds: a website redesign for search and conversion, SaaS prototypes, an HR software rollout and AI workshops.",
+      "Antoine Smolar is a Bachelor of Business Administration student at NEOMA Business School (2023–2027) looking for digital transformation and operations project manager roles. He builds websites, apps and internal tools and makes them findable on Google and AI engines. His work so far comes from internships, school projects and side builds: a website redesign for search and conversion, SaaS prototypes, an HR software rollout and AI workshops.",
     sources: [
       { label: "Antoine Smolar — CV (PDF)", url: CV_URL },
       { label: "LinkedIn profile", url: "https://www.linkedin.com/in/antoine-smolar/" },

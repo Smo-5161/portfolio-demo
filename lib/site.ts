@@ -52,9 +52,9 @@ export const routes: RouteInfo[] = [
   {
     path: "/",
     label: "Home",
-    title: "Antoine Smolar — Portfolio: SEO, GEO, no-code & digital transformation",
+    title: "Antoine Smolar — Digital Transformation & Operations Project Manager (student) | Portfolio",
     description:
-      "Antoine Smolar, business student at NEOMA: websites, SaaS and internal tools, SEO and GEO for AI search, no-code apps. Case studies and a live technical lab.",
+      "Antoine Smolar, NEOMA business student targeting digital transformation & operations project manager roles: websites, SaaS, internal tools, SEO and GEO.",
   },
   {
     path: "/websites",
@@ -151,7 +151,7 @@ export function formatPeriod(p: { start: string; end?: string; ongoing?: boolean
   const start = sy === ey ? partialDate(p.start).replace(` ${sy}`, "") : partialDate(p.start);
   return `${start} – ${partialDate(p.end)}`;
 }
-/** ISO 8601 interval for schema.org temporalCoverage: "2026-06/2026-08", "2026-10/..". */
+/** ISO 8601 interval for the <time> element of a project period: "2026-06/2026-08", "2026-10/..". */
 export function periodInterval(p: { start: string; end?: string; ongoing?: boolean }) {
   return p.ongoing ? `${p.start}/..` : p.end ? `${p.start}/${p.end}` : p.start;
 }
