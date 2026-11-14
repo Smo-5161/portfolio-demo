@@ -102,12 +102,12 @@
     "name": "Kompute — batch AI jobs on idle gaming GPUs",
     "url": "https://kompute.vercel.app/",
     "urlLabel": "Visit the site",
-    "description": "Student team project (entrepreneurship class): a marketplace that runs small teams' batch AI jobs on gaming PCs that would otherwise sit idle.",
+    "description": "Student team project (entrepreneurship class): a marketplace that runs small teams' batch AI jobs on gaming PCs that would otherwise sit idle. Stopped as a real business; it continues only as a class project.",
     "scope": [
       "School project",
       "Team work",
-      "Product",
-      "Business model"
+      "Business model",
+      "Stopped"
     ],
     "stack": [
       "Next.js",
@@ -117,7 +117,7 @@
       "Kompute was built as a group project for an entrepreneurship class. The result is a team effort, not mine alone.",
       "It grew out of a personal project I had put on hold: I had hit a technical wall on security, since running other people’s workloads safely on private computers demands a level of sandboxing and isolation expertise I did not have yet. Rather than ship something unsafe, I paused it, and the class gave the team a chance to rethink the idea as a business: who needs it, what it should cost, and what a credible first version looks like.",
       "Kompute is a student project: there are no customers, no providers and no revenue. The site says so openly.",
-      "The school project started in September 2026 and is still running. I may pick Kompute up again later, once I have the security skills it needs and depending on how the AI compute market evolves."
+      "Status: I have stopped Kompute as a real business (see why below). It continues only as the class project, which started in September 2026 and is still running."
     ],
     "work": [
       {
@@ -162,6 +162,25 @@
           "A live demo runs a real embeddings job on a separate worker that saves checkpoints, can be unplugged mid-job and resumes (on a CPU server, not a gaming GPU).",
           "A quote form that stores requests in a database, answered by hand.",
           "The marketplace dashboard (providers, wallet, payouts) is a mock-up with demo data."
+        ]
+      },
+      {
+        "title": "Why I stopped Kompute as a business",
+        "text": "A deliberate decision, not a drift: the numbers and the skills did not add up.",
+        "points": [
+          "Security first: running strangers' workloads on private computers is a high-stakes problem. It needs a high level of security and data-flow expertise, skills that take years to build and are mostly learned alongside experienced engineers. I could not get there in a reasonable time.",
+          "Then the economics, the bigger problem: margins per job are very thin, so the model only works with a huge number of customers. Winning that many customers would cost too much: the customer acquisition cost (CAC) would be too high for the revenue each one brings.",
+          "What stays: the shortage of computing power, and of graphics cards, is a real problem. I keep it in mind, hoping to find another angle of attack one day."
+        ]
+      },
+      {
+        "title": "What the business plan says, honestly",
+        "text": "In the class, we wrote the business plan as if we were launching for real, and kept it honest about what would be needed:",
+        "points": [
+          "Outside funding would be mandatory: a business angel, Bpifrance or a similar investor.",
+          "A co-founder specialised in security and data flows would be mandatory too.",
+          "The first customer-acquisition campaign would be decisive for the whole project.",
+          "The plan is a class exercise, but these are real observations and the decisions we would have taken in real life."
         ]
       }
     ],
