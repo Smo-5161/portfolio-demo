@@ -37,6 +37,15 @@ export const faq: FaqItem[] = [
     sources: [{ label: "Antoine Smolar — CV (PDF)", url: CV_URL }],
   },
   {
+    question: "How does Antoine Smolar build a product?",
+    answer:
+      "Fast first, refined after. He writes a product requirements document (PRD) complete enough to build from directly, ships a working version at the minimum quality expected as early as possible, then refines it once it is live and real results show where it matters, and keeps refining after release. He sees this method as what lets him run several projects at the same time; the trade-off he owns is favouring effective volume over perfectionism.",
+    sources: [
+      { label: "PRD of this website (GitHub)", url: "https://github.com/Smo-5161/portfolio-demo/blob/main/docs/PRD.md" },
+      { label: "Architecture & SEO/GEO/CRO Lab", url: `${SITE_URL}/architecture-lab` },
+    ],
+  },
+  {
     question: "How was this website built?",
     answer:
       "It was vibe-coded with Claude as a coding partner, under Antoine Smolar's direction: he defined the site architecture, semantic markup, robots.txt and AI crawler rules, structured data, llms.txt and the GEO-ready FAQ in a written brief the AI had to follow. The site is a skills showcase reached from his CV and LinkedIn, not a site meant to attract search traffic, which is why it runs on a free Vercel domain and documents server-side tracking instead of running it.",

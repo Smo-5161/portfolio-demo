@@ -4,7 +4,7 @@ import Image from "next/image";
 import cvPreview from "@/public/cv/cv-preview.webp";
 import { pageMetadata } from "@/lib/seo";
 import { JsonLd, profilePageJsonLd } from "@/lib/jsonld";
-import { contact } from "@/lib/site";
+import { contact, repoFile } from "@/lib/site";
 
 export const metadata = pageMetadata("/");
 
@@ -15,6 +15,28 @@ type Skill = { short: string; name: string; text: string };
 
 // Kept short on purpose so all six fit on one line on desktop.
 // Wording rule: describe what Antoine has actually done or trained on, never more.
+// How I work: the method behind every project on this page. Each step links to a proof on the site.
+const method = [
+  {
+    step: "1",
+    title: "Write the PRD first",
+    text: "A product requirements document complete enough to build from directly, so the first version works instead of being a sketch.",
+    proof: { label: "The PRD of this site", href: repoFile("docs/PRD.md") },
+  },
+  {
+    step: "2",
+    title: "Ship a working version, fast",
+    text: "A functional version at the minimum quality expected (it works, it is usable, it serves the main need), released as early as possible.",
+    proof: { label: "Omi.ai, a working MVP", href: "/saas" },
+  },
+  {
+    step: "3",
+    title: "Refine on observed results",
+    text: "Polish comes once the product is live and real data shows where it matters, and it keeps going after release.",
+    proof: { label: "What testing caught on this site", href: "/architecture-lab#tracking" },
+  },
+];
+
 const skills: Skill[] = [
   {
     short: "SEO",
@@ -172,6 +194,38 @@ export default function Home() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-12">
+            <p className="eyebrow mb-2">Method</p>
+            <h2 id="method-title" className="text-3xl mb-3">
+              How I work
+            </h2>
+            <p className="max-w-3xl text-ink-700 leading-relaxed">
+              I get a working product out as fast as possible, then refine it on real results. This
+              is what lets me carry several projects at the same time.
+            </p>
+            <ol className="mt-6 grid gap-4 md:grid-cols-3">
+              {method.map((m) => (
+                <li key={m.step} className="card p-5">
+                  <p className="text-sm font-semibold text-brand-700">Step {m.step}</p>
+                  <h3 className="text-lg mt-1">{m.title}</h3>
+                  <p className="text-sm text-ink-700 leading-relaxed mt-2">{m.text}</p>
+                  <a
+                    href={m.proof.href}
+                    className="link text-sm mt-3 inline-block"
+                    {...(m.proof.href.startsWith("http") && { target: "_blank", rel: "noopener" })}
+                  >
+                    {m.proof.label} {m.proof.href.startsWith("http") ? "↗" : "→"}
+                  </a>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 max-w-3xl text-sm text-ink-700 leading-relaxed">
+              <strong className="text-ink-900">The trade-off, owned:</strong> I favour effective volume
+              over perfectionism. A first version is less polished than it could be; the polish goes
+              where results show it matters, and I keep refining once it is deployed.
+            </p>
+          </div>
         </div>
       </section>
 
