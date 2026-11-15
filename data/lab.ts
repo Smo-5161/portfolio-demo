@@ -24,8 +24,16 @@ export const trackingEvents: TrackingEvent[] = [
   {
     name: "generate_lead",
     trigger: "Click on my phone number, email or LinkedIn, anywhere on the site",
-    params: ["contact_method", "link_location"],
+    params: ["contact_method", "link_location", "contact_position"],
     type: "conversion",
+    tool: "GA4 (via GTM)",
+    status: "live",
+  },
+  {
+    name: "experience_impression",
+    trigger: "Every page load: which A/B test variant the visitor sees (contact block at the top or above the footer)",
+    params: ["exp_variant_string"],
+    type: "event",
     tool: "GA4 (via GTM)",
     status: "live",
   },

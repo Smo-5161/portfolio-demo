@@ -2,9 +2,10 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { AB_TEST } from "@/lib/ab-test";
 
 /**
- * Pushes the tracking plan's events to the dataLayer (see data/lab.ts).
+ * Pushes the tracking plan's events, plus the A/B test impression (lib/ab-test.ts), to the dataLayer (see data/lab.ts).
  * GTM listens to them with Custom Event triggers; GA4 marks them as key events.
  * Nothing is sent anywhere by this file alone: the GTM container decides, under Consent Mode.
  */
@@ -25,6 +26,17 @@ function locationOf(el: Element) {
 
 export default function TrackingEvents({ portfolioPaths }: { portfolioPaths: string[] }) {
   const pathname = usePathname();
+
+  // A/B test "contact position": the variant was drawn by the inline script in the layout.
+  // The impression is pushed here, once per page load, after the Consent Mode defaults.
+  useEffect(() => {
+    const variant = document.documentElement.dataset.contactPosition;
+    if (!variant) return;
+    const forced = new URLSearchParams(window.location.search).has(AB_TEST.forceParam);
+    push("experience_impression", {
+      exp_variant_string: `${AB_TEST.id}-${variant}${forced ? "_forced" : ""}`,
+    });
+  }, []);
 
   // Clicks: contact (conversion), CV, recommendation letters, the variant demo, links to projects.
   useEffect(() => {

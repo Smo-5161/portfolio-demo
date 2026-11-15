@@ -1,4 +1,4 @@
-// Root layout: metadata defaults, fonts, consent defaults, tracking (production only), header, footer and consent banner.
+// Root layout: metadata defaults, fonts, consent defaults, A/B test script, tracking (production only), header, contact block, footer and consent banner.
 import TrackingEvents from "@/components/TrackingEvents";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
@@ -7,6 +7,8 @@ import Analytics, { consentDefaults } from "@/components/Analytics";
 import ConsentBanner from "@/components/ConsentBanner";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ContactBlock from "@/components/ContactBlock";
+import { abScript } from "@/lib/ab-test";
 import { JsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { GTM_ID } from "@/lib/tracking";
 import { SITE_URL, contact, routeInfo, routes } from "@/lib/site";
@@ -57,12 +59,15 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${brandFont.variable}`}>
+    <html lang="en" className={`scroll-smooth ${brandFont.variable}`} suppressHydrationWarning>
       <Script id="consent-defaults" strategy="beforeInteractive">
         {consentDefaults}
       </Script>
       {TRACKING && <Analytics />}
       <body className="font-sans">
+        {/* A/B test: draws or reads the variant and sets <html data-contact-position> before the first paint.
+            suppressHydrationWarning on <html> because that attribute is not in the server HTML. */}
+        <script dangerouslySetInnerHTML={{ __html: abScript }} />
         {TRACKING && (
         <noscript>
           <iframe
@@ -76,6 +81,7 @@ export default function RootLayout({
         <JsonLd data={websiteJsonLd} />
         <SiteHeader />
         <div id="content">{children}</div>
+        <ContactBlock />
         <SiteFooter />
         <TrackingEvents portfolioPaths={routes.filter((r) => r.portfolio).map((r) => r.path)} />
         <ConsentBanner />

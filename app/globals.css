@@ -156,3 +156,29 @@
 section:target:not([data-ready]) > .lab-panel {
   grid-template-rows: 1fr;
 }
+
+/* A/B test "contact position" (lib/ab-test.ts). The contact block is rendered once, after the
+   page content; for the "top" variant it is moved under the header with CSS order, before
+   the first paint. Same HTML for every visitor and crawler: nothing hidden, no cloaking. */
+body {
+  display: flex;
+  flex-direction: column;
+}
+body > header {
+  order: -2;
+}
+html[data-contact-position="top"] #contact {
+  order: -1;
+  border-top: 0;
+  border-bottom: 1px solid var(--color-stroke);
+}
+html[data-contact-position="top"] #contact > div {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+html[data-contact-position="top"] .site-footer {
+  border-top: 1px solid var(--color-stroke);
+}
+html[data-contact-position="top"] .site-footer > div {
+  padding-top: 2rem;
+}

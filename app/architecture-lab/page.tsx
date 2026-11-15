@@ -32,6 +32,7 @@ const toc = [
   { id: "tracking", label: "Analytics" },
   { id: "server-side", label: "Server-side" },
   { id: "dashboards", label: "Dashboards" },
+  { id: "ab-test", label: "A/B test" },
   { id: "variant-demo", label: "Variant demo" },
 ];
 
@@ -68,8 +69,8 @@ const landmarks = [
   { tag: "<main>", use: "One per page, holds the page content" },
   { tag: "<section aria-labelledby>", use: "Each section is named by its own heading" },
   { tag: "<article>", use: "Self-contained units: skill, project, FAQ entry" },
-  { tag: "<address>", use: "Contact details in the footer" },
-  { tag: "<footer>", use: "Contact block on every page" },
+  { tag: "<address>", use: "Contact details, in the contact block on every page" },
+  { tag: "<footer>", use: "Utility links: Lab, FAQ, source code, cookie settings" },
 ];
 
 const jsonLdBlocks = [
@@ -687,10 +688,123 @@ Sitemap: /sitemap.xml`}
           </ul>
         </Section>
 
-        {/* 9. Variant selector demo */}
+        {/* 9. A/B test */}
+        <Section
+          id="ab-test"
+          eyebrow="09"
+          title="A/B test: where should my contact details go?"
+          code={["lib/ab-test.ts", "components/ContactBlock.tsx", "app/globals.css", "components/TrackingEvents.tsx"]}
+          plain="An A/B test shows two versions of a page to two random halves of visitors, then compares which one gets more of the result you want. Here, half the visitors see my contact details right under the menu, the other half at the bottom of the page, and I count who contacts me. This one is a demonstration: the portfolio gets far too few visitors for the result to mean anything. It shows I can design and run the test properly, not that one version won."
+          intro={
+            <>
+              <p className="mb-3">
+                <StatusChip status="live" />{" "}
+                <span className="chip bg-accent-50! border-transparent!">Demonstration: no usable data</span>
+              </p>
+              The test is live on every page, but its results are not exploitable: this site has
+              almost no traffic, so no difference between the two versions could ever be told apart
+              from chance. What it demonstrates is the setup, from hypothesis to analysis plan.
+            </>
+          }
+        >
+          <div className="card p-6 mb-6 bg-brand-50! border-transparent!">
+            <h3 className="text-base mb-2">Hypothesis</h3>
+            <p className="text-sm text-ink-700 leading-relaxed">
+              Clarity’s scroll-depth data shows that not every visitor scrolls to the bottom of the
+              page, where my contact details sit. Moving them right under the header should therefore
+              generate more leads.
+            </p>
+          </div>
+
+          <div className="card overflow-x-auto mb-6">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Design of the A/B test</caption>
+              <tbody>
+                {[
+                  ["Variant A (control)", "Contact block at the bottom of every page, above the footer links."],
+                  ["Variant B", "The same block, moved right under the header."],
+                  ["Split", "50/50, drawn at random on the first visit and kept for later visits."],
+                  ["Lead (primary metric)", "generate_lead: a click on my phone number, email or LinkedIn."],
+                  ["Result", "Lead rate per variant: generate_lead events ÷ visitors who saw the variant."],
+                ].map(([k, v]) => (
+                  <tr key={k} className="border-t border-stroke first:border-t-0 align-top">
+                    <th scope="row" className="p-3 text-left font-medium w-48">{k}</th>
+                    <td className="p-3 text-ink-700">{v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <ol className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr]">
+            <FlowNode title="Inline script" detail="Draws A or B before the first paint" tone="bg-brand-100" />
+            <Arrow />
+            <FlowNode title="CSS order" detail="Moves the block, same HTML" tone="bg-accent-100" />
+            <Arrow />
+            <FlowNode title="dataLayer → GTM" detail="contact_position on every event" tone="bg-accent-50" />
+            <Arrow />
+            <FlowNode title="GA4 · Clarity" detail="Leads and heatmaps per variant" tone="bg-brand-50" />
+          </ol>
+
+          <div className="grid gap-4 mt-8 md:grid-cols-3">
+            <div className="card p-5">
+              <h3 className="text-base mb-2">No flicker, no external tool</h3>
+              <p className="text-sm text-ink-700">
+                A few lines of inline script pick the variant before anything is drawn, so the page
+                never jumps. Pages stay pre-rendered and fast: no testing tool to load, no extra
+                request.
+              </p>
+            </div>
+            <div className="card p-5">
+              <h3 className="text-base mb-2">Safe for SEO</h3>
+              <p className="text-sm text-ink-700">
+                Both variants share the same HTML and the same canonical URL; only the visual order
+                changes. Googlebot sees what visitors see, so there is nothing hidden and no cloaking.
+              </p>
+            </div>
+            <div className="card p-5">
+              <h3 className="text-base mb-2">Consent respected</h3>
+              <p className="text-sm text-ink-700">
+                Every visitor is assigned a variant, but it reaches GA4 under Consent Mode like any
+                other event, and Clarity gets its <code>contact_position</code> tag only after
+                “Accept”.
+              </p>
+            </div>
+          </div>
+
+          <div className="card p-6 mt-4">
+            <h3 className="text-base mb-2">How it would be read</h3>
+            <p className="text-sm text-ink-700 leading-relaxed mb-3">
+              In GA4, <code>contact_position</code> is a custom dimension: an exploration splits{" "}
+              <code>generate_lead</code> by variant, and a significance test (two-proportion z-test)
+              says whether the gap is real. In Clarity, recordings and heatmaps are filtered by the same
+              tag. Visits opened with a forced variant are flagged <code>_forced</code> and excluded.
+            </p>
+            <p className="text-sm text-ink-700 leading-relaxed">
+              <strong>Why this demo can’t conclude:</strong> to detect a lead rate going from 2% to 3%
+              (95% confidence, 80% power), each variant needs about 3,800 visitors, around 7,600 in
+              total. This portfolio has had a handful of visits, mostly friends and family on my own
+              computer. The test would need to run on a site with real traffic to mean anything.
+            </p>
+          </div>
+
+          <p className="text-sm text-ink-700 mt-6">
+            See both variants:{" "}
+            <a href="/?contact=top" className="link">contact at the top</a> ·{" "}
+            <a href="/?contact=footer" className="link">contact at the bottom</a>{" "}
+            (forced for this visit only, not counted).
+          </p>
+          <p className="text-xs text-ink-500 mt-3">
+            Known trade-off: in variant B the block is moved visually, so keyboard and screen reader
+            users still reach it after the page content. On a site with real traffic I would render
+            each variant on the server instead.
+          </p>
+        </Section>
+
+        {/* 10. Variant selector demo */}
         <Section
           id="variant-demo"
-          eyebrow="09"
+          eyebrow="10"
           title="Live demo: variant selector & faceted URLs"
           cta={{ label: "Open the demo", href: "/lab/variant-selector" }}
           code={["components/VariantSelector.tsx", "app/lab/variant-selector/page.tsx", "data/demo-product.ts"]}

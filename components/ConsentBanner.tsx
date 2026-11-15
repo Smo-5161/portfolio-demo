@@ -32,7 +32,12 @@ function gtag(..._args: unknown[]) {
  * exists, so the call waits (up to 15 s) for the real script instead.
  */
 function clarityConsent(choice: Choice) {
-  const send = () => w().clarity?.("consentv2", { ad_Storage: choice, analytics_Storage: choice });
+  const send = () => {
+    w().clarity?.("consentv2", { ad_Storage: choice, analytics_Storage: choice });
+    // A/B test: tag the session with its variant, to filter recordings and heatmaps in Clarity.
+    const variant = document.documentElement.dataset.contactPosition;
+    if (choice === "granted" && variant) w().clarity?.("set", "contact_position", variant);
+  };
   if (w().clarity) return send();
   if (choice === "denied") return; // Clarity never loads without consent: nothing to tell it.
   let tries = 0;
