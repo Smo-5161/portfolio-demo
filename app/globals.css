@@ -182,3 +182,27 @@ html[data-contact-position="top"] .site-footer {
 html[data-contact-position="top"] .site-footer > div {
   padding-top: 2rem;
 }
+/* Compact look at the top, so the hero stays in view on mobile. */
+html[data-contact-position="top"] #contact h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+html[data-contact-position="top"] #contact ul {
+  gap: 0.5rem;
+}
+html[data-contact-position="top"] #contact li a {
+  padding: 0.5rem 0.875rem;
+}
+@media (max-width: 639px) {
+  html[data-contact-position="top"] #contact > div {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  html[data-contact-position="top"] #contact li a span:first-child {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  html[data-contact-position="top"] #contact li a span:last-child {
+    display: inline;
+  }
+}
