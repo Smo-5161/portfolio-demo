@@ -741,7 +741,7 @@ Sitemap: /sitemap.xml`}
             <Arrow />
             <FlowNode title="CSS order" detail="Moves the block, same HTML" tone="bg-accent-100" />
             <Arrow />
-            <FlowNode title="dataLayer → GTM" detail="contact_position on every event" tone="bg-accent-50" />
+            <FlowNode title="dataLayer → GTM" detail="Variant tag and event" tone="bg-accent-50" />
             <Arrow />
             <FlowNode title="GA4 · Clarity" detail="Leads and heatmaps per variant" tone="bg-brand-50" />
           </ol>
@@ -766,10 +766,37 @@ Sitemap: /sitemap.xml`}
               <h3 className="text-base mb-2">Consent respected</h3>
               <p className="text-sm text-ink-700">
                 Every visitor is assigned a variant, but it reaches GA4 under Consent Mode like any
-                other event, and Clarity gets its <code>contact_position</code> tag only after
-                “Accept”.
+                other event, and Clarity gets its tag and event only after “Accept”.
               </p>
             </div>
+          </div>
+
+          <div className="card p-6 mt-4">
+            <h3 className="text-base mb-2">Custom tags and events I set up for each variant</h3>
+            <p className="text-sm text-ink-700 leading-relaxed mb-3">
+              Without them, GA4 and Clarity would see a single site and could not tell the two versions
+              apart. I added:
+            </p>
+            <ul className="text-sm text-ink-700 leading-relaxed list-disc pl-5 space-y-1">
+              <li>
+                <strong>GA4, custom event</strong> <code>experience_impression</code> on every page,
+                with <code>exp_variant_string</code> = <code>contact_position-top</code> or{" "}
+                <code>contact_position-footer</code>.
+              </li>
+              <li>
+                <strong>GA4, custom dimension</strong> <code>contact_position</code> (event scope),
+                attached to the impression and to every <code>generate_lead</code>, so leads can be
+                split by variant.
+              </li>
+              <li>
+                <strong>Clarity, custom tag</strong> <code>contact_position</code> = <code>top</code>{" "}
+                or <code>footer</code> on each session.
+              </li>
+              <li>
+                <strong>Clarity, custom event</strong> <code>variant_contact_top</code> or{" "}
+                <code>variant_contact_footer</code>, to filter recordings and heatmaps by version.
+              </li>
+            </ul>
           </div>
 
           <div className="card p-6 mt-4">
