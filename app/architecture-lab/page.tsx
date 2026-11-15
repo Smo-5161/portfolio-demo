@@ -279,7 +279,7 @@ export default function ArchitectureLabPage() {
         <Section
           id="architecture"
           code={["lib/site.ts", "app/sitemap.ts", "app/llms.txt/route.ts", "next.config.ts"]}
-          plain="Think of the site as a building with a clear floor plan: every room (page) can be reached from the lobby (the home page) in one step, with signs everywhere. Search engines discover a site by following its links, so a simple plan means no page gets lost. The “files made for machines” are a reception desk for robots: a map of the site (sitemap), the house rules (robots.txt) and a short summary written for AI assistants (llms.txt)."
+          plain="A website is a bit like a building: if every room can be reached from the lobby in one step, nobody gets lost, and neither do search engines, which find pages by following links. The “files made for machines” are the reception desk for robots: a map of the site, the house rules, and a short summary for AI assistants."
           eyebrow="01"
           title="Site architecture"
           intro="A flat structure: every page is one click from the home page, every section has its own anchor, and content lives in data files reused everywhere."
@@ -322,7 +322,7 @@ export default function ArchitectureLabPage() {
         <Section
           id="stack"
           code={["package.json", "app/layout.tsx", "app/globals.css"]}
-          plain="Many modern websites send an almost empty page and assemble it inside the visitor’s browser. Search engines and AI assistants often don’t wait for that step, so they see little or nothing. Here the server sends the finished page straight away, like handing someone a printed brochure instead of a box of parts. Visitors get a faster site, and Google or ChatGPT can read every word."
+          plain="Lots of sites send an almost empty page and build it in your browser. Search engines and AI assistants often don’t wait, so they see very little. Here the server sends the finished page straight away: faster for visitors, and Google or ChatGPT can read every word."
           eyebrow="02"
           title="Code & stack"
           intro="The site is built so that a crawler or an LLM gets the full content in plain HTML, without running any JavaScript."
@@ -352,7 +352,7 @@ export default function ArchitectureLabPage() {
         <Section
           id="markup"
           code={["lib/jsonld.tsx", "lib/seo.ts"]}
-          plain="HTML tags work like labels on a filing cabinet: “this is the main title”, “this is a section”, “this is the contact address”. Clear labels help Google and AI tools understand what each part of a page is. JSON-LD goes one step further: it is an ID card hidden in the page, in a format machines read directly (“this site belongs to Antoine Smolar, a business student, here is his LinkedIn”). It helps Google display richer results and helps AI assistants describe a person or a company accurately."
+          plain="HTML tags are labels on a filing cabinet (“main title”, “section”, “contact address”) that help Google and AI tools understand each part of a page. JSON-LD adds a kind of ID card machines read directly: who the site belongs to, what he does, where to find him."
           eyebrow="03"
           title="Semantic markup & structured data"
           intro="HTML tags describe what each block is, and JSON-LD states the facts explicitly so search engines and LLMs don't have to guess."
@@ -401,7 +401,7 @@ export default function ArchitectureLabPage() {
         <Section
           id="robots"
           code={["lib/ai-bots.ts", "app/robots.txt/route.ts"]}
-          plain="robots.txt is the doorman of a website: a small public file telling automated visitors (robots) what they are allowed to read. AI companies send different robots for different jobs: learning from pages, finding pages to quote, and opening a page when someone asks about it. Here each job is listed separately and a clear choice is made for each one: all are welcome, because the goal of this portfolio is to be known and quoted by AI assistants."
+          plain="robots.txt is the site’s doorman: it tells robots what they may read. AI companies send different robots to learn from pages, find pages to quote, or open a page when someone asks about it. I list each one and let them all in, because I want this portfolio to be found and quoted."
           eyebrow="04"
           title="robots.txt & AI crawlers"
           intro={
@@ -457,7 +457,7 @@ Sitemap: /sitemap.xml`}
         <Section
           id="faq-structure"
           code={["lib/faq.ts", "app/faq/page.tsx"]}
-          plain="When someone asks ChatGPT a question, it looks for short, clear, trustworthy answers it can quote. So every answer in this FAQ starts with the direct answer and a figure, then adds context, then names its source: exactly the shape an AI likes to reuse. On a portfolio, a FAQ about SEO statistics isn’t really useful to visitors: it is here to show the method. So instead of cluttering the home page, it has its own page, linked from the footer. It is not hidden, though: showing robots text that people can’t see is a classic black-hat trick that Google penalizes."
+          plain="AI assistants like short, clear, sourced answers they can quote, so every answer here starts with the answer itself, then context, then its source. It’s a demonstration of the method rather than content for visitors, so it has its own page, linked from the footer. It isn’t hidden: showing robots text people can’t see is a trick Google penalises."
           eyebrow="05"
           title="A FAQ built for GEO"
           intro={<>Generative engines quote short, self-contained, sourced answers. Every FAQ entry follows the same anatomy. On this portfolio the FAQ is a demonstration of SEO/GEO structuring rather than content for visitors, so it lives on a dedicated page, <a href="/faq" className="link">/faq</a>, linked from the footer, instead of the home page. It opens with three questions about me, so an AI asked “Who is Antoine Smolar?” finds a direct, sourced answer. Since 2023 Google only shows FAQ rich results for government and health sites: the FAQPage markup here targets meaning and LLMs, not rich snippets. Every figure is observed data (no forecasts) and the page shows its last update date.</>}
@@ -499,7 +499,7 @@ Sitemap: /sitemap.xml`}
         <Section
           id="tracking"
           code={["components/Analytics.tsx", "components/ConsentBanner.tsx", "data/lab.ts"]}
-          plain="Google Analytics counts what happens: how many visitors, what they click, how many get in touch. Microsoft Clarity shows how it happens: heatmaps of where people click and anonymous replays of visits, to spot what confuses them. Google Tag Manager is the control panel that switches these tools on without touching the site’s code. A “conversion” is an action that matters for the business, here contacting me. And the cookie banner asks visitors for permission first, as European law requires. Where I stand: I installed and configured this stack myself, from the consent banner to GTM, GA4 and Clarity. I have trained on reading heatmaps, session recordings and conversion funnels, but I haven’t yet analysed real traffic to drive a design or business decision. That is the next step, and the part where I would need some ramp-up time on a real project."
+          plain="Google Analytics counts what happens (visits, clicks, contacts), Clarity shows how it happens (heatmaps, anonymous replays), and Tag Manager switches them on without touching the code. The cookie banner asks first, as European law requires. I set all of this up myself. I’ve trained on reading heatmaps and funnels, but I haven’t yet used real traffic to make a decision: that’s the next step, and where I’d need some ramp-up time."
           eyebrow="06"
           title="Analytics & tracking"
           intro="Live since 13 November 2026. Google Tag Manager loads on every page and drives Google Analytics 4 and Microsoft Clarity. The site pushes its own events to the dataLayer; GTM turns them into GA4 events, each one checked in GA4's real-time report. Consent is handled by a banner, Google Consent Mode v2 and Clarity Consent API v2: until a visitor accepts, GA4 only sends anonymous cookieless pings and Clarity does not load at all."
@@ -575,7 +575,7 @@ Sitemap: /sitemap.xml`}
         {/* 7. Server-side */}
         <Section
           id="server-side"
-          plain="Today, measurement tools run inside the visitor’s browser, where ad blockers and privacy settings often switch them off: part of the visits simply goes uncounted, like a shop door counter that misses some customers. Server-side tracking moves this work to my own server: the browser sends one message to my own address, and my server passes it on to Google and the other tools. Measurement becomes more complete and more reliable, and the page gets lighter. It does not override anyone’s choice: if a visitor refuses cookies, only anonymous statistics are kept. Not deployed on purpose: with a portfolio’s traffic, a server container would cost resources without producing meaningful data. The setup is designed and documented; I understand how it works and why it matters, and I would expect a learning curve the first time I run it in production."
+          plain="Ad blockers and privacy settings switch off part of the tracking that runs in the browser, so some visits go uncounted. Server-side tracking sends the data through my own server instead: more complete, and a lighter page, without overriding anyone’s cookie choice. I haven’t deployed it, on purpose: with a portfolio’s traffic it would cost more than it tells. It’s designed and documented, and I’d expect a learning curve the first time I run it for real."
           eyebrow="07"
           title="Server-side tracking with Stape"
           intro={
@@ -644,7 +644,7 @@ Sitemap: /sitemap.xml`}
         <Section
           id="dashboards"
           code={["data/lab.ts"]}
-          plain="These are the reporting screens of the tools described above, taken on this site. They show the setup works end to end and data comes in. With a portfolio’s low traffic, they illustrate the tools rather than a full analysis."
+          plain="Screenshots of the tools above, taken on this site. They prove the setup works end to end; with so little traffic, they illustrate the tools rather than tell a story."
           eyebrow="08"
           title="Dashboards, heatmaps & reports"
           intro="Screenshots from the tools above."
@@ -694,7 +694,7 @@ Sitemap: /sitemap.xml`}
           eyebrow="09"
           title="A/B test: where should my contact details go?"
           code={["lib/ab-test.ts", "components/ContactBlock.tsx", "app/globals.css", "components/TrackingEvents.tsx"]}
-          plain="An A/B test shows two versions of a page to two random halves of visitors, then compares which one gets more of the result you want. Here, half the visitors see my contact details right under the menu, the other half at the bottom of the page, and I count who contacts me. This one is a demonstration: the portfolio gets far too few visitors for the result to mean anything. It shows I can design and run the test properly, not that one version won."
+          plain="Half the visitors see my contact details right under the menu, the other half at the bottom, and I count who gets in touch. It’s a demonstration: there are far too few visitors for a real result. What it shows is that I can set up and run a test properly."
           intro={
             <>
               <p className="mb-3">
@@ -835,7 +835,7 @@ Sitemap: /sitemap.xml`}
           title="Live demo: variant selector & faceted URLs"
           cta={{ label: "Open the demo", href: "/lab/variant-selector" }}
           code={["components/VariantSelector.tsx", "app/lab/variant-selector/page.tsx", "data/demo-product.ts"]}
-          plain="On e-commerce sites, every colour or size choice can create a new web address. Thousands of near-identical pages waste Google’s time and split ranking signals between them. This demo keeps the selector smooth for shoppers while telling Google which version is the real one, and measures every choice for conversion analysis."
+          plain="On online shops, every colour or size choice can create a new web address, and thousands of near-identical pages confuse Google. This demo keeps the selector smooth for shoppers, tells Google which version is the real one, and measures each choice."
           intro="A product page with colour and size selectors and a live SEO inspector. The selection is kept in the URL (shareable links, working back button), and the inspector shows, for each state, the canonical and robots tags such a page should send."
         >
           <div className="card overflow-x-auto mb-6">
