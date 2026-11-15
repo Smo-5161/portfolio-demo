@@ -3,7 +3,7 @@
     "id": "helmo-renovation",
     "name": "Helmo Rénovation",
     "url": "https://helmo-renovation.fr/",
-    "description": "A 2-month redesign of a renovation company's WordPress site: SEO, UI and UX for its 64 pages, with an assistant I trained. The 83 blog articles of the 147-page site weren't my work.",
+    "description": "A 2-month redesign of a renovation company's WordPress site: SEO, UI and UX for its 64 pages, each with its own desktop and mobile layout (128 layouts), with an assistant I trained. The 83 blog articles weren't my work.",
     "duration": "2 months",
     "scope": [
       "Technical SEO",
@@ -28,6 +28,7 @@
         "points": [
           "I directed the work and often built model pages for the assistant to copy.",
           "I split the tasks; by the end we each owned a set of pages, so site-wide changes no longer needed sharing out.",
+          "Every page was laid out twice in Elementor, once for desktop and once for mobile.",
           "The assistant did simple no-code edits; I handled global CSS, caching and the CEO's new requests."
         ]
       },
