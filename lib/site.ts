@@ -62,15 +62,15 @@ export const routes: RouteInfo[] = [
     portfolio: true,
     title: "Website case studies: SEO & UX redesigns",
     description:
-      "Website redesigns built for search and conversion: site architecture, technical SEO, structured data, page speed and GEO-ready FAQs, with real results.",
+      "Website redesigns built for search and conversion: site architecture, technical SEO, structured data, page speed and GEO-ready FAQs.",
   },
   {
     path: "/saas",
     label: "SaaS",
     portfolio: true,
-    title: "SaaS products built from idea to launch",
+    title: "SaaS projects: from idea to MVP",
     description:
-      "SaaS products designed and built end to end, like Omi.ai, an AI onboarding platform with process capture, RAG knowledge base and an AI mentor.",
+      "SaaS projects designed and built end to end, like Omi.ai, an AI onboarding platform with process capture, RAG knowledge base and an AI mentor.",
   },
   {
     path: "/internal-tools",
@@ -78,7 +78,7 @@ export const routes: RouteInfo[] = [
     portfolio: true,
     title: "Internal tools & digital transformation",
     description:
-      "Internal tools, business apps and digital transformation projects, like the rollout of the Factorial HR software at a public waste authority, that automate work and modernize how teams operate.",
+      "Digital transformation and internal tool projects: the rollout of the Factorial HR software at a public waste authority, and a team prototype of a CRM/ERP for a heating repair company.",
   },
   {
     path: "/workshops",
@@ -86,7 +86,7 @@ export const routes: RouteInfo[] = [
     portfolio: true,
     title: "Workshops & talks on AI, vibe coding and growth",
     description:
-      "Workshops and conferences led by Antoine Smolar on AI, vibe coding, no-code and growth marketing: format, audience and takeaways.",
+      "Workshops co-organised by Antoine Smolar on AI and vibe coding: format, audience and takeaways. Talks coming soon.",
   },
   {
     path: "/research",
@@ -110,7 +110,7 @@ export const routes: RouteInfo[] = [
     portfolio: true,
     title: "Traditional marketing: brand, events and campaigns",
     description:
-      "The human side of marketing by Antoine Smolar: brand, events, partnerships, print and field campaigns, with their goals and results.",
+      "The human side of marketing by Antoine Smolar: a real company case and a field campaign, with their goals and his role.",
   },
   {
     path: "/architecture-lab",

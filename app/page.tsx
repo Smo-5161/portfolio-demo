@@ -70,7 +70,7 @@ const skills: Skill[] = [
   {
     short: "No-code",
     name: "App development",
-    text: "SaaS products and internal tools shipped in days, vibe coded with Claude Code.",
+    text: "An AI SaaS MVP and a CRM/ERP prototype, vibe coded with Claude Code.",
   },
   {
     short: "Digital & AI",
@@ -85,22 +85,22 @@ const projects = [
   {
     href: "/websites",
     label: "Websites",
-    text: "Showcase and e-commerce sites built for search visibility and conversion.",
+    text: "A 64-page website redesign built for search visibility and conversion.",
   },
   {
     href: "/saas",
     label: "SaaS",
-    text: "Software products built from idea to launch.",
+    text: "Software products taken from idea to MVP.",
   },
   {
     href: "/internal-tools",
     label: "Internal Tools & Digital Transformation",
-    text: "Business apps and digital projects that automate and modernize the way teams work.",
+    text: "An HR software rollout and a CRM/ERP prototype that modernise how teams work.",
   },
   {
     href: "/workshops",
     label: "Workshops & Talks",
-    text: "Workshops and conferences I have led on AI, vibe coding and growth.",
+    text: "A vibe coding workshop I co-organised; talks coming soon.",
   },
   {
     href: "/research",
