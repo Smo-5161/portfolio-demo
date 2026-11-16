@@ -86,7 +86,7 @@ export const routes: RouteInfo[] = [
     portfolio: true,
     title: "Workshops & talks on AI, vibe coding and growth",
     description:
-      "Workshops co-organised by Antoine Smolar on AI and vibe coding: format, audience and takeaways. Talks coming soon.",
+      "Workshops and conferences led by Antoine Smolar on AI, vibe coding, no-code and growth marketing: format, audience and takeaways.",
   },
   {
     path: "/research",

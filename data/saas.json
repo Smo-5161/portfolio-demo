@@ -39,6 +39,7 @@
         "title": "Capture and AI-written procedures",
         "text": "The employee records their screen while explaining it out loud, then uploads the video.",
         "points": [
+          "Personal and financial information is blurred automatically during recording.",
           "The narration is transcribed and a vision model describes key frames.",
           "Omi drafts a step-by-step procedure (SOP); each step cites its narration lines and recording moments.",
           "A coverage score and warnings guide the review. Nothing reaches the AI until a human publishes it.",

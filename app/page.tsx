@@ -100,7 +100,7 @@ const projects = [
   {
     href: "/workshops",
     label: "Workshops & Talks",
-    text: "A vibe coding workshop I co-organised; talks coming soon.",
+    text: "Workshops and conferences I have led on AI, vibe coding and growth.",
   },
   {
     href: "/research",
