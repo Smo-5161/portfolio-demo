@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { CONSENT_KEY } from "@/lib/tracking";
+import { rememberVariant } from "@/lib/ab-test";
 
 type Choice = "granted" | "denied";
 
@@ -87,6 +88,7 @@ export default function ConsentBanner() {
     try {
       localStorage.setItem(CONSENT_KEY, choice);
     } catch {}
+    rememberVariant(choice);
     applyChoice(choice);
     setOpen(false);
   }

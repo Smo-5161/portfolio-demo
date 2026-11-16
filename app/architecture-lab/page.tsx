@@ -512,7 +512,7 @@ Sitemap: /sitemap.xml`}
             <li className="grid gap-3">
               <span className="rounded-2xl px-4 py-3 bg-accent-50">
                 <span className="block font-medium">Google Analytics 4</span>
-                <span className="block text-xs text-ink-700 mt-0.5">Property {GA4_ID} · 1 conversion, 4 key events</span>
+                <span className="block text-xs text-ink-700 mt-0.5">Property {GA4_ID} · {trackingEvents.filter((e) => e.type === "conversion").length} conversion, {trackingEvents.filter((e) => e.type === "key_event").length} key events</span>
               </span>
               <span className="rounded-2xl px-4 py-3 bg-brand-50">
                 <span className="block font-medium">Microsoft Clarity</span>
@@ -723,7 +723,7 @@ Sitemap: /sitemap.xml`}
                 {[
                   ["Variant A (control)", "Contact block at the bottom of every page, above the footer links."],
                   ["Variant B", "The same block, moved right under the header."],
-                  ["Split", "50/50, drawn at random on the first visit and kept for later visits."],
+                  ["Split", "50/50, drawn at random on arrival. Kept for later visits only if the visitor accepts cookies; otherwise it lives in memory and nothing is stored."],
                   ["Lead (primary metric)", "generate_lead: a click on my phone number, email or LinkedIn."],
                   ["Result", "Lead rate per variant: generate_lead events ÷ visitors who saw the variant."],
                 ].map(([k, v]) => (
@@ -765,8 +765,9 @@ Sitemap: /sitemap.xml`}
             <div className="card p-5">
               <h3 className="text-base mb-2">Consent respected</h3>
               <p className="text-sm text-ink-700">
-                Every visitor is assigned a variant, but it reaches GA4 under Consent Mode like any
-                other event, and Clarity gets its tag and event only after “Accept”.
+                Every visitor gets a variant, but it is only saved on the device after “Accept”, as the
+                banner promises. It reaches GA4 under Consent Mode like any other event, and Clarity
+                gets its tag and event only after “Accept”.
               </p>
             </div>
           </div>

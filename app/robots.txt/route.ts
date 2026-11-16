@@ -10,7 +10,7 @@ export function GET() {
     [
       `# ${c.label}: ${c.what}`,
       `# ${c.decision}`,
-      ...c.bots.map((b) => `User-agent: ${b.name}${c.id === "undocumented" ? "  # undocumented, seen in logs only" : ""}`),
+      ...c.bots.map((b) => `User-agent: ${b.name}${c.id === "undocumented" ? "  # undocumented, name reported by third parties" : ""}`),
       "Allow: /",
     ].join("\n"),
   );

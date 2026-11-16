@@ -52,7 +52,7 @@ export const routes: RouteInfo[] = [
   {
     path: "/",
     label: "Home",
-    title: "Antoine Smolar — Digital Transformation & Operations Project Manager (student) | Portfolio",
+    title: "Antoine Smolar — Business Student | Portfolio",
     description:
       "Antoine Smolar, NEOMA business student targeting digital transformation & operations project manager roles: websites, SaaS, internal tools, SEO and GEO.",
   },
