@@ -383,7 +383,13 @@
         }
       ]
     },
-    "note": "Slide 2 (team photos) is left out for my teammates' privacy. The deck discloses its AI use: Perplexity for sources, Gemini for some structure, all reviewed by the team."
+    "note": "Slide 2 (team photos) is left out for my teammates' privacy. The deck discloses its AI use: Perplexity for sources, Gemini for some structure, all reviewed by the team.",
+    "links": [
+      {
+        "label": "Read the professor's recommendation letter",
+        "url": "/cv/Antoine-Smolar-Recommendation-Letters.pdf#page=5"
+      }
+    ]
   },
   {
     "id": "sirtom-shared-composters",
